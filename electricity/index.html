@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI計算・適正体重チェック（無料） - CalcBox</title>
-  <meta name="description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
-  <meta property="og:title" content="BMI計算・適正体重チェック（無料） - CalcBox">
-  <meta property="og:description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
+  <title>電気代計算シミュレーション（無料） - CalcBox</title>
+  <meta name="description" content="家電の消費電力と使用時間から電気代を簡単計算。複数家電の電気代シミュレーション。エアコン・冷蔵庫など主要家電のプリセット付き。">
+  <meta property="og:title" content="電気代計算シミュレーション（無料） - CalcBox">
+  <meta property="og:description" content="家電の消費電力と使用時間から電気代を簡単計算。複数家電の電気代シミュレーション。エアコン・冷蔵庫など主要家電のプリセット付き。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/bmi/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/electricity/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/bmi/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/electricity/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "BMI計算・適正体重チェック",
-    "description": "身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。",
-    "url": "https://yuhi-sa.github.io/calcbox/bmi/",
-    "applicationCategory": "HealthApplication",
+    "name": "電気代計算シミュレーション",
+    "description": "家電の消費電力と使用時間から電気代を簡単計算。複数家電の電気代シミュレーション。エアコン・冷蔵庫など主要家電のプリセット付き。",
+    "url": "https://yuhi-sa.github.io/calcbox/electricity/",
+    "applicationCategory": "UtilityApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -98,103 +98,121 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">BMI計算・適正体重チェック</li>
+        <li aria-current="page">電気代計算</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">BMI計算・適正体重チェック</h1>
-      <p class="tool__lead">身長と体重を入力するだけで、BMI値・肥満度判定・適正体重をすぐに計算できます。</p>
+      <h1 class="tool__title">電気代計算シミュレーション</h1>
+      <p class="tool__lead">家電の消費電力（W）と1日の使用時間を入力するだけで、日・月・年間の電気代を簡単にシミュレーションできます。</p>
 
       <div class="tool__body">
         <div class="form-group">
-          <label class="form-label" for="height">身長（cm）</label>
-          <input class="input" type="number" id="height" min="100" max="250" step="0.1" placeholder="例: 170">
+          <label class="form-label" for="electricity-rate">電気料金単価（円/kWh）</label>
+          <input class="input" type="number" id="electricity-rate" min="1" max="100" step="0.1" value="31" placeholder="例: 31">
         </div>
-        <div class="form-group">
-          <label class="form-label" for="weight">体重（kg）</label>
-          <input class="input" type="number" id="weight" min="20" max="300" step="0.1" placeholder="例: 65">
+
+        <div id="appliance-list">
+          <div class="appliance-row" data-index="0">
+            <div class="form-group">
+              <label class="form-label">家電プリセット</label>
+              <select class="select appliance-preset">
+                <option value="">手動で入力</option>
+                <option value="500">エアコン（500W）</option>
+                <option value="150">冷蔵庫（150W）</option>
+                <option value="100">テレビ（100W）</option>
+                <option value="400">洗濯機（400W）</option>
+                <option value="1000">電子レンジ（1000W）</option>
+                <option value="1200">ドライヤー（1200W）</option>
+                <option value="60">照明（60W）</option>
+                <option value="100">パソコン（100W）</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">消費電力（W）</label>
+              <input class="input appliance-watt" type="number" min="1" max="10000" step="1" placeholder="例: 500">
+            </div>
+            <div class="form-group">
+              <label class="form-label">1日の使用時間（時間）</label>
+              <input class="input appliance-hours" type="number" min="0.1" max="24" step="0.1" placeholder="例: 8">
+            </div>
+          </div>
         </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--secondary" id="add-appliance-btn" type="button">+ 家電を追加</button>
+        </div>
+
         <div class="tool__actions">
           <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
           <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
         </div>
 
         <div class="result" id="result" hidden>
+          <div id="each-result"></div>
           <div class="result__item">
-            <span class="result__label">あなたのBMI</span>
-            <span class="result__value" id="bmi-value"></span>
+            <span class="result__label">合計（1日あたり）</span>
+            <span class="result__value" id="total-daily"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">肥満度判定</span>
-            <span class="result__value" id="bmi-category"></span>
+            <span class="result__label">合計（1ヶ月あたり）</span>
+            <span class="result__value" id="total-monthly"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">適正体重（BMI 22）</span>
-            <span class="result__value" id="ideal-weight"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">適正体重との差</span>
-            <span class="result__value" id="weight-diff"></span>
-          </div>
-        </div>
-
-        <div id="bmi-chart-section" hidden>
-          <h2 class="section__title">BMI早見表</h2>
-          <div class="bmi-chart-wrapper">
-            <table class="bmi-chart" id="bmi-chart">
-              <thead>
-                <tr>
-                  <th>身長＼体重</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+            <span class="result__label">合計（1年あたり）</span>
+            <span class="result__value" id="total-yearly"></span>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">BMI計算ツールの使い方</h2>
+      <h2 class="section__title">電気代計算ツールの使い方</h2>
       <div class="section__content">
-        <p>BMI（Body Mass Index：ボディマス指数）は、体重と身長から算出される肥満度を表す体格指数です。世界保健機関（WHO）が定めた国際的な指標で、成人の肥満や低体重の判定に広く用いられています。</p>
-        <p>使い方はとても簡単です。身長をセンチメートル（cm）、体重をキログラム（kg）で入力し、「計算する」ボタンを押すだけ。BMI値、肥満度の判定結果、そしてあなたの身長に対する適正体重が即座に表示されます。</p>
-        <h3>BMIの計算式</h3>
-        <p>BMI = 体重(kg) / 身長(m)の2乗</p>
-        <p>例えば、身長170cm・体重65kgの場合、BMI = 65 / (1.70 × 1.70) = 22.5 となります。</p>
-        <h3>日本肥満学会の判定基準</h3>
+        <p>電気代計算ツールは、ご家庭の家電製品がどれくらいの電気代を消費しているかを簡単にシミュレーションできる無料オンラインツールです。毎月の電気代が気になる方、節電を考えている方に最適です。</p>
+        <h3>電気代の計算式</h3>
+        <p>電気代は次の計算式で算出されます。</p>
+        <p>電気代（円） = 消費電力（W） / 1000 × 使用時間（時間） × 電気料金単価（円/kWh）</p>
+        <p>例えば、エアコン（500W）を1日8時間使用した場合、電気料金単価が31円/kWhとすると、1日あたりの電気代は 500 / 1000 × 8 × 31 = 124円 となります。これを1ヶ月（30日）に換算すると 3,720円、1年間では 45,260円 になります。</p>
+        <h3>使い方</h3>
+        <p>1. 電気料金単価を入力します。全国平均は約31円/kWhですが、ご契約の電力会社やプランによって異なりますので、電気料金の検針票やWebサイトで確認できます。2. 家電プリセットから家電を選ぶか、消費電力を手動で入力します。プリセットを選ぶと消費電力が自動入力されます。3. 1日の使用時間を入力します。4. 複数の家電をまとめて計算したい場合は「家電を追加」ボタンで行を追加できます。5. 「計算する」ボタンを押すと、各家電の電気代の内訳と合計が表示されます。</p>
+        <h3>電気料金単価について</h3>
+        <p>電気料金単価は電力会社や契約プランによって異なります。2024年時点の全国平均的な目安は約31円/kWhです。実際の電気代は基本料金や再エネ賦課金、燃料費調整額なども加わるため、本ツールの計算結果はあくまで目安としてご利用ください。正確な単価は毎月届く電気料金の検針票や、電力会社のマイページで確認できます。</p>
+        <h3>主な家電の消費電力の目安</h3>
         <ul>
-          <li>BMI 18.5未満：低体重（やせ）</li>
-          <li>BMI 18.5〜25未満：普通体重</li>
-          <li>BMI 25〜30未満：肥満（1度）</li>
-          <li>BMI 30〜35未満：肥満（2度）</li>
-          <li>BMI 35〜40未満：肥満（3度）</li>
-          <li>BMI 40以上：肥満（4度）</li>
+          <li>エアコン：300W〜1000W（設定温度や運転モードにより大きく変動）</li>
+          <li>冷蔵庫：100W〜250W（常時稼働のため24時間で計算）</li>
+          <li>テレビ：50W〜200W（画面サイズや種類による）</li>
+          <li>洗濯機：300W〜500W（乾燥機能付きは800W〜1200W）</li>
+          <li>電子レンジ：500W〜1500W（使用時間は短め）</li>
+          <li>ドライヤー：600W〜1200W（使用時間は短め）</li>
+          <li>照明（LED）：7W〜15W（蛍光灯は40W〜60W）</li>
+          <li>パソコン：50W〜200W（デスクトップとノートで差あり）</li>
         </ul>
-        <p>日本では統計的に最も病気にかかりにくいとされるBMI 22を「適正体重（標準体重）」としています。適正体重 = 身長(m)の2乗 × 22 で計算できます。</p>
+        <h3>節電のポイント</h3>
+        <p>電気代を抑えるためには、消費電力の大きい家電（エアコン、ドライヤー、電子レンジなど）の使用時間を見直すことが効果的です。また、古い家電を省エネ性能の高い新しいモデルに買い替えることで、消費電力を大幅に削減できるケースもあります。冷蔵庫は24時間稼働しているため、省エネ性能の差が年間の電気代に大きく影響します。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. BMIは筋肉量が多い人にも正確ですか？</h3>
-        <p>A. BMIは身長と体重だけで計算するため、筋肉量が多いアスリートや体脂肪率が低い方の場合、実際の体脂肪量と異なる結果が出ることがあります。BMIはあくまでスクリーニングの指標として捉え、正確な体組成は体脂肪計などで別途確認することをおすすめします。</p>
-        <h3>Q. 子どもにもBMIは使えますか？</h3>
-        <p>A. BMIは成人（18歳以上）を対象とした指標です。子どもの場合はカウプ指数（乳幼児）やローレル指数（学童）など、年齢に応じた別の体格指標が使われます。本ツールは成人向けの計算結果を表示しています。</p>
-        <h3>Q. 適正体重とBMI 22の関係は？</h3>
-        <p>A. 日本肥満学会では、BMI 22の時に最も生活習慣病のリスクが低くなるという統計データに基づき、BMI 22を適正体重の基準としています。ただし個人差があるため、BMI 22はあくまで目安です。体調や健康診断の結果を総合的に判断してください。</p>
+        <h3>Q. 電気料金単価の31円/kWhは正確ですか？</h3>
+        <p>A. 31円/kWhは全国的な目安の値です。実際の電気料金単価は電力会社、契約プラン、使用量、地域、時間帯によって異なります。正確な単価は電力会社の検針票や契約内容をご確認ください。また、電気代には基本料金や再エネ賦課金なども含まれるため、本ツールの結果はあくまで消費電力分の目安です。</p>
+        <h3>Q. エアコンの電気代を正確に知りたいのですが？</h3>
+        <p>A. エアコンは設定温度、外気温、部屋の広さ、断熱性能などによって実際の消費電力が大きく変動します。カタログに記載されている消費電力は定格値であり、実際の使用状況では異なる場合があります。より正確に知りたい場合は、ワットチェッカーなどの測定機器の使用をおすすめします。</p>
+        <h3>Q. 複数の家電を同時に計算できますか？</h3>
+        <p>A. はい、「家電を追加」ボタンを押すことで複数の家電を一度に入力・計算できます。各家電の電気代の内訳と、全家電の合計電気代（日・月・年）がまとめて表示されます。ご家庭全体の電気代の把握や、どの家電が電気代に大きく影響しているかの確認に便利です。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
         <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
       </ul>
     </section>
 
@@ -242,6 +260,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/bmi.js"></script>
+  <script src="../js/electricity.js"></script>
 </body>
 </html>

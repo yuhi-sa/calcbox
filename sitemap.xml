@@ -37,6 +37,42 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://yuhi-sa.github.io/calcbox/tax/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/loan/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/electricity/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/unit/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/time/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/pet-age/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://yuhi-sa.github.io/calcbox/about.html</loc>
     <lastmod>2026-02-11</lastmod>
     <changefreq>yearly</changefreq>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消費税計算ツール（税込・税抜）（無料） - CalcBox</title>
+  <meta name="description" content="消費税の計算を簡単に。税込価格から税抜価格、税抜価格から税込価格を自動計算。軽減税率8%にも対応した無料オンライン消費税計算ツール。">
+  <meta property="og:title" content="消費税計算ツール（税込・税抜）（無料） - CalcBox">
+  <meta property="og:description" content="消費税の計算を簡単に。税込価格から税抜価格、税抜価格から税込価格を自動計算。軽減税率8%にも対応した無料オンライン消費税計算ツール。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/tax/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/tax/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "消費税計算ツール",
+    "description": "消費税の計算を簡単に。税込価格から税抜価格、税抜価格から税込価格を自動計算。軽減税率8%にも対応した無料オンライン消費税計算ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/tax/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">消費税計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">消費税計算ツール</h1>
+      <p class="tool__lead">税込価格と税抜価格を簡単に相互変換。標準税率10%と軽減税率8%に対応しています。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label">計算方向</label>
+          <div class="radio-group">
+            <label><input type="radio" name="calc-direction" value="exclude-to-include" checked> 税抜 → 税込</label>
+            <label><input type="radio" name="calc-direction" value="include-to-exclude"> 税込 → 税抜</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">税率</label>
+          <div class="radio-group">
+            <label><input type="radio" name="tax-rate" value="10" checked> 10%（標準税率）</label>
+            <label><input type="radio" name="tax-rate" value="8"> 8%（軽減税率）</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="price" id="price-label">税抜価格（円）</label>
+          <input class="input" type="number" id="price" min="0" step="1" placeholder="例: 1000">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label" id="result-price-label">税込価格</span>
+            <span class="result__value" id="result-price"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">消費税額</span>
+            <span class="result__value" id="result-tax"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label" id="result-original-label">税抜価格</span>
+            <span class="result__value" id="result-original"></span>
+          </div>
+        </div>
+
+        <h2 class="section__title" style="margin-top: 2rem;">複数商品の合計</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1rem;">複数の商品をまとめて消費税計算できます。「行を追加」ボタンで商品を追加してください。</p>
+        <div id="multi-items">
+          <div class="form-group" style="display: flex; gap: 8px; align-items: flex-end;">
+            <div style="flex: 2;">
+              <label class="form-label">商品名（任意）</label>
+              <input class="input multi-name" type="text" placeholder="例: りんご">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label">金額（円）</label>
+              <input class="input multi-price" type="number" min="0" step="1" placeholder="例: 500">
+            </div>
+            <div style="flex: 0;">
+              <select class="input multi-rate" style="min-width: 80px;">
+                <option value="10">10%</option>
+                <option value="8">8%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="tool__actions" style="margin-top: 0.5rem;">
+          <button class="btn btn--secondary" id="add-item-btn" type="button">行を追加</button>
+          <button class="btn btn--primary" id="calc-multi-btn" type="button">合計を計算</button>
+        </div>
+
+        <div class="result" id="multi-result" hidden>
+          <div class="result__item">
+            <span class="result__label">税抜合計</span>
+            <span class="result__value" id="multi-subtotal"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">消費税合計</span>
+            <span class="result__value" id="multi-tax"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">税込合計</span>
+            <span class="result__value" id="multi-total"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">消費税計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>消費税計算ツールは、税込価格から税抜価格を求めたり、税抜価格から税込価格を求めたりするための無料オンラインツールです。2019年10月に実施された消費税率引き上げにより、日本の消費税は標準税率10%と軽減税率8%の複数税率制度が導入されました。本ツールはどちらの税率にも対応しており、日々の買い物やビジネスシーンで役立ちます。</p>
+
+        <h3>税抜から税込への計算（税込価格の求め方）</h3>
+        <p>税抜価格に消費税を加えて税込価格を計算します。計算式は以下の通りです。</p>
+        <ul>
+          <li>税込価格 = 税抜価格 ×（1 + 税率）</li>
+          <li>消費税額 = 税抜価格 × 税率</li>
+        </ul>
+        <p>例えば、税抜価格1,000円の商品に標準税率10%を適用すると、消費税額は100円、税込価格は1,100円となります。軽減税率8%の場合は、消費税額80円、税込価格1,080円です。</p>
+
+        <h3>税込から税抜への計算（税抜価格の求め方）</h3>
+        <p>税込価格から消費税を差し引いて税抜価格を計算します。計算式は以下の通りです。</p>
+        <ul>
+          <li>税抜価格 = 税込価格 /（1 + 税率）</li>
+          <li>消費税額 = 税込価格 - 税抜価格</li>
+        </ul>
+        <p>例えば、税込価格1,100円の商品（標準税率10%）の場合、税抜価格は1,000円、消費税額は100円です。税込価格1,080円の食料品（軽減税率8%）では、税抜価格は1,000円、消費税額は80円になります。</p>
+
+        <h3>軽減税率とは</h3>
+        <p>軽減税率は、生活必需品である飲食料品（酒類を除く）と定期購読の新聞に適用される8%の税率です。外食やケータリングは標準税率10%が適用されます。スーパーやコンビニで購入する食品のほとんどは軽減税率8%の対象となります。レシートや請求書では、軽減税率対象品目に「※」マークが付けられていることが多いです。</p>
+
+        <h3>複数商品の合計計算</h3>
+        <p>複数の商品をまとめて消費税計算する機能も搭載しています。商品ごとに異なる税率を設定できるため、標準税率10%の商品と軽減税率8%の食料品が混在する場合でも正確に合計金額を算出できます。レシートの確認や経費精算、見積書の作成などにご活用ください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 軽減税率8%が適用される商品は何ですか？</h3>
+        <p>A. 軽減税率8%は、飲食料品（酒類を除く）と週2回以上発行される定期購読の新聞に適用されます。飲食料品には、お菓子、飲料、加工食品、生鮮食品などが含まれます。ただし、外食（レストランやフードコートでの飲食）やケータリング、酒類は標準税率10%が適用されます。テイクアウトや宅配は軽減税率8%の対象です。</p>
+        <h3>Q. 税込価格から税抜価格を計算すると端数が出ることがありますか？</h3>
+        <p>A. はい、税込価格によっては税抜価格に端数が出ることがあります。本ツールでは小数点以下を表示しています。実際の取引では、事業者ごとに端数処理（切り捨て・切り上げ・四捨五入）のルールが異なります。一般的には円未満を切り捨てるケースが多いです。</p>
+        <h3>Q. インボイス制度と消費税計算の関係は？</h3>
+        <p>A. 2023年10月に開始されたインボイス制度（適格請求書等保存方式）では、請求書に税率ごとの消費税額を正確に記載することが求められます。本ツールで計算した消費税額は、請求書や見積書を作成する際の参考値としてご利用いただけます。正式な経理処理では、お使いの会計ソフトの端数処理ルールに従ってください。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../loan/" class="related-tools__link">ローン計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/tax.js"></script>
+</body>
+</html>

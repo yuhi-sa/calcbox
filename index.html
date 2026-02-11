@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CalcBox - 暮らしに役立つ無料計算ツール集</title>
-  <meta name="description" content="BMI計算、日数計算、年齢計算、消費カロリー計算、割り勘計算など、暮らしに役立つ無料の計算ツールを集めました。">
-  <meta name="keywords" content="計算ツール,BMI計算,日数計算,年齢計算,カロリー計算,割り勘計算">
+  <meta name="description" content="BMI計算、消費税計算、ローン計算、日数計算、年齢計算、電気代計算、単位変換、時間計算など、暮らしに役立つ無料の計算ツールを集めました。">
+  <meta name="keywords" content="計算ツール,BMI計算,日数計算,年齢計算,カロリー計算,割り勘計算,消費税計算,ローン計算,電気代計算,単位変換,時間計算,ペット年齢">
   <meta property="og:type" content="website">
   <meta property="og:title" content="CalcBox - 暮らしに役立つ無料計算ツール集">
-  <meta property="og:description" content="BMI計算、日数計算、年齢計算、消費カロリー計算、割り勘計算など、暮らしに役立つ無料の計算ツールを集めました。">
+  <meta property="og:description" content="BMI計算、消費税計算、ローン計算、日数計算、年齢計算、電気代計算など、暮らしに役立つ無料の計算ツールを集めました。">
   <meta property="og:site_name" content="CalcBox">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="CalcBox - 暮らしに役立つ無料計算ツール集">
   <meta name="twitter:description" content="日常のちょっとした計算を、サッと解決。暮らしに役立つ無料計算ツール集。">
-  <link rel="canonical" href="">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/">
   <link rel="stylesheet" href="css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
@@ -50,9 +50,10 @@
         <ul class="nav-desktop__list">
           <li><a href="bmi/" class="nav-desktop__link">BMI計算</a></li>
           <li><a href="days/" class="nav-desktop__link">日数計算</a></li>
-          <li><a href="age/" class="nav-desktop__link">年齢計算</a></li>
-          <li><a href="calorie/" class="nav-desktop__link">カロリー計算</a></li>
-          <li><a href="warikan/" class="nav-desktop__link">割り勘計算</a></li>
+          <li><a href="tax/" class="nav-desktop__link">消費税</a></li>
+          <li><a href="loan/" class="nav-desktop__link">ローン</a></li>
+          <li><a href="electricity/" class="nav-desktop__link">電気代</a></li>
+          <li><a href="unit/" class="nav-desktop__link">単位変換</a></li>
         </ul>
       </nav>
 
@@ -77,6 +78,12 @@
     <a href="age/" class="mobile-nav__link">年齢計算（生年月日から）</a>
     <a href="calorie/" class="mobile-nav__link">消費カロリー計算</a>
     <a href="warikan/" class="mobile-nav__link">割り勘計算</a>
+    <a href="tax/" class="mobile-nav__link">消費税計算（税込・税抜）</a>
+    <a href="loan/" class="mobile-nav__link">ローン計算</a>
+    <a href="electricity/" class="mobile-nav__link">電気代計算</a>
+    <a href="unit/" class="mobile-nav__link">単位変換</a>
+    <a href="time/" class="mobile-nav__link">時間計算</a>
+    <a href="pet-age/" class="mobile-nav__link">ペット年齢換算</a>
     <a href="about.html" class="mobile-nav__link">サイトについて</a>
     <a href="privacy.html" class="mobile-nav__link">プライバシーポリシー</a>
   </nav>
@@ -138,6 +145,60 @@
           <h2 class="tool-card__title">割り勘計算</h2>
           <p class="tool-card__desc">飲み会やお食事の会計をかんたんに割り勘。端数処理もおまかせ。</p>
         </a>
+
+        <!-- 消費税計算 -->
+        <a href="tax/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <h2 class="tool-card__title">消費税計算（税込・税抜）</h2>
+          <p class="tool-card__desc">税込価格と税抜価格を瞬時に変換。軽減税率8%にも対応。</p>
+        </a>
+
+        <!-- ローン計算 -->
+        <a href="loan/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><polyline points="18 9 12 15 9 12 3 18"/></svg>
+          </div>
+          <h2 class="tool-card__title">ローン計算</h2>
+          <p class="tool-card__desc">住宅ローンや自動車ローンの月々の返済額・総支払額をシミュレーション。</p>
+        </a>
+
+        <!-- 電気代計算 -->
+        <a href="electricity/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h2 class="tool-card__title">電気代計算</h2>
+          <p class="tool-card__desc">家電の消費電力から月間・年間の電気代を計算。節電の参考に。</p>
+        </a>
+
+        <!-- 単位変換 -->
+        <a href="unit/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h2 class="tool-card__title">単位変換</h2>
+          <p class="tool-card__desc">長さ・重さ・温度・面積の単位を簡単に変換。坪↔平米にも対応。</p>
+        </a>
+
+        <!-- 時間計算 -->
+        <a href="time/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h2 class="tool-card__title">時間計算</h2>
+          <p class="tool-card__desc">時間の足し算・引き算、分変換、時給計算がまとめてできます。</p>
+        </a>
+
+        <!-- ペット年齢換算 -->
+        <a href="pet-age/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-1.5 0-3-.5-4-1.5C6.5 18 5 16 5 14c0-1.5.5-3 1.5-4C8 8.5 10 7 12 7s4 1.5 5.5 3c1 1 1.5 2.5 1.5 4 0 2-1.5 4-3 5.5-1 1-2.5 1.5-4 1.5z"/><circle cx="8.5" cy="6" r="1.5"/><circle cx="15.5" cy="6" r="1.5"/><circle cx="5" cy="10" r="1.5"/><circle cx="19" cy="10" r="1.5"/></svg>
+          </div>
+          <h2 class="tool-card__title">ペット年齢換算</h2>
+          <p class="tool-card__desc">犬・猫の年齢を人間の年齢に換算。サイズ別の換算にも対応。</p>
+        </a>
       </section>
     </div>
   </main>
@@ -159,15 +220,21 @@
           <a href="bmi/" class="footer__link">BMI計算</a>
           <a href="days/" class="footer__link">日数計算</a>
           <a href="age/" class="footer__link">年齢計算</a>
+          <a href="calorie/" class="footer__link">消費カロリー計算</a>
         </div>
         <div>
           <h2 class="footer__heading">計算ツール</h2>
-          <a href="calorie/" class="footer__link">消費カロリー計算</a>
           <a href="warikan/" class="footer__link">割り勘計算</a>
+          <a href="tax/" class="footer__link">消費税計算</a>
+          <a href="loan/" class="footer__link">ローン計算</a>
+          <a href="electricity/" class="footer__link">電気代計算</a>
+          <a href="unit/" class="footer__link">単位変換</a>
+          <a href="time/" class="footer__link">時間計算</a>
+          <a href="pet-age/" class="footer__link">ペット年齢換算</a>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2025 CalcBox All rights reserved.</p>
+        <p>&copy; 2026 CalcBox All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI計算・適正体重チェック（無料） - CalcBox</title>
-  <meta name="description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
-  <meta property="og:title" content="BMI計算・適正体重チェック（無料） - CalcBox">
-  <meta property="og:description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
+  <title>ローン計算シミュレーション（無料） - CalcBox</title>
+  <meta name="description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。年別返済表つき。">
+  <meta property="og:title" content="ローン計算シミュレーション（無料） - CalcBox">
+  <meta property="og:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/bmi/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/loan/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/bmi/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/loan/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "BMI計算・適正体重チェック",
-    "description": "身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。",
-    "url": "https://yuhi-sa.github.io/calcbox/bmi/",
-    "applicationCategory": "HealthApplication",
+    "name": "ローン計算シミュレーション",
+    "description": "住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。",
+    "url": "https://yuhi-sa.github.io/calcbox/loan/",
+    "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -98,23 +98,43 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">BMI計算・適正体重チェック</li>
+        <li aria-current="page">ローン計算</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">BMI計算・適正体重チェック</h1>
-      <p class="tool__lead">身長と体重を入力するだけで、BMI値・肥満度判定・適正体重をすぐに計算できます。</p>
+      <h1 class="tool__title">ローン計算シミュレーション</h1>
+      <p class="tool__lead">借入金額・金利・返済期間を入力するだけで、月々の返済額や総返済額を簡単にシミュレーションできます。</p>
 
       <div class="tool__body">
         <div class="form-group">
-          <label class="form-label" for="height">身長（cm）</label>
-          <input class="input" type="number" id="height" min="100" max="250" step="0.1" placeholder="例: 170">
+          <label class="form-label" for="loan-type">ローン種類</label>
+          <select class="input" id="loan-type">
+            <option value="housing">住宅ローン</option>
+            <option value="car">自動車ローン</option>
+            <option value="other">その他</option>
+          </select>
         </div>
         <div class="form-group">
-          <label class="form-label" for="weight">体重（kg）</label>
-          <input class="input" type="number" id="weight" min="20" max="300" step="0.1" placeholder="例: 65">
+          <label class="form-label" for="loan-amount">借入金額（万円）</label>
+          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="例: 3000">
         </div>
+        <div class="form-group">
+          <label class="form-label" for="interest-rate">年利（%）</label>
+          <input class="input" type="number" id="interest-rate" min="0" max="50" step="0.01" placeholder="例: 1.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loan-years">返済期間（年）</label>
+          <input class="input" type="number" id="loan-years" min="1" max="50" step="1" placeholder="例: 35">
+        </div>
+        <div class="form-group">
+          <label class="form-label">返済方式</label>
+          <div class="radio-group">
+            <label><input type="radio" name="repayment-method" value="equal-payment" checked> 元利均等返済</label>
+            <label><input type="radio" name="repayment-method" value="equal-principal"> 元金均等返済</label>
+          </div>
+        </div>
+
         <div class="tool__actions">
           <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
           <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
@@ -122,33 +142,33 @@
 
         <div class="result" id="result" hidden>
           <div class="result__item">
-            <span class="result__label">あなたのBMI</span>
-            <span class="result__value" id="bmi-value"></span>
+            <span class="result__label" id="monthly-label">毎月の返済額</span>
+            <span class="result__value" id="monthly-payment"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">肥満度判定</span>
-            <span class="result__value" id="bmi-category"></span>
+            <span class="result__label">総返済額</span>
+            <span class="result__value" id="total-payment"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">適正体重（BMI 22）</span>
-            <span class="result__value" id="ideal-weight"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">適正体重との差</span>
-            <span class="result__value" id="weight-diff"></span>
+            <span class="result__label">利息総額</span>
+            <span class="result__value" id="total-interest"></span>
           </div>
         </div>
 
-        <div id="bmi-chart-section" hidden>
-          <h2 class="section__title">BMI早見表</h2>
-          <div class="bmi-chart-wrapper">
-            <table class="bmi-chart" id="bmi-chart">
+        <div id="amortization-section" hidden>
+          <h2 class="section__title">年別返済表</h2>
+          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
+            <table id="amortization-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
               <thead>
-                <tr>
-                  <th>身長＼体重</th>
+                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
+                  <th style="padding: 10px 8px; text-align: center;">年</th>
+                  <th style="padding: 10px 8px; text-align: right;">年間返済額</th>
+                  <th style="padding: 10px 8px; text-align: right;">元金分</th>
+                  <th style="padding: 10px 8px; text-align: right;">利息分</th>
+                  <th style="padding: 10px 8px; text-align: right;">残高</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody id="amortization-body"></tbody>
             </table>
           </div>
         </div>
@@ -156,45 +176,48 @@
     </div>
 
     <section class="section">
-      <h2 class="section__title">BMI計算ツールの使い方</h2>
+      <h2 class="section__title">ローン計算ツールの使い方</h2>
       <div class="section__content">
-        <p>BMI（Body Mass Index：ボディマス指数）は、体重と身長から算出される肥満度を表す体格指数です。世界保健機関（WHO）が定めた国際的な指標で、成人の肥満や低体重の判定に広く用いられています。</p>
-        <p>使い方はとても簡単です。身長をセンチメートル（cm）、体重をキログラム（kg）で入力し、「計算する」ボタンを押すだけ。BMI値、肥満度の判定結果、そしてあなたの身長に対する適正体重が即座に表示されます。</p>
-        <h3>BMIの計算式</h3>
-        <p>BMI = 体重(kg) / 身長(m)の2乗</p>
-        <p>例えば、身長170cm・体重65kgの場合、BMI = 65 / (1.70 × 1.70) = 22.5 となります。</p>
-        <h3>日本肥満学会の判定基準</h3>
+        <p>ローン計算シミュレーションは、住宅ローンや自動車ローンなどの借入に対する返済額を簡単に試算できる無料オンラインツールです。借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。</p>
+
+        <h3>元利均等返済とは</h3>
+        <p>元利均等返済は、毎月の返済額（元金＋利息）が一定となる返済方式です。返済額が変わらないため家計の管理がしやすく、住宅ローンで最も一般的に利用されています。返済初期は利息の割合が大きく、返済が進むにつれて元金の割合が増えていきます。計算式は以下の通りです。</p>
         <ul>
-          <li>BMI 18.5未満：低体重（やせ）</li>
-          <li>BMI 18.5〜25未満：普通体重</li>
-          <li>BMI 25〜30未満：肥満（1度）</li>
-          <li>BMI 30〜35未満：肥満（2度）</li>
-          <li>BMI 35〜40未満：肥満（3度）</li>
-          <li>BMI 40以上：肥満（4度）</li>
+          <li>毎月の返済額 = 借入金額 × 月利 × (1 + 月利)^返済回数 / ((1 + 月利)^返済回数 - 1)</li>
+          <li>月利 = 年利 / 12</li>
+          <li>返済回数 = 返済年数 × 12</li>
         </ul>
-        <p>日本では統計的に最も病気にかかりにくいとされるBMI 22を「適正体重（標準体重）」としています。適正体重 = 身長(m)の2乗 × 22 で計算できます。</p>
+
+        <h3>元金均等返済とは</h3>
+        <p>元金均等返済は、毎月の元金返済額が一定で、それに利息を加えた金額を返済する方式です。返済開始当初は返済額が大きいですが、残高が減るにつれて利息も減り、返済額は徐々に少なくなります。元利均等返済と比べて総返済額が少なくなるメリットがありますが、初期の返済負担が大きくなります。</p>
+
+        <h3>住宅ローンのシミュレーション</h3>
+        <p>住宅ローンは一般的に借入金額が大きく（数千万円）、返済期間も長期（25〜35年）となります。金利タイプには固定金利と変動金利があり、2024年現在の変動金利は年0.3%〜0.6%程度、固定金利（35年）は年1.5%〜2.0%程度が目安です。本ツールで異なる金利や返済期間を試して、ご自身に合った返済計画を検討できます。</p>
+
+        <h3>自動車ローンのシミュレーション</h3>
+        <p>自動車ローンは借入金額100万〜500万円程度、返済期間3〜7年程度が一般的です。金利はディーラーローンで年3%〜8%、銀行の自動車ローンで年1%〜3%程度です。頭金の有無や返済期間によって月々の負担が大きく変わるため、シミュレーションで比較検討することをおすすめします。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. BMIは筋肉量が多い人にも正確ですか？</h3>
-        <p>A. BMIは身長と体重だけで計算するため、筋肉量が多いアスリートや体脂肪率が低い方の場合、実際の体脂肪量と異なる結果が出ることがあります。BMIはあくまでスクリーニングの指標として捉え、正確な体組成は体脂肪計などで別途確認することをおすすめします。</p>
-        <h3>Q. 子どもにもBMIは使えますか？</h3>
-        <p>A. BMIは成人（18歳以上）を対象とした指標です。子どもの場合はカウプ指数（乳幼児）やローレル指数（学童）など、年齢に応じた別の体格指標が使われます。本ツールは成人向けの計算結果を表示しています。</p>
-        <h3>Q. 適正体重とBMI 22の関係は？</h3>
-        <p>A. 日本肥満学会では、BMI 22の時に最も生活習慣病のリスクが低くなるという統計データに基づき、BMI 22を適正体重の基準としています。ただし個人差があるため、BMI 22はあくまで目安です。体調や健康診断の結果を総合的に判断してください。</p>
+        <h3>Q. 元利均等返済と元金均等返済、どちらがお得ですか？</h3>
+        <p>A. 総返済額で比較すると、元金均等返済のほうが利息総額が少なくなります。ただし、元金均等返済は返済初期の月々の負担が大きくなります。家計に余裕がある場合は元金均等返済がお得ですが、毎月一定額の返済を希望する場合は元利均等返済が適しています。ライフプランに合わせて選択してください。</p>
+        <h3>Q. ボーナス返済には対応していますか？</h3>
+        <p>A. 現在のバージョンでは毎月均等の返済のみに対応しています。ボーナス返済を考慮する場合は、ボーナス返済分を差し引いた借入金額でシミュレーションし、別途ボーナス返済分を計算してください。例えば、3,000万円の借入でボーナス返済500万円の場合、まず2,500万円で計算し、500万円分を別途計算して合算します。</p>
+        <h3>Q. 実際の返済額と計算結果が異なるのはなぜですか？</h3>
+        <p>A. 本ツールの計算結果は概算値です。実際の返済額は、金融機関の端数処理方法、返済開始日、経過利息の計算方法などにより若干異なる場合があります。また、変動金利の場合は金利見直しにより返済額が変わります。正確な返済額は、借入先の金融機関にご確認ください。本ツールは返済計画の目安としてご利用ください。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
         <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
       </ul>
     </section>
 
@@ -242,6 +265,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/bmi.js"></script>
+  <script src="../js/loan.js"></script>
 </body>
 </html>

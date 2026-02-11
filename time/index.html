@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>時間計算ツール（無料） - CalcBox</title>
+  <meta name="description" content="時間の足し算・引き算、時間と分の変換、時給計算がすべて無料でできるオンラインツール。時間計算・分変換・時給計算をまとめて簡単に。">
+  <meta property="og:title" content="時間計算ツール（無料） - CalcBox">
+  <meta property="og:description" content="時間の足し算・引き算、時間と分の変換、時給計算がすべて無料でできるオンラインツール。時間計算・分変換・時給計算をまとめて簡単に。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/time/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/time/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "時間計算ツール",
+    "description": "時間の足し算・引き算、時間と分の変換、時給計算がすべて無料でできるオンラインツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/time/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">時間計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">時間計算ツール</h1>
+      <p class="tool__lead">時間の足し算・引き算、時間と分の相互変換、時給計算がまとめてできる便利なツールです。</p>
+
+      <div class="tool__body">
+        <!-- モード選択 -->
+        <div class="form-group">
+          <label class="form-label">計算モード</label>
+          <div class="radio-group">
+            <label><input type="radio" name="time-mode" value="calc" checked> 時間の足し算・引き算</label>
+            <label><input type="radio" name="time-mode" value="convert"> 時間・分 変換</label>
+            <label><input type="radio" name="time-mode" value="wage"> 時給計算</label>
+          </div>
+        </div>
+
+        <!-- モード1: 時間の足し算・引き算 -->
+        <div id="mode-calc">
+          <h2 class="section__title">時間の足し算・引き算</h2>
+          <div class="form-group">
+            <label class="form-label">時間A</label>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input class="input" type="number" id="calc-a-hours" min="0" max="9999" step="1" placeholder="0" style="width:80px;"> 時間
+              <input class="input" type="number" id="calc-a-minutes" min="0" max="59" step="1" placeholder="0" style="width:80px;"> 分
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">演算</label>
+            <div class="radio-group">
+              <label><input type="radio" name="calc-op" value="add" checked> 足し算（+）</label>
+              <label><input type="radio" name="calc-op" value="sub"> 引き算（-）</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">時間B</label>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input class="input" type="number" id="calc-b-hours" min="0" max="9999" step="1" placeholder="0" style="width:80px;"> 時間
+              <input class="input" type="number" id="calc-b-minutes" min="0" max="59" step="1" placeholder="0" style="width:80px;"> 分
+            </div>
+          </div>
+          <div class="tool__actions">
+            <button class="btn btn--primary" id="calc-time-btn" type="button">計算する</button>
+          </div>
+          <div class="result" id="calc-result" hidden>
+            <div class="result__item">
+              <span class="result__label">計算結果</span>
+              <span class="result__value" id="calc-result-value"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">合計（分換算）</span>
+              <span class="result__value" id="calc-result-minutes"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- モード2: 時間・分 変換 -->
+        <div id="mode-convert" hidden>
+          <h2 class="section__title">時間・分 変換</h2>
+          <div class="form-group">
+            <label class="form-label">変換方向</label>
+            <div class="radio-group">
+              <label><input type="radio" name="convert-dir" value="to-minutes" checked> 時間・分 → 合計分</label>
+              <label><input type="radio" name="convert-dir" value="to-hours"> 合計分 → 時間・分</label>
+            </div>
+          </div>
+          <div id="convert-to-minutes-input">
+            <div class="form-group">
+              <label class="form-label">時間と分を入力</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input class="input" type="number" id="conv-hours" min="0" max="9999" step="1" placeholder="0" style="width:80px;"> 時間
+                <input class="input" type="number" id="conv-minutes" min="0" max="59" step="1" placeholder="0" style="width:80px;"> 分
+              </div>
+            </div>
+          </div>
+          <div id="convert-to-hours-input" hidden>
+            <div class="form-group">
+              <label class="form-label">合計分を入力</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input class="input" type="number" id="conv-total-minutes" min="0" max="999999" step="1" placeholder="例: 150" style="width:120px;"> 分
+              </div>
+            </div>
+          </div>
+          <div class="tool__actions">
+            <button class="btn btn--primary" id="convert-btn" type="button">変換する</button>
+          </div>
+          <div class="result" id="convert-result" hidden>
+            <div class="result__item">
+              <span class="result__label">変換結果</span>
+              <span class="result__value" id="convert-result-value"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- モード3: 時給計算 -->
+        <div id="mode-wage" hidden>
+          <h2 class="section__title">時給計算</h2>
+          <div class="form-group">
+            <label class="form-label">計算方向</label>
+            <div class="radio-group">
+              <label><input type="radio" name="wage-dir" value="to-pay" checked> 時給 × 時間 → 給与</label>
+              <label><input type="radio" name="wage-dir" value="to-rate"> 給与 ÷ 時間 → 時給</label>
+            </div>
+          </div>
+          <div id="wage-to-pay-input">
+            <div class="form-group">
+              <label class="form-label" for="wage-rate">時給（円）</label>
+              <input class="input" type="number" id="wage-rate" min="1" step="1" placeholder="例: 1200">
+            </div>
+            <div class="form-group">
+              <label class="form-label">勤務時間</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input class="input" type="number" id="wage-hours" min="0" max="9999" step="1" placeholder="0" style="width:80px;"> 時間
+                <input class="input" type="number" id="wage-minutes" min="0" max="59" step="1" placeholder="0" style="width:80px;"> 分
+              </div>
+            </div>
+          </div>
+          <div id="wage-to-rate-input" hidden>
+            <div class="form-group">
+              <label class="form-label" for="wage-total-pay">給与総額（円）</label>
+              <input class="input" type="number" id="wage-total-pay" min="1" step="1" placeholder="例: 10000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">勤務時間</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input class="input" type="number" id="wage-rev-hours" min="0" max="9999" step="1" placeholder="0" style="width:80px;"> 時間
+                <input class="input" type="number" id="wage-rev-minutes" min="0" max="59" step="1" placeholder="0" style="width:80px;"> 分
+              </div>
+            </div>
+          </div>
+          <div class="tool__actions">
+            <button class="btn btn--primary" id="wage-btn" type="button">計算する</button>
+          </div>
+          <div class="result" id="wage-result" hidden>
+            <div class="result__item">
+              <span class="result__label" id="wage-result-label">給与</span>
+              <span class="result__value" id="wage-result-value"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--secondary" id="time-reset-btn" type="button">リセット</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">時間計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>時間計算ツールは、日常生活や仕事で頻繁に必要となる「時間」に関する計算をまとめて行える無料のオンラインツールです。時間の足し算・引き算、時間と分の相互変換、時給に基づく給与計算の3つの機能を備えています。</p>
+
+        <h3>時間の足し算・引き算</h3>
+        <p>2つの時間を足したり引いたりする計算ができます。たとえば「2時間30分 + 1時間45分」のような計算を瞬時に行い、結果を「4時間15分」のように時間と分で表示します。勤務時間の合計や、複数の作業にかかった時間の合算など、さまざまな場面で活用できます。引き算の場合、結果がマイナスになる場合はマイナス表示されるため、時間差の計算にも便利です。</p>
+
+        <h3>時間・分 変換</h3>
+        <p>「2時間30分は何分？」「150分は何時間何分？」のような変換を行います。時間と分を入力すると合計分数に変換でき、逆に分数を入力すると時間と分に分解して表示します。レシピの調理時間を分単位に揃えたい場合や、試験時間を時間・分に分けて把握したい場合などに役立ちます。</p>
+
+        <h3>時給計算</h3>
+        <p>時給と勤務時間から給与総額を計算できます。たとえば時給1,200円で3時間30分働いた場合の給与は4,200円と計算されます。また、逆に給与総額と勤務時間から時給を逆算することもできます。アルバイトやパートの給与確認、フリーランスの時間単価の計算などに最適です。</p>
+
+        <h3>入力のヒント</h3>
+        <p>時間の入力は「時間」と「分」を別々のフィールドに入力します。分は0から59の範囲で入力してください。60分以上を入力したい場合は、時間のフィールドに繰り上げた値を入力するか、「時間・分 変換」機能で変換してからご利用ください。計算結果は自動的に時間と分に正規化されて表示されます。</p>
+
+        <h3>活用シーン</h3>
+        <p>このツールは以下のような場面で特に役立ちます。残業時間の合計計算、通勤時間の往復合算、料理や作業の所要時間管理、アルバイトの給与計算、タイムカードの確認、フリーランスの作業時間の単価計算などです。スマートフォンからも使えるので、外出先でもサッと計算できます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 引き算の結果がマイナスになった場合はどう表示されますか？</h3>
+        <p>A. 引き算の結果がマイナスになる場合は、先頭にマイナス記号を付けて「-1時間15分」のように表示されます。時間Aより時間Bが大きい場合にマイナスの結果となります。</p>
+        <h3>Q. 時給計算で端数が出る場合はどうなりますか？</h3>
+        <p>A. 給与計算の結果に端数が出る場合は、小数点以下を四捨五入して表示します。時給を逆算する場合も同様に四捨五入した結果を表示します。実際の給与計算では企業の端数処理ルールに従ってください。</p>
+        <h3>Q. 24時間を超える時間も計算できますか？</h3>
+        <p>A. はい、24時間を超える時間の計算にも対応しています。例えば「30時間45分 + 15時間20分 = 46時間5分」のように、日をまたぐ合計時間の計算も問題なく行えます。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/time.js"></script>
+</body>
+</html>
