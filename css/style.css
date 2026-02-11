@@ -193,6 +193,9 @@ main {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .header__logo {
@@ -993,6 +996,347 @@ main {
   }
 }
 
+/* ----- ツールページ用ヘッダー ----- */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ツールページ用デスクトップナビ */
+.nav {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.nav__link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+/* ツールページ用モバイルナビ（ul/li ラッパー対応） */
+.mobile-nav__list {
+  list-style: none;
+}
+
+/* ----- ツールページ用パンくず（BEMサブクラスなし） ----- */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumb li::before {
+  content: "/";
+  color: var(--color-text-muted);
+}
+
+.breadcrumb li:first-child::before {
+  display: none;
+}
+
+.breadcrumb a {
+  color: var(--color-text-secondary);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+/* ----- ツールページ共通レイアウト ----- */
+.tool {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.tool__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.tool__lead {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.tool__body {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.tool__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* ----- ツールページ用フォーム ----- */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg-input);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.select {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg-input);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2395a5a6' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}
+
+/* ラジオボタングループ */
+.radio-group {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.radio-group label:hover {
+  border-color: var(--color-primary);
+}
+
+.radio-group input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+.radio-group label:has(input:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+/* ----- ツールページ用結果表示 ----- */
+.result {
+  background-color: var(--color-result-bg);
+  border: 1.5px solid var(--color-result-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.result__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.result__item:last-child {
+  border-bottom: none;
+}
+
+.result__label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.result__value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ----- ツールページ用セクション ----- */
+.section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.section__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.section__content {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.section__content p {
+  margin-bottom: var(--space-md);
+}
+
+.section__content p:last-child {
+  margin-bottom: 0;
+}
+
+.section__content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.section__content ul,
+.section__content ol {
+  padding-left: 1.5em;
+  margin-bottom: var(--space-md);
+}
+
+.section__content ul {
+  list-style: disc;
+}
+
+.section__content ol {
+  list-style: decimal;
+}
+
+.section__content li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ----- ツールページ用フッター ----- */
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.footer__section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: var(--space-md);
+}
+
+.footer__list {
+  list-style: none;
+}
+
+/* ----- テーブル・チャート ----- */
+.bmi-chart-wrapper {
+  overflow-x: auto;
+  margin-top: var(--space-md);
+}
+
+.bmi-chart {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.bmi-chart th,
+.bmi-chart td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.bmi-chart thead th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+}
+
+/* ----- ツールページ用パンくず・関連ツール幅制限 ----- */
+main > .breadcrumb {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+main > .related-tools {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-md);
+}
+
 /* ----- レスポンシブ: タブレット ----- */
 @media (min-width: 768px) {
   .hero__title {
@@ -1018,12 +1362,17 @@ main {
 
 /* ----- レスポンシブ: デスクトップ ----- */
 @media (min-width: 1024px) {
-  .nav-desktop {
+  .nav-desktop,
+  .nav {
     display: block;
   }
 
   .hamburger {
     display: none;
+  }
+
+  .tool__body {
+    padding: var(--space-xl) var(--space-2xl);
   }
 
   .hero__title {
