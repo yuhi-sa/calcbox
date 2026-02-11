@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年齢計算ツール（生年月日から） - CalcBox</title>
+  <meta name="description" content="生年月日から年齢・干支・星座を自動計算。和暦変換や次の誕生日までの日数も表示。">
+  <meta property="og:title" content="年齢計算ツール（生年月日から） - CalcBox">
+  <meta property="og:description" content="生年月日から年齢・干支・星座を自動計算。和暦変換や次の誕生日までの日数も表示。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/age/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/age/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "年齢計算ツール",
+    "description": "生年月日から年齢・干支・星座を自動計算。和暦変換や次の誕生日までの日数も表示。",
+    "url": "https://yuhi-sa.github.io/calcbox/age/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../age/" class="nav__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="nav__link">カロリー</a></li>
+            <li><a href="../warikan/" class="nav__link">割り勘</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">年齢計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">年齢計算ツール</h1>
+      <p class="tool__lead">生年月日を入力するだけで、満年齢・干支・星座・和暦などを一括で計算できます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="birthday">生年月日</label>
+          <input class="input" type="date" id="birthday">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">満年齢</span>
+            <span class="result__value" id="age-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">生年月日（和暦）</span>
+            <span class="result__value" id="wareki-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">干支（えと）</span>
+            <span class="result__value" id="eto-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">星座</span>
+            <span class="result__value" id="zodiac-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">次の誕生日まで</span>
+            <span class="result__value" id="next-birthday"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">生まれてから</span>
+            <span class="result__value" id="days-alive"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">年齢計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>年齢計算ツールは、生年月日を入力するだけで様々な情報を一度に確認できる便利なオンラインツールです。履歴書の作成、各種手続き、雑学の確認など幅広い場面で活用できます。</p>
+        <h3>表示される情報</h3>
+        <p><strong>満年齢</strong>：「○歳○ヶ月○日」の形式で表示します。日本の法律では、誕生日の前日に年齢が加算される（年齢計算ニ関スル法律）ため、本ツールでは一般的な数え方（誕生日当日に加齢）で計算しています。</p>
+        <p><strong>和暦</strong>：令和・平成・昭和・大正の各元号に変換して表示します。西暦から和暦への変換は、各元号の開始日に基づいて正確に行います。</p>
+        <p><strong>干支（えと）</strong>：生まれ年の干支（十二支）を表示します。子（ねずみ）・丑（うし）・寅（とら）・卯（うさぎ）・辰（たつ）・巳（へび）・午（うま）・未（ひつじ）・申（さる）・酉（とり）・戌（いぬ）・亥（いのしし）の12種類です。</p>
+        <p><strong>星座</strong>：誕生日に基づく西洋占星術の12星座を表示します。</p>
+        <p><strong>次の誕生日まで</strong>：次の誕生日までの残り日数を表示します。</p>
+        <p><strong>生まれてからの日数</strong>：生まれてから今日まで何日経過したかを表示します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 満年齢と数え年の違いは？</h3>
+        <p>A. 満年齢は生まれた日を0歳とし、誕生日ごとに1歳加算する数え方です。数え年は生まれた年を1歳とし、元日（1月1日）に1歳加算する日本の伝統的な数え方です。本ツールでは一般的に使われる満年齢で計算しています。</p>
+        <h3>Q. 令和・平成・昭和以外の元号にも対応していますか？</h3>
+        <p>A. 本ツールでは大正以降の元号（大正・昭和・平成・令和）に対応しています。大正より前の年号の場合は西暦のみで表示されます。</p>
+        <h3>Q. 2月29日生まれの場合はどうなりますか？</h3>
+        <p>A. うるう年の2月29日生まれの方の場合、うるう年でない年は3月1日を誕生日として計算します。法的には前日（2月28日）に年齢が加算されますが、本ツールでは一般的な慣行に沿って計算しています。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/age.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>割り勘計算ツール（傾斜配分対応） - CalcBox</title>
+  <meta name="description" content="飲み会やイベントの割り勘を簡単計算。傾斜配分や端数処理にも対応した無料ツール。">
+  <meta property="og:title" content="割り勘計算ツール（傾斜配分対応） - CalcBox">
+  <meta property="og:description" content="飲み会やイベントの割り勘を簡単計算。傾斜配分や端数処理にも対応した無料ツール。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/warikan/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/warikan/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "割り勘計算ツール",
+    "description": "飲み会やイベントの割り勘を簡単計算。傾斜配分や端数処理にも対応した無料ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/warikan/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../age/" class="nav__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="nav__link">カロリー</a></li>
+            <li><a href="../warikan/" class="nav__link">割り勘</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">割り勘計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">割り勘計算ツール</h1>
+      <p class="tool__lead">飲み会やイベントの会計を簡単に割り勘計算。傾斜配分や端数処理にも対応しています。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="total-amount">合計金額（円）</label>
+          <input class="input" type="number" id="total-amount" min="1" step="1" placeholder="例: 30000">
+        </div>
+
+        <!-- 均等割りセクション -->
+        <h2 class="section__title">均等割り</h2>
+        <div class="form-group">
+          <label class="form-label" for="equal-people">人数</label>
+          <input class="input" type="number" id="equal-people" min="2" max="100" step="1" placeholder="例: 5">
+        </div>
+        <div class="form-group">
+          <label class="form-label">端数処理</label>
+          <div class="radio-group">
+            <label><input type="radio" name="rounding" value="ceil" checked> 切り上げ</label>
+            <label><input type="radio" name="rounding" value="floor"> 切り捨て</label>
+            <label><input type="radio" name="rounding" value="round"> 四捨五入</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">丸め単位</label>
+          <div class="radio-group">
+            <label><input type="radio" name="unit" value="100" checked> 100円単位</label>
+            <label><input type="radio" name="unit" value="10"> 10円単位</label>
+            <label><input type="radio" name="unit" value="1"> 1円単位</label>
+          </div>
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-equal-btn" type="button">均等割りで計算</button>
+        </div>
+        <div class="result" id="equal-result" hidden>
+          <div class="result__item">
+            <span class="result__label">1人あたり</span>
+            <span class="result__value" id="per-person"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">徴収合計</span>
+            <span class="result__value" id="collected-total"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">端数（余り/不足）</span>
+            <span class="result__value" id="remainder"></span>
+          </div>
+        </div>
+
+        <!-- 傾斜配分セクション -->
+        <h2 class="section__title">傾斜配分</h2>
+        <p>グループごとの人数を入力してください。「多め」は普通の1.5倍、「少なめ」は普通の0.7倍で計算します。</p>
+        <div class="form-group">
+          <label class="form-label" for="group-more">「多め」の人数</label>
+          <input class="input" type="number" id="group-more" min="0" max="50" step="1" value="0" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="group-normal">「普通」の人数</label>
+          <input class="input" type="number" id="group-normal" min="0" max="50" step="1" value="0" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="group-less">「少なめ」の人数</label>
+          <input class="input" type="number" id="group-less" min="0" max="50" step="1" value="0" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label class="form-label">丸め単位</label>
+          <div class="radio-group">
+            <label><input type="radio" name="keisha-unit" value="100" checked> 100円単位</label>
+            <label><input type="radio" name="keisha-unit" value="10"> 10円単位</label>
+            <label><input type="radio" name="keisha-unit" value="1"> 1円単位</label>
+          </div>
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-keisha-btn" type="button">傾斜配分で計算</button>
+        </div>
+        <div class="result" id="keisha-result" hidden>
+          <div class="result__item">
+            <span class="result__label">「多め」1人あたり</span>
+            <span class="result__value" id="keisha-more"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">「普通」1人あたり</span>
+            <span class="result__value" id="keisha-normal"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">「少なめ」1人あたり</span>
+            <span class="result__value" id="keisha-less"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">徴収合計</span>
+            <span class="result__value" id="keisha-collected"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">端数（余り/不足）</span>
+            <span class="result__value" id="keisha-remainder"></span>
+          </div>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">割り勘計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>割り勘計算ツールは、飲み会やイベント、食事会などの会計をスムーズに割り勘するためのオンラインツールです。均等割りだけでなく、幹事や上司は多め、新人は少なめといった傾斜配分にも対応しています。</p>
+        <h3>均等割り</h3>
+        <p>合計金額と人数を入力するだけで、1人あたりの支払額を計算します。端数処理は「切り上げ」「切り捨て」「四捨五入」の3種類から選べます。丸め単位も100円・10円・1円から選択可能です。例えば、30,000円を7人で割ると1人あたり約4,286円ですが、100円単位で切り上げると4,300円となります。</p>
+        <h3>傾斜配分</h3>
+        <p>「多め」「普通」「少なめ」の3グループに分けて配分できます。多めは普通の1.5倍、少なめは普通の0.7倍の金額を支払います。例えば幹事や年長者は「多め」、一般参加者は「普通」、学生や新人は「少なめ」のように設定できます。</p>
+        <h3>端数について</h3>
+        <p>割り勘の端数処理では、丸め方によって徴収合計が合計金額と一致しない場合があります。その差額（余りまたは不足）も表示するので、幹事の方が調整しやすくなっています。切り上げの場合は余りが出ることが多く、そのお金は幹事が次回に持ち越したり、デザート代に充てるなどの使い方ができます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 傾斜配分の倍率は変更できますか？</h3>
+        <p>A. 現在のバージョンでは、「多め」は普通の1.5倍、「少なめ」は普通の0.7倍で固定されています。一般的な飲み会での傾斜割り勘に適した比率です。</p>
+        <h3>Q. 端数はどうすればいいですか？</h3>
+        <p>A. 切り上げで計算した場合、余りが出ます。この余りは幹事が管理し、次回の会費に充てたり、その場でお菓子代にするなどの使い方が一般的です。切り捨ての場合は不足が出るため、幹事が差額を負担するか、別途調整してください。</p>
+        <h3>Q. 3人以上のグループ分けはできますか？</h3>
+        <p>A. 現在は「多め」「普通」「少なめ」の3グループに対応しています。より細かい金額指定が必要な場合は、各自の金額を手動で調整してください。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/warikan.js"></script>
+</body>
+</html>

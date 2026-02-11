@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalcBox - 暮らしに役立つ無料計算ツール集</title>
+  <meta name="description" content="BMI計算、日数計算、年齢計算、消費カロリー計算、割り勘計算など、暮らしに役立つ無料の計算ツールを集めました。">
+  <meta name="keywords" content="計算ツール,BMI計算,日数計算,年齢計算,カロリー計算,割り勘計算">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CalcBox - 暮らしに役立つ無料計算ツール集">
+  <meta property="og:description" content="BMI計算、日数計算、年齢計算、消費カロリー計算、割り勘計算など、暮らしに役立つ無料の計算ツールを集めました。">
+  <meta property="og:site_name" content="CalcBox">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CalcBox - 暮らしに役立つ無料計算ツール集">
+  <meta name="twitter:description" content="日常のちょっとした計算を、サッと解決。暮らしに役立つ無料計算ツール集。">
+  <link rel="canonical" href="">
+  <link rel="stylesheet" href="css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CalcBox",
+    "alternateName": "カルクボックス",
+    "description": "暮らしに役立つ無料計算ツール集",
+    "inLanguage": "ja"
+  }
+  </script>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="3" y="2" width="26" height="28" rx="4" fill="#e67e22"/>
+          <rect x="6" y="5" width="20" height="8" rx="2" fill="#fff"/>
+          <rect x="7" y="16" width="4" height="4" rx="1" fill="#fff" opacity=".9"/>
+          <rect x="14" y="16" width="4" height="4" rx="1" fill="#fff" opacity=".9"/>
+          <rect x="21" y="16" width="4" height="4" rx="1" fill="#fff" opacity=".9"/>
+          <rect x="7" y="23" width="4" height="4" rx="1" fill="#fff" opacity=".9"/>
+          <rect x="14" y="23" width="4" height="4" rx="1" fill="#fff" opacity=".9"/>
+          <rect x="21" y="23" width="4" height="4" rx="1" fill="#27ae60"/>
+        </svg>
+        CalcBox
+      </a>
+
+      <nav class="nav-desktop" aria-label="メインナビゲーション">
+        <ul class="nav-desktop__list">
+          <li><a href="bmi/" class="nav-desktop__link">BMI計算</a></li>
+          <li><a href="days/" class="nav-desktop__link">日数計算</a></li>
+          <li><a href="age/" class="nav-desktop__link">年齢計算</a></li>
+          <li><a href="calorie/" class="nav-desktop__link">カロリー計算</a></li>
+          <li><a href="warikan/" class="nav-desktop__link">割り勘計算</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button type="button" id="hamburger" class="hamburger" aria-label="メニュー" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <a href="bmi/" class="mobile-nav__link">BMI計算・適正体重チェック</a>
+    <a href="days/" class="mobile-nav__link">日数計算（日付間の日数）</a>
+    <a href="age/" class="mobile-nav__link">年齢計算（生年月日から）</a>
+    <a href="calorie/" class="mobile-nav__link">消費カロリー計算</a>
+    <a href="warikan/" class="mobile-nav__link">割り勘計算</a>
+    <a href="about.html" class="mobile-nav__link">サイトについて</a>
+    <a href="privacy.html" class="mobile-nav__link">プライバシーポリシー</a>
+  </nav>
+
+  <!-- 広告枠 -->
+  <div class="ad-slot"></div>
+
+  <main>
+    <div class="container">
+      <!-- ヒーロー -->
+      <section class="hero">
+        <h1 class="hero__title">暮らしの計算を、<span class="hero__title-accent">サッと解決。</span></h1>
+        <p class="hero__subtitle">日常のちょっとした計算を、サッと解決。CalcBoxは無料で使える便利な計算ツール集です。</p>
+      </section>
+
+      <!-- ツール一覧 -->
+      <section class="tools-grid" aria-label="計算ツール一覧">
+        <!-- BMI計算 -->
+        <a href="bmi/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h2 class="tool-card__title">BMI計算・適正体重チェック</h2>
+          <p class="tool-card__desc">身長と体重からBMI値を計算し、肥満度や適正体重を確認できます。</p>
+        </a>
+
+        <!-- 日数計算 -->
+        <a href="days/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h2 class="tool-card__title">日数計算（日付間の日数）</h2>
+          <p class="tool-card__desc">2つの日付の間が何日あるかを計算します。期間の把握に便利です。</p>
+        </a>
+
+        <!-- 年齢計算 -->
+        <a href="age/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h2 class="tool-card__title">年齢計算（生年月日から）</h2>
+          <p class="tool-card__desc">生年月日から現在の年齢を計算。指定日時点の年齢も確認できます。</p>
+        </a>
+
+        <!-- 消費カロリー計算 -->
+        <a href="calorie/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c.5 3-1.5 5-3 7 1 2 3 3 3 6a4 4 0 0 1-8 0c0-3 2-4 3-6-1.5-2-3.5-4-3-7 2.5 1 4.5 3 5 5 .5-2 2.5-4 5-5h-2z"/><path d="M18 10c.5 2-.5 4-2 5 .5 1 1.5 2 1.5 4a3 3 0 0 1-6 0c0-2 1-3 1.5-4-1.5-1-2.5-3-2-5 1.5.5 3 2 3.5 3.5.5-1.5 2-3 3.5-3.5z"/></svg>
+          </div>
+          <h2 class="tool-card__title">消費カロリー計算</h2>
+          <p class="tool-card__desc">運動や日常活動で消費するカロリーを計算します。ダイエットの参考に。</p>
+        </a>
+
+        <!-- 割り勘計算 -->
+        <a href="warikan/" class="tool-card">
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h2 class="tool-card__title">割り勘計算</h2>
+          <p class="tool-card__desc">飲み会やお食事の会計をかんたんに割り勘。端数処理もおまかせ。</p>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h2 class="footer__heading">CalcBox</h2>
+          <p class="footer__text">暮らしに役立つ無料計算ツール集。すべてブラウザ上で完結し、データの送信は一切行いません。</p>
+          <p class="footer__text" style="margin-top:12px;">
+            <a href="about.html" class="footer__link" style="display:inline;">サイトについて</a> ／
+            <a href="privacy.html" class="footer__link" style="display:inline;">プライバシーポリシー</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="footer__heading">計算ツール</h2>
+          <a href="bmi/" class="footer__link">BMI計算</a>
+          <a href="days/" class="footer__link">日数計算</a>
+          <a href="age/" class="footer__link">年齢計算</a>
+        </div>
+        <div>
+          <h2 class="footer__heading">計算ツール</h2>
+          <a href="calorie/" class="footer__link">消費カロリー計算</a>
+          <a href="warikan/" class="footer__link">割り勘計算</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 CalcBox All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

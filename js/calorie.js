@@ -1,0 +1,138 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var exerciseList = document.getElementById('exercise-list');
+  var addBtn = document.getElementById('add-exercise-btn');
+  var calcBtn = document.getElementById('calc-btn');
+  var resetBtn = document.getElementById('reset-btn');
+  var resultSection = document.getElementById('result');
+  var eachResult = document.getElementById('each-result');
+  var totalCalorie = document.getElementById('total-calorie');
+  var onigiriCount = document.getElementById('onigiri-count');
+  var bodyWeightInput = document.getElementById('body-weight');
+
+  var exerciseNames = {
+    '3.5': 'ウォーキング',
+    '7.0': 'ジョギング',
+    '10.0': 'ランニング',
+    '8.0': '水泳',
+    '6.8': 'サイクリング',
+    '2.5': 'ヨガ',
+    '6.0': '筋トレ',
+    '8.8': '階段昇降',
+    '12.3': 'なわとび',
+    '2.3': 'ストレッチ'
+  };
+
+  var rowCount = 1;
+
+  function createExerciseRow() {
+    var div = document.createElement('div');
+    div.className = 'exercise-row';
+    div.setAttribute('data-index', rowCount);
+    div.innerHTML =
+      '<div class="form-group">' +
+        '<label class="form-label">運動の種類</label>' +
+        '<select class="select exercise-type">' +
+          '<option value="">選択してください</option>' +
+          '<option value="3.5">ウォーキング（普通）</option>' +
+          '<option value="7.0">ジョギング</option>' +
+          '<option value="10.0">ランニング</option>' +
+          '<option value="8.0">水泳（クロール）</option>' +
+          '<option value="6.8">サイクリング</option>' +
+          '<option value="2.5">ヨガ</option>' +
+          '<option value="6.0">筋トレ（高強度）</option>' +
+          '<option value="8.8">階段昇降</option>' +
+          '<option value="12.3">なわとび</option>' +
+          '<option value="2.3">ストレッチ</option>' +
+        '</select>' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">運動時間（分）</label>' +
+        '<input class="input exercise-time" type="number" min="1" max="600" placeholder="例: 30">' +
+      '</div>' +
+      '<button class="btn btn--secondary remove-exercise-btn" type="button">削除</button>';
+    rowCount++;
+    return div;
+  }
+
+  addBtn.addEventListener('click', function () {
+    var row = createExerciseRow();
+    exerciseList.appendChild(row);
+
+    row.querySelector('.remove-exercise-btn').addEventListener('click', function () {
+      exerciseList.removeChild(row);
+    });
+  });
+
+  calcBtn.addEventListener('click', function () {
+    var weight = parseFloat(bodyWeightInput.value);
+    if (!weight || weight < 20 || weight > 300) {
+      alert('体重（20〜300kg）を正しく入力してください。');
+      return;
+    }
+
+    var rows = exerciseList.querySelectorAll('.exercise-row');
+    var total = 0;
+    var details = [];
+    var hasValid = false;
+
+    for (var i = 0; i < rows.length; i++) {
+      var typeSelect = rows[i].querySelector('.exercise-type');
+      var timeInput = rows[i].querySelector('.exercise-time');
+      var mets = parseFloat(typeSelect.value);
+      var minutes = parseFloat(timeInput.value);
+
+      if (!mets || !minutes) continue;
+
+      hasValid = true;
+      var hours = minutes / 60;
+      var cal = mets * weight * hours * 1.05;
+      total += cal;
+
+      details.push({
+        name: exerciseNames[typeSelect.value] || '不明',
+        minutes: minutes,
+        calories: cal
+      });
+    }
+
+    if (!hasValid) {
+      alert('運動の種類と時間を少なくとも1つ入力してください。');
+      return;
+    }
+
+    // Render each exercise result
+    eachResult.innerHTML = '';
+    details.forEach(function (d) {
+      var item = document.createElement('div');
+      item.className = 'result__item';
+      item.innerHTML =
+        '<span class="result__label">' + d.name + '（' + d.minutes + '分）</span>' +
+        '<span class="result__value">' + Math.round(d.calories) + ' kcal</span>';
+      eachResult.appendChild(item);
+    });
+
+    totalCalorie.textContent = Math.round(total) + ' kcal';
+
+    var onigiri = total / 170;
+    onigiriCount.textContent = 'おにぎり約 ' + onigiri.toFixed(1) + ' 個分';
+
+    resultSection.hidden = false;
+    resultSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  resetBtn.addEventListener('click', function () {
+    bodyWeightInput.value = '';
+    // Remove all added rows, keep the first one
+    var rows = exerciseList.querySelectorAll('.exercise-row');
+    for (var i = rows.length - 1; i > 0; i--) {
+      exerciseList.removeChild(rows[i]);
+    }
+    // Reset first row
+    var firstRow = rows[0];
+    if (firstRow) {
+      firstRow.querySelector('.exercise-type').value = '';
+      firstRow.querySelector('.exercise-time').value = '';
+    }
+    resultSection.hidden = true;
+  });
+});

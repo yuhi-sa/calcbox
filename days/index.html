@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日数計算ツール（日付間の日数計算） - CalcBox</title>
+  <meta name="description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <meta property="og:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
+  <meta property="og:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/days/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "日数計算ツール",
+    "description": "2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。",
+    "url": "https://yuhi-sa.github.io/calcbox/days/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../age/" class="nav__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="nav__link">カロリー</a></li>
+            <li><a href="../warikan/" class="nav__link">割り勘</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">日数計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">日数計算ツール</h1>
+      <p class="tool__lead">2つの日付間の日数を計算したり、今日から○日後の日付を調べることができます。</p>
+
+      <div class="tool__body">
+        <!-- 日数差計算 -->
+        <h2 class="section__title">日付間の日数を計算</h2>
+        <div class="form-group">
+          <label class="form-label" for="start-date">開始日</label>
+          <input class="input" type="date" id="start-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="end-date">終了日</label>
+          <input class="input" type="date" id="end-date">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-diff-btn" type="button">日数を計算</button>
+        </div>
+        <div class="result" id="diff-result" hidden>
+          <div class="result__item">
+            <span class="result__label">日数</span>
+            <span class="result__value" id="diff-days"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">週と日</span>
+            <span class="result__value" id="diff-weeks"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">開始日の曜日</span>
+            <span class="result__value" id="start-weekday"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">終了日の曜日</span>
+            <span class="result__value" id="end-weekday"></span>
+          </div>
+        </div>
+
+        <!-- ○日後計算 -->
+        <h2 class="section__title">今日から○日後は何日？</h2>
+        <div class="form-group">
+          <label class="form-label" for="base-date">基準日</label>
+          <input class="input" type="date" id="base-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="add-days">日数（マイナスで過去）</label>
+          <input class="input" type="number" id="add-days" placeholder="例: 30">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-add-btn" type="button">計算する</button>
+        </div>
+        <div class="result" id="add-result" hidden>
+          <div class="result__item">
+            <span class="result__label">計算結果</span>
+            <span class="result__value" id="add-result-date"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">曜日</span>
+            <span class="result__value" id="add-result-weekday"></span>
+          </div>
+        </div>
+
+        <!-- カウントダウン -->
+        <h2 class="section__title">今日まであと何日？（カウントダウン）</h2>
+        <div class="form-group">
+          <label class="form-label" for="target-date">目標日</label>
+          <input class="input" type="date" id="target-date">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-countdown-btn" type="button">カウントダウン</button>
+        </div>
+        <div class="result" id="countdown-result" hidden>
+          <div class="result__item">
+            <span class="result__label">残り日数</span>
+            <span class="result__value" id="countdown-days"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">目標日の曜日</span>
+            <span class="result__value" id="countdown-weekday"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">日数計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。</p>
+        <h3>3つの機能</h3>
+        <p><strong>1. 日付間の日数計算</strong>：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。それぞれの日付の曜日も確認できます。</p>
+        <p><strong>2. ○日後の日付計算</strong>：基準日から指定した日数後（または前）の日付を計算します。「今日から100日後は何月何日？」といった疑問にすぐ答えられます。マイナスの数値を入力すれば過去の日付も計算可能です。</p>
+        <p><strong>3. カウントダウン</strong>：目標日までの残り日数を計算します。記念日やイベント、試験日までのカウントダウンに便利です。</p>
+        <p>すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。安心してご利用いただけます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 日数計算は開始日と終了日を含みますか？</h3>
+        <p>A. 本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。</p>
+        <h3>Q. うるう年は考慮されますか？</h3>
+        <p>A. はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。</p>
+        <h3>Q. 過去の日付も計算できますか？</h3>
+        <p>A. はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/days.js"></script>
+</body>
+</html>

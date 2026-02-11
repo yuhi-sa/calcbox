@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI計算・適正体重チェック（無料） - CalcBox</title>
+  <meta name="description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
+  <meta property="og:title" content="BMI計算・適正体重チェック（無料） - CalcBox">
+  <meta property="og:description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/bmi/">
+  <meta property="og:site_name" content="CalcBox">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/bmi/">
+  <link rel="stylesheet" href="../css/style.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BMI計算・適正体重チェック",
+    "description": "身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/bmi/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../age/" class="nav__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="nav__link">カロリー</a></li>
+            <li><a href="../warikan/" class="nav__link">割り勘</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">BMI計算・適正体重チェック</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">BMI計算・適正体重チェック</h1>
+      <p class="tool__lead">身長と体重を入力するだけで、BMI値・肥満度判定・適正体重をすぐに計算できます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="height">身長（cm）</label>
+          <input class="input" type="number" id="height" min="100" max="250" step="0.1" placeholder="例: 170">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="weight">体重（kg）</label>
+          <input class="input" type="number" id="weight" min="20" max="300" step="0.1" placeholder="例: 65">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">あなたのBMI</span>
+            <span class="result__value" id="bmi-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">肥満度判定</span>
+            <span class="result__value" id="bmi-category"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">適正体重（BMI 22）</span>
+            <span class="result__value" id="ideal-weight"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">適正体重との差</span>
+            <span class="result__value" id="weight-diff"></span>
+          </div>
+        </div>
+
+        <div id="bmi-chart-section" hidden>
+          <h2 class="section__title">BMI早見表</h2>
+          <div class="bmi-chart-wrapper">
+            <table class="bmi-chart" id="bmi-chart">
+              <thead>
+                <tr>
+                  <th>身長＼体重</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">BMI計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>BMI（Body Mass Index：ボディマス指数）は、体重と身長から算出される肥満度を表す体格指数です。世界保健機関（WHO）が定めた国際的な指標で、成人の肥満や低体重の判定に広く用いられています。</p>
+        <p>使い方はとても簡単です。身長をセンチメートル（cm）、体重をキログラム（kg）で入力し、「計算する」ボタンを押すだけ。BMI値、肥満度の判定結果、そしてあなたの身長に対する適正体重が即座に表示されます。</p>
+        <h3>BMIの計算式</h3>
+        <p>BMI = 体重(kg) / 身長(m)の2乗</p>
+        <p>例えば、身長170cm・体重65kgの場合、BMI = 65 / (1.70 × 1.70) = 22.5 となります。</p>
+        <h3>日本肥満学会の判定基準</h3>
+        <ul>
+          <li>BMI 18.5未満：低体重（やせ）</li>
+          <li>BMI 18.5〜25未満：普通体重</li>
+          <li>BMI 25〜30未満：肥満（1度）</li>
+          <li>BMI 30〜35未満：肥満（2度）</li>
+          <li>BMI 35〜40未満：肥満（3度）</li>
+          <li>BMI 40以上：肥満（4度）</li>
+        </ul>
+        <p>日本では統計的に最も病気にかかりにくいとされるBMI 22を「適正体重（標準体重）」としています。適正体重 = 身長(m)の2乗 × 22 で計算できます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. BMIは筋肉量が多い人にも正確ですか？</h3>
+        <p>A. BMIは身長と体重だけで計算するため、筋肉量が多いアスリートや体脂肪率が低い方の場合、実際の体脂肪量と異なる結果が出ることがあります。BMIはあくまでスクリーニングの指標として捉え、正確な体組成は体脂肪計などで別途確認することをおすすめします。</p>
+        <h3>Q. 子どもにもBMIは使えますか？</h3>
+        <p>A. BMIは成人（18歳以上）を対象とした指標です。子どもの場合はカウプ指数（乳幼児）やローレル指数（学童）など、年齢に応じた別の体格指標が使われます。本ツールは成人向けの計算結果を表示しています。</p>
+        <h3>Q. 適正体重とBMI 22の関係は？</h3>
+        <p>A. 日本肥満学会では、BMI 22の時に最も生活習慣病のリスクが低くなるという統計データに基づき、BMI 22を適正体重の基準としています。ただし個人差があるため、BMI 22はあくまで目安です。体調や健康診断の結果を総合的に判断してください。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/bmi.js"></script>
+</body>
+</html>
