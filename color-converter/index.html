@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日数計算ツール（日付間の日数計算） - CalcBox</title>
-  <meta name="description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
-  <meta property="og:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
-  <meta property="og:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <title>色変換ツール（HEX・RGB・HSL）（無料） - CalcBox</title>
+  <meta name="description" content="カラーコードを簡単に変換。HEX、RGB、HSLの相互変換に対応。カラーピッカーで色を選んで各形式のコードを取得できる無料オンライン色変換ツール。">
+  <meta property="og:title" content="色変換ツール（HEX・RGB・HSL）（無料） - CalcBox">
+  <meta property="og:description" content="カラーコードを簡単に変換。HEX、RGB、HSLの相互変換に対応。カラーピッカーで色を選んで各形式のコードを取得できる無料オンライン色変換ツール。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/days/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/color-converter/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/color-converter/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "日数計算ツール",
-    "description": "2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。",
-    "url": "https://yuhi-sa.github.io/calcbox/days/",
-    "applicationCategory": "UtilityApplication",
+    "name": "色変換ツール",
+    "description": "カラーコードを簡単に変換。HEX、RGB、HSLの相互変換に対応。カラーピッカーで色を選んで各形式のコードを取得できる無料オンライン色変換ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/color-converter/",
+    "applicationCategory": "DesignApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -108,124 +108,131 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">日数計算</li>
+        <li aria-current="page">色変換</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">日数計算ツール</h1>
-      <p class="tool__lead">2つの日付間の日数を計算したり、今日から○日後の日付を調べることができます。</p>
+      <h1 class="tool__title">色変換ツール</h1>
+      <p class="tool__lead">HEX・RGB・HSLのカラーコードを相互変換。カラーピッカーで色を選ぶだけで、各形式のコードを即座に取得できます。</p>
 
       <div class="tool__body">
-        <!-- 日数差計算 -->
-        <h2 class="section__title">日付間の日数を計算</h2>
         <div class="form-group">
-          <label class="form-label" for="start-date">開始日</label>
-          <input class="input" type="date" id="start-date">
+          <label class="form-label" for="color-picker">カラーピッカー</label>
+          <input class="input" type="color" id="color-picker" value="#3b82f6" style="width: 100%; height: 50px; padding: 4px; cursor: pointer;">
         </div>
+
+        <div id="color-preview" style="width: 100%; height: 80px; border-radius: 8px; margin-bottom: 1rem; background-color: #3b82f6; border: 1px solid var(--color-border);"></div>
+
         <div class="form-group">
-          <label class="form-label" for="end-date">終了日</label>
-          <input class="input" type="date" id="end-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-diff-btn" type="button">日数を計算</button>
-        </div>
-        <div class="result" id="diff-result" hidden>
-          <div class="result__item">
-            <span class="result__label">日数</span>
-            <span class="result__value" id="diff-days"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">週と日</span>
-            <span class="result__value" id="diff-weeks"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">開始日の曜日</span>
-            <span class="result__value" id="start-weekday"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">終了日の曜日</span>
-            <span class="result__value" id="end-weekday"></span>
+          <label class="form-label" for="hex-input">HEXコード</label>
+          <div style="display: flex; gap: 8px;">
+            <input class="input" type="text" id="hex-input" value="#3b82f6" placeholder="例: #ff6600" style="flex: 1;">
+            <button class="btn btn--secondary copy-btn" type="button" data-target="hex-input" style="white-space: nowrap;">コピー</button>
           </div>
         </div>
 
-        <!-- ○日後計算 -->
-        <h2 class="section__title">今日から○日後は何日？</h2>
         <div class="form-group">
-          <label class="form-label" for="base-date">基準日</label>
-          <input class="input" type="date" id="base-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="add-days">日数（マイナスで過去）</label>
-          <input class="input" type="number" id="add-days" placeholder="例: 30">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-add-btn" type="button">計算する</button>
-        </div>
-        <div class="result" id="add-result" hidden>
-          <div class="result__item">
-            <span class="result__label">計算結果</span>
-            <span class="result__value" id="add-result-date"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">曜日</span>
-            <span class="result__value" id="add-result-weekday"></span>
+          <label class="form-label">RGB値</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-r" style="font-size: 0.8rem;">R (0-255)</label>
+              <input class="input" type="number" id="rgb-r" min="0" max="255" value="59">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-g" style="font-size: 0.8rem;">G (0-255)</label>
+              <input class="input" type="number" id="rgb-g" min="0" max="255" value="130">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-b" style="font-size: 0.8rem;">B (0-255)</label>
+              <input class="input" type="number" id="rgb-b" min="0" max="255" value="246">
+            </div>
           </div>
         </div>
 
-        <!-- カウントダウン -->
-        <h2 class="section__title">今日まであと何日？（カウントダウン）</h2>
         <div class="form-group">
-          <label class="form-label" for="target-date">目標日</label>
-          <input class="input" type="date" id="target-date">
+          <label class="form-label">HSL値</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-h" style="font-size: 0.8rem;">H (0-360)</label>
+              <input class="input" type="number" id="hsl-h" min="0" max="360" value="217">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-s" style="font-size: 0.8rem;">S (0-100)</label>
+              <input class="input" type="number" id="hsl-s" min="0" max="100" value="91">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-l" style="font-size: 0.8rem;">L (0-100)</label>
+              <input class="input" type="number" id="hsl-l" min="0" max="100" value="60">
+            </div>
+          </div>
         </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-countdown-btn" type="button">カウントダウン</button>
-        </div>
-        <div class="result" id="countdown-result" hidden>
+
+        <h2 class="section__title" style="margin-top: 2rem;">CSS記法</h2>
+        <div class="result" id="result">
           <div class="result__item">
-            <span class="result__label">残り日数</span>
-            <span class="result__value" id="countdown-days"></span>
+            <span class="result__label">HEX</span>
+            <span class="result__value" id="css-hex" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-hex-text">#3b82f6</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-hex-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">コピー</button>
+            </span>
           </div>
           <div class="result__item">
-            <span class="result__label">目標日の曜日</span>
-            <span class="result__value" id="countdown-weekday"></span>
+            <span class="result__label">RGB</span>
+            <span class="result__value" id="css-rgb" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-rgb-text">rgb(59, 130, 246)</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-rgb-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">コピー</button>
+            </span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">HSL</span>
+            <span class="result__value" id="css-hsl" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-hsl-text">hsl(217, 91%, 60%)</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-hsl-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">コピー</button>
+            </span>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">日数計算ツールの使い方</h2>
+      <h2 class="section__title">色変換ツールの使い方</h2>
       <div class="section__content">
-        <p>日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。</p>
-        <h3>3つの機能</h3>
-        <p><strong>1. 日付間の日数計算</strong>：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。それぞれの日付の曜日も確認できます。</p>
-        <p><strong>2. ○日後の日付計算</strong>：基準日から指定した日数後（または前）の日付を計算します。「今日から100日後は何月何日？」といった疑問にすぐ答えられます。マイナスの数値を入力すれば過去の日付も計算可能です。</p>
-        <p><strong>3. カウントダウン</strong>：目標日までの残り日数を計算します。記念日やイベント、試験日までのカウントダウンに便利です。</p>
-        <p>すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。安心してご利用いただけます。</p>
+        <p>色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。</p>
+
+        <h3>HEX（16進数カラーコード）</h3>
+        <p>HEXカラーコードは、Webデザインで最も広く使われる色の表記方法です。「#」に続く6桁の16進数で色を表現します。先頭2桁が赤（R）、中央2桁が緑（G）、末尾2桁が青（B）を表し、それぞれ00〜FFの値を取ります。例えば「#FF0000」は純粋な赤、「#00FF00」は純粋な緑、「#0000FF」は純粋な青です。CSSでの色指定やデザインツールでの色共有に広く使用されています。</p>
+
+        <h3>RGB（Red, Green, Blue）</h3>
+        <p>RGBは赤（Red）・緑（Green）・青（Blue）の3つの光の原色を組み合わせて色を表現する方式です。各色の値は0〜255の整数で指定します。RGB(255, 0, 0)は赤、RGB(0, 255, 0)は緑、RGB(0, 0, 255)は青を表します。CSSでは「rgb(59, 130, 246)」のような記法で使用します。モニターやディスプレイは光の三原色で色を表示するため、画面表示に最も直接的な色指定方式です。</p>
+
+        <h3>HSL（Hue, Saturation, Lightness）</h3>
+        <p>HSLは色相（Hue）・彩度（Saturation）・明度（Lightness）の3つの要素で色を表現する方式です。色相は0〜360度の角度で色味を指定し（0度=赤、120度=緑、240度=青）、彩度は0〜100%で鮮やかさを、明度は0〜100%で明るさを指定します。人間の色の知覚に近い表現方法のため、「同じ色味で少し明るくしたい」「彩度を落として落ち着いた色にしたい」といった調整が直感的に行えます。</p>
+
+        <h3>コピー機能</h3>
+        <p>各カラーコード形式の横にある「コピー」ボタンをクリックすると、クリップボードに値がコピーされます。CSS記法セクションでは、CSSで直接使用できる形式でコードをコピーできるため、コーディング作業がスムーズに行えます。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 日数計算は開始日と終了日を含みますか？</h3>
-        <p>A. 本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。</p>
-        <h3>Q. うるう年は考慮されますか？</h3>
-        <p>A. はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。</p>
-        <h3>Q. 過去の日付も計算できますか？</h3>
-        <p>A. はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。</p>
+        <h3>Q. HEXとRGBの違いは何ですか？</h3>
+        <p>A. HEXとRGBは同じ色を異なる記法で表現したものです。HEXは16進数表記で「#3b82f6」のように書き、RGBは10進数表記で「rgb(59, 130, 246)」のように書きます。どちらも赤・緑・青の3つの値で色を表しており、相互に変換可能です。HEXはHTMLやCSSでの色指定に、RGBはプログラミングやデザインツールでよく使用されます。</p>
+        <h3>Q. HSLはどのような場面で便利ですか？</h3>
+        <p>A. HSLは色の調整を行う際に特に便利です。例えば、同じ色相のまま明度だけを変えてホバーエフェクト用の色を作ったり、彩度を下げてグレーがかった落ち着いた色にしたりすることが直感的にできます。Webデザインでカラーパレットを作成する際にも、HSLベースで考えると統一感のある配色がしやすくなります。</p>
+        <h3>Q. CSSではどのカラーコード形式を使うべきですか？</h3>
+        <p>A. CSSではHEX、RGB、HSLのいずれも使用できます。短く書けるHEXが最もよく使われていますが、透明度（アルファ値）を指定したい場合はrgba()やhsla()が便利です。チームやプロジェクトのコーディング規約に合わせて選択することをおすすめします。最近のCSSでは、HSLを使った色管理も人気が高まっています。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
+        <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
       </ul>
     </section>
 
@@ -283,6 +290,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/days.js"></script>
+  <script src="../js/color-converter.js"></script>
 </body>
 </html>

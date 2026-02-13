@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日数計算ツール（日付間の日数計算） - CalcBox</title>
-  <meta name="description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
-  <meta property="og:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
-  <meta property="og:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <title>割引計算ツール（○%OFF・二重割引）（無料） - CalcBox</title>
+  <meta name="description" content="割引後の価格を簡単計算。パーセントOFF・円引き・二重割引（重ね掛け）に対応した無料オンライン割引計算ツール。お買い物前の価格チェックに便利です。">
+  <meta property="og:title" content="割引計算ツール（○%OFF・二重割引）（無料） - CalcBox">
+  <meta property="og:description" content="割引後の価格を簡単計算。パーセントOFF・円引き・二重割引（重ね掛け）に対応した無料オンライン割引計算ツール。お買い物前の価格チェックに便利です。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/days/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/discount/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/discount/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "日数計算ツール",
-    "description": "2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。",
-    "url": "https://yuhi-sa.github.io/calcbox/days/",
-    "applicationCategory": "UtilityApplication",
+    "name": "割引計算ツール",
+    "description": "割引後の価格を簡単計算。パーセントOFF・円引き・二重割引（重ね掛け）に対応した無料オンライン割引計算ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/discount/",
+    "applicationCategory": "ShoppingApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -108,124 +108,131 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">日数計算</li>
+        <li aria-current="page">割引計算</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">日数計算ツール</h1>
-      <p class="tool__lead">2つの日付間の日数を計算したり、今日から○日後の日付を調べることができます。</p>
+      <h1 class="tool__title">割引計算ツール</h1>
+      <p class="tool__lead">元値と割引率・割引額から割引後の価格を簡単計算。二重割引（重ね掛け）にも対応しています。</p>
 
       <div class="tool__body">
-        <!-- 日数差計算 -->
-        <h2 class="section__title">日付間の日数を計算</h2>
         <div class="form-group">
-          <label class="form-label" for="start-date">開始日</label>
-          <input class="input" type="date" id="start-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="end-date">終了日</label>
-          <input class="input" type="date" id="end-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-diff-btn" type="button">日数を計算</button>
-        </div>
-        <div class="result" id="diff-result" hidden>
-          <div class="result__item">
-            <span class="result__label">日数</span>
-            <span class="result__value" id="diff-days"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">週と日</span>
-            <span class="result__value" id="diff-weeks"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">開始日の曜日</span>
-            <span class="result__value" id="start-weekday"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">終了日の曜日</span>
-            <span class="result__value" id="end-weekday"></span>
+          <label class="form-label">計算モード</label>
+          <div class="radio-group">
+            <label><input type="radio" name="calc-mode" value="percent" checked> ○%OFFで計算</label>
+            <label><input type="radio" name="calc-mode" value="amount"> ○円引きで計算</label>
+            <label><input type="radio" name="calc-mode" value="double"> 二重割引（重ね掛け）</label>
           </div>
         </div>
 
-        <!-- ○日後計算 -->
-        <h2 class="section__title">今日から○日後は何日？</h2>
         <div class="form-group">
-          <label class="form-label" for="base-date">基準日</label>
-          <input class="input" type="date" id="base-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="add-days">日数（マイナスで過去）</label>
-          <input class="input" type="number" id="add-days" placeholder="例: 30">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-add-btn" type="button">計算する</button>
-        </div>
-        <div class="result" id="add-result" hidden>
-          <div class="result__item">
-            <span class="result__label">計算結果</span>
-            <span class="result__value" id="add-result-date"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">曜日</span>
-            <span class="result__value" id="add-result-weekday"></span>
-          </div>
+          <label class="form-label" for="original-price">元値（円）</label>
+          <input class="input" type="number" id="original-price" min="0" step="1" placeholder="例: 5000">
         </div>
 
-        <!-- カウントダウン -->
-        <h2 class="section__title">今日まであと何日？（カウントダウン）</h2>
-        <div class="form-group">
-          <label class="form-label" for="target-date">目標日</label>
-          <input class="input" type="date" id="target-date">
+        <div class="form-group" id="percent-group">
+          <label class="form-label" for="discount-percent">割引率（%）</label>
+          <input class="input" type="number" id="discount-percent" min="0" max="100" step="1" placeholder="例: 30">
         </div>
+
+        <div class="form-group" id="amount-group" hidden>
+          <label class="form-label" for="discount-amount">割引額（円）</label>
+          <input class="input" type="number" id="discount-amount" min="0" step="1" placeholder="例: 1500">
+        </div>
+
+        <div class="form-group" id="double-group1" hidden>
+          <label class="form-label" for="discount-percent1">1回目の割引率（%）</label>
+          <input class="input" type="number" id="discount-percent1" min="0" max="100" step="1" placeholder="例: 20">
+        </div>
+
+        <div class="form-group" id="double-group2" hidden>
+          <label class="form-label" for="discount-percent2">2回目の割引率（%）</label>
+          <input class="input" type="number" id="discount-percent2" min="0" max="100" step="1" placeholder="例: 10">
+        </div>
+
         <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-countdown-btn" type="button">カウントダウン</button>
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
         </div>
-        <div class="result" id="countdown-result" hidden>
+
+        <div class="result" id="result" hidden>
           <div class="result__item">
-            <span class="result__label">残り日数</span>
-            <span class="result__value" id="countdown-days"></span>
+            <span class="result__label">割引後価格</span>
+            <span class="result__value" id="result-price"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">目標日の曜日</span>
-            <span class="result__value" id="countdown-weekday"></span>
+            <span class="result__label">割引額</span>
+            <span class="result__value" id="result-discount"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">割引率</span>
+            <span class="result__value" id="result-rate"></span>
+          </div>
+          <div class="result__item" id="result-double-detail-item" hidden>
+            <span class="result__label">実質割引率</span>
+            <span class="result__value" id="result-double-detail"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">表示</span>
+            <span class="result__value" id="result-display"></span>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">日数計算ツールの使い方</h2>
+      <h2 class="section__title">割引計算ツールの使い方</h2>
       <div class="section__content">
-        <p>日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。</p>
-        <h3>3つの機能</h3>
-        <p><strong>1. 日付間の日数計算</strong>：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。それぞれの日付の曜日も確認できます。</p>
-        <p><strong>2. ○日後の日付計算</strong>：基準日から指定した日数後（または前）の日付を計算します。「今日から100日後は何月何日？」といった疑問にすぐ答えられます。マイナスの数値を入力すれば過去の日付も計算可能です。</p>
-        <p><strong>3. カウントダウン</strong>：目標日までの残り日数を計算します。記念日やイベント、試験日までのカウントダウンに便利です。</p>
-        <p>すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。安心してご利用いただけます。</p>
+        <p>割引計算ツールは、お買い物時のセール価格を簡単に計算するための無料オンラインツールです。パーセントOFF、円引き、二重割引（重ね掛け）の3つの計算モードに対応しています。</p>
+
+        <h3>パーセントOFF計算（割引率から計算）</h3>
+        <p>元値に割引率（%）を適用して割引後の価格を計算します。計算式は以下の通りです。</p>
+        <ul>
+          <li>割引額 = 元値 × 割引率 / 100</li>
+          <li>割引後価格 = 元値 - 割引額</li>
+        </ul>
+        <p>例えば、5,000円の商品が30%OFFの場合、割引額は1,500円、割引後価格は3,500円となります。「3割引き」と「30%OFF」は同じ意味です。</p>
+
+        <h3>円引き計算（割引額から計算）</h3>
+        <p>元値から指定した金額を差し引いて割引後の価格を計算します。同時に、その割引が何%OFFに相当するかも表示します。</p>
+        <ul>
+          <li>割引後価格 = 元値 - 割引額</li>
+          <li>割引率 = 割引額 / 元値 × 100</li>
+        </ul>
+        <p>例えば、3,000円の商品が500円引きの場合、割引後価格は2,500円で、約16.7%OFFに相当します。</p>
+
+        <h3>二重割引（重ね掛け）計算</h3>
+        <p>2つの割引率を順番に適用する二重割引の計算ができます。セールの上にクーポンを重ねて使う場合などに便利です。</p>
+        <ul>
+          <li>1回目の割引後 = 元値 ×（1 - 1回目の割引率 / 100）</li>
+          <li>2回目の割引後 = 1回目の割引後 ×（1 - 2回目の割引率 / 100）</li>
+        </ul>
+        <p>例えば、10,000円の商品に20%OFFの後、さらに10%OFFを適用すると、1回目で8,000円、2回目で7,200円になります。これは単純な30%OFFではなく、実質28%OFFとなる点に注意してください。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 日数計算は開始日と終了日を含みますか？</h3>
-        <p>A. 本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。</p>
-        <h3>Q. うるう年は考慮されますか？</h3>
-        <p>A. はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。</p>
-        <h3>Q. 過去の日付も計算できますか？</h3>
-        <p>A. はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。</p>
+        <h3>Q. 「3割引き」と「30%OFF」は同じですか？</h3>
+        <p>A. はい、同じです。日本語の「○割引き」は、割引率を10で割った値（○割 = ○×10%）に相当します。つまり「3割引き」は「30%OFF」と同じ意味です。「7掛け」とも表現されることがあり、これは元値の70%の価格になるという意味です。</p>
+        <h3>Q. 二重割引は2つの割引率を足した割引率と同じですか？</h3>
+        <p>A. いいえ、異なります。二重割引（重ね掛け）は、1回目の割引後の金額にさらに2回目の割引を適用するため、単純に割引率を足し合わせた場合よりも割引額が小さくなります。例えば、20%OFFと10%OFFの重ね掛けは実質28%OFFであり、30%OFFにはなりません。</p>
+        <h3>Q. 割引後の価格に消費税はどう計算すればいいですか？</h3>
+        <p>A. 一般的に、割引後の価格に消費税率を掛けて税込価格を求めます。割引計算後、正確な税込価格を知りたい場合は、本サイトの<a href="../tax/">消費税計算ツール</a>もご活用ください。</p>
+        <h3>Q. 端数が出た場合はどう処理されますか？</h3>
+        <p>A. 本ツールでは割引後価格を小数点以下切り捨て（円未満切り捨て）で表示しています。実際の店舗やECサイトでは、端数処理のルール（切り捨て・切り上げ・四捨五入）が異なる場合がありますのでご注意ください。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
         <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../loan/" class="related-tools__link">ローン計算</a></li>
+        <li><a href="../electricity/" class="related-tools__link">電気代計算</a></li>
       </ul>
     </section>
 
@@ -283,6 +290,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/days.js"></script>
+  <script src="../js/discount.js"></script>
 </body>
 </html>

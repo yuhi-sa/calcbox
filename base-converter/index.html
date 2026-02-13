@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日数計算ツール（日付間の日数計算） - CalcBox</title>
-  <meta name="description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
-  <meta property="og:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
-  <meta property="og:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <title>進数変換ツール（2進数・8進数・10進数・16進数）（無料） - CalcBox</title>
+  <meta name="description" content="2進数・8進数・10進数・16進数を相互変換。プログラミングや情報処理の学習に便利な無料オンライン進数変換ツール。">
+  <meta property="og:title" content="進数変換ツール（2進数・8進数・10進数・16進数）（無料） - CalcBox">
+  <meta property="og:description" content="2進数・8進数・10進数・16進数を相互変換。プログラミングや情報処理の学習に便利な無料オンライン進数変換ツール。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/days/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/base-converter/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/base-converter/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "日数計算ツール",
-    "description": "2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。",
-    "url": "https://yuhi-sa.github.io/calcbox/days/",
-    "applicationCategory": "UtilityApplication",
+    "name": "進数変換ツール",
+    "description": "2進数・8進数・10進数・16進数を相互変換。プログラミングや情報処理の学習に便利な無料オンライン進数変換ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/base-converter/",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -108,124 +108,97 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">日数計算</li>
+        <li aria-current="page">進数変換</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">日数計算ツール</h1>
-      <p class="tool__lead">2つの日付間の日数を計算したり、今日から○日後の日付を調べることができます。</p>
+      <h1 class="tool__title">進数変換ツール</h1>
+      <p class="tool__lead">2進数・8進数・10進数・16進数を相互に変換します。プログラミングや情報処理の学習に便利です。</p>
 
       <div class="tool__body">
-        <!-- 日数差計算 -->
-        <h2 class="section__title">日付間の日数を計算</h2>
         <div class="form-group">
-          <label class="form-label" for="start-date">開始日</label>
-          <input class="input" type="date" id="start-date">
+          <label class="form-label" for="input-value">変換する値</label>
+          <input class="input" type="text" id="input-value" placeholder="例: 255">
         </div>
         <div class="form-group">
-          <label class="form-label" for="end-date">終了日</label>
-          <input class="input" type="date" id="end-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-diff-btn" type="button">日数を計算</button>
-        </div>
-        <div class="result" id="diff-result" hidden>
-          <div class="result__item">
-            <span class="result__label">日数</span>
-            <span class="result__value" id="diff-days"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">週と日</span>
-            <span class="result__value" id="diff-weeks"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">開始日の曜日</span>
-            <span class="result__value" id="start-weekday"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">終了日の曜日</span>
-            <span class="result__value" id="end-weekday"></span>
-          </div>
+          <label class="form-label" for="input-base">入力の進数</label>
+          <select class="input" id="input-base">
+            <option value="2">2進数（バイナリ）</option>
+            <option value="8">8進数（オクタル）</option>
+            <option value="10" selected>10進数（デシマル）</option>
+            <option value="16">16進数（ヘキサデシマル）</option>
+          </select>
         </div>
 
-        <!-- ○日後計算 -->
-        <h2 class="section__title">今日から○日後は何日？</h2>
-        <div class="form-group">
-          <label class="form-label" for="base-date">基準日</label>
-          <input class="input" type="date" id="base-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="add-days">日数（マイナスで過去）</label>
-          <input class="input" type="number" id="add-days" placeholder="例: 30">
-        </div>
         <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-add-btn" type="button">計算する</button>
-        </div>
-        <div class="result" id="add-result" hidden>
-          <div class="result__item">
-            <span class="result__label">計算結果</span>
-            <span class="result__value" id="add-result-date"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">曜日</span>
-            <span class="result__value" id="add-result-weekday"></span>
-          </div>
+          <button class="btn btn--primary" id="calc-btn" type="button">変換する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
         </div>
 
-        <!-- カウントダウン -->
-        <h2 class="section__title">今日まであと何日？（カウントダウン）</h2>
-        <div class="form-group">
-          <label class="form-label" for="target-date">目標日</label>
-          <input class="input" type="date" id="target-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-countdown-btn" type="button">カウントダウン</button>
-        </div>
-        <div class="result" id="countdown-result" hidden>
+        <div class="result" id="result" hidden>
           <div class="result__item">
-            <span class="result__label">残り日数</span>
-            <span class="result__value" id="countdown-days"></span>
+            <span class="result__label">2進数</span>
+            <span class="result__value" id="result-bin"></span>
           </div>
           <div class="result__item">
-            <span class="result__label">目標日の曜日</span>
-            <span class="result__value" id="countdown-weekday"></span>
+            <span class="result__label">8進数</span>
+            <span class="result__value" id="result-oct"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">10進数</span>
+            <span class="result__value" id="result-dec"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">16進数</span>
+            <span class="result__value" id="result-hex"></span>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">日数計算ツールの使い方</h2>
+      <h2 class="section__title">進数変換ツールの使い方</h2>
       <div class="section__content">
-        <p>日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。</p>
-        <h3>3つの機能</h3>
-        <p><strong>1. 日付間の日数計算</strong>：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。それぞれの日付の曜日も確認できます。</p>
-        <p><strong>2. ○日後の日付計算</strong>：基準日から指定した日数後（または前）の日付を計算します。「今日から100日後は何月何日？」といった疑問にすぐ答えられます。マイナスの数値を入力すれば過去の日付も計算可能です。</p>
-        <p><strong>3. カウントダウン</strong>：目標日までの残り日数を計算します。記念日やイベント、試験日までのカウントダウンに便利です。</p>
-        <p>すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。安心してご利用いただけます。</p>
+        <p>進数変換ツールは、異なる基数（2進数、8進数、10進数、16進数）の数値を相互に変換できる無料のオンラインツールです。プログラミング、ネットワーク設定、情報処理試験の学習などに活用できます。</p>
+
+        <h3>各進数について</h3>
+        <ul>
+          <li><strong>2進数（バイナリ）:</strong> 0と1のみで表現。コンピュータの内部表現で使用されます。</li>
+          <li><strong>8進数（オクタル）:</strong> 0〜7の数字で表現。Unixのファイルパーミッション設定などで使われます。</li>
+          <li><strong>10進数（デシマル）:</strong> 日常で使う0〜9の数字で表現する一般的な表記法です。</li>
+          <li><strong>16進数（ヘキサデシマル）:</strong> 0〜9とA〜Fで表現。メモリアドレス、色コード（#FF0000）、MACアドレスなどで使われます。</li>
+        </ul>
+
+        <h3>変換例</h3>
+        <p>10進数の「255」を他の進数に変換すると：</p>
+        <ul>
+          <li>2進数: 11111111</li>
+          <li>8進数: 377</li>
+          <li>16進数: FF</li>
+        </ul>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 日数計算は開始日と終了日を含みますか？</h3>
-        <p>A. 本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。</p>
-        <h3>Q. うるう年は考慮されますか？</h3>
-        <p>A. はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。</p>
-        <h3>Q. 過去の日付も計算できますか？</h3>
-        <p>A. はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。</p>
+        <h3>Q. 16進数の入力でa〜fは大文字・小文字どちらで入力すればいいですか？</h3>
+        <p>A. どちらでも入力できます。結果は大文字（A〜F）で表示されます。</p>
+        <h3>Q. 負の数は変換できますか？</h3>
+        <p>A. 本ツールは正の整数のみに対応しています。負の数や小数の変換には対応していません。</p>
+        <h3>Q. プログラミングでよく使う進数表記は？</h3>
+        <p>A. 多くのプログラミング言語では、2進数は「0b」（例: 0b1010）、8進数は「0o」（例: 0o12）、16進数は「0x」（例: 0xFF）をプレフィックスとして使います。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="../color-converter/" class="related-tools__link">色変換</a></li>
+        <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
       </ul>
     </section>
 
@@ -283,6 +256,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/days.js"></script>
+  <script src="../js/base-converter.js"></script>
 </body>
 </html>

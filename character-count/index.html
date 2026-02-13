@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日数計算ツール（日付間の日数計算） - CalcBox</title>
-  <meta name="description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
-  <meta property="og:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
-  <meta property="og:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
+  <title>文字数カウントツール（無料） - CalcBox</title>
+  <meta name="description" content="入力したテキストの文字数・行数・バイト数をリアルタイムでカウント。原稿用紙換算にも対応した無料オンライン文字数カウンター。">
+  <meta property="og:title" content="文字数カウントツール（無料） - CalcBox">
+  <meta property="og:description" content="入力したテキストの文字数・行数・バイト数をリアルタイムでカウント。原稿用紙換算にも対応した無料オンライン文字数カウンター。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/days/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/character-count/">
   <meta property="og:site_name" content="CalcBox">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/character-count/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "日数計算ツール",
-    "description": "2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。",
-    "url": "https://yuhi-sa.github.io/calcbox/days/",
-    "applicationCategory": "UtilityApplication",
+    "name": "文字数カウントツール",
+    "description": "入力したテキストの文字数・行数・バイト数をリアルタイムでカウント。原稿用紙換算にも対応した無料オンライン文字数カウンター。",
+    "url": "https://yuhi-sa.github.io/calcbox/character-count/",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -108,124 +108,89 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">日数計算</li>
+        <li aria-current="page">文字数カウント</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">日数計算ツール</h1>
-      <p class="tool__lead">2つの日付間の日数を計算したり、今日から○日後の日付を調べることができます。</p>
+      <h1 class="tool__title">文字数カウントツール</h1>
+      <p class="tool__lead">テキストを入力するとリアルタイムで文字数・行数・バイト数をカウントします。原稿用紙換算にも対応。</p>
 
       <div class="tool__body">
-        <!-- 日数差計算 -->
-        <h2 class="section__title">日付間の日数を計算</h2>
         <div class="form-group">
-          <label class="form-label" for="start-date">開始日</label>
-          <input class="input" type="date" id="start-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="end-date">終了日</label>
-          <input class="input" type="date" id="end-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-diff-btn" type="button">日数を計算</button>
-        </div>
-        <div class="result" id="diff-result" hidden>
-          <div class="result__item">
-            <span class="result__label">日数</span>
-            <span class="result__value" id="diff-days"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">週と日</span>
-            <span class="result__value" id="diff-weeks"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">開始日の曜日</span>
-            <span class="result__value" id="start-weekday"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">終了日の曜日</span>
-            <span class="result__value" id="end-weekday"></span>
-          </div>
+          <label class="form-label" for="text-input">テキストを入力</label>
+          <textarea class="input" id="text-input" rows="8" placeholder="ここにテキストを入力してください..." style="resize: vertical;"></textarea>
         </div>
 
-        <!-- ○日後計算 -->
-        <h2 class="section__title">今日から○日後は何日？</h2>
-        <div class="form-group">
-          <label class="form-label" for="base-date">基準日</label>
-          <input class="input" type="date" id="base-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="add-days">日数（マイナスで過去）</label>
-          <input class="input" type="number" id="add-days" placeholder="例: 30">
-        </div>
         <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-add-btn" type="button">計算する</button>
-        </div>
-        <div class="result" id="add-result" hidden>
-          <div class="result__item">
-            <span class="result__label">計算結果</span>
-            <span class="result__value" id="add-result-date"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">曜日</span>
-            <span class="result__value" id="add-result-weekday"></span>
-          </div>
+          <button class="btn btn--secondary" id="clear-btn" type="button">クリア</button>
         </div>
 
-        <!-- カウントダウン -->
-        <h2 class="section__title">今日まであと何日？（カウントダウン）</h2>
-        <div class="form-group">
-          <label class="form-label" for="target-date">目標日</label>
-          <input class="input" type="date" id="target-date">
-        </div>
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-countdown-btn" type="button">カウントダウン</button>
-        </div>
-        <div class="result" id="countdown-result" hidden>
+        <div class="result" id="result">
           <div class="result__item">
-            <span class="result__label">残り日数</span>
-            <span class="result__value" id="countdown-days"></span>
+            <span class="result__label">文字数（スペース込み）</span>
+            <span class="result__value" id="result-chars">0</span>
           </div>
           <div class="result__item">
-            <span class="result__label">目標日の曜日</span>
-            <span class="result__value" id="countdown-weekday"></span>
+            <span class="result__label">文字数（スペース除く）</span>
+            <span class="result__value" id="result-chars-no-space">0</span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">行数</span>
+            <span class="result__value" id="result-lines">0</span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">段落数</span>
+            <span class="result__value" id="result-paragraphs">0</span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">バイト数（UTF-8）</span>
+            <span class="result__value" id="result-bytes">0</span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">原稿用紙（400字詰め）</span>
+            <span class="result__value" id="result-manuscript">0枚と0文字</span>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">日数計算ツールの使い方</h2>
+      <h2 class="section__title">文字数カウントツールの使い方</h2>
       <div class="section__content">
-        <p>日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。</p>
-        <h3>3つの機能</h3>
-        <p><strong>1. 日付間の日数計算</strong>：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。それぞれの日付の曜日も確認できます。</p>
-        <p><strong>2. ○日後の日付計算</strong>：基準日から指定した日数後（または前）の日付を計算します。「今日から100日後は何月何日？」といった疑問にすぐ答えられます。マイナスの数値を入力すれば過去の日付も計算可能です。</p>
-        <p><strong>3. カウントダウン</strong>：目標日までの残り日数を計算します。記念日やイベント、試験日までのカウントダウンに便利です。</p>
-        <p>すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。安心してご利用いただけます。</p>
+        <p>文字数カウントツールは、入力されたテキストの文字数をリアルタイムでカウントできる無料のオンラインツールです。レポートや論文の文字数制限の確認、ブログ記事の文字数チェック、SNS投稿の文字数管理などに活用できます。</p>
+
+        <h3>カウントされる項目</h3>
+        <ul>
+          <li><strong>文字数（スペース込み）:</strong> 改行を含まないすべての文字をカウントします。</li>
+          <li><strong>文字数（スペース除く）:</strong> 半角・全角スペースを除いた文字数です。</li>
+          <li><strong>行数:</strong> テキストの行数をカウントします。</li>
+          <li><strong>段落数:</strong> 空行で区切られた段落の数をカウントします。</li>
+          <li><strong>バイト数:</strong> UTF-8エンコーディングでのバイト数です。日本語は1文字あたり3バイトです。</li>
+          <li><strong>原稿用紙換算:</strong> 400字詰め原稿用紙で何枚分かを表示します。</li>
+        </ul>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 日数計算は開始日と終了日を含みますか？</h3>
-        <p>A. 本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。</p>
-        <h3>Q. うるう年は考慮されますか？</h3>
-        <p>A. はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。</p>
-        <h3>Q. 過去の日付も計算できますか？</h3>
-        <p>A. はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。</p>
+        <h3>Q. 改行は文字数に含まれますか？</h3>
+        <p>A. 改行は文字数には含まれません。行数としてカウントされます。</p>
+        <h3>Q. 全角と半角は区別されますか？</h3>
+        <p>A. 文字数カウントでは全角・半角ともに1文字としてカウントされます。バイト数では全角文字（日本語など）は3バイト、半角英数字は1バイトとなります。</p>
+        <h3>Q. 入力したテキストは保存されますか？</h3>
+        <p>A. いいえ、入力されたテキストはブラウザ上でのみ処理され、サーバーには一切送信されません。安心してご利用ください。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
-        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
+        <li><a href="../time/" class="related-tools__link">時間計算</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
       </ul>
     </section>
 
@@ -283,6 +248,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/days.js"></script>
+  <script src="../js/character-count.js"></script>
 </body>
 </html>
