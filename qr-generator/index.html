@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ローン計算シミュレーション（無料） - CalcBox</title>
-  <meta name="description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。年別返済表つき。">
-  <meta property="og:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta property="og:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <title>QRコード生成ツール（無料・即時生成） - CalcBox</title>
+  <meta name="description" content="テキストやURLからQRコードをブラウザ上で即座に生成。PNG画像としてダウンロードも可能。無料で使えるQRコード作成ツールです。">
+  <meta property="og:title" content="QRコード生成ツール（無料・即時生成） - CalcBox">
+  <meta property="og:description" content="テキストやURLからQRコードをブラウザ上で即座に生成。PNG画像としてダウンロードも可能。無料で使えるQRコード作成ツールです。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/loan/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/qr-generator/">
   <meta property="og:site_name" content="CalcBox">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta name="twitter:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <meta name="twitter:title" content="QRコード生成ツール（無料・即時生成） - CalcBox">
+  <meta name="twitter:description" content="テキストやURLからQRコードをブラウザ上で即座に生成。PNG画像としてダウンロードも可能。無料で使えるQRコード作成ツールです。">
   <meta property="og:locale" content="ja_JP">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/loan/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/qr-generator/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ローン計算シミュレーション",
-    "description": "住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。",
-    "url": "https://yuhi-sa.github.io/calcbox/loan/",
-    "applicationCategory": "FinanceApplication",
+    "name": "QRコード生成ツール",
+    "description": "テキストやURLからQRコードをブラウザ上で即座に生成。PNG画像としてダウンロードも可能。無料で使えるQRコード作成ツールです。",
+    "url": "https://yuhi-sa.github.io/calcbox/qr-generator/",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -44,7 +44,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
-      {"@type": "ListItem", "position": 2, "name": "ローン計算シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/loan/"}
+      {"@type": "ListItem", "position": 2, "name": "QRコード生成ツール（無料・即時生成）", "item": "https://yuhi-sa.github.io/calcbox/qr-generator/"}
     ]
   }
   </script>
@@ -137,126 +137,73 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">ローン計算</li>
+        <li aria-current="page">QRコード生成</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">ローン計算シミュレーション</h1>
-      <p class="tool__lead">借入金額・金利・返済期間を入力するだけで、月々の返済額や総返済額を簡単にシミュレーションできます。</p>
+      <h1 class="tool__title">QRコード生成ツール</h1>
+      <p class="tool__lead">テキストやURLを入力するだけでQRコードを即座に生成。PNG画像としてダウンロードも可能です。無料でブラウザから簡単に使えます。</p>
 
       <div class="tool__body">
         <div class="form-group">
-          <label class="form-label" for="loan-type">ローン種類</label>
-          <select class="input" id="loan-type">
-            <option value="housing">住宅ローン</option>
-            <option value="car">自動車ローン</option>
-            <option value="other">その他</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loan-amount">借入金額（万円）</label>
-          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="例: 3000">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="interest-rate">年利（%）</label>
-          <input class="input" type="number" id="interest-rate" min="0" max="50" step="0.01" placeholder="例: 1.5">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loan-years">返済期間（年）</label>
-          <input class="input" type="number" id="loan-years" min="1" max="50" step="1" placeholder="例: 35">
-        </div>
-        <div class="form-group">
-          <label class="form-label">返済方式</label>
-          <div class="radio-group">
-            <label><input type="radio" name="repayment-method" value="equal-payment" checked> 元利均等返済</label>
-            <label><input type="radio" name="repayment-method" value="equal-principal"> 元金均等返済</label>
-          </div>
+          <label class="form-label" for="qr-text">テキスト / URL</label>
+          <textarea class="input" id="qr-text" rows="3" placeholder="QRコードにしたいテキストやURLを入力してください"></textarea>
         </div>
 
         <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--primary" id="generate-btn" type="button">QRコードを生成</button>
           <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
         </div>
 
         <div class="result" id="result" hidden>
-          <div class="result__item">
-            <span class="result__label" id="monthly-label">毎月の返済額</span>
-            <span class="result__value" id="monthly-payment"></span>
+          <div id="qr-output" style="text-align: center;">
+            <canvas id="qr-canvas" style="max-width: 100%; border: 1px solid var(--color-border, #ddd); border-radius: 8px;"></canvas>
           </div>
-          <div class="result__item">
-            <span class="result__label">総返済額</span>
-            <span class="result__value" id="total-payment"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">利息総額</span>
-            <span class="result__value" id="total-interest"></span>
-          </div>
-        </div>
-
-        <div id="amortization-section" hidden>
-          <h2 class="section__title">年別返済表</h2>
-          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
-            <table id="amortization-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
-              <thead>
-                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
-                  <th style="padding: 10px 8px; text-align: center;">年</th>
-                  <th style="padding: 10px 8px; text-align: right;">年間返済額</th>
-                  <th style="padding: 10px 8px; text-align: right;">元金分</th>
-                  <th style="padding: 10px 8px; text-align: right;">利息分</th>
-                  <th style="padding: 10px 8px; text-align: right;">残高</th>
-                </tr>
-              </thead>
-              <tbody id="amortization-body"></tbody>
-            </table>
+          <div style="text-align: center; margin-top: 16px;">
+            <button class="btn btn--primary" id="download-btn" type="button">PNG画像をダウンロード</button>
           </div>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">ローン計算ツールの使い方</h2>
+      <h2 class="section__title">QRコード生成ツールの使い方</h2>
       <div class="section__content">
-        <p>ローン計算シミュレーションは、住宅ローンや自動車ローンなどの借入に対する返済額を簡単に試算できる無料オンラインツールです。借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。</p>
+        <p>QRコード生成ツールは、テキストやURLからQRコードをブラウザ上で生成するための無料ツールです。生成されたQRコードはPNG画像としてダウンロードできます。</p>
 
-        <h3>元利均等返済とは</h3>
-        <p>元利均等返済は、毎月の返済額（元金＋利息）が一定となる返済方式です。返済額が変わらないため家計の管理がしやすく、住宅ローンで最も一般的に利用されています。返済初期は利息の割合が大きく、返済が進むにつれて元金の割合が増えていきます。計算式は以下の通りです。</p>
-        <ul>
-          <li>毎月の返済額 = 借入金額 × 月利 × (1 + 月利)^返済回数 / ((1 + 月利)^返済回数 - 1)</li>
-          <li>月利 = 年利 / 12</li>
-          <li>返済回数 = 返済年数 × 12</li>
-        </ul>
+        <h3>テキスト・URLの入力</h3>
+        <p>QRコードにしたいテキストやURLを入力欄に入力してください。WebサイトのURL、メールアドレス、電話番号、任意のテキストなど、様々な内容をQRコードに変換できます。</p>
 
-        <h3>元金均等返済とは</h3>
-        <p>元金均等返済は、毎月の元金返済額が一定で、それに利息を加えた金額を返済する方式です。返済開始当初は返済額が大きいですが、残高が減るにつれて利息も減り、返済額は徐々に少なくなります。元利均等返済と比べて総返済額が少なくなるメリットがありますが、初期の返済負担が大きくなります。</p>
+        <h3>QRコードの生成</h3>
+        <p>「QRコードを生成」ボタンをクリックすると、入力した内容がQRコードとして表示されます。生成されたQRコードはスマートフォンのカメラやQRコードリーダーアプリで読み取ることができます。</p>
 
-        <h3>住宅ローンのシミュレーション</h3>
-        <p>住宅ローンは一般的に借入金額が大きく（数千万円）、返済期間も長期（25〜35年）となります。金利タイプには固定金利と変動金利があり、2024年現在の変動金利は年0.3%〜0.6%程度、固定金利（35年）は年1.5%〜2.0%程度が目安です。本ツールで異なる金利や返済期間を試して、ご自身に合った返済計画を検討できます。</p>
-
-        <h3>自動車ローンのシミュレーション</h3>
-        <p>自動車ローンは借入金額100万〜500万円程度、返済期間3〜7年程度が一般的です。金利はディーラーローンで年3%〜8%、銀行の自動車ローンで年1%〜3%程度です。頭金の有無や返済期間によって月々の負担が大きく変わるため、シミュレーションで比較検討することをおすすめします。</p>
+        <h3>PNG画像のダウンロード</h3>
+        <p>「PNG画像をダウンロード」ボタンをクリックすると、生成されたQRコードをPNG形式の画像ファイルとしてダウンロードできます。印刷物やWebサイトへの掲載にご利用いただけます。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 元利均等返済と元金均等返済、どちらがお得ですか？</h3>
-        <p>A. 総返済額で比較すると、元金均等返済のほうが利息総額が少なくなります。ただし、元金均等返済は返済初期の月々の負担が大きくなります。家計に余裕がある場合は元金均等返済がお得ですが、毎月一定額の返済を希望する場合は元利均等返済が適しています。ライフプランに合わせて選択してください。</p>
-        <h3>Q. ボーナス返済には対応していますか？</h3>
-        <p>A. 現在のバージョンでは毎月均等の返済のみに対応しています。ボーナス返済を考慮する場合は、ボーナス返済分を差し引いた借入金額でシミュレーションし、別途ボーナス返済分を計算してください。例えば、3,000万円の借入でボーナス返済500万円の場合、まず2,500万円で計算し、500万円分を別途計算して合算します。</p>
-        <h3>Q. 実際の返済額と計算結果が異なるのはなぜですか？</h3>
-        <p>A. 本ツールの計算結果は概算値です。実際の返済額は、金融機関の端数処理方法、返済開始日、経過利息の計算方法などにより若干異なる場合があります。また、変動金利の場合は金利見直しにより返済額が変わります。正確な返済額は、借入先の金融機関にご確認ください。本ツールは返済計画の目安としてご利用ください。</p>
+        <h3>Q. QRコードに入力できる文字数に制限はありますか？</h3>
+        <p>A. QRコードには規格上の文字数制限があります。数字のみの場合は最大約7,000文字、英数字の場合は最大約4,000文字、日本語などのバイトデータの場合は最大約2,900文字まで格納できます。ただし、文字数が多いほどQRコードが複雑になり、読み取りが難しくなる場合があります。</p>
+        <h3>Q. 生成したQRコードは商用利用できますか？</h3>
+        <p>A. はい、本ツールで生成したQRコードは商用・非商用を問わず自由にご利用いただけます。名刺やチラシ、ポスター、Webサイトなどにお使いください。</p>
+        <h3>Q. QRコードの色やサイズを変更できますか？</h3>
+        <p>A. 現在は標準的な白黒のQRコードを300x300ピクセルで生成しています。ダウンロードした画像を画像編集ソフトで加工することで、色やサイズの変更が可能です。</p>
+        <h3>Q. 日本語のテキストもQRコードにできますか？</h3>
+        <p>A. はい、日本語のテキストもQRコードに変換できます。ひらがな、カタカナ、漢字を含むテキストをそのまま入力してください。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
-        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
+        <li><a href="../color-converter/" class="related-tools__link">色変換</a></li>
       </ul>
     </section>
 
@@ -324,6 +271,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/loan.js"></script>
+  <script src="../js/qr-generator.js"></script>
 </body>
 </html>

@@ -2,133 +2,193 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/bmi/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/days/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/age/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/calorie/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/warikan/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/tax/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/loan/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/electricity/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/unit/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/time/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/pet-age/</loc>
-    <lastmod>2026-02-11</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/discount/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/password/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/character-count/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/compound-interest/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/body-fat/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/base-converter/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/salary/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/area/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/color-converter/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yuhi-sa.github.io/calcbox/speed/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/wareki/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/random/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/statistics/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/json-formatter/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/qr-generator/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/timezone/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/countdown/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/stopwatch/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/hash/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yuhi-sa.github.io/calcbox/age-table/</loc>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

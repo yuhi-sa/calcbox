@@ -198,10 +198,307 @@
     },
   };
 
+  /* ----- ツール検索 ----- */
+  const ToolSearch = {
+    init() {
+      var searchInput = document.getElementById("tool-search");
+      if (!searchInput) return;
+      searchInput.addEventListener("input", function () {
+        ToolSearch.filter(searchInput.value);
+      });
+    },
+
+    filter(query) {
+      var cards = document.querySelectorAll(".tool-card");
+      if (!cards.length) return;
+
+      var q = query.trim().toLowerCase();
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var title = (card.querySelector(".tool-card__title") || {}).textContent || "";
+        var desc = (card.querySelector(".tool-card__desc") || {}).textContent || "";
+        var text = (title + " " + desc).toLowerCase();
+        var matchesSearch = !q || text.indexOf(q) !== -1;
+
+        // Check category filter as well
+        var matchesCategory = true;
+        var activeTab = document.querySelector(".category-tab--active");
+        if (activeTab) {
+          var cat = activeTab.getAttribute("data-category");
+          if (cat === "favorites") {
+            matchesCategory = Favorites.getAll().indexOf(card.getAttribute("href")) !== -1;
+          } else if (cat && cat !== "all") {
+            matchesCategory = card.getAttribute("data-category") === cat;
+          }
+        }
+
+        if (matchesSearch && matchesCategory) {
+          card.classList.remove("tool-card--hidden");
+          visibleCount++;
+        } else {
+          card.classList.add("tool-card--hidden");
+        }
+      });
+
+      var noResults = document.querySelector(".tools-no-results");
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.add("tools-no-results--visible");
+        } else {
+          noResults.classList.remove("tools-no-results--visible");
+        }
+      }
+    },
+  };
+
+  /* ----- カテゴリタブ ----- */
+  const CategoryFilter = {
+    init() {
+      var tabs = document.querySelectorAll(".category-tab");
+      if (!tabs.length) return;
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          CategoryFilter.activate(tab);
+        });
+      });
+    },
+
+    activate(tab) {
+      // Remove --active from all tabs, add to clicked tab
+      document.querySelectorAll(".category-tab").forEach(function (t) {
+        t.classList.remove("category-tab--active");
+      });
+      tab.classList.add("category-tab--active");
+
+      var category = tab.getAttribute("data-category");
+      var cards = document.querySelectorAll(".tool-card");
+      var searchInput = document.getElementById("tool-search");
+      var q = searchInput ? searchInput.value.trim().toLowerCase() : "";
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var matchesCategory = true;
+        if (category === "favorites") {
+          matchesCategory = Favorites.getAll().indexOf(card.getAttribute("href")) !== -1;
+        } else if (category && category !== "all") {
+          matchesCategory = card.getAttribute("data-category") === category;
+        }
+
+        // Apply search filter on top
+        var matchesSearch = true;
+        if (q) {
+          var title = (card.querySelector(".tool-card__title") || {}).textContent || "";
+          var desc = (card.querySelector(".tool-card__desc") || {}).textContent || "";
+          var text = (title + " " + desc).toLowerCase();
+          matchesSearch = text.indexOf(q) !== -1;
+        }
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove("tool-card--hidden");
+          visibleCount++;
+        } else {
+          card.classList.add("tool-card--hidden");
+        }
+      });
+
+      var noResults = document.querySelector(".tools-no-results");
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.add("tools-no-results--visible");
+        } else {
+          noResults.classList.remove("tools-no-results--visible");
+        }
+      }
+    },
+  };
+
+  /* ----- お気に入り ----- */
+  const Favorites = {
+    STORAGE_KEY: "calcbox-favorites",
+
+    init() {
+      var cards = document.querySelectorAll(".tool-card");
+      if (!cards.length) return;
+      this.render();
+      document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".tool-card__favorite");
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var card = btn.closest(".tool-card");
+        if (card) {
+          Favorites.toggle(card.getAttribute("href"));
+        }
+      });
+    },
+
+    toggle(toolHref) {
+      var favs = this.getAll();
+      var index = favs.indexOf(toolHref);
+      if (index === -1) {
+        favs.push(toolHref);
+      } else {
+        favs.splice(index, 1);
+      }
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(favs));
+      this.render();
+    },
+
+    getAll() {
+      try {
+        return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
+      } catch (e) {
+        return [];
+      }
+    },
+
+    render() {
+      var favs = this.getAll();
+      var cards = document.querySelectorAll(".tool-card");
+      cards.forEach(function (card) {
+        var href = card.getAttribute("href");
+        var btn = card.querySelector(".tool-card__favorite");
+        if (!btn) {
+          btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "tool-card__favorite";
+          btn.setAttribute("aria-label", "お気に入り");
+          card.appendChild(btn);
+        }
+        var isFav = favs.indexOf(href) !== -1;
+        btn.innerHTML = isFav ? "&#9733;" : "&#9734;";
+        if (isFav) {
+          btn.classList.add("tool-card__favorite--active");
+        } else {
+          btn.classList.remove("tool-card__favorite--active");
+        }
+      });
+
+      // If favorites category is active, refilter
+      var activeTab = document.querySelector(".category-tab--active");
+      if (activeTab && activeTab.getAttribute("data-category") === "favorites") {
+        CategoryFilter.activate(activeTab);
+      }
+    },
+  };
+
+  /* ----- 最近使ったツール ----- */
+  const RecentTools = {
+    STORAGE_KEY: "calcbox-recent",
+    MAX: 4,
+
+    init() {
+      this.recordVisit();
+      this.renderOnHomepage();
+    },
+
+    recordVisit() {
+      // Only record on tool pages (not homepage)
+      var path = location.pathname;
+      // Check if we're on a tool page (URL has a subdirectory under calcbox)
+      var match = path.match(/\/calcbox\/([a-z0-9-]+)\//);
+      if (!match) {
+        // Also handle non-calcbox base paths
+        var segments = path.replace(/\/$/, "").split("/");
+        var last = segments[segments.length - 1];
+        if (!last || last === "index.html" || last === "calcbox") return;
+      }
+
+      var title = document.title.replace(/ [-|].*/g, "").trim();
+      if (!title) return;
+
+      var href = path;
+      // Normalize to relative href matching tool-card href format
+      var calcboxIndex = path.indexOf("/calcbox/");
+      if (calcboxIndex !== -1) {
+        href = path.substring(calcboxIndex + "/calcbox/".length);
+      } else {
+        href = path.replace(/^\//, "");
+      }
+      // Ensure trailing slash
+      if (href && href.charAt(href.length - 1) !== "/") {
+        href += "/";
+      }
+
+      if (!href || href === "/" || href === "index.html") return;
+
+      var recent = this._getAll();
+      // Remove duplicate
+      recent = recent.filter(function (item) {
+        return item.href !== href;
+      });
+      // Add to front
+      recent.unshift({ href: href, title: title });
+      // Keep only MAX items
+      if (recent.length > this.MAX) {
+        recent = recent.slice(0, this.MAX);
+      }
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(recent));
+    },
+
+    renderOnHomepage() {
+      var container = document.querySelector(".recent-tools");
+      if (!container) return;
+
+      var recent = this._getAll();
+      if (!recent.length) {
+        container.classList.remove("recent-tools--visible");
+        return;
+      }
+
+      var grid = container.querySelector(".recent-tools__grid");
+      if (!grid) return;
+
+      grid.innerHTML = "";
+      recent.forEach(function (item) {
+        var a = document.createElement("a");
+        a.href = item.href;
+        a.className = "recent-tools__item";
+
+        var iconDiv = document.createElement("div");
+        iconDiv.className = "recent-tools__item-icon";
+        iconDiv.textContent = "\u{1F552}";
+
+        var span = document.createElement("span");
+        span.textContent = item.title;
+
+        a.appendChild(iconDiv);
+        a.appendChild(span);
+        grid.appendChild(a);
+      });
+
+      container.classList.add("recent-tools--visible");
+    },
+
+    _getAll() {
+      try {
+        return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
+      } catch (e) {
+        return [];
+      }
+    },
+  };
+
+  /* ----- PWA ----- */
+  const PWA = {
+    init() {
+      if ("serviceWorker" in navigator) {
+        var basePath = location.pathname.indexOf("/calcbox/") !== -1 ? "/calcbox/" : "/";
+        navigator.serviceWorker.register(basePath + "sw.js").catch(function () {});
+      }
+    },
+  };
+
   /* ----- 初期化 ----- */
   function init() {
     ThemeManager.init();
     MobileMenu.init();
+    ToolSearch.init();
+    CategoryFilter.init();
+    Favorites.init();
+    RecentTools.init();
+    PWA.init();
   }
 
   if (document.readyState === "loading") {
@@ -216,5 +513,10 @@
     menu: MobileMenu,
     toast: Toast,
     utils: Utils,
+    search: ToolSearch,
+    category: CategoryFilter,
+    favorites: Favorites,
+    recent: RecentTools,
+    pwa: PWA,
   };
 })();

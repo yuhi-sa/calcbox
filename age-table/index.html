@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ローン計算シミュレーション（無料） - CalcBox</title>
-  <meta name="description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。年別返済表つき。">
-  <meta property="og:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta property="og:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <title>年齢早見表 2026年版（和暦・干支対応） - CalcBox</title>
+  <meta name="description" content="2026年版の年齢早見表。西暦・和暦（令和・平成・昭和）・年齢・干支を一覧で確認できます。検索・フィルター機能付きで素早く調べられます。">
+  <meta property="og:title" content="年齢早見表 2026年版（和暦・干支対応） - CalcBox">
+  <meta property="og:description" content="2026年版の年齢早見表。西暦・和暦（令和・平成・昭和）・年齢・干支を一覧で確認できます。検索・フィルター機能付きで素早く調べられます。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/loan/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/age-table/">
   <meta property="og:site_name" content="CalcBox">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta name="twitter:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <meta name="twitter:title" content="年齢早見表 2026年版（和暦・干支対応） - CalcBox">
+  <meta name="twitter:description" content="2026年版の年齢早見表。西暦・和暦（令和・平成・昭和）・年齢・干支を一覧で確認できます。検索・フィルター機能付きで素早く調べられます。">
   <meta property="og:locale" content="ja_JP">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/loan/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/age-table/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ローン計算シミュレーション",
-    "description": "住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。",
-    "url": "https://yuhi-sa.github.io/calcbox/loan/",
-    "applicationCategory": "FinanceApplication",
+    "name": "年齢早見表 2026年版",
+    "description": "2026年版の年齢早見表。西暦・和暦（令和・平成・昭和）・年齢・干支を一覧で確認できます。検索・フィルター機能付き。",
+    "url": "https://yuhi-sa.github.io/calcbox/age-table/",
+    "applicationCategory": "ReferenceApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -44,7 +44,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
-      {"@type": "ListItem", "position": 2, "name": "ローン計算シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/loan/"}
+      {"@type": "ListItem", "position": 2, "name": "年齢早見表 2026年版（和暦・干支対応）", "item": "https://yuhi-sa.github.io/calcbox/age-table/"}
     ]
   }
   </script>
@@ -137,125 +137,76 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">ローン計算</li>
+        <li aria-current="page">年齢早見表</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">ローン計算シミュレーション</h1>
-      <p class="tool__lead">借入金額・金利・返済期間を入力するだけで、月々の返済額や総返済額を簡単にシミュレーションできます。</p>
+      <h1 class="tool__title">年齢早見表 2026年版</h1>
+      <p class="tool__lead">2026年（令和8年）の年齢早見表です。西暦・和暦（令和・平成・昭和）・年齢・干支を一覧で確認できます。検索欄で絞り込みも可能です。</p>
 
       <div class="tool__body">
         <div class="form-group">
-          <label class="form-label" for="loan-type">ローン種類</label>
-          <select class="input" id="loan-type">
-            <option value="housing">住宅ローン</option>
-            <option value="car">自動車ローン</option>
-            <option value="other">その他</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loan-amount">借入金額（万円）</label>
-          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="例: 3000">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="interest-rate">年利（%）</label>
-          <input class="input" type="number" id="interest-rate" min="0" max="50" step="0.01" placeholder="例: 1.5">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loan-years">返済期間（年）</label>
-          <input class="input" type="number" id="loan-years" min="1" max="50" step="1" placeholder="例: 35">
-        </div>
-        <div class="form-group">
-          <label class="form-label">返済方式</label>
-          <div class="radio-group">
-            <label><input type="radio" name="repayment-method" value="equal-payment" checked> 元利均等返済</label>
-            <label><input type="radio" name="repayment-method" value="equal-principal"> 元金均等返済</label>
-          </div>
+          <label class="form-label" for="search-input">検索・フィルター</label>
+          <input class="input" type="text" id="search-input" placeholder="西暦・年齢・和暦・干支で検索（例: 1990, 36, 平成2, 午）">
         </div>
 
-        <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
-          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
-        </div>
-
-        <div class="result" id="result" hidden>
-          <div class="result__item">
-            <span class="result__label" id="monthly-label">毎月の返済額</span>
-            <span class="result__value" id="monthly-payment"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">総返済額</span>
-            <span class="result__value" id="total-payment"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">利息総額</span>
-            <span class="result__value" id="total-interest"></span>
-          </div>
-        </div>
-
-        <div id="amortization-section" hidden>
-          <h2 class="section__title">年別返済表</h2>
-          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
-            <table id="amortization-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
+        <div class="result" id="result">
+          <div style="overflow-x: auto;">
+            <table id="age-table" style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
               <thead>
-                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
-                  <th style="padding: 10px 8px; text-align: center;">年</th>
-                  <th style="padding: 10px 8px; text-align: right;">年間返済額</th>
-                  <th style="padding: 10px 8px; text-align: right;">元金分</th>
-                  <th style="padding: 10px 8px; text-align: right;">利息分</th>
-                  <th style="padding: 10px 8px; text-align: right;">残高</th>
+                <tr style="background: var(--color-primary); color: #fff;">
+                  <th style="padding: 10px 12px; text-align: center; white-space: nowrap;">西暦</th>
+                  <th style="padding: 10px 12px; text-align: center; white-space: nowrap;">和暦</th>
+                  <th style="padding: 10px 12px; text-align: center; white-space: nowrap;">年齢</th>
+                  <th style="padding: 10px 12px; text-align: center; white-space: nowrap;">干支</th>
                 </tr>
               </thead>
-              <tbody id="amortization-body"></tbody>
+              <tbody id="age-table-body">
+              </tbody>
             </table>
           </div>
+          <p id="no-results" style="text-align: center; padding: 20px; color: var(--color-text-secondary); display: none;">該当するデータが見つかりません。</p>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">ローン計算ツールの使い方</h2>
+      <h2 class="section__title">年齢早見表の使い方</h2>
       <div class="section__content">
-        <p>ローン計算シミュレーションは、住宅ローンや自動車ローンなどの借入に対する返済額を簡単に試算できる無料オンラインツールです。借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。</p>
+        <p>年齢早見表は、2026年（令和8年）における各生まれ年の年齢を一覧で確認できるツールです。西暦、和暦（令和・平成・昭和）、年齢、干支の4つの情報を網羅しています。</p>
 
-        <h3>元利均等返済とは</h3>
-        <p>元利均等返済は、毎月の返済額（元金＋利息）が一定となる返済方式です。返済額が変わらないため家計の管理がしやすく、住宅ローンで最も一般的に利用されています。返済初期は利息の割合が大きく、返済が進むにつれて元金の割合が増えていきます。計算式は以下の通りです。</p>
-        <ul>
-          <li>毎月の返済額 = 借入金額 × 月利 × (1 + 月利)^返済回数 / ((1 + 月利)^返済回数 - 1)</li>
-          <li>月利 = 年利 / 12</li>
-          <li>返済回数 = 返済年数 × 12</li>
-        </ul>
+        <h3>検索・フィルター機能</h3>
+        <p>検索欄に西暦（例: 1990）、年齢（例: 36）、和暦（例: 平成2）、干支（例: 午）などを入力すると、該当する行だけが表示されます。複数の条件に一致する行が表示されるため、素早く目的の情報を見つけることができます。</p>
 
-        <h3>元金均等返済とは</h3>
-        <p>元金均等返済は、毎月の元金返済額が一定で、それに利息を加えた金額を返済する方式です。返済開始当初は返済額が大きいですが、残高が減るにつれて利息も減り、返済額は徐々に少なくなります。元利均等返済と比べて総返済額が少なくなるメリットがありますが、初期の返済負担が大きくなります。</p>
+        <h3>和暦の対応</h3>
+        <p>昭和（1926年〜1989年）、平成（1989年〜2019年）、令和（2019年〜）の3つの元号に対応しています。元号が切り替わる年は両方の表記を併記しています。</p>
 
-        <h3>住宅ローンのシミュレーション</h3>
-        <p>住宅ローンは一般的に借入金額が大きく（数千万円）、返済期間も長期（25〜35年）となります。金利タイプには固定金利と変動金利があり、2024年現在の変動金利は年0.3%〜0.6%程度、固定金利（35年）は年1.5%〜2.0%程度が目安です。本ツールで異なる金利や返済期間を試して、ご自身に合った返済計画を検討できます。</p>
-
-        <h3>自動車ローンのシミュレーション</h3>
-        <p>自動車ローンは借入金額100万〜500万円程度、返済期間3〜7年程度が一般的です。金利はディーラーローンで年3%〜8%、銀行の自動車ローンで年1%〜3%程度です。頭金の有無や返済期間によって月々の負担が大きく変わるため、シミュレーションで比較検討することをおすすめします。</p>
+        <h3>干支について</h3>
+        <p>干支（十二支）は12年で一周する周期で、子(ね)・丑(うし)・寅(とら)・卯(う)・辰(たつ)・巳(み)・午(うま)・未(ひつじ)・申(さる)・酉(とり)・戌(いぬ)・亥(い)の12種類があります。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 元利均等返済と元金均等返済、どちらがお得ですか？</h3>
-        <p>A. 総返済額で比較すると、元金均等返済のほうが利息総額が少なくなります。ただし、元金均等返済は返済初期の月々の負担が大きくなります。家計に余裕がある場合は元金均等返済がお得ですが、毎月一定額の返済を希望する場合は元利均等返済が適しています。ライフプランに合わせて選択してください。</p>
-        <h3>Q. ボーナス返済には対応していますか？</h3>
-        <p>A. 現在のバージョンでは毎月均等の返済のみに対応しています。ボーナス返済を考慮する場合は、ボーナス返済分を差し引いた借入金額でシミュレーションし、別途ボーナス返済分を計算してください。例えば、3,000万円の借入でボーナス返済500万円の場合、まず2,500万円で計算し、500万円分を別途計算して合算します。</p>
-        <h3>Q. 実際の返済額と計算結果が異なるのはなぜですか？</h3>
-        <p>A. 本ツールの計算結果は概算値です。実際の返済額は、金融機関の端数処理方法、返済開始日、経過利息の計算方法などにより若干異なる場合があります。また、変動金利の場合は金利見直しにより返済額が変わります。正確な返済額は、借入先の金融機関にご確認ください。本ツールは返済計画の目安としてご利用ください。</p>
+        <h3>Q. 年齢は誕生日前後でどう変わりますか？</h3>
+        <p>A. この早見表は2026年中に迎える年齢（その年の誕生日を迎えた後の年齢）を表示しています。誕生日前の場合は表示の年齢から1歳引いた数が現在の年齢となります。</p>
+        <h3>Q. 昭和64年と平成元年はどちらで表示されますか？</h3>
+        <p>A. 1989年は「昭和64年 / 平成元年」と両方を併記して表示しています。同様に、2019年は「平成31年 / 令和元年」と併記しています。</p>
+        <h3>Q. 数え年との違いは何ですか？</h3>
+        <p>A. この早見表は「満年齢」を表示しています。満年齢は誕生日を迎えるごとに1歳加算される一般的な年齢の数え方です。「数え年」は生まれた年を1歳とし、元日に1歳加算する伝統的な数え方で、満年齢より1〜2歳多くなります。</p>
+        <h3>Q. 2026年以外の年齢早見表はありますか？</h3>
+        <p>A. 現在は2026年版のみの提供となっています。年齢を個別に計算したい場合は、<a href="../age/">年齢計算ツール</a>をご利用ください。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
         <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../pet-age/" class="related-tools__link">ペット年齢換算</a></li>
         <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
       </ul>
     </section>
@@ -324,6 +275,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/loan.js"></script>
+  <script src="../js/age-table.js"></script>
 </body>
 </html>

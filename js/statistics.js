@@ -1,0 +1,123 @@
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var dataInput = document.getElementById('data-input');
+  var calcBtn = document.getElementById('calc-btn');
+  var resetBtn = document.getElementById('reset-btn');
+  var resultSection = document.getElementById('result');
+  var statsResults = document.getElementById('stats-results');
+
+  function parseData(text) {
+    var numbers = [];
+    var parts = text.replace(/\n/g, ',').split(',');
+    for (var i = 0; i < parts.length; i++) {
+      var trimmed = parts[i].trim();
+      if (trimmed === '') continue;
+      var n = Number(trimmed);
+      if (isFinite(n)) {
+        numbers.push(n);
+      }
+    }
+    return numbers;
+  }
+
+  function calcMedian(sorted) {
+    var len = sorted.length;
+    if (len === 0) return 0;
+    var mid = Math.floor(len / 2);
+    if (len % 2 === 0) {
+      return (sorted[mid - 1] + sorted[mid]) / 2;
+    }
+    return sorted[mid];
+  }
+
+  function calcMode(data) {
+    var freq = {};
+    var maxFreq = 0;
+    for (var i = 0; i < data.length; i++) {
+      var key = String(data[i]);
+      freq[key] = (freq[key] || 0) + 1;
+      if (freq[key] > maxFreq) maxFreq = freq[key];
+    }
+    if (maxFreq <= 1) return 'なし';
+    var modes = [];
+    for (var k in freq) {
+      if (freq[k] === maxFreq) {
+        modes.push(Number(k));
+      }
+    }
+    modes.sort(function (a, b) { return a - b; });
+    return modes.join(', ');
+  }
+
+  function roundTo(num, decimals) {
+    var factor = Math.pow(10, decimals);
+    return Math.round(num * factor) / factor;
+  }
+
+  function addResultItem(container, label, value) {
+    var item = document.createElement('div');
+    item.className = 'result__item';
+
+    var labelEl = document.createElement('span');
+    labelEl.className = 'result__label';
+    labelEl.textContent = label;
+
+    var valueEl = document.createElement('span');
+    valueEl.className = 'result__value';
+    valueEl.textContent = value;
+
+    item.appendChild(labelEl);
+    item.appendChild(valueEl);
+    container.appendChild(item);
+  }
+
+  calcBtn.addEventListener('click', function () {
+    var data = parseData(dataInput.value);
+
+    if (data.length === 0) {
+      alert('有効な数値データを入力してください。');
+      return;
+    }
+
+    var sorted = data.slice().sort(function (a, b) { return a - b; });
+    var count = data.length;
+    var sum = 0;
+    for (var i = 0; i < count; i++) sum += data[i];
+    var mean = sum / count;
+    var median = calcMedian(sorted);
+    var mode = calcMode(data);
+    var min = sorted[0];
+    var max = sorted[count - 1];
+    var range = max - min;
+
+    var varianceSum = 0;
+    for (var j = 0; j < count; j++) {
+      varianceSum += (data[j] - mean) * (data[j] - mean);
+    }
+    var variance = varianceSum / count;
+    var stddev = Math.sqrt(variance);
+
+    statsResults.innerHTML = '';
+
+    addResultItem(statsResults, 'データ数', count);
+    addResultItem(statsResults, '合計', roundTo(sum, 4));
+    addResultItem(statsResults, '平均', roundTo(mean, 4));
+    addResultItem(statsResults, '中央値', roundTo(median, 4));
+    addResultItem(statsResults, '最頻値', mode);
+    addResultItem(statsResults, '最小値', roundTo(min, 4));
+    addResultItem(statsResults, '最大値', roundTo(max, 4));
+    addResultItem(statsResults, '範囲', roundTo(range, 4));
+    addResultItem(statsResults, '分散', roundTo(variance, 4));
+    addResultItem(statsResults, '標準偏差', roundTo(stddev, 4));
+
+    resultSection.hidden = false;
+    resultSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  resetBtn.addEventListener('click', function () {
+    dataInput.value = '';
+    statsResults.innerHTML = '';
+    resultSection.hidden = true;
+  });
+});

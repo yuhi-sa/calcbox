@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ローン計算シミュレーション（無料） - CalcBox</title>
-  <meta name="description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。年別返済表つき。">
-  <meta property="og:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta property="og:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <title>和暦西暦変換ツール（令和・平成・昭和対応） - CalcBox</title>
+  <meta name="description" content="和暦（令和・平成・昭和・大正・明治）と西暦を相互変換。年号を選んで年数を入力するだけで即座に変換できます。元号の早見表付き。">
+  <meta property="og:title" content="和暦西暦変換ツール（令和・平成・昭和対応） - CalcBox">
+  <meta property="og:description" content="和暦（令和・平成・昭和・大正・明治）と西暦を相互変換。年号を選んで年数を入力するだけで即座に変換できます。元号の早見表付き。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/loan/">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/wareki/">
   <meta property="og:site_name" content="CalcBox">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ローン計算シミュレーション（無料） - CalcBox">
-  <meta name="twitter:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
+  <meta name="twitter:title" content="和暦西暦変換ツール（令和・平成・昭和対応） - CalcBox">
+  <meta name="twitter:description" content="和暦（令和・平成・昭和・大正・明治）と西暦を相互変換。年号を選んで年数を入力するだけで即座に変換できます。元号の早見表付き。">
   <meta property="og:locale" content="ja_JP">
-  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/loan/">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/wareki/">
   <link rel="stylesheet" href="../css/style.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ローン計算シミュレーション",
-    "description": "住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。",
-    "url": "https://yuhi-sa.github.io/calcbox/loan/",
-    "applicationCategory": "FinanceApplication",
+    "name": "和暦西暦変換ツール",
+    "description": "和暦（令和・平成・昭和・大正・明治）と西暦を相互変換できる無料ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/wareki/",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -44,7 +44,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
-      {"@type": "ListItem", "position": 2, "name": "ローン計算シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/loan/"}
+      {"@type": "ListItem", "position": 2, "name": "和暦西暦変換ツール", "item": "https://yuhi-sa.github.io/calcbox/wareki/"}
     ]
   }
   </script>
@@ -137,126 +137,117 @@
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../">ホーム</a></li>
-        <li aria-current="page">ローン計算</li>
+        <li aria-current="page">和暦西暦変換</li>
       </ol>
     </nav>
 
     <div class="tool">
-      <h1 class="tool__title">ローン計算シミュレーション</h1>
-      <p class="tool__lead">借入金額・金利・返済期間を入力するだけで、月々の返済額や総返済額を簡単にシミュレーションできます。</p>
+      <h1 class="tool__title">和暦西暦変換ツール</h1>
+      <p class="tool__lead">和暦（令和・平成・昭和・大正・明治）と西暦を相互に変換できます。元号と年数を選ぶだけで即座に変換。</p>
 
       <div class="tool__body">
+        <h2 style="font-size:1rem;font-weight:600;margin-bottom:var(--space-md);">和暦 → 西暦</h2>
         <div class="form-group">
-          <label class="form-label" for="loan-type">ローン種類</label>
-          <select class="input" id="loan-type">
-            <option value="housing">住宅ローン</option>
-            <option value="car">自動車ローン</option>
-            <option value="other">その他</option>
+          <label class="form-label" for="era-select">元号</label>
+          <select class="select" id="era-select">
+            <option value="reiwa">令和</option>
+            <option value="heisei">平成</option>
+            <option value="showa">昭和</option>
+            <option value="taisho">大正</option>
+            <option value="meiji">明治</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label class="form-label" for="loan-amount">借入金額（万円）</label>
-          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="例: 3000">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="interest-rate">年利（%）</label>
-          <input class="input" type="number" id="interest-rate" min="0" max="50" step="0.01" placeholder="例: 1.5">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loan-years">返済期間（年）</label>
-          <input class="input" type="number" id="loan-years" min="1" max="50" step="1" placeholder="例: 35">
-        </div>
-        <div class="form-group">
-          <label class="form-label">返済方式</label>
-          <div class="radio-group">
-            <label><input type="radio" name="repayment-method" value="equal-payment" checked> 元利均等返済</label>
-            <label><input type="radio" name="repayment-method" value="equal-principal"> 元金均等返済</label>
-          </div>
+          <label class="form-label" for="era-year">年</label>
+          <input class="input" type="number" id="era-year" min="1" max="100" step="1" value="1" placeholder="例: 1">
         </div>
 
         <div class="tool__actions">
-          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
-          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+          <button class="btn btn--primary" id="wareki-to-seireki-btn" type="button">西暦に変換</button>
         </div>
 
-        <div class="result" id="result" hidden>
-          <div class="result__item">
-            <span class="result__label" id="monthly-label">毎月の返済額</span>
-            <span class="result__value" id="monthly-payment"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">総返済額</span>
-            <span class="result__value" id="total-payment"></span>
-          </div>
-          <div class="result__item">
-            <span class="result__label">利息総額</span>
-            <span class="result__value" id="total-interest"></span>
-          </div>
+        <div class="result" id="result-wareki" hidden>
+          <div id="wareki-result-content"></div>
         </div>
 
-        <div id="amortization-section" hidden>
-          <h2 class="section__title">年別返済表</h2>
-          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
-            <table id="amortization-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
-              <thead>
-                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
-                  <th style="padding: 10px 8px; text-align: center;">年</th>
-                  <th style="padding: 10px 8px; text-align: right;">年間返済額</th>
-                  <th style="padding: 10px 8px; text-align: right;">元金分</th>
-                  <th style="padding: 10px 8px; text-align: right;">利息分</th>
-                  <th style="padding: 10px 8px; text-align: right;">残高</th>
-                </tr>
-              </thead>
-              <tbody id="amortization-body"></tbody>
-            </table>
-          </div>
+        <hr style="margin:var(--space-xl) 0;border:none;border-top:1px solid var(--color-border);">
+
+        <h2 style="font-size:1rem;font-weight:600;margin-bottom:var(--space-md);">西暦 → 和暦</h2>
+        <div class="form-group">
+          <label class="form-label" for="western-year">西暦</label>
+          <input class="input" type="number" id="western-year" min="1868" max="2100" step="1" value="2026" placeholder="例: 2026">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="seireki-to-wareki-btn" type="button">和暦に変換</button>
+        </div>
+
+        <div class="result" id="result-seireki" hidden>
+          <div id="seireki-result-content"></div>
+        </div>
+
+        <hr style="margin:var(--space-xl) 0;border:none;border-top:1px solid var(--color-border);">
+
+        <h2 style="font-size:1rem;font-weight:600;margin-bottom:var(--space-md);">元号早見表</h2>
+        <div style="overflow-x:auto;">
+          <table id="era-table" style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+            <thead>
+              <tr>
+                <th style="padding:8px;text-align:center;border:1px solid var(--color-border);background-color:var(--color-bg-secondary);font-weight:600;">元号</th>
+                <th style="padding:8px;text-align:center;border:1px solid var(--color-border);background-color:var(--color-bg-secondary);font-weight:600;">期間（西暦）</th>
+                <th style="padding:8px;text-align:center;border:1px solid var(--color-border);background-color:var(--color-bg-secondary);font-weight:600;">元年</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">令和</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">2019年〜</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">2019年</td></tr>
+              <tr><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">平成</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1989年〜2019年</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1989年</td></tr>
+              <tr><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">昭和</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1926年〜1989年</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1926年</td></tr>
+              <tr><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">大正</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1912年〜1926年</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1912年</td></tr>
+              <tr><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">明治</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1868年〜1912年</td><td style="padding:8px;text-align:center;border:1px solid var(--color-border);">1868年</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 
     <section class="section">
-      <h2 class="section__title">ローン計算ツールの使い方</h2>
+      <h2 class="section__title">和暦西暦変換ツールの使い方</h2>
       <div class="section__content">
-        <p>ローン計算シミュレーションは、住宅ローンや自動車ローンなどの借入に対する返済額を簡単に試算できる無料オンラインツールです。借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。</p>
+        <p>和暦西暦変換ツールは、日本の元号（令和・平成・昭和・大正・明治）と西暦を相互に変換するための無料ツールです。書類の記入や年齢計算など、和暦と西暦の変換が必要な場面でご活用ください。</p>
 
-        <h3>元利均等返済とは</h3>
-        <p>元利均等返済は、毎月の返済額（元金＋利息）が一定となる返済方式です。返済額が変わらないため家計の管理がしやすく、住宅ローンで最も一般的に利用されています。返済初期は利息の割合が大きく、返済が進むにつれて元金の割合が増えていきます。計算式は以下の通りです。</p>
-        <ul>
-          <li>毎月の返済額 = 借入金額 × 月利 × (1 + 月利)^返済回数 / ((1 + 月利)^返済回数 - 1)</li>
-          <li>月利 = 年利 / 12</li>
-          <li>返済回数 = 返済年数 × 12</li>
-        </ul>
+        <h3>和暦から西暦への変換</h3>
+        <p>元号を選択し、年数を入力して「西暦に変換」ボタンを押すと、対応する西暦が表示されます。例えば「令和7年」と入力すると「2025年」と表示されます。</p>
 
-        <h3>元金均等返済とは</h3>
-        <p>元金均等返済は、毎月の元金返済額が一定で、それに利息を加えた金額を返済する方式です。返済開始当初は返済額が大きいですが、残高が減るにつれて利息も減り、返済額は徐々に少なくなります。元利均等返済と比べて総返済額が少なくなるメリットがありますが、初期の返済負担が大きくなります。</p>
+        <h3>西暦から和暦への変換</h3>
+        <p>西暦を入力して「和暦に変換」ボタンを押すと、対応する和暦が表示されます。複数の元号にまたがる年（例: 2019年は平成31年＝令和元年）の場合は、両方の元号を表示します。</p>
 
-        <h3>住宅ローンのシミュレーション</h3>
-        <p>住宅ローンは一般的に借入金額が大きく（数千万円）、返済期間も長期（25〜35年）となります。金利タイプには固定金利と変動金利があり、2024年現在の変動金利は年0.3%〜0.6%程度、固定金利（35年）は年1.5%〜2.0%程度が目安です。本ツールで異なる金利や返済期間を試して、ご自身に合った返済計画を検討できます。</p>
-
-        <h3>自動車ローンのシミュレーション</h3>
-        <p>自動車ローンは借入金額100万〜500万円程度、返済期間3〜7年程度が一般的です。金利はディーラーローンで年3%〜8%、銀行の自動車ローンで年1%〜3%程度です。頭金の有無や返済期間によって月々の負担が大きく変わるため、シミュレーションで比較検討することをおすすめします。</p>
+        <h3>元号早見表</h3>
+        <p>各元号の開始年と期間を一覧で確認できます。明治から令和まで、5つの元号に対応しています。</p>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section__title">よくある質問（FAQ）</h2>
       <div class="section__content">
-        <h3>Q. 元利均等返済と元金均等返済、どちらがお得ですか？</h3>
-        <p>A. 総返済額で比較すると、元金均等返済のほうが利息総額が少なくなります。ただし、元金均等返済は返済初期の月々の負担が大きくなります。家計に余裕がある場合は元金均等返済がお得ですが、毎月一定額の返済を希望する場合は元利均等返済が適しています。ライフプランに合わせて選択してください。</p>
-        <h3>Q. ボーナス返済には対応していますか？</h3>
-        <p>A. 現在のバージョンでは毎月均等の返済のみに対応しています。ボーナス返済を考慮する場合は、ボーナス返済分を差し引いた借入金額でシミュレーションし、別途ボーナス返済分を計算してください。例えば、3,000万円の借入でボーナス返済500万円の場合、まず2,500万円で計算し、500万円分を別途計算して合算します。</p>
-        <h3>Q. 実際の返済額と計算結果が異なるのはなぜですか？</h3>
-        <p>A. 本ツールの計算結果は概算値です。実際の返済額は、金融機関の端数処理方法、返済開始日、経過利息の計算方法などにより若干異なる場合があります。また、変動金利の場合は金利見直しにより返済額が変わります。正確な返済額は、借入先の金融機関にご確認ください。本ツールは返済計画の目安としてご利用ください。</p>
+        <h3>Q. 令和は何年から始まりましたか？</h3>
+        <p>A. 令和は2019年5月1日から始まりました。2019年は令和元年です。</p>
+        <h3>Q. 平成と令和の境目はいつですか？</h3>
+        <p>A. 2019年4月30日までが平成31年、2019年5月1日からが令和元年です。同じ2019年でも、月によって元号が異なります。</p>
+        <h3>Q. 明治より前の元号にも対応していますか？</h3>
+        <p>A. 本ツールは明治以降の5つの元号（明治・大正・昭和・平成・令和）に対応しています。明治より前の元号には対応していません。</p>
+        <h3>Q. 元号の「元年」とは何ですか？</h3>
+        <p>A. 元号が始まった最初の年を「元年」と呼びます。例えば令和元年は2019年、平成元年は1989年です。「元年」は「1年」と同じ意味です。</p>
       </div>
     </section>
 
     <section class="related-tools">
       <h2 class="section__title">関連ツール</h2>
       <ul class="related-tools__list">
-        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
-        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
         <li><a href="../days/" class="related-tools__link">日数計算</a></li>
-        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+        <li><a href="../time/" class="related-tools__link">時間計算</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
       </ul>
     </section>
 
@@ -324,6 +315,6 @@
   </footer>
 
   <script src="../js/common.js"></script>
-  <script src="../js/loan.js"></script>
+  <script src="../js/wareki.js"></script>
 </body>
 </html>
