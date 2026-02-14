@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="文字数カウントツール（無料） - CalcBox">
   <meta name="twitter:description" content="入力したテキストの文字数・行数・バイト数をリアルタイムでカウント。原稿用紙換算にも対応した無料オンライン文字数カウンター。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/character-count/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,67 @@
       {"@type": "ListItem", "position": 2, "name": "文字数カウントツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/character-count/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "改行は文字数に含まれますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "改行は文字数には含まれません。行数としてカウントされます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "全角と半角は区別されますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "文字数カウントでは全角・半角ともに1文字としてカウントされます。バイト数では全角文字（日本語など）は3バイト、半角英数字は1バイトとなります。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "入力したテキストは保存されますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "いいえ、入力されたテキストはブラウザ上でのみ処理され、サーバーには一切送信されません。安心してご利用ください。"
+            }
+        }
+    ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "文字数カウントツールの使い方",
+    "description": "文字数カウントツールは、入力されたテキストの文字数をリアルタイムでカウントできる無料のオンラインツールです。レポートや論文の文字数制限の確認、ブログ記事の文字数チェック、SNS投稿の文字数管理などに活用できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "文字数カウントツールは、入力されたテキストの文字数をリアルタ",
+            "text": "文字数カウントツールは、入力されたテキストの文字数をリアルタイムでカウントできる無料のオンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "レポートや論文の文字数制限の確認、ブログ記事の文字数チェック",
+            "text": "レポートや論文の文字数制限の確認、ブログ記事の文字数チェック、SNS投稿の文字数管理などに活用できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "原稿用紙換算: 400字詰め原稿用紙で何枚分かを表示します",
+            "text": "原稿用紙換算: 400字詰め原稿用紙で何枚分かを表示します。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 文字数カウントツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -221,6 +285,7 @@
         <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
         <li><a href="../time/" class="related-tools__link">時間計算</a></li>
         <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/char-counter/" class="related-tools__link">開発者向け文字数カウントツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -287,7 +352,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/character-count.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/character-count.min.js"></script>
 </body>
 </html>

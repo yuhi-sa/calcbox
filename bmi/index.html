@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="BMI計算・適正体重チェック（無料） - CalcBox">
   <meta name="twitter:description" content="身長と体重からBMIを自動計算。適正体重や肥満度の判定も。無料オンラインBMI計算ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/bmi/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,62 @@
       {"@type": "ListItem", "position": 2, "name": "BMI計算・適正体重チェック（無料）", "item": "https://yuhi-sa.github.io/calcbox/bmi/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "BMIは筋肉量が多い人にも正確ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMIは身長と体重だけで計算するため、筋肉量が多いアスリートや体脂肪率が低い方の場合、実際の体脂肪量と異なる結果が出ることがあります。BMIはあくまでスクリーニングの指標として捉え、正確な体組成は体脂肪計などで別途確認することをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "子どもにもBMIは使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMIは成人（18歳以上）を対象とした指標です。子どもの場合はカウプ指数（乳幼児）やローレル指数（学童）など、年齢に応じた別の体格指標が使われます。本ツールは成人向けの計算結果を表示しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "適正体重とBMI 22の関係は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "日本肥満学会では、BMI 22の時に最も生活習慣病のリスクが低くなるという統計データに基づき、BMI 22を適正体重の基準としています。ただし個人差があるため、BMI 22はあくまで目安です。体調や健康診断の結果を総合的に判断してください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "BMI計算ツールの使い方",
+    "description": "BMI（Body Mass Index：ボディマス指数）は、体重と身長から算出される肥満度を表す体格指数です。世界保健機関（WHO）が定めた国際的な指標で、成人の肥満や低体重の判定に広く用いられています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "身長をセンチメートル（cm）、体重をキログラム（kg）で入力",
+            "text": "身長をセンチメートル（cm）、体重をキログラム（kg）で入力し、「計算する」ボタンを押すだけ。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "BMI値、肥満度の判定結果、そしてあなたの身長に対する適正体",
+            "text": "BMI値、肥満度の判定結果、そしてあなたの身長に対する適正体重が即座に表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox BMI計算・適正体重チェック"
+    }
+}
   </script>
 </head>
 <body>
@@ -301,7 +360,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/bmi.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/bmi.min.js"></script>
 </body>
 </html>

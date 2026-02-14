@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="給与手取り計算ツール（年収・月収から概算）（無料） - CalcBox">
   <meta name="twitter:description" content="年収・月収から手取り金額を簡単に概算計算。健康保険料・厚生年金・雇用保険・介護保険・所得税・住民税の内訳も表示。無料オンライン給与手取り計算ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/salary/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,75 @@
       {"@type": "ListItem", "position": 2, "name": "給与手取り計算ツール（年収・月収から概算）（無料）", "item": "https://yuhi-sa.github.io/calcbox/salary/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "手取り額はなぜ額面と大きく異なるのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "給与からは健康保険料・厚生年金保険料・雇用保険料などの社会保険料と、所得税・住民税が差し引かれるためです。一般的に額面の15%〜25%程度が控除されます。年収が高くなるほど所得税の税率が上がるため、控除割合も大きくなります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "40歳以上で控除額が増えるのはなぜですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "40歳以上65歳未満の方は、介護保険の第2号被保険者となり、健康保険料とは別に介護保険料が給与から天引きされます。そのため、40歳を境に社会保険料の負担が増加します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "この計算結果はどの程度正確ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールは標準的な料率による概算値を表示しています。実際の金額は、加入している健康保険組合の保険料率、お住まいの自治体の住民税率、各種控除の適用状況、ボーナスの有無などによって異なります。正確な金額は給与明細や源泉徴収票でご確認ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "扶養人数は手取り額にどう影響しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "扶養親族がいる場合、扶養控除が適用され、課税所得が減少します。その結果、所得税と住民税が軽減され、手取り額が増加します。一般の扶養控除は1人あたり38万円（所得税）・33万円（住民税）です。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "給与手取り計算ツールの使い方",
+    "description": "給与手取り計算ツールは、年収または月収の額面金額から、社会保険料と税金を差し引いた手取り金額を概算で計算する無料オンラインツールです。就職・転職活動中の方や、家計の見直しをしたい方にお役立ていただけます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "値を入力する",
+            "text": "計算に必要な値を入力欄に入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算ボタンを押す",
+            "text": "「計算する」ボタンをクリックします。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "結果を確認する",
+            "text": "計算結果が画面に表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 給与手取り計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -342,7 +414,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/salary.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/salary.min.js"></script>
 </body>
 </html>

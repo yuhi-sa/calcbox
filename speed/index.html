@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="速度・距離・時間計算ツール（無料） - CalcBox">
   <meta name="twitter:description" content="速度・距離・時間を簡単に計算。km/h・m/s・mphの速度単位変換やマラソンペース計算にも対応した無料オンライン計算ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/speed/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "速度・距離・時間計算ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/speed/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "km/hとm/sの変換方法は？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "km/hをm/sに変換するには3.6で割ります。逆にm/sをkm/hに変換するには3.6を掛けます。例えば、時速36km/hは秒速10m/s、秒速5m/sは時速18km/hです。この関係は、1km = 1000m、1時間 = 3600秒から導かれます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "マラソンのペース（分/km）はどのように計算しますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "1kmあたりの所要時間は「60 / 速度（km/h）」で計算できます。例えば時速10km/hの場合、60 / 10 = 6分/kmです。フルマラソン（42.195km）を4時間で完走するには、平均ペースは約5'41\"/kmとなります。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "車の平均速度はどのくらいですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "日本の一般道路では30〜60km/h程度、高速道路では80〜100km/h程度が一般的です。ただし、信号待ちや渋滞を考慮すると、一般道の実効速度は20〜30km/h程度になることも多いです。旅行の所要時間を見積もる際は、実効速度を考慮することをおすすめします。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "速度・距離・時間計算ツールの使い方",
+    "description": "速度・距離・時間計算ツールは、3つの物理量の関係を簡単に計算するための無料オンラインツールです。「速度 = 距離 / 時間」の基本公式をもとに、求めたい値を選択して残りの2つを入力するだけで計算できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "「速度 = 距離 / 時間」の基本公式をもとに、求めたい値を",
+            "text": "「速度 = 距離 / 時間」の基本公式をもとに、求めたい値を選択して残りの2つを入力するだけで計算できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算結果の速度を、km/h（キロメートル毎時）、m/s（メー",
+            "text": "計算結果の速度を、km/h（キロメートル毎時）、m/s（メートル毎秒）、mph（マイル毎時）の3つの単位で同時に表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "変換式は以下の通りです",
+            "text": "変換式は以下の通りです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "速度をもとに、1kmあたりの所要時間（ペース）を「分'秒\"/",
+            "text": "速度をもとに、1kmあたりの所要時間（ペース）を「分'秒\"/km」の形式で表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "ランニングやマラソンのトレーニングで目標ペースを確認する際に",
+            "text": "ランニングやマラソンのトレーニングで目標ペースを確認する際に便利です。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 速度・距離・時間計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -345,7 +419,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/speed.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/speed.min.js"></script>
 </body>
 </html>

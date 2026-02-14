@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="時間計算ツール（無料） - CalcBox">
   <meta name="twitter:description" content="時間の足し算・引き算、時間と分の変換、時給計算がすべて無料でできるオンラインツール。時間計算・分変換・時給計算をまとめて簡単に。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/time/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "時間計算ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/time/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "引き算の結果がマイナスになった場合はどう表示されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "引き算の結果がマイナスになる場合は、先頭にマイナス記号を付けて「-1時間15分」のように表示されます。時間Aより時間Bが大きい場合にマイナスの結果となります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "時給計算で端数が出る場合はどうなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "給与計算の結果に端数が出る場合は、小数点以下を四捨五入して表示します。時給を逆算する場合も同様に四捨五入した結果を表示します。実際の給与計算では企業の端数処理ルールに従ってください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "24時間を超える時間も計算できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、24時間を超える時間の計算にも対応しています。例えば「30時間45分 + 15時間20分 = 46時間5分」のように、日をまたぐ合計時間の計算も問題なく行えます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "時間計算ツールの使い方",
+    "description": "時間計算ツールは、日常生活や仕事で頻繁に必要となる「時間」に関する計算をまとめて行える無料のオンラインツールです。時間の足し算・引き算、時間と分の相互変換、時給に基づく給与計算の3つの機能を備えています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "時間の足し算・引き算、時間と分の相互変換、時給に基づく給与計",
+            "text": "時間の足し算・引き算、時間と分の相互変換、時給に基づく給与計算の3つの機能を備えています。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "たとえば「2時間30分 + 1時間45分」のような計算を瞬時",
+            "text": "たとえば「2時間30分 + 1時間45分」のような計算を瞬時に行い、結果を「4時間15分」のように時間と分で表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "引き算の場合、結果がマイナスになる場合はマイナス表示されるた",
+            "text": "引き算の場合、結果がマイナスになる場合はマイナス表示されるため、時間差の計算にも便利です。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「2時間30分は何分？」「150分は何時間何分？」のような変",
+            "text": "「2時間30分は何分？」「150分は何時間何分？」のような変換を行います。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "時間と分を入力すると合計分数に変換でき、逆に分数を入力すると",
+            "text": "時間と分を入力すると合計分数に変換でき、逆に分数を入力すると時間と分に分解して表示します。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 時間計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -394,7 +468,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/time.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/time.min.js"></script>
 </body>
 </html>

@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="色変換ツール（HEX・RGB・HSL）（無料） - CalcBox">
   <meta name="twitter:description" content="カラーコードを簡単に変換。HEX、RGB、HSLの相互変換に対応。カラーピッカーで色を選んで各形式のコードを取得できる無料オンライン色変換ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/color-converter/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "色変換ツール（HEX・RGB・HSL）（無料）", "item": "https://yuhi-sa.github.io/calcbox/color-converter/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "HEXとRGBの違いは何ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HEXとRGBは同じ色を異なる記法で表現したものです。HEXは16進数表記で「#3b82f6」のように書き、RGBは10進数表記で「rgb(59, 130, 246)」のように書きます。どちらも赤・緑・青の3つの値で色を表しており、相互に変換可能です。HEXはHTMLやCSSでの色指定に、RGBはプログラミングやデザインツールでよく使用されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "HSLはどのような場面で便利ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HSLは色の調整を行う際に特に便利です。例えば、同じ色相のまま明度だけを変えてホバーエフェクト用の色を作ったり、彩度を下げてグレーがかった落ち着いた色にしたりすることが直感的にできます。Webデザインでカラーパレットを作成する際にも、HSLベースで考えると統一感のある配色がしやすくなります。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "CSSではどのカラーコード形式を使うべきですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "CSSではHEX、RGB、HSLのいずれも使用できます。短く書けるHEXが最もよく使われていますが、透明度（アルファ値）を指定したい場合はrgba()やhsla()が便利です。チームやプロジェクトのコーディング規約に合わせて選択することをおすすめします。最近のCSSでは、HSLを使った色管理も人気が高まっています。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "色変換ツールの使い方",
+    "description": "色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "色変換ツールは、Webデザインやグラフィックデザインでよく使",
+            "text": "色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "カラーピッカーで直感的に色を選択するか、各形式の値を直接入力",
+            "text": "カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "CSSでの色指定やデザインツールでの色共有に広く使用されてい",
+            "text": "CSSでの色指定やデザインツールでの色共有に広く使用されています。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "各色の値は0〜255の整数で指定します",
+            "text": "各色の値は0〜255の整数で指定します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "モニターやディスプレイは光の三原色で色を表示するため、画面表",
+            "text": "モニターやディスプレイは光の三原色で色を表示するため、画面表示に最も直接的な色指定方式です。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 色変換ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -263,6 +337,7 @@
         <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
         <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
         <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/color-converter/" class="related-tools__link">開発者向け色変換ツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -329,7 +404,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/color-converter.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/color-converter.min.js"></script>
 </body>
 </html>

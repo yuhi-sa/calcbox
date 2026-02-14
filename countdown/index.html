@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="カウントダウンタイマー（無料） - CalcBox">
   <meta name="twitter:description" content="指定した日時までのカウントダウンをリアルタイム表示。イベントや記念日までの残り時間を日・時間・分・秒で確認できます。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/countdown/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "カウントダウンタイマー", "item": "https://yuhi-sa.github.io/calcbox/countdown/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "ページを閉じてもカウントダウンは続きますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "いいえ、ページを閉じるとカウントダウンは停止します。再度ページを開いて目標日時を設定し直す必要があります。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "過去の日時を設定するとどうなりますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "過去の日時を設定した場合、すでに目標時刻を過ぎているため、即座に「時間になりました！」と表示されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "カウントダウンの精度はどのくらいですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "1秒単位で更新されます。お使いのデバイスのシステム時計に基づいて計算しているため、デバイスの時刻が正確であれば高い精度でカウントダウンできます。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "カウントダウンタイマーの使い方",
+    "description": "カウントダウンタイマーは、指定した日時までの残り時間をリアルタイムで表示する無料ツールです。すべての処理はブラウザ内で完結します。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "カウントダウンタイマーは、指定した日時までの残り時間をリアル",
+            "text": "カウントダウンタイマーは、指定した日時までの残り時間をリアルタイムで表示する無料ツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "カウントダウンしたい目標の日付と時刻を入力します",
+            "text": "カウントダウンしたい目標の日付と時刻を入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「スタート」ボタンを押すと、目標日時までの残り時間が「X日 ",
+            "text": "「スタート」ボタンを押すと、目標日時までの残り時間が「X日 X時間 X分 X秒」の形式でリアルタイムに表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "目標時刻に達すると「時間になりました！」というメッセージが表",
+            "text": "目標時刻に達すると「時間になりました！」というメッセージが表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「リセット」ボタンで初期状態に戻せます",
+            "text": "「リセット」ボタンで初期状態に戻せます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox カウントダウンタイマー"
+    }
+}
   </script>
 </head>
 <body>
@@ -273,7 +347,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/countdown.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/countdown.min.js"></script>
 </body>
 </html>

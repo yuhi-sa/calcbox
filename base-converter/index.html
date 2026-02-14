@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="進数変換ツール（2進数・8進数・10進数・16進数）（無料） - CalcBox">
   <meta name="twitter:description" content="2進数・8進数・10進数・16進数を相互変換。プログラミングや情報処理の学習に便利な無料オンライン進数変換ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/base-converter/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,72 @@
       {"@type": "ListItem", "position": 2, "name": "進数変換ツール（2進数・8進数・10進数・16進数）（無料）", "item": "https://yuhi-sa.github.io/calcbox/base-converter/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "16進数の入力でa〜fは大文字・小文字どちらで入力すればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "どちらでも入力できます。結果は大文字（A〜F）で表示されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "負の数は変換できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールは正の整数のみに対応しています。負の数や小数の変換には対応していません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "プログラミングでよく使う進数表記は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多くのプログラミング言語では、2進数は「0b」（例: 0b1010）、8進数は「0o」（例: 0o12）、16進数は「0x」（例: 0xFF）をプレフィックスとして使います。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "進数変換ツールの使い方",
+    "description": "進数変換ツールは、異なる基数（2進数、8進数、10進数、16進数）の数値を相互に変換できる無料のオンラインツールです。プログラミング、ネットワーク設定、情報処理試験の学習などに活用できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "進数変換ツールは、異なる基数（2進数、8進数、10進数、16",
+            "text": "進数変換ツールは、異なる基数（2進数、8進数、10進数、16進数）の数値を相互に変換できる無料のオンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "プログラミング、ネットワーク設定、情報処理試験の学習などに活",
+            "text": "プログラミング、ネットワーク設定、情報処理試験の学習などに活用できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Unixのファイルパーミッション設定などで使われます",
+            "text": "Unixのファイルパーミッション設定などで使われます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "10進数の「255」を他の進数に変換すると：",
+            "text": "10進数の「255」を他の進数に変換すると：。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 進数変換ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -229,6 +298,7 @@
         <li><a href="../color-converter/" class="related-tools__link">色変換</a></li>
         <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
         <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/number-base/" class="related-tools__link">開発者向け進数変換ツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -295,7 +365,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/base-converter.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/base-converter.min.js"></script>
 </body>
 </html>

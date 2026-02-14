@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="単位変換・単位換算ツール（無料） - CalcBox">
   <meta name="twitter:description" content="長さ・重さ・温度・面積の単位変換を簡単計算。坪から平米、インチからセンチ、華氏から摂氏など。変換早見表付きの無料オンラインツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/unit/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "単位変換・単位換算ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/unit/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "坪と平米（m²）の変換はどのように計算されていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1坪 = 約3.30579m²（正確には400/121 m²）で計算しています。不動産広告などでよく見る「坪数」を平米に変換する際にご利用ください。例えば30坪は約99.17m²です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "華氏と摂氏の変換式は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "摂氏から華氏への変換式は ℉ = ℃ × 9/5 + 32 です。逆に華氏から摂氏へは ℃ = (℉ - 32) × 5/9 です。例えば摂氏100℃は華氏212℉（水の沸点）、摂氏0℃は華氏32℉（水の凝固点）です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "畳の面積は地域によって違うのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、畳のサイズは地域によって異なります。本ツールでは中京間（約1.6562m²）を基準にしています。京間（約1.824m²）、江戸間（約1.548m²）、団地間（約1.445m²）など、畳のサイズは地域や建物の種類によって異なりますので、あくまで目安としてご利用ください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "単位変換ツールの使い方",
+    "description": "単位変換ツールは、日常生活やビジネスでよく使われる単位の換算を簡単に行える無料オンラインツールです。長さ、重さ、温度、面積の4つのカテゴリに対応し、国際単位系（SI単位）だけでなく、インチやポンドなどの英米単位、坪や畳などの日本独自の単位にも対応しています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "単位変換ツールは、日常生活やビジネスでよく使われる単位の換算",
+            "text": "単位変換ツールは、日常生活やビジネスでよく使われる単位の換算を簡単に行える無料オンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "1. カテゴリ（長さ・重さ・温度・面積）をラジオボタンで選択",
+            "text": "1. カテゴリ（長さ・重さ・温度・面積）をラジオボタンで選択します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "2. 変換元の値を入力し、変換元と変換先の単位をセレクトボッ",
+            "text": "2. 変換元の値を入力し、変換元と変換先の単位をセレクトボックスから選択します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "3. 「変換する」ボタンを押すと、変換結果と変換早見表が表示",
+            "text": "3. 「変換する」ボタンを押すと、変換結果と変換早見表が表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "4. 「入れ替え」ボタンを押すと、変換元と変換先の単位を入れ",
+            "text": "4. 「入れ替え」ボタンを押すと、変換元と変換先の単位を入れ替えて再計算できます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 単位変換・単位換算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -303,7 +377,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/unit.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/unit.min.js"></script>
 </body>
 </html>

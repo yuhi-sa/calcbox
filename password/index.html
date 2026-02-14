@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="パスワード生成ツール（安全・無料） - CalcBox">
   <meta name="twitter:description" content="安全なパスワードをブラウザ上で生成。文字数・文字種を指定して複数パスワードを一括生成。暗号学的に安全な乱数を使用し、データは一切送信しません。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/password/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,75 @@
       {"@type": "ListItem", "position": 2, "name": "パスワード生成ツール（安全・無料）", "item": "https://yuhi-sa.github.io/calcbox/password/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "生成されたパスワードは安全ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい、安全です。本ツールはブラウザの暗号学的に安全な乱数生成器（crypto.getRandomValues）を使用してパスワードを生成しています。Math.random()のような予測可能な乱数は使用していません。また、生成されたパスワードはサーバーに送信されず、すべてブラウザ内で処理が完結します。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "パスワードの文字数はどのくらいが適切ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "一般的には12文字以上が推奨されています。重要なアカウント（メール、銀行、SNSなど）には16文字以上を推奨します。文字数が長いほどブルートフォース攻撃（総当たり攻撃）に対する耐性が高くなります。4種類の文字種をすべて使用した16文字のパスワードは、現在のコンピュータでは解読に天文学的な時間がかかります。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "記号を含めるべきですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可能であれば記号を含めることをおすすめします。記号を含めることで、パスワードの文字の組み合わせパターンが大幅に増え、安全性が向上します。ただし、一部のWebサービスでは使用できる記号が制限されている場合があります。その場合は記号のチェックを外してご利用ください。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "同じパスワードを複数のサービスで使っても大丈夫ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "いいえ、同じパスワードの使い回しは非常に危険です。1つのサービスでパスワードが漏洩した場合、他のサービスにも不正アクセスされるリスクがあります。サービスごとに異なるパスワードを設定し、パスワードマネージャーで管理することをおすすめします。"
+            }
+        }
+    ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "パスワード生成ツールの使い方",
+    "description": "パスワード生成ツールは、安全で強力なパスワードをブラウザ上で生成するための無料ツールです。暗号学的に安全な乱数生成器（crypto.getRandomValues）を使用しており、生成されたパスワードはサーバーに送信されることなく、お使いのブラウザ内で完結します。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "パスワードの文字数を8文字から64文字の範囲で指定できます",
+            "text": "パスワードの文字数を8文字から64文字の範囲で指定できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "パスワードに含める文字の種類を選択できます",
+            "text": "パスワードに含める文字の種類を選択できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "サービスによって使用可能な文字種に制限がある場合は、必要に応",
+            "text": "サービスによって使用可能な文字種に制限がある場合は、必要に応じてチェックを外してください。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox パスワード生成ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -218,6 +290,7 @@
         <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
         <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
         <li><a href="../time/" class="related-tools__link">時間計算</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/password-generator/" class="related-tools__link">開発者向けパスワード生成ツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -284,7 +357,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/password.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/password.min.js"></script>
 </body>
 </html>

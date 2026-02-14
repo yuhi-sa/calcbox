@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="複利計算・資産シミュレーション（無料） - CalcBox">
   <meta name="twitter:description" content="複利計算で資産運用をシミュレーション。元本・年利率・運用期間・毎月の積立額から将来の資産額を計算。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/compound-interest/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,67 @@
       {"@type": "ListItem", "position": 2, "name": "複利計算・資産シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/compound-interest/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "税金は考慮されていますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "本ツールでは税金を考慮していません。実際の投資では運用益に対して約20.315%の税金がかかります（NISA等の非課税制度を利用する場合を除く）。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "年利率は何%で計算すればいいですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "運用先によって異なります。一般的な目安として、定期預金は0.01〜0.3%程度、投資信託（インデックスファンド）は年平均3〜7%程度が参考値です。将来の利回りは保証されたものではありません。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "積立額は途中で変更できますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "本ツールでは一定の積立額で計算しています。積立額が途中で変わる場合は、期間を分けてそれぞれ計算してみてください。"
+            }
+        }
+    ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "複利計算ツールの使い方",
+    "description": "複利計算ツールは、投資や貯蓄の将来価値をシミュレーションできる無料のオンラインツールです。複利とは「利息にも利息がつく」仕組みのことで、長期運用するほど雪だるま式に資産が増えていきます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "値を入力する",
+            "text": "計算に必要な値を入力欄に入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算ボタンを押す",
+            "text": "「計算する」ボタンをクリックします。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "結果を確認する",
+            "text": "計算結果が画面に表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 複利計算・資産シミュレーション"
+    }
+}
   </script>
 </head>
 <body>
@@ -311,7 +375,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/compound-interest.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/compound-interest.min.js"></script>
 </body>
 </html>

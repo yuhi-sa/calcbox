@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="QRコード生成ツール（無料・即時生成） - CalcBox">
   <meta name="twitter:description" content="テキストやURLからQRコードをブラウザ上で即座に生成。PNG画像としてダウンロードも可能。無料で使えるQRコード作成ツールです。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/qr-generator/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,80 @@
       {"@type": "ListItem", "position": 2, "name": "QRコード生成ツール（無料・即時生成）", "item": "https://yuhi-sa.github.io/calcbox/qr-generator/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "QRコードに入力できる文字数に制限はありますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "QRコードには規格上の文字数制限があります。数字のみの場合は最大約7,000文字、英数字の場合は最大約4,000文字、日本語などのバイトデータの場合は最大約2,900文字まで格納できます。ただし、文字数が多いほどQRコードが複雑になり、読み取りが難しくなる場合があります。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "生成したQRコードは商用利用できますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、本ツールで生成したQRコードは商用・非商用を問わず自由にご利用いただけます。名刺やチラシ、ポスター、Webサイトなどにお使いください。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "QRコードの色やサイズを変更できますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "現在は標準的な白黒のQRコードを300x300ピクセルで生成しています。ダウンロードした画像を画像編集ソフトで加工することで、色やサイズの変更が可能です。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "日本語のテキストもQRコードにできますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、日本語のテキストもQRコードに変換できます。ひらがな、カタカナ、漢字を含むテキストをそのまま入力してください。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "QRコード生成ツールの使い方",
+    "description": "QRコード生成ツールは、テキストやURLからQRコードをブラウザ上で生成するための無料ツールです。生成されたQRコードはPNG画像としてダウンロードできます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "QRコードにしたいテキストやURLを入力欄に入力してください",
+            "text": "QRコードにしたいテキストやURLを入力欄に入力してください。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "WebサイトのURL、メールアドレス、電話番号、任意のテキス",
+            "text": "WebサイトのURL、メールアドレス、電話番号、任意のテキストなど、様々な内容をQRコードに変換できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「QRコードを生成」ボタンをクリックすると、入力した内容がQ",
+            "text": "「QRコードを生成」ボタンをクリックすると、入力した内容がQRコードとして表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「PNG画像をダウンロード」ボタンをクリックすると、生成され",
+            "text": "「PNG画像をダウンロード」ボタンをクリックすると、生成されたQRコードをPNG形式の画像ファイルとしてダウンロードできます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox QRコード生成ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -205,6 +282,7 @@
         <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
         <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
         <li><a href="../color-converter/" class="related-tools__link">色変換</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/qr-code/" class="related-tools__link">開発者向けQRコード生成ツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -271,7 +349,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/qr-generator.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/qr-generator.min.js"></script>
 </body>
 </html>

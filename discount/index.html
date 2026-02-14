@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="割引計算ツール（○%OFF・二重割引）（無料） - CalcBox">
   <meta name="twitter:description" content="割引後の価格を簡単計算。パーセントOFF・円引き・二重割引（重ね掛け）に対応した無料オンライン割引計算ツール。お買い物前の価格チェックに便利です。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/discount/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,70 @@
       {"@type": "ListItem", "position": 2, "name": "割引計算ツール（○%OFF・二重割引）（無料）", "item": "https://yuhi-sa.github.io/calcbox/discount/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "「3割引き」と「30%OFF」は同じですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、同じです。日本語の「○割引き」は、割引率を10で割った値（○割 = ○×10%）に相当します。つまり「3割引き」は「30%OFF」と同じ意味です。「7掛け」とも表現されることがあり、これは元値の70%の価格になるという意味です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "二重割引は2つの割引率を足した割引率と同じですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、異なります。二重割引（重ね掛け）は、1回目の割引後の金額にさらに2回目の割引を適用するため、単純に割引率を足し合わせた場合よりも割引額が小さくなります。例えば、20%OFFと10%OFFの重ね掛けは実質28%OFFであり、30%OFFにはなりません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "割引後の価格に消費税はどう計算すればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "一般的に、割引後の価格に消費税率を掛けて税込価格を求めます。割引計算後、正確な税込価格を知りたい場合は、本サイトの消費税計算ツールもご活用ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "端数が出た場合はどう処理されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールでは割引後価格を小数点以下切り捨て（円未満切り捨て）で表示しています。実際の店舗やECサイトでは、端数処理のルール（切り捨て・切り上げ・四捨五入）が異なる場合がありますのでご注意ください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "割引計算ツールの使い方",
+    "description": "割引計算ツールは、お買い物時のセール価格を簡単に計算するための無料オンラインツールです。パーセントOFF、円引き、二重割引（重ね掛け）の3つの計算モードに対応しています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "元値から指定した金額を差し引いて割引後の価格を計算します",
+            "text": "元値から指定した金額を差し引いて割引後の価格を計算します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "同時に、その割引が何%OFFに相当するかも表示します",
+            "text": "同時に、その割引が何%OFFに相当するかも表示します。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 割引計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -329,7 +396,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/discount.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/discount.min.js"></script>
 </body>
 </html>

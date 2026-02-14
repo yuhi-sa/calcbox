@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="日数計算ツール（日付間の日数計算） - CalcBox">
   <meta name="twitter:description" content="2つの日付の間が何日間かを計算。今日から○日後の日付や、記念日までのカウントダウンにも対応。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/days/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "日数計算ツール（日付間の日数計算）", "item": "https://yuhi-sa.github.io/calcbox/days/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "日数計算は開始日と終了日を含みますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールでは、開始日から終了日までの差分日数を表示します。例えば1月1日から1月3日を指定した場合、2日間と表示されます。「1月1日を含めて3日間」と数えたい場合は、結果に1を足してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "うるう年は考慮されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、うるう年（2月29日）も正しく考慮して計算します。JavaScriptのDate機能を使用しているため、うるう年の日付も正確に扱えます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "過去の日付も計算できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、過去の日付も問題なく入力・計算できます。日付間の日数計算では開始日と終了日を逆にしても正しい日数が表示されます。○日後計算ではマイナスの値を入力することで過去の日付を算出できます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "日数計算ツールの使い方",
+    "description": "日数計算ツールは、日付に関するさまざまな計算を簡単に行えるオンラインツールです。旅行の計画、プロジェクトの期間計算、記念日のカウントダウンなど、日常の様々な場面で活用できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "1. 日付間の日数計算：開始日と終了日を入力すると、その間の",
+            "text": "1. 日付間の日数計算：開始日と終了日を入力すると、その間の日数を「○日間」と「○週○日」の2通りで表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "それぞれの日付の曜日も確認できます",
+            "text": "それぞれの日付の曜日も確認できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "2. ○日後の日付計算：基準日から指定した日数後（または前）",
+            "text": "2. ○日後の日付計算：基準日から指定した日数後（または前）の日付を計算します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "マイナスの数値を入力すれば過去の日付も計算可能です",
+            "text": "マイナスの数値を入力すれば過去の日付も計算可能です。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "すべての計算はブラウザ上で即座に行われ、入力データがサーバー",
+            "text": "すべての計算はブラウザ上で即座に行われ、入力データがサーバーに送信されることはありません。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 日数計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -322,7 +396,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/days.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/days.min.js"></script>
 </body>
 </html>

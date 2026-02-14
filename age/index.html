@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="年齢計算ツール（生年月日から） - CalcBox">
   <meta name="twitter:description" content="生年月日から年齢・干支・星座を自動計算。和暦変換や次の誕生日までの日数も表示。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/age/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "年齢計算ツール（生年月日から）", "item": "https://yuhi-sa.github.io/calcbox/age/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "満年齢と数え年の違いは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "満年齢は生まれた日を0歳とし、誕生日ごとに1歳加算する数え方です。数え年は生まれた年を1歳とし、元日（1月1日）に1歳加算する日本の伝統的な数え方です。本ツールでは一般的に使われる満年齢で計算しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "令和・平成・昭和以外の元号にも対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールでは大正以降の元号（大正・昭和・平成・令和）に対応しています。大正より前の年号の場合は西暦のみで表示されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2月29日生まれの場合はどうなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "うるう年の2月29日生まれの方の場合、うるう年でない年は3月1日を誕生日として計算します。法的には前日（2月28日）に年齢が加算されますが、本ツールでは一般的な慣行に沿って計算しています。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "年齢計算ツールの使い方",
+    "description": "年齢計算ツールは、生年月日を入力するだけで様々な情報を一度に確認できる便利なオンラインツールです。履歴書の作成、各種手続き、雑学の確認など幅広い場面で活用できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "年齢計算ツールは、生年月日を入力するだけで様々な情報を一度に",
+            "text": "年齢計算ツールは、生年月日を入力するだけで様々な情報を一度に確認できる便利なオンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "履歴書の作成、各種手続き、雑学の確認など幅広い場面で活用でき",
+            "text": "履歴書の作成、各種手続き、雑学の確認など幅広い場面で活用できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "満年齢：「○歳○ヶ月○日」の形式で表示します",
+            "text": "満年齢：「○歳○ヶ月○日」の形式で表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "和暦：令和・平成・昭和・大正の各元号に変換して表示します",
+            "text": "和暦：令和・平成・昭和・大正の各元号に変換して表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "西暦から和暦への変換は、各元号の開始日に基づいて正確に行いま",
+            "text": "西暦から和暦への変換は、各元号の開始日に基づいて正確に行います。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 年齢計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -284,7 +358,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/age.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/age.min.js"></script>
 </body>
 </html>

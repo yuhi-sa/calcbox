@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="タイムゾーン変換ツール（世界時計・無料） - CalcBox">
   <meta name="twitter:description" content="世界の主要都市の現在時刻をリアルタイム表示。タイムゾーン間の時刻変換も簡単に行えます。東京・ニューヨーク・ロンドン・パリなど10都市対応。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/timezone/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,67 @@
       {"@type": "ListItem", "position": 2, "name": "タイムゾーン変換ツール", "item": "https://yuhi-sa.github.io/calcbox/timezone/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "サマータイムには対応していますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、対応しています。ブラウザのIntl.DateTimeFormat APIを使用しているため、各地域のサマータイム（夏時間）が自動的に反映されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "表示される時刻は正確ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "お使いのデバイスのシステム時計に基づいて表示しています。デバイスの時刻が正確であれば、表示される各都市の時刻も正確です。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "日付をまたぐ変換はできますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、できます。変換結果には日付も表示されるため、日付が変わる場合も正確に確認できます。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "タイムゾーン変換ツールの使い方",
+    "description": "タイムゾーン変換ツールは、世界各地の現在時刻を確認し、異なるタイムゾーン間で時刻を変換するための無料ツールです。すべての計算はブラウザ内で完結します。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "タイムゾーン変換ツールは、世界各地の現在時刻を確認し、異なる",
+            "text": "タイムゾーン変換ツールは、世界各地の現在時刻を確認し、異なるタイムゾーン間で時刻を変換するための無料ツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "東京、ニューヨーク、ロンドン、パリ、シドニー、北京、ドバイ",
+            "text": "東京、ニューヨーク、ロンドン、パリ、シドニー、北京、ドバイ、ロサンゼルス、シンガポール、ベルリンの10都市の現在時刻をリアルタイムで表示します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "変換元のタイムゾーンと日時を指定し、変換先のタイムゾーンを選",
+            "text": "変換元のタイムゾーンと日時を指定し、変換先のタイムゾーンを選択して「変換する」ボタンを押すと、変換後の日時が表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox タイムゾーン変換ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -286,7 +350,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/timezone.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/timezone.min.js"></script>
 </body>
 </html>

@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="平均・標準偏差計算ツール（統計計算） - CalcBox">
   <meta name="twitter:description" content="数値データの平均、中央値、最頻値、分散、標準偏差をまとめて計算。数値を入力するだけで主要な統計量を即座に算出する無料ツールです。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/statistics/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,85 @@
       {"@type": "ListItem", "position": 2, "name": "平均・標準偏差計算ツール", "item": "https://yuhi-sa.github.io/calcbox/statistics/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "標準偏差とは何ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "標準偏差は、データのばらつき具合を数値で表したものです。標準偏差が大きいほどデータのばらつきが大きく、小さいほどデータが平均値の近くに集中していることを意味します。分散の平方根で計算されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "母集団の標準偏差ですか？標本の標準偏差ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "本ツールでは母集団の標準偏差（母標準偏差）を計算しています。入力データ全体を母集団として扱い、分散はデータ数Nで割って計算しています。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "最頻値が複数ある場合はどうなりますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "最頻値が複数ある場合は、すべての最頻値をカンマ区切りで表示します。すべての値が1回ずつしか出現しない場合は「なし」と表示されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "入力データに小数は使えますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、小数を含むデータにも対応しています。整数と小数を混在させて入力しても問題ありません。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "統計計算ツールの使い方",
+    "description": "統計計算ツールは、入力された数値データに対して主要な統計量を一括で計算する無料ツールです。テストの点数、売上データ、実験結果などの分析にご活用ください。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "統計計算ツールは、入力された数値データに対して主要な統計量を",
+            "text": "統計計算ツールは、入力された数値データに対して主要な統計量を一括で計算する無料ツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "テストの点数、売上データ、実験結果などの分析にご活用ください",
+            "text": "テストの点数、売上データ、実験結果などの分析にご活用ください。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "数値データは以下の2つの方法で入力できます",
+            "text": "数値データは以下の2つの方法で入力できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "1行に1つずつ数値を入力する方法",
+            "text": "1行に1つずつ数値を入力する方法。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "カンマ（,）で区切って入力する方法",
+            "text": "カンマ（,）で区切って入力する方法。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 平均・標準偏差計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -278,7 +360,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/statistics.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/statistics.min.js"></script>
 </body>
 </html>

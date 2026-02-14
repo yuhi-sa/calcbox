@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="面積計算ツール（図形別・単位換算付き）（無料） - CalcBox">
   <meta name="twitter:description" content="正方形・長方形・三角形・円・台形・ひし形の面積を簡単計算。坪・畳・アール・ヘクタールへの単位換算にも対応した無料オンライン面積計算ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/area/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,75 @@
       {"@type": "ListItem", "position": 2, "name": "面積計算ツール（図形別・単位換算付き）（無料）", "item": "https://yuhi-sa.github.io/calcbox/area/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "坪と平方メートルの換算方法を教えてください。",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "1坪は約3.30579平方メートルです。平方メートルから坪に変換するには、平方メートルの値を3.30579で割ります。逆に、坪から平方メートルに変換するには3.30579を掛けます。例えば、30坪は約99.17平方メートルです。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "畳の大きさは地域によって異なりますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、畳にはいくつかの規格があります。本ツールでは江戸間（1畳 = 約1.548 m2、176cm x 88cm）を基準にしています。京間（191cm x 95.5cm）は約1.824 m2、中京間（182cm x 91cm）は約1.656 m2です。お住まいの地域の畳の規格に応じて読み替えてください。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "円の面積計算で使われる円周率は？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "本ツールではJavaScriptのMath.PI（3.141592653589793...）を使用して計算しています。十分な精度で面積を算出できます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "不動産の面積確認に使えますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "概算値としてお使いいただけます。ただし、実際の土地や建物は複雑な形状をしていることが多いため、正確な面積は登記簿謄本や測量図でご確認ください。本ツールは長方形や三角形などの単純な図形の面積を素早く計算するのに適しています。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "面積計算ツールの使い方",
+    "description": "面積計算ツールは、さまざまな図形の面積を簡単に計算できる無料オンラインツールです。不動産の面積確認、土地の測量結果の換算、学校の数学の課題など、幅広い用途でお使いいただけます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "不動産の面積確認、土地の測量結果の換算、学校の数学の課題など",
+            "text": "不動産の面積確認、土地の測量結果の換算、学校の数学の課題など、幅広い用途でお使いいただけます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "図形を選択すると、必要な入力項目が自動的に表示されます",
+            "text": "図形を選択すると、必要な入力項目が自動的に表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算結果は平方メートル（m2）のほか、以下の単位に自動変換し",
+            "text": "計算結果は平方メートル（m2）のほか、以下の単位に自動変換して表示します。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 面積計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -342,7 +414,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/area.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/area.min.js"></script>
 </body>
 </html>

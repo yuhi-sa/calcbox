@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="ハッシュ生成ツール（SHA-1/SHA-256/SHA-512） - CalcBox">
   <meta name="twitter:description" content="テキストからSHA-1、SHA-256、SHA-512ハッシュ値を即座に生成。Web Crypto APIを使用し、ブラウザ内で安全に処理。コピー機能付き。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/hash/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,77 @@
       {"@type": "ListItem", "position": 2, "name": "ハッシュ生成ツール", "item": "https://yuhi-sa.github.io/calcbox/hash/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "ハッシュ値とは何ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ハッシュ値とは、任意の長さのデータから固定長の値を生成する関数（ハッシュ関数）の出力です。同じ入力からは常に同じハッシュ値が得られますが、ハッシュ値から元のデータを復元することはできません（一方向性）。データの整合性チェックやパスワードの保存などに使用されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "SHA-1、SHA-256、SHA-512の違いは何ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "主な違いはハッシュ値の長さ（ビット数）です。SHA-1は160ビット、SHA-256は256ビット、SHA-512は512ビットのハッシュ値を生成します。ビット数が大きいほど衝突（異なる入力から同じハッシュ値が生成される）の可能性が低くなります。SHA-1は現在では衝突が発見されているため、セキュリティ用途にはSHA-256以上の使用が推奨されています。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "入力したテキストは安全ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい、安全です。本ツールはブラウザのWeb Crypto APIを使用しており、入力されたテキストやハッシュ値はサーバーに送信されません。すべての処理がお使いのブラウザ内で完結します。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ハッシュ生成ツールの使い方",
+    "description": "ハッシュ生成ツールは、入力したテキストから暗号学的ハッシュ値を生成するための無料ツールです。Web Crypto API（crypto.subtle.digest）を使用しており、すべての処理がブラウザ内で完結します。テキストはサーバーに送信されません。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "ハッシュ生成ツールは、入力したテキストから暗号学的ハッシュ値",
+            "text": "ハッシュ生成ツールは、入力したテキストから暗号学的ハッシュ値を生成するための無料ツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "テキストを入力すると、3種類すべてのハッシュ値が自動的に計算",
+            "text": "テキストを入力すると、3種類すべてのハッシュ値が自動的に計算されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "テキストを入力すると自動的にハッシュ値が計算されます（入力後",
+            "text": "テキストを入力すると自動的にハッシュ値が計算されます（入力後に少し待つと計算が開始されます）。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "リアルタイムで結果を確認できます",
+            "text": "リアルタイムで結果を確認できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "各ハッシュ値の横にある「コピー」ボタンをクリックすると、ハッ",
+            "text": "各ハッシュ値の横にある「コピー」ボタンをクリックすると、ハッシュ値をクリップボードにコピーできます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ハッシュ生成ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -213,6 +287,7 @@
         <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
         <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
         <li><a href="../color-converter/" class="related-tools__link">色変換</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/hash-generator/" class="related-tools__link">開発者向けハッシュ生成ツール（DevToolBox）</a></li>
       </ul>
     </section>
 
@@ -279,7 +354,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/hash.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/hash.min.js"></script>
 </body>
 </html>

@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="ローン計算シミュレーション（無料） - CalcBox">
   <meta name="twitter:description" content="住宅ローン・自動車ローンの返済額を簡単シミュレーション。借入金額・金利・返済期間から月々の返済額、総返済額、利息総額を自動計算。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/loan/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,62 @@
       {"@type": "ListItem", "position": 2, "name": "ローン計算シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/loan/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "元利均等返済と元金均等返済、どちらがお得ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "総返済額で比較すると、元金均等返済のほうが利息総額が少なくなります。ただし、元金均等返済は返済初期の月々の負担が大きくなります。家計に余裕がある場合は元金均等返済がお得ですが、毎月一定額の返済を希望する場合は元利均等返済が適しています。ライフプランに合わせて選択してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ボーナス返済には対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在のバージョンでは毎月均等の返済のみに対応しています。ボーナス返済を考慮する場合は、ボーナス返済分を差し引いた借入金額でシミュレーションし、別途ボーナス返済分を計算してください。例えば、3,000万円の借入でボーナス返済500万円の場合、まず2,500万円で計算し、500万円分を別途計算して合算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "実際の返済額と計算結果が異なるのはなぜですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールの計算結果は概算値です。実際の返済額は、金融機関の端数処理方法、返済開始日、経過利息の計算方法などにより若干異なる場合があります。また、変動金利の場合は金利見直しにより返済額が変わります。正確な返済額は、借入先の金融機関にご確認ください。本ツールは返済計画の目安としてご利用ください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ローン計算ツールの使い方",
+    "description": "ローン計算シミュレーションは、住宅ローンや自動車ローンなどの借入に対する返済額を簡単に試算できる無料オンラインツールです。借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済",
+            "text": "借入金額、年利（金利）、返済期間を入力するだけで、毎月の返済額、総返済額、利息総額を即座に計算します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "さらに年別の返済内訳表も表示されるため、返済計画の立案に役立",
+            "text": "さらに年別の返済内訳表も表示されるため、返済計画の立案に役立ちます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ローン計算シミュレーション"
+    }
+}
   </script>
 </head>
 <body>
@@ -324,7 +383,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/loan.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/loan.min.js"></script>
 </body>
 </html>

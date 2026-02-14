@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="割り勘計算ツール（傾斜配分対応） - CalcBox">
   <meta name="twitter:description" content="飲み会やイベントの割り勘を簡単計算。傾斜配分や端数処理にも対応した無料ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/warikan/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,72 @@
       {"@type": "ListItem", "position": 2, "name": "割り勘計算ツール（傾斜配分対応）", "item": "https://yuhi-sa.github.io/calcbox/warikan/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "傾斜配分の倍率は変更できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在のバージョンでは、「多め」は普通の1.5倍、「少なめ」は普通の0.7倍で固定されています。一般的な飲み会での傾斜割り勘に適した比率です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "端数はどうすればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "切り上げで計算した場合、余りが出ます。この余りは幹事が管理し、次回の会費に充てたり、その場でお菓子代にするなどの使い方が一般的です。切り捨ての場合は不足が出るため、幹事が差額を負担するか、別途調整してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3人以上のグループ分けはできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在は「多め」「普通」「少なめ」の3グループに対応しています。より細かい金額指定が必要な場合は、各自の金額を手動で調整してください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "割り勘計算ツールの使い方",
+    "description": "割り勘計算ツールは、飲み会やイベント、食事会などの会計をスムーズに割り勘するためのオンラインツールです。均等割りだけでなく、幹事や上司は多め、新人は少なめといった傾斜配分にも対応しています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "合計金額と人数を入力するだけで、1人あたりの支払額を計算しま",
+            "text": "合計金額と人数を入力するだけで、1人あたりの支払額を計算します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "丸め単位も100円・10円・1円から選択可能です",
+            "text": "丸め単位も100円・10円・1円から選択可能です。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "例えば幹事や年長者は「多め」、一般参加者は「普通」、学生や新",
+            "text": "例えば幹事や年長者は「多め」、一般参加者は「普通」、学生や新人は「少なめ」のように設定できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "その差額（余りまたは不足）も表示するので、幹事の方が調整しや",
+            "text": "その差額（余りまたは不足）も表示するので、幹事の方が調整しやすくなっています。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 割り勘計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -345,7 +414,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/warikan.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/warikan.min.js"></script>
 </body>
 </html>

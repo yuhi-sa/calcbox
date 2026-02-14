@@ -15,8 +15,11 @@
   <meta name="twitter:title" content="消費税計算ツール（税込・税抜）（無料） - CalcBox">
   <meta name="twitter:description" content="消費税の計算を簡単に。税込価格から税抜価格、税抜価格から税込価格を自動計算。軽減税率8%にも対応した無料オンライン消費税計算ツール。">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/tax/">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
   <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script type="application/ld+json">
   {
@@ -48,6 +51,62 @@
       {"@type": "ListItem", "position": 2, "name": "消費税計算ツール（税込・税抜）（無料）", "item": "https://yuhi-sa.github.io/calcbox/tax/"}
     ]
   }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "軽減税率8%が適用される商品は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "軽減税率8%は、飲食料品（酒類を除く）と週2回以上発行される定期購読の新聞に適用されます。飲食料品には、お菓子、飲料、加工食品、生鮮食品などが含まれます。ただし、外食（レストランやフードコートでの飲食）やケータリング、酒類は標準税率10%が適用されます。テイクアウトや宅配は軽減税率8%の対象です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "税込価格から税抜価格を計算すると端数が出ることがありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、税込価格によっては税抜価格に端数が出ることがあります。本ツールでは小数点以下を表示しています。実際の取引では、事業者ごとに端数処理（切り捨て・切り上げ・四捨五入）のルールが異なります。一般的には円未満を切り捨てるケースが多いです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "インボイス制度と消費税計算の関係は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2023年10月に開始されたインボイス制度（適格請求書等保存方式）では、請求書に税率ごとの消費税額を正確に記載することが求められます。本ツールで計算した消費税額は、請求書や見積書を作成する際の参考値としてご利用いただけます。正式な経理処理では、お使いの会計ソフトの端数処理ルールに従ってください。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "消費税計算ツールの使い方",
+    "description": "消費税計算ツールは、税込価格から税抜価格を求めたり、税抜価格から税込価格を求めたりするための無料オンラインツールです。2019年10月に実施された消費税率引き上げにより、日本の消費税は標準税率10%と軽減税率8%の複数税率制度が導入されました。本ツールはどちらの税率にも対応しており、日々の買い物やビジネスシーンで役立ちます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "商品ごとに異なる税率を設定できるため、標準税率10%の商品と",
+            "text": "商品ごとに異なる税率を設定できるため、標準税率10%の商品と軽減税率8%の食料品が混在する場合でも正確に合計金額を算出できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "レシートの確認や経費精算、見積書の作成などにご活用ください",
+            "text": "レシートの確認や経費精算、見積書の作成などにご活用ください。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 消費税計算ツール"
+    }
+}
   </script>
 </head>
 <body>
@@ -342,7 +401,7 @@
     </div>
   </footer>
 
-  <script src="../js/common.js"></script>
-  <script src="../js/tax.js"></script>
+  <script src="../js/common.min.js"></script>
+  <script src="../js/tax.min.js"></script>
 </body>
 </html>
