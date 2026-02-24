@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>住宅ローン控除額シミュレーション（無料） - CalcBox</title>
+  <meta name="description" content="住宅ローン控除（住宅ローン減税）の年間控除額を簡単シミュレーション。借入金額・年末残高・入居年から控除期間の合計額、所得税・住民税の軽減効果を自動計算。">
+  <meta property="og:title" content="住宅ローン控除額シミュレーション（無料） - CalcBox">
+  <meta property="og:description" content="住宅ローン控除（住宅ローン減税）の年間控除額を簡単シミュレーション。借入金額・年末残高・入居年から控除額を自動計算。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/housing-deduction/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="住宅ローン控除額シミュレーション（無料） - CalcBox">
+  <meta name="twitter:description" content="住宅ローン控除（住宅ローン減税）の年間控除額を簡単シミュレーション。借入金額・年末残高・入居年から控除額を自動計算。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/housing-deduction/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "住宅ローン控除額シミュレーション",
+    "description": "住宅ローン控除（住宅ローン減税）の年間控除額を簡単シミュレーション。借入金額・年末残高・入居年から控除期間の合計額を自動計算。",
+    "url": "https://yuhi-sa.github.io/calcbox/housing-deduction/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "住宅ローン控除額シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/housing-deduction/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "住宅ローン控除の控除率は何%ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2022年以降に入居した場合、控除率は年末ローン残高の0.7%です。それ以前（2021年以前）に入居した場合は1.0%でした。本ツールでは入居年に応じた控除率で自動計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "住宅ローン控除の期間は何年ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2022年以降に入居した新築住宅の場合、控除期間は13年間です。中古住宅の場合は10年間です。2021年以前に入居した場合は原則10年間（特例で13年間）でした。本ツールでは控除期間を選択して計算できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "住宅ローン控除で住民税からも控除されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、所得税から控除しきれない場合は住民税からも控除されます。ただし住民税からの控除には上限があり、所得税の課税総所得金額の5%（最大97,500円）までです。2022年以降入居の場合も同様の上限が適用されます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "住宅ローン控除額シミュレーションの使い方",
+    "description": "借入金額、年末ローン残高、入居年、控除期間を入力するだけで、住宅ローン控除の年間控除額と控除期間合計額を即座に計算できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "借入条件を入力",
+            "text": "借入金額、年末ローン残高（初年度）、入居年、控除期間（13年または10年）を入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "控除額を確認",
+            "text": "「計算する」ボタンを押すと、年間控除額、控除期間合計額、所得税・住民税の軽減効果が表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 住宅ローン控除額シミュレーション"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">住宅ローン控除額シミュレーション</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">住宅ローン控除額シミュレーション</h1>
+      <p class="tool__lead">借入条件を入力するだけで、住宅ローン控除（住宅ローン減税）による年間控除額と控除期間合計の軽減効果を簡単にシミュレーションできます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="loan-amount">借入金額（万円）</label>
+          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="例: 3000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="year-end-balance">年末ローン残高（万円）<small>※初年度</small></label>
+          <input class="input" type="number" id="year-end-balance" min="1" step="1" placeholder="例: 2950">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="interest-rate">借入金利（%）</label>
+          <input class="input" type="number" id="interest-rate" min="0" max="20" step="0.01" placeholder="例: 0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="move-in-year">入居年</label>
+          <select class="input" id="move-in-year">
+            <option value="2025">2025年（令和7年）</option>
+            <option value="2024">2024年（令和6年）</option>
+            <option value="2023">2023年（令和5年）</option>
+            <option value="2022">2022年（令和4年）</option>
+            <option value="2021">2021年以前</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="deduction-period">控除期間</label>
+          <select class="input" id="deduction-period">
+            <option value="13">13年（新築住宅）</option>
+            <option value="10">10年（中古住宅）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="annual-income">年収（万円）<small>※所得税・住民税の軽減効果計算用</small></label>
+          <input class="input" type="number" id="annual-income" min="0" step="1" placeholder="例: 600">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">初年度の控除額</span>
+            <span class="result__value" id="first-year-deduction"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">控除期間合計</span>
+            <span class="result__value" id="total-deduction"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">控除率</span>
+            <span class="result__value" id="deduction-rate"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">所得税からの軽減（年間目安）</span>
+            <span class="result__value" id="income-tax-reduction"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">住民税からの軽減（年間目安）</span>
+            <span class="result__value" id="resident-tax-reduction"></span>
+          </div>
+        </div>
+
+        <div id="yearly-section" hidden>
+          <h2 class="section__title">年別控除額一覧</h2>
+          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
+            <table id="yearly-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 400px;">
+              <thead>
+                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
+                  <th style="padding: 10px 8px; text-align: center;">年目</th>
+                  <th style="padding: 10px 8px; text-align: right;">年末残高</th>
+                  <th style="padding: 10px 8px; text-align: right;">控除額</th>
+                </tr>
+              </thead>
+              <tbody id="yearly-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="recommendation-section" hidden>
+          <h2 class="section__title">住宅ローンを比較する</h2>
+          <div class="section__content">
+            <p>住宅ローン控除の効果を最大化するためには、金利条件の良い住宅ローンを選ぶことが重要です。複数の金融機関を比較して、最適な住宅ローンを見つけましょう。</p>
+            <ul>
+              <li><strong>ネット銀行の住宅ローン</strong> - 低金利が特徴。変動金利0.3%台から利用可能な場合も。</li>
+              <li><strong>メガバンクの住宅ローン</strong> - 審査基準が明確で安心。対面相談が可能。</li>
+              <li><strong>フラット35</strong> - 全期間固定金利で返済額が変わらない安心感。住宅金融支援機構が提供。</li>
+            </ul>
+            <p>借り換えを検討中の方も、現在の金利と比較してメリットがあるか確認してみてください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">住宅ローン控除額シミュレーションの使い方</h2>
+      <div class="section__content">
+        <p>住宅ローン控除（住宅ローン減税）は、住宅ローンを利用してマイホームを取得した場合に、年末のローン残高に応じて所得税・住民税が軽減される制度です。正式名称は「住宅借入金等特別控除」です。</p>
+
+        <h3>控除率と控除期間</h3>
+        <p>2022年の税制改正により、控除率と控除期間が変更されました。</p>
+        <ul>
+          <li>2022年以降入居：控除率0.7%、新築は13年間、中古は10年間</li>
+          <li>2021年以前入居：控除率1.0%、原則10年間（特例13年間）</li>
+        </ul>
+
+        <h3>借入限度額</h3>
+        <p>控除対象となる借入金額には上限があります。2024年・2025年入居の場合、省エネ住宅の種類によって3,000万円〜4,500万円の上限が設定されています。一般住宅は2,000万円（2024年以降は控除なしの場合あり）です。</p>
+
+        <h3>住民税からの控除</h3>
+        <p>所得税から控除しきれない場合、住民税からも控除されます。住民税からの控除上限は、所得税の課税総所得金額の5%（最大97,500円）です。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 住宅ローン控除の控除率は何%ですか？</h3>
+        <p>A. 2022年以降に入居した場合、控除率は年末ローン残高の0.7%です。それ以前（2021年以前）に入居した場合は1.0%でした。本ツールでは入居年に応じた控除率で自動計算します。</p>
+        <h3>Q. 住宅ローン控除の期間は何年ですか？</h3>
+        <p>A. 2022年以降に入居した新築住宅の場合、控除期間は13年間です。中古住宅の場合は10年間です。2021年以前に入居した場合は原則10年間（特例で13年間）でした。</p>
+        <h3>Q. 住宅ローン控除で住民税からも控除されますか？</h3>
+        <p>A. はい、所得税から控除しきれない場合は住民税からも控除されます。ただし住民税からの控除には上限があり、所得税の課税総所得金額の5%（最大97,500円）までです。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../loan/" class="related-tools__link">ローン計算</a></li>
+        <li><a href="../salary/" class="related-tools__link">給与手取り計算</a></li>
+        <li><a href="../compound-interest/" class="related-tools__link">複利計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/housing-deduction.min.js"></script>
+</body>
+</html>

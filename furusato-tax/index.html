@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>ふるさと納税控除額シミュレーション（無料） - CalcBox</title>
+  <meta name="description" content="ふるさと納税の控除上限額を簡単シミュレーション。年収・家族構成・住宅ローン控除の有無から控除上限額の目安と実質お得額を自動計算。無料オンラインツール。">
+  <meta property="og:title" content="ふるさと納税控除額シミュレーション（無料） - CalcBox">
+  <meta property="og:description" content="ふるさと納税の控除上限額を簡単シミュレーション。年収・家族構成から控除上限額の目安と実質お得額を自動計算。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/furusato-tax/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ふるさと納税控除額シミュレーション（無料） - CalcBox">
+  <meta name="twitter:description" content="ふるさと納税の控除上限額を簡単シミュレーション。年収・家族構成から控除上限額の目安と実質お得額を自動計算。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/furusato-tax/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ふるさと納税控除額シミュレーション",
+    "description": "ふるさと納税の控除上限額を簡単シミュレーション。年収・家族構成・住宅ローン控除の有無から控除上限額の目安と実質お得額を自動計算。",
+    "url": "https://yuhi-sa.github.io/calcbox/furusato-tax/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "ふるさと納税控除額シミュレーション（無料）", "item": "https://yuhi-sa.github.io/calcbox/furusato-tax/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ふるさと納税の控除上限額はどうやって決まりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ふるさと納税の控除上限額は、主に年収（所得）と所得税・住民税の課税額によって決まります。家族構成（配偶者控除や扶養控除の有無）や、住宅ローン控除・医療費控除などの他の控除額によっても変動します。本ツールでは年収と家族構成から目安額を計算しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "自己負担2,000円とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ふるさと納税では、控除上限額内であれば寄付金額から2,000円を差し引いた金額が所得税・住民税から控除されます。この2,000円が自己負担額です。例えば5万円寄付した場合、48,000円が税金から控除され、実質2,000円の負担で返礼品を受け取れます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "住宅ローン控除とふるさと納税は併用できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、併用可能です。ただし、住宅ローン控除により所得税が大幅に軽減されている場合、ふるさと納税の控除上限額が下がることがあります。ワンストップ特例制度を利用すると住民税からのみ控除されるため、影響を最小限に抑えられる場合があります。本ツールでは住宅ローン控除ありの場合の目安も計算できます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ふるさと納税控除額シミュレーションの使い方",
+    "description": "年収、家族構成、住宅ローン控除の有無を入力するだけで、ふるさと納税の控除上限額の目安と実質お得額を即座に計算できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "年収・家族構成・住宅ローン控除の有無を入力",
+            "text": "年収（額面）、家族構成（独身・共働き・配偶者あり・子供の人数）、住宅ローン控除の有無を入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "控除上限額と実質お得額を確認",
+            "text": "「計算する」ボタンを押すと、控除上限額の目安と自己負担2,000円を除いた実質お得額が表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ふるさと納税控除額シミュレーション"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">ふるさと納税控除額シミュレーション</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">ふるさと納税控除額シミュレーション</h1>
+      <p class="tool__lead">年収・家族構成を入力するだけで、ふるさと納税の控除上限額の目安を簡単にシミュレーションできます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="annual-income">年収（万円）<small>※額面</small></label>
+          <input class="input" type="number" id="annual-income" min="0" step="1" placeholder="例: 500">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="family-type">家族構成</label>
+          <select class="input" id="family-type">
+            <option value="single">独身または共働き（配偶者控除なし）</option>
+            <option value="married">夫婦（配偶者控除あり）</option>
+            <option value="married-child1">夫婦＋子1人（高校生）</option>
+            <option value="married-child2">夫婦＋子2人（高校生＋大学生）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">住宅ローン控除</label>
+          <div class="radio-group">
+            <label><input type="radio" name="housing-loan" value="none" checked> なし</label>
+            <label><input type="radio" name="housing-loan" value="yes"> あり</label>
+          </div>
+        </div>
+        <div class="form-group" id="housing-loan-amount-group" hidden>
+          <label class="form-label" for="housing-loan-amount">住宅ローン控除額（万円/年）</label>
+          <input class="input" type="number" id="housing-loan-amount" min="0" step="1" placeholder="例: 20">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">控除上限額（目安）</span>
+            <span class="result__value" id="max-deduction"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">実質お得額（自己負担2,000円を除く）</span>
+            <span class="result__value" id="benefit-amount"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">自己負担額</span>
+            <span class="result__value" id="self-pay">2,000円</span>
+          </div>
+        </div>
+
+        <div id="recommendation-section" hidden>
+          <h2 class="section__title">ふるさと納税サイトで申し込む</h2>
+          <div class="section__content">
+            <p>控除上限額の目安がわかったら、ふるさと納税ポータルサイトから寄付先を選びましょう。人気のふるさと納税サイトでは、返礼品のランキングや口コミを参考にお得な返礼品を探すことができます。</p>
+            <ul>
+              <li><strong>楽天ふるさと納税</strong> - 楽天ポイントが貯まる・使える。ポイント還元率が高くお得度が高い。</li>
+              <li><strong>ふるなび</strong> - 家電の返礼品が充実。ふるなびコインでAmazonギフト券等に交換可能。</li>
+              <li><strong>さとふる</strong> - 返礼品の到着が早い。マイページで配送状況を確認できる。</li>
+              <li><strong>ふるさとチョイス</strong> - 掲載自治体数No.1。選べる返礼品の種類が最も豊富。</li>
+            </ul>
+            <p>ワンストップ特例制度を利用すれば確定申告不要で控除が受けられます（寄付先が5自治体以内の場合）。</p>
+          </div>
+        </div>
+
+        <div id="table-section" hidden>
+          <h2 class="section__title">年収別 控除上限額の目安一覧</h2>
+          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
+            <table id="income-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
+              <thead>
+                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
+                  <th style="padding: 10px 8px; text-align: center;">年収</th>
+                  <th style="padding: 10px 8px; text-align: right;">独身・共働き</th>
+                  <th style="padding: 10px 8px; text-align: right;">夫婦</th>
+                  <th style="padding: 10px 8px; text-align: right;">夫婦＋子1人</th>
+                  <th style="padding: 10px 8px; text-align: right;">夫婦＋子2人</th>
+                </tr>
+              </thead>
+              <tbody id="income-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">ふるさと納税控除額シミュレーションの使い方</h2>
+      <div class="section__content">
+        <p>ふるさと納税は、自分が応援したい自治体に寄付をすると、寄付金額のうち2,000円を超える部分が所得税・住民税から控除される制度です。さらに寄付先の自治体から返礼品を受け取れるため、実質2,000円の自己負担で各地の特産品を楽しむことができます。</p>
+
+        <h3>控除上限額とは</h3>
+        <p>ふるさと納税で税金の控除を受けられる金額には上限があります。この上限額は年収（所得）や家族構成によって異なります。上限を超えて寄付すると、超過分は自己負担となるため、事前に目安を確認しておくことが重要です。</p>
+
+        <h3>計算の仕組み</h3>
+        <p>ふるさと納税の控除は以下の3つから構成されます。</p>
+        <ul>
+          <li>所得税からの控除 = (寄付金額 - 2,000円) × 所得税率</li>
+          <li>住民税からの控除（基本分） = (寄付金額 - 2,000円) × 10%</li>
+          <li>住民税からの控除（特例分） = (寄付金額 - 2,000円) × (100% - 10% - 所得税率)</li>
+        </ul>
+        <p>特例分は住民税所得割額の20%が上限となるため、この上限に達する寄付金額が「控除上限額」となります。</p>
+
+        <h3>住宅ローン控除との併用</h3>
+        <p>住宅ローン控除を受けている場合、所得税が大幅に軽減されているため、ふるさと納税の控除枠が減少する可能性があります。ワンストップ特例制度を利用すれば住民税のみから控除されるため、住宅ローン控除との影響を軽減できます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. ふるさと納税の控除上限額はどうやって決まりますか？</h3>
+        <p>A. ふるさと納税の控除上限額は、主に年収（所得）と所得税・住民税の課税額によって決まります。家族構成（配偶者控除や扶養控除の有無）や、住宅ローン控除・医療費控除などの他の控除額によっても変動します。本ツールでは年収と家族構成から目安額を計算しています。</p>
+        <h3>Q. 自己負担2,000円とは何ですか？</h3>
+        <p>A. ふるさと納税では、控除上限額内であれば寄付金額から2,000円を差し引いた金額が所得税・住民税から控除されます。この2,000円が自己負担額です。例えば5万円寄付した場合、48,000円が税金から控除され、実質2,000円の負担で返礼品を受け取れます。</p>
+        <h3>Q. 住宅ローン控除とふるさと納税は併用できますか？</h3>
+        <p>A. はい、併用可能です。ただし、住宅ローン控除により所得税が大幅に軽減されている場合、ふるさと納税の控除上限額が下がることがあります。ワンストップ特例制度を利用すると住民税からのみ控除されるため、影響を最小限に抑えられる場合があります。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../salary/" class="related-tools__link">給与手取り計算</a></li>
+        <li><a href="../loan/" class="related-tools__link">ローン計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
+        <li><a href="../compound-interest/" class="related-tools__link">複利計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/furusato-tax.min.js"></script>
+</body>
+</html>

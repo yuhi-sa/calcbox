@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>バイト代・シフト給料計算ツール（無料） - CalcBox</title>
+  <meta name="description" content="アルバイトの時給・勤務時間・日数から日給・週給・月給・年収を自動計算。深夜手当（22時以降25%割増）や交通費も考慮。103万円・130万円の壁への到達予想も表示する無料ツール。">
+  <meta property="og:title" content="バイト代・シフト給料計算ツール（無料） - CalcBox">
+  <meta property="og:description" content="アルバイトの時給・勤務時間・日数から日給・週給・月給・年収を自動計算。深夜手当や交通費も考慮。103万円・130万円の壁への到達予想も表示。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/part-time-pay/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="バイト代・シフト給料計算ツール（無料） - CalcBox">
+  <meta name="twitter:description" content="アルバイトの時給・勤務時間・日数から日給・週給・月給・年収を自動計算。深夜手当や交通費も考慮。103万円・130万円の壁への到達予想も表示。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/part-time-pay/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "バイト代・シフト給料計算ツール",
+    "description": "アルバイトの時給・勤務時間・日数から日給・週給・月給・年収を自動計算。深夜手当や交通費も考慮。103万円・130万円の壁への到達予想も表示。",
+    "url": "https://yuhi-sa.github.io/calcbox/part-time-pay/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "バイト代・シフト給料計算ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/part-time-pay/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "103万円の壁とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "年収103万円を超えると所得税が発生します。給与所得控除55万円と基礎控除48万円の合計が103万円のため、これを超えた分に所得税がかかります。また、親の扶養から外れることで親の税負担が増える場合もあります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "深夜手当はどのように計算されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "労働基準法により、22時から翌5時までの深夜労働には通常時給の25%以上の割増賃金が支払われます。例えば時給1,000円の場合、深夜帯は1,250円以上となります。本ツールでは深夜勤務時間を入力することで自動計算します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "130万円の壁を超えるとどうなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "年収130万円を超えると、親や配偶者の社会保険の扶養から外れ、自分で国民健康保険や国民年金に加入する必要があります。保険料負担が年間約20〜30万円増えるため、手取りが大きく減少する可能性があります。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "バイト代・シフト給料計算ツールの使い方",
+    "description": "バイト代・シフト給料計算ツールは、アルバイトの時給・勤務時間・勤務日数から日給・週給・月給・年収を簡単に計算できる無料オンラインツールです。深夜手当や交通費も考慮でき、103万円・130万円の壁への到達予想も確認できます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "時給と勤務条件を入力する",
+            "text": "時給、1日の勤務時間、週の勤務日数を入力します。深夜勤務がある場合は深夜勤務時間も入力します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算ボタンを押す",
+            "text": "「計算する」ボタンをクリックすると、日給・週給・月給・年収が自動計算されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "結果を確認する",
+            "text": "各種給料の概算と、103万円・130万円の壁への到達予想が表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox バイト代・シフト給料計算ツール"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">バイト代・シフト給料計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">バイト代・シフト給料計算ツール</h1>
+      <p class="tool__lead">時給・勤務時間・日数からバイト代を自動計算。深夜手当や交通費も考慮し、103万円・130万円の壁への到達予想も確認できます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="hourly-wage">時給（円）</label>
+          <input class="input" type="number" id="hourly-wage" min="1" step="1" placeholder="例: 1100">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="hours-per-day">1日の勤務時間（時間）</label>
+          <input class="input" type="number" id="hours-per-day" min="0.5" max="24" step="0.5" placeholder="例: 5">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="days-per-week">週の勤務日数（日）</label>
+          <input class="input" type="number" id="days-per-week" min="1" max="7" step="1" placeholder="例: 3">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="night-hours">うち深夜勤務時間（22時〜翌5時、時間/日）</label>
+          <input class="input" type="number" id="night-hours" min="0" max="24" step="0.5" value="0" placeholder="例: 0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="transport-cost">交通費（1日あたり、円）</label>
+          <input class="input" type="number" id="transport-cost" min="0" step="10" value="0" placeholder="例: 500">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">日給（交通費込み）</span>
+            <span class="result__value" id="result-daily"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">週給</span>
+            <span class="result__value" id="result-weekly"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">月給（概算）</span>
+            <span class="result__value" id="result-monthly"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">年収（概算）</span>
+            <span class="result__value" id="result-annual"></span>
+          </div>
+          <div class="result__item" style="margin-top: 1rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+            <span class="result__label">深夜手当（1日あたり）</span>
+            <span class="result__value" id="result-night-pay"></span>
+          </div>
+          <div class="result__item" style="margin-top: 1rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+            <span class="result__label">103万円の壁</span>
+            <span class="result__value" id="result-wall-103"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">130万円の壁</span>
+            <span class="result__value" id="result-wall-130"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">バイト代・シフト給料計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>バイト代・シフト給料計算ツールは、アルバイトやパートの時給・勤務時間・勤務日数から、日給・週給・月給・年収を簡単に計算できる無料オンラインツールです。深夜手当（22時〜翌5時は25%割増）や交通費も考慮した正確な計算が可能です。</p>
+
+        <h3>深夜手当の計算</h3>
+        <p>労働基準法第37条により、22時から翌5時までの労働には通常時給の25%以上の割増賃金が必要です。本ツールでは法定最低限の25%割増で計算しています。</p>
+        <ul>
+          <li>深夜時給 = 通常時給 × 1.25</li>
+          <li>深夜手当（1日） = 通常時給 × 0.25 × 深夜勤務時間</li>
+        </ul>
+
+        <h3>月給・年収の概算方法</h3>
+        <p>月給は「週給 × 52週 / 12ヶ月」で概算しています。年収は「週給 × 52週」で計算しています。祝日や休暇は考慮していないため、実際の金額は多少異なる場合があります。</p>
+
+        <h3>103万円・130万円の壁について</h3>
+        <p>学生やパートで働く場合、年収に応じて税金や社会保険料の負担が変わる重要な基準があります。</p>
+        <ul>
+          <li><strong>103万円の壁</strong>：年収103万円を超えると所得税が発生。親の扶養からも外れる可能性があります。</li>
+          <li><strong>130万円の壁</strong>：年収130万円を超えると社会保険の扶養から外れ、自分で保険料を負担する必要があります。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. 103万円の壁とは何ですか？</h3>
+        <p>A. 年収103万円を超えると所得税が発生します。給与所得控除55万円と基礎控除48万円の合計が103万円のため、これを超えた分に所得税がかかります。また、親の扶養から外れることで親の税負担が増える場合もあります。</p>
+        <h3>Q. 深夜手当はどのように計算されますか？</h3>
+        <p>A. 労働基準法により、22時から翌5時までの深夜労働には通常時給の25%以上の割増賃金が支払われます。例えば時給1,000円の場合、深夜帯は1,250円以上となります。本ツールでは深夜勤務時間を入力することで自動計算します。</p>
+        <h3>Q. 130万円の壁を超えるとどうなりますか？</h3>
+        <p>A. 年収130万円を超えると、親や配偶者の社会保険の扶養から外れ、自分で国民健康保険や国民年金に加入する必要があります。保険料負担が年間約20〜30万円増えるため、手取りが大きく減少する可能性があります。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../salary/" class="related-tools__link">給与手取り計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
+        <li><a href="../time/" class="related-tools__link">時間計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/part-time-pay.min.js"></script>
+</body>
+</html>

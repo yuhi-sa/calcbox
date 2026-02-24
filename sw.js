@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calcbox-v1';
+const CACHE_NAME = 'calcbox-v2';
 const BASE_PATH = '/calcbox/';
 
 const PRECACHE_URLS = [

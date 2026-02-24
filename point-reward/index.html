@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>ポイント還元率計算・比較ツール（無料） - CalcBox</title>
+  <meta name="description" content="クレジットカードや電子マネーのポイント還元率を計算・比較。支払い金額から獲得ポイント数・実質割引額・実質還元率を自動計算。最大3枚のカード比較機能付き無料ツール。">
+  <meta property="og:title" content="ポイント還元率計算・比較ツール（無料） - CalcBox">
+  <meta property="og:description" content="クレジットカードや電子マネーのポイント還元率を計算・比較。支払い金額から獲得ポイント・実質割引額・実質還元率を自動計算。最大3枚のカード比較機能付き。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/point-reward/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ポイント還元率計算・比較ツール（無料） - CalcBox">
+  <meta name="twitter:description" content="クレジットカードや電子マネーのポイント還元率を計算・比較。支払い金額から獲得ポイント・実質割引額・実質還元率を自動計算。最大3枚のカード比較機能付き。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/point-reward/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ポイント還元率計算・比較ツール",
+    "description": "クレジットカードや電子マネーのポイント還元率を計算・比較。支払い金額から獲得ポイント数・実質割引額・実質還元率を自動計算。最大3枚のカード比較機能付き。",
+    "url": "https://yuhi-sa.github.io/calcbox/point-reward/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "ポイント還元率計算・比較ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/point-reward/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ポイント還元率と実質還元率の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ポイント還元率はカード会社が提示する還元率です。一方、実質還元率は1ポイントの価値を考慮した実際のお得度を示します。例えば還元率1%で1ポイント=0.5円の場合、実質還元率は0.5%となります。本ツールではこの実質還元率を正確に計算できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "1ポイントの価値はカードによって違うのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、カードやポイントプログラムによって1ポイントの価値は異なります。多くのカードでは1ポイント=1円ですが、0.5円や5円のものもあります。例えばJCBカードのOki Dokiポイントは1ポイント=5円、楽天カードの楽天ポイントは1ポイント=1円です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "複数のカードを比較するにはどうすればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールでは最大3枚のカードを同時に比較できます。各カードの還元率とポイント価値を入力すると、同じ支払い金額に対する獲得ポイント数・実質割引額・実質還元率を一覧表で比較できます。年会費も入力すれば、年間利用額に対する実質的なお得度を正確に比較できます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ポイント還元率計算・比較ツールの使い方",
+    "description": "ポイント還元率計算・比較ツールは、クレジットカードや電子マネーのポイント還元を計算・比較できる無料オンラインツールです。支払い金額と還元率を入力するだけで、獲得ポイント数や実質割引額を計算します。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "支払い金額とカード情報を入力する",
+            "text": "支払い金額、ポイント還元率、1ポイントの価値を入力します。比較したい場合は最大3枚まで入力できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計算ボタンを押す",
+            "text": "「計算する」ボタンをクリックすると、各カードの還元結果が表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "比較結果を確認する",
+            "text": "獲得ポイント数、実質割引額、実質還元率の比較表が表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ポイント還元率計算・比較ツール"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">ポイント還元率計算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">ポイント還元率計算・比較ツール</h1>
+      <p class="tool__lead">クレジットカードや電子マネーのポイント還元率を計算・比較。最大3枚のカードを同時に比較できます。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="payment-amount">支払い金額（円）</label>
+          <input class="input" type="number" id="payment-amount" min="1" step="1" placeholder="例: 10000">
+        </div>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem;">カード1</h3>
+        <div class="form-group">
+          <label class="form-label" for="card1-name">カード名（任意）</label>
+          <input class="input" type="text" id="card1-name" placeholder="例: 楽天カード">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card1-rate">ポイント還元率（%）</label>
+          <input class="input" type="number" id="card1-rate" min="0" max="100" step="0.1" placeholder="例: 1.0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card1-value">1ポイントの価値（円）</label>
+          <input class="input" type="number" id="card1-value" min="0.01" step="0.01" value="1" placeholder="例: 1">
+        </div>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem;">カード2（任意）</h3>
+        <div class="form-group">
+          <label class="form-label" for="card2-name">カード名</label>
+          <input class="input" type="text" id="card2-name" placeholder="例: JCBカード">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card2-rate">ポイント還元率（%）</label>
+          <input class="input" type="number" id="card2-rate" min="0" max="100" step="0.1" placeholder="例: 0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card2-value">1ポイントの価値（円）</label>
+          <input class="input" type="number" id="card2-value" min="0.01" step="0.01" placeholder="例: 5">
+        </div>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem;">カード3（任意）</h3>
+        <div class="form-group">
+          <label class="form-label" for="card3-name">カード名</label>
+          <input class="input" type="text" id="card3-name" placeholder="例: dカード">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card3-rate">ポイント還元率（%）</label>
+          <input class="input" type="number" id="card3-rate" min="0" max="100" step="0.1" placeholder="例: 1.0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="card3-value">1ポイントの価値（円）</label>
+          <input class="input" type="number" id="card3-value" min="0.01" step="0.01" placeholder="例: 1">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+        </div>
+
+        <div id="result" hidden>
+          <div class="result" id="result-card1" hidden>
+            <h3 style="margin-bottom: 0.5rem; font-size: 1rem;" id="result-card1-title">カード1</h3>
+            <div class="result__item">
+              <span class="result__label">獲得ポイント数</span>
+              <span class="result__value" id="result-card1-points"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質割引額</span>
+              <span class="result__value" id="result-card1-discount"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質還元率</span>
+              <span class="result__value" id="result-card1-effective"></span>
+            </div>
+          </div>
+
+          <div class="result" id="result-card2" hidden style="margin-top: 1rem;">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1rem;" id="result-card2-title">カード2</h3>
+            <div class="result__item">
+              <span class="result__label">獲得ポイント数</span>
+              <span class="result__value" id="result-card2-points"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質割引額</span>
+              <span class="result__value" id="result-card2-discount"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質還元率</span>
+              <span class="result__value" id="result-card2-effective"></span>
+            </div>
+          </div>
+
+          <div class="result" id="result-card3" hidden style="margin-top: 1rem;">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1rem;" id="result-card3-title">カード3</h3>
+            <div class="result__item">
+              <span class="result__label">獲得ポイント数</span>
+              <span class="result__value" id="result-card3-points"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質割引額</span>
+              <span class="result__value" id="result-card3-discount"></span>
+            </div>
+            <div class="result__item">
+              <span class="result__label">実質還元率</span>
+              <span class="result__value" id="result-card3-effective"></span>
+            </div>
+          </div>
+
+          <div class="result" id="result-recommendation" hidden style="margin-top: 1rem;">
+            <div class="result__item">
+              <span class="result__label">おすすめ</span>
+              <span class="result__value" id="result-best-card"></span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 1rem;">※ おすすめクレジットカード比較の参考にご活用ください。年会費やポイント有効期限は考慮していません。</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">ポイント還元率計算ツールの使い方</h2>
+      <div class="section__content">
+        <p>ポイント還元率計算・比較ツールは、クレジットカードや電子マネーのポイント還元を正確に計算・比較できる無料オンラインツールです。カードごとに異なるポイント還元率やポイントの価値を入力するだけで、実質的なお得度を簡単に比較できます。</p>
+
+        <h3>実質還元率の計算方法</h3>
+        <p>カード会社が提示する還元率だけでは本当のお得度はわかりません。1ポイントの価値を考慮した「実質還元率」で比較することが重要です。</p>
+        <ul>
+          <li>獲得ポイント数 = 支払い金額 × 還元率 / 100</li>
+          <li>実質割引額 = 獲得ポイント数 × 1ポイントの価値</li>
+          <li>実質還元率 = 実質割引額 / 支払い金額 × 100</li>
+        </ul>
+
+        <h3>カードのポイント価値の例</h3>
+        <ul>
+          <li><strong>楽天ポイント</strong>：1ポイント = 1円</li>
+          <li><strong>Oki Dokiポイント（JCB）</strong>：1ポイント = 約5円</li>
+          <li><strong>Vポイント（三井住友）</strong>：1ポイント = 1円</li>
+          <li><strong>永久不滅ポイント（セゾン）</strong>：1ポイント = 約5円</li>
+        </ul>
+
+        <h3>おすすめクレジットカード比較のポイント</h3>
+        <p>カード選びでは還元率だけでなく、年会費、ポイント有効期限、ポイントの使いやすさ、付帯保険なども総合的に比較することが大切です。本ツールでは還元率の観点から最も効率的なカードを見つけることができます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. ポイント還元率と実質還元率の違いは何ですか？</h3>
+        <p>A. ポイント還元率はカード会社が提示する還元率です。一方、実質還元率は1ポイントの価値を考慮した実際のお得度を示します。例えば還元率1%で1ポイント=0.5円の場合、実質還元率は0.5%となります。本ツールではこの実質還元率を正確に計算できます。</p>
+        <h3>Q. 1ポイントの価値はカードによって違うのですか？</h3>
+        <p>A. はい、カードやポイントプログラムによって1ポイントの価値は異なります。多くのカードでは1ポイント=1円ですが、0.5円や5円のものもあります。例えばJCBカードのOki Dokiポイントは1ポイント=5円、楽天カードの楽天ポイントは1ポイント=1円です。</p>
+        <h3>Q. 複数のカードを比較するにはどうすればいいですか？</h3>
+        <p>A. 本ツールでは最大3枚のカードを同時に比較できます。各カードの還元率とポイント価値を入力すると、同じ支払い金額に対する獲得ポイント数・実質割引額・実質還元率を一覧で比較できます。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../discount/" class="related-tools__link">割引計算</a></li>
+        <li><a href="../tax/" class="related-tools__link">消費税計算</a></li>
+        <li><a href="../warikan/" class="related-tools__link">割り勘計算</a></li>
+        <li><a href="../compound-interest/" class="related-tools__link">複利計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="horizontal" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/point-reward.min.js"></script>
+</body>
+</html>
