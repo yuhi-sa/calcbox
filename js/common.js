@@ -490,6 +490,236 @@
     },
   };
 
+  /* ----- 計算履歴 ----- */
+  var CalcHistory = {
+    STORAGE_KEY: "calcbox-history",
+    MAX: 50,
+
+    save: function (tool, input, result) {
+      var entries = this.getAll();
+      entries.unshift({
+        tool: tool,
+        input: input,
+        result: result,
+        timestamp: Date.now(),
+      });
+      if (entries.length > this.MAX) {
+        entries = entries.slice(0, this.MAX);
+      }
+      try {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(entries));
+      } catch (e) {}
+    },
+
+    getAll: function () {
+      try {
+        return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
+      } catch (e) {
+        return [];
+      }
+    },
+
+    clear: function () {
+      localStorage.removeItem(this.STORAGE_KEY);
+    },
+
+    getByTool: function (toolName) {
+      return this.getAll().filter(function (entry) {
+        return entry.tool === toolName;
+      });
+    },
+  };
+
+  /* ----- 履歴モーダル ----- */
+  var HistoryModal = {
+    _el: null,
+
+    init: function () {
+      var btn = document.getElementById("history-btn");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          HistoryModal.open();
+        });
+      }
+    },
+
+    _create: function () {
+      if (this._el) return this._el;
+
+      var overlay = document.createElement("div");
+      overlay.className = "history-modal";
+      overlay.innerHTML =
+        '<div class="history-modal__content">' +
+        '<div class="history-modal__header">' +
+        '<h2 class="history-modal__title">\u8A08\u7B97\u5C65\u6B74</h2>' +
+        '<button type="button" class="history-modal__close" aria-label="\u9589\u3058\u308B">&times;</button>' +
+        "</div>" +
+        '<div class="history-modal__body"></div>' +
+        '<div class="history-modal__footer">' +
+        '<button type="button" class="btn btn--secondary history-modal__clear">\u5C65\u6B74\u3092\u30AF\u30EA\u30A2</button>' +
+        "</div>" +
+        "</div>";
+
+      overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) {
+          HistoryModal.close();
+        }
+      });
+
+      overlay.querySelector(".history-modal__close").addEventListener("click", function () {
+        HistoryModal.close();
+      });
+
+      overlay.querySelector(".history-modal__clear").addEventListener("click", function () {
+        CalcHistory.clear();
+        HistoryModal._render();
+        Toast.show("\u5C65\u6B74\u3092\u30AF\u30EA\u30A2\u3057\u307E\u3057\u305F", "success");
+      });
+
+      document.body.appendChild(overlay);
+      this._el = overlay;
+      return overlay;
+    },
+
+    _render: function () {
+      if (!this._el) return;
+      var body = this._el.querySelector(".history-modal__body");
+      var entries = CalcHistory.getAll();
+
+      if (!entries.length) {
+        body.innerHTML = '<p class="history-modal__empty">\u5C65\u6B74\u306F\u3042\u308A\u307E\u305B\u3093</p>';
+        return;
+      }
+
+      var html = "";
+      entries.forEach(function (entry) {
+        var date = new Date(entry.timestamp);
+        var dateStr =
+          date.getFullYear() +
+          "/" +
+          (date.getMonth() + 1) +
+          "/" +
+          date.getDate() +
+          " " +
+          ("0" + date.getHours()).slice(-2) +
+          ":" +
+          ("0" + date.getMinutes()).slice(-2);
+        html +=
+          '<div class="history-item">' +
+          '<div class="history-item__tool">' +
+          escapeHtml(entry.tool) +
+          "</div>" +
+          '<div class="history-item__detail">' +
+          '<span class="history-item__input">' +
+          escapeHtml(entry.input) +
+          "</span>" +
+          '<span class="history-item__result">' +
+          escapeHtml(entry.result) +
+          "</span>" +
+          "</div>" +
+          '<div class="history-item__date">' +
+          dateStr +
+          "</div>" +
+          "</div>";
+      });
+      body.innerHTML = html;
+    },
+
+    open: function () {
+      var el = this._create();
+      this._render();
+      el.classList.add("history-modal--open");
+      document.body.style.overflow = "hidden";
+    },
+
+    close: function () {
+      if (this._el) {
+        this._el.classList.remove("history-modal--open");
+        document.body.style.overflow = "";
+      }
+    },
+  };
+
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  /* ----- クリップボードコピー ----- */
+  var CopyResult = {
+    copyText: function (text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text).then(function () {
+          Toast.show("\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F", "success");
+        });
+      }
+      // フォールバック
+      var textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        Toast.show("\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F", "success");
+      } catch (e) {
+        Toast.show("\u30B3\u30D4\u30FC\u306B\u5931\u6557\u3057\u307E\u3057\u305F", "error");
+      }
+      document.body.removeChild(textarea);
+      return Promise.resolve();
+    },
+  };
+
+  /* ----- シェア ----- */
+  var ShareResult = {
+    share: function (title, text) {
+      if (navigator.share) {
+        return navigator.share({ title: title, text: text, url: location.href }).catch(function () {});
+      }
+      return CopyResult.copyText(text);
+    },
+  };
+
+  /* ----- キーボードショートカット ----- */
+  var KeyboardShortcuts = {
+    init: function () {
+      // Escapeで履歴モーダルを閉じる（全ページ共通）
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && HistoryModal._el && HistoryModal._el.classList.contains("history-modal--open")) {
+          HistoryModal.close();
+          return;
+        }
+      });
+
+      // ツールページのみ（calc-btn がある場合）
+      var calcBtn = document.getElementById("calc-btn");
+      if (!calcBtn) return;
+
+      document.addEventListener("keydown", function (e) {
+        // Escape: リセット（モーダルが開いていない時のみ）
+        if (e.key === "Escape") {
+          if (HistoryModal._el && HistoryModal._el.classList.contains("history-modal--open")) return;
+          var resetBtn = document.getElementById("reset-btn");
+          if (resetBtn) {
+            resetBtn.click();
+          }
+          return;
+        }
+
+        // Enter: 入力フィールドで計算実行
+        if (e.key === "Enter" && e.target.matches("input, select")) {
+          e.preventDefault();
+          var btn = document.getElementById("calc-btn");
+          if (btn) {
+            btn.click();
+          }
+        }
+      });
+    },
+  };
+
   /* ----- 初期化 ----- */
   function init() {
     ThemeManager.init();
@@ -499,6 +729,8 @@
     Favorites.init();
     RecentTools.init();
     PWA.init();
+    HistoryModal.init();
+    KeyboardShortcuts.init();
   }
 
   if (document.readyState === "loading") {
@@ -518,5 +750,8 @@
     favorites: Favorites,
     recent: RecentTools,
     pwa: PWA,
+    history: CalcHistory,
+    copy: CopyResult,
+    share: ShareResult,
   };
 })();

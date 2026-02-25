@@ -1,10 +1,30 @@
-const CACHE_NAME = 'calcbox-v2';
+const CACHE_NAME = 'calcbox-v3';
 const BASE_PATH = '/calcbox/';
 
 const PRECACHE_URLS = [
   BASE_PATH,
   BASE_PATH + 'css/style.css',
-  BASE_PATH + 'js/common.js'
+  BASE_PATH + 'js/common.js',
+  BASE_PATH + 'currency/',
+  BASE_PATH + 'js/currency.min.js',
+  BASE_PATH + 'encode/',
+  BASE_PATH + 'js/encode.min.js',
+  BASE_PATH + 'regex/',
+  BASE_PATH + 'js/regex.min.js',
+  BASE_PATH + 'ip-calc/',
+  BASE_PATH + 'js/ip-calc.min.js',
+  BASE_PATH + 'probability/',
+  BASE_PATH + 'js/probability.min.js',
+  BASE_PATH + 'gradient/',
+  BASE_PATH + 'js/gradient.min.js',
+  BASE_PATH + 'markdown/',
+  BASE_PATH + 'js/markdown.min.js',
+  BASE_PATH + 'diff/',
+  BASE_PATH + 'js/diff.min.js',
+  BASE_PATH + 'loan-compare/',
+  BASE_PATH + 'js/loan-compare.min.js',
+  BASE_PATH + 'nutrition/',
+  BASE_PATH + 'js/nutrition.min.js'
 ];
 
 self.addEventListener('install', event => {
