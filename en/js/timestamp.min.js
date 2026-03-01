@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var ms = tsUnit.value === 'ms' ? ts : ts * 1000;
     var date = new Date(ms);
     if (isNaN(date.getTime())) {
-      tsDateOutput.textContent = 'Invalid タイムスタンプです';
+      tsDateOutput.textContent = 'Invalid timestamp';
       tsResult.hidden = false;
       return;
     }

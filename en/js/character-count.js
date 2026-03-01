@@ -17,15 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCounts() {
     var text = textInput.value;
 
-    // 文字数（スペース込み、改行除く）
     var charsWithSpace = text.replace(/\n/g, '').length;
     resultChars.textContent = charsWithSpace.toLocaleString();
 
-    // 文字数（スペース除く）
     var charsNoSpace = text.replace(/[\s\n]/g, '').length;
     resultCharsNoSpace.textContent = charsNoSpace.toLocaleString();
 
-    // 行数
     if (text === '') {
       resultLines.textContent = '0';
     } else {
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
       resultLines.textContent = lines.toLocaleString();
     }
 
-    // 段落数
     if (text.trim() === '') {
       resultParagraphs.textContent = '0';
     } else {
@@ -43,14 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
       resultParagraphs.textContent = paragraphs.toLocaleString();
     }
 
-    // バイト数
     var bytes = countBytes(text);
-    resultBytes.textContent = bytes.toLocaleString() + ' バイト';
+    resultBytes.textContent = bytes.toLocaleString() + ' bytes';
 
-    // 原稿用紙換算（400字詰め）
-    var sheets = Math.floor(charsWithSpace / 400);
-    var remainder = charsWithSpace % 400;
-    resultManuscript.textContent = sheets + '枚と' + remainder + '文字';
+    var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+    resultManuscript.textContent = words.toLocaleString() + ' words';
   }
 
   textInput.addEventListener('input', updateCounts);

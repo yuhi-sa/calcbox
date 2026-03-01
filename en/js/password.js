@@ -33,77 +33,44 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function evaluateStrength(length, charsetSize) {
-    // Entropy = length * log2(charsetSize)
     var entropy = length * (Math.log(charsetSize) / Math.log(2));
-    if (entropy < 40) {
-      return { label: '弱', level: 1, className: 'strength--weak' };
-    } else if (entropy < 60) {
-      return { label: '中', level: 2, className: 'strength--medium' };
-    } else if (entropy < 80) {
-      return { label: '強', level: 3, className: 'strength--strong' };
-    } else {
-      return { label: '非常に強い', level: 4, className: 'strength--very-strong' };
-    }
+    if (entropy < 40) return { label: 'Weak', level: 1 };
+    if (entropy < 60) return { label: 'Medium', level: 2 };
+    if (entropy < 80) return { label: 'Strong', level: 3 };
+    return { label: 'Very Strong', level: 4 };
   }
 
   function copyToClipboard(text, btn) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
         var original = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(function () {
-          btn.textContent = original;
-        }, 1500);
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 1500);
       });
     }
   }
 
   generateBtn.addEventListener('click', function () {
     var length = parseInt(pwLengthInput.value, 10);
-    if (isNaN(length) || length < 8 || length > 64) {
-      alert('パスワード文字数は8〜64の範囲で入力してください。');
-      return;
-    }
+    if (isNaN(length) || length < 8 || length > 64) { alert('Password length must be between 8 and 64.'); return; }
 
     var count = parseInt(pwCountInput.value, 10);
-    if (isNaN(count) || count < 1 || count > 10) {
-      alert('生成数は1〜10の範囲で入力してください。');
-      return;
-    }
+    if (isNaN(count) || count < 1 || count > 10) { alert('Number of passwords must be between 1 and 10.'); return; }
 
-    // Build charset
     var charset = '';
     var charsetSize = 0;
-    if (useUppercase.checked) {
-      charset += UPPERCASE;
-      charsetSize += UPPERCASE.length;
-    }
-    if (useLowercase.checked) {
-      charset += LOWERCASE;
-      charsetSize += LOWERCASE.length;
-    }
-    if (useNumbers.checked) {
-      charset += NUMBERS;
-      charsetSize += NUMBERS.length;
-    }
-    if (useSymbols.checked) {
-      charset += SYMBOLS;
-      charsetSize += SYMBOLS.length;
-    }
+    if (useUppercase.checked) { charset += UPPERCASE; charsetSize += UPPERCASE.length; }
+    if (useLowercase.checked) { charset += LOWERCASE; charsetSize += LOWERCASE.length; }
+    if (useNumbers.checked) { charset += NUMBERS; charsetSize += NUMBERS.length; }
+    if (useSymbols.checked) { charset += SYMBOLS; charsetSize += SYMBOLS.length; }
 
-    if (charset.length === 0) {
-      alert('少なくとも1つの文字種を選択してください。');
-      return;
-    }
+    if (charset.length === 0) { alert('Please select at least one character type.'); return; }
 
     var strength = evaluateStrength(length, charsetSize);
-
-    // Clear previous results
     passwordList.innerHTML = '';
 
     for (var i = 0; i < count; i++) {
       var pw = generatePassword(length, charset);
-
       var item = document.createElement('div');
       item.className = 'result__item';
       item.style.cssText = 'flex-direction: column; align-items: stretch; gap: 8px;';
@@ -121,29 +88,26 @@ document.addEventListener('DOMContentLoaded', function () {
       copyBtn.style.cssText = 'padding: 6px 14px; font-size: 0.85rem; white-space: nowrap;';
       copyBtn.textContent = 'Copy';
       (function (password, button) {
-        button.addEventListener('click', function () {
-          copyToClipboard(password, button);
-        });
+        button.addEventListener('click', function () { copyToClipboard(password, button); });
       })(pw, copyBtn);
 
       pwRow.appendChild(pwText);
       pwRow.appendChild(copyBtn);
       item.appendChild(pwRow);
 
-      // Strength meter
       var meterRow = document.createElement('div');
       meterRow.style.cssText = 'display: flex; align-items: center; gap: 8px;';
 
       var meterLabel = document.createElement('span');
       meterLabel.style.cssText = 'font-size: 0.85rem; color: var(--color-text-secondary); white-space: nowrap;';
-      meterLabel.textContent = '強度:';
+      meterLabel.textContent = 'Strength:';
 
       var meterBar = document.createElement('div');
       meterBar.style.cssText = 'flex: 1; height: 6px; background: var(--color-bg-secondary, #e0e0e0); border-radius: 3px; overflow: hidden;';
 
       var meterFill = document.createElement('div');
       var widthPercent = (strength.level / 4) * 100;
-      var fillColor = '#e74c3c'; // weak
+      var fillColor = '#e74c3c';
       if (strength.level === 2) fillColor = '#f39c12';
       if (strength.level === 3) fillColor = '#27ae60';
       if (strength.level === 4) fillColor = '#2980b9';

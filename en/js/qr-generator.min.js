@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function generateQR() {
     var text = qrTextInput.value.trim();
     if (!text) {
-      alert('テキストまたはURLを入力してください。');
+      alert('Please enter text or a URL.');
       return;
     }
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ctx.font = '14px sans-serif';
     ctx.textAlign = 'center';
     ctx.fillStyle = '#888888';
-    ctx.fillText('生成中...', QR_SIZE / 2, QR_SIZE / 2);
+    ctx.fillText('Generating...', QR_SIZE / 2, QR_SIZE / 2);
 
     resultSection.hidden = false;
 
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ctx.fillStyle = '#e74c3c';
       ctx.font = '14px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('QRコードの生成に失敗しました', QR_SIZE / 2, QR_SIZE / 2 - 10);
-      ctx.fillText('通信環境を確認してください', QR_SIZE / 2, QR_SIZE / 2 + 14);
+      ctx.fillText('Failed to generate QR code', QR_SIZE / 2, QR_SIZE / 2 - 10);
+      ctx.fillText('Please check your connection', QR_SIZE / 2, QR_SIZE / 2 + 14);
     };
     img.src = apiUrl;
   }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
       link.href = dataURL;
       link.click();
     } catch (e) {
-      alert('ダウンロードに失敗しました。もう一度QRコードを生成してからお試しください。');
+      alert('Download failed. Please generate the QR code again and try once more.');
     }
   }
 

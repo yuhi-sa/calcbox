@@ -102,11 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var count = parseInt(countInput.value, 10);
 
     if (isNaN(count) || count < 1) {
-      showError('1以上の数値を入力してください。');
+      showError('Please enter a number of 1 or greater.');
       return;
     }
     if (count > 100) {
-      showError('100以下の数値を入力してください。');
+      showError('Please enter a number of 100 or less.');
       return;
     }
 
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var wordCount = text.split(/\s+/).filter(function (w) { return w.length > 0; }).length;
 
     loremOutput.textContent = text;
-    resultInfo.textContent = charCount.toLocaleString() + '文字 / ' + wordCount.toLocaleString() + '単語';
+    resultInfo.textContent = charCount.toLocaleString() + ' characters / ' + wordCount.toLocaleString() + ' words';
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });
   });

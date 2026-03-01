@@ -83,10 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (uuidRegex.test(val)) {
       var version = val.charAt(14);
-      validateResult.textContent = 'Valid UUID（v' + version + '）です';
+      validateResult.textContent = 'Valid UUID (v' + version + ')';
       validateResult.style.color = 'var(--color-success, #22c55e)';
     } else {
-      validateResult.textContent = 'Invalid UUID形式です';
+      validateResult.textContent = 'Invalid UUID format';
       validateResult.style.color = 'var(--color-accent)';
     }
   });

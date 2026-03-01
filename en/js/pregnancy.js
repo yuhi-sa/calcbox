@@ -13,12 +13,9 @@
   var timelineBody = document.getElementById('timeline-body');
 
   function formatDate(date) {
-    var y = date.getFullYear();
-    var m = ('0' + (date.getMonth() + 1)).slice(-2);
-    var d = ('0' + date.getDate()).slice(-2);
-    var days = ['日', '月', '火', '水', '木', '金', '土'];
-    var dayName = days[date.getDay()];
-    return y + '年' + m + '月' + d + '日（' + dayName + '）';
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    return days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
   }
 
   function addDays(date, days) {
@@ -28,30 +25,29 @@
   }
 
   function getTrimester(weeks) {
-    if (weeks < 0) return { label: '妊娠前', color: '#6b7280' };
-    if (weeks < 16) return { label: '妊娠初期（1〜4ヶ月）', color: '#f59e0b' };
-    if (weeks < 28) return { label: '妊娠中期（5〜7ヶ月）安定期', color: '#22c55e' };
-    if (weeks < 40) return { label: '妊娠後期（8〜10ヶ月）', color: '#3b82f6' };
-    return { label: '出産予定日超過', color: '#ef4444' };
+    if (weeks < 0) return { label: 'Before pregnancy', color: '#6b7280' };
+    if (weeks < 16) return { label: 'First trimester (Months 1-4)', color: '#f59e0b' };
+    if (weeks < 28) return { label: 'Second trimester (Months 5-7)', color: '#22c55e' };
+    if (weeks < 40) return { label: 'Third trimester (Months 8-10)', color: '#3b82f6' };
+    return { label: 'Past due date', color: '#ef4444' };
   }
 
   function buildTimeline(lmpDate) {
     timelineBody.innerHTML = '';
-
     var phases = [
-      { name: '妊娠初期', weeks: '0〜15週', months: '1〜4ヶ月', startWeek: 0, endWeek: 15, features: 'つわり、眠気、胎児の器官形成' },
-      { name: '├ 妊娠超初期', weeks: '0〜3週', months: '1ヶ月', startWeek: 0, endWeek: 3, features: '受精・着床、自覚症状なし' },
-      { name: '├ 妊娠2ヶ月', weeks: '4〜7週', months: '2ヶ月', startWeek: 4, endWeek: 7, features: 'つわり開始、妊娠検査薬で陽性' },
-      { name: '├ 妊娠3ヶ月', weeks: '8〜11週', months: '3ヶ月', startWeek: 8, endWeek: 11, features: 'つわりのピーク、心拍確認' },
-      { name: '└ 妊娠4ヶ月', weeks: '12〜15週', months: '4ヶ月', startWeek: 12, endWeek: 15, features: 'つわり軽減、胎盤完成' },
-      { name: '妊娠中期', weeks: '16〜27週', months: '5〜7ヶ月', startWeek: 16, endWeek: 27, features: '安定期、胎動、お腹のふくらみ' },
-      { name: '├ 妊娠5ヶ月', weeks: '16〜19週', months: '5ヶ月', startWeek: 16, endWeek: 19, features: '安定期入り、胎動を感じ始める' },
-      { name: '├ 妊娠6ヶ月', weeks: '20〜23週', months: '6ヶ月', startWeek: 20, endWeek: 23, features: '胎動活発、性別判明の可能性' },
-      { name: '└ 妊娠7ヶ月', weeks: '24〜27週', months: '7ヶ月', startWeek: 24, endWeek: 27, features: 'お腹が目立つ、足のむくみ' },
-      { name: '妊娠後期', weeks: '28〜39週', months: '8〜10ヶ月', startWeek: 28, endWeek: 39, features: '出産準備、健診頻度増加' },
-      { name: '├ 妊娠8ヶ月', weeks: '28〜31週', months: '8ヶ月', startWeek: 28, endWeek: 31, features: '逆子チェック、産休開始目安' },
-      { name: '├ 妊娠9ヶ月', weeks: '32〜35週', months: '9ヶ月', startWeek: 32, endWeek: 35, features: '出産準備、入院グッズの用意' },
-      { name: '└ 妊娠10ヶ月', weeks: '36〜39週', months: '10ヶ月', startWeek: 36, endWeek: 39, features: '正期産（37週〜）、いつでも出産OK' }
+      { name: 'First trimester', weeks: 'Wk 0-15', months: 'Mo 1-4', startWeek: 0, endWeek: 15, features: 'Morning sickness, drowsiness, organ formation' },
+      { name: '  Early pregnancy', weeks: 'Wk 0-3', months: 'Mo 1', startWeek: 0, endWeek: 3, features: 'Fertilization & implantation, no symptoms' },
+      { name: '  Month 2', weeks: 'Wk 4-7', months: 'Mo 2', startWeek: 4, endWeek: 7, features: 'Morning sickness starts, positive test' },
+      { name: '  Month 3', weeks: 'Wk 8-11', months: 'Mo 3', startWeek: 8, endWeek: 11, features: 'Peak morning sickness, heartbeat confirmed' },
+      { name: '  Month 4', weeks: 'Wk 12-15', months: 'Mo 4', startWeek: 12, endWeek: 15, features: 'Morning sickness eases, placenta forms' },
+      { name: 'Second trimester', weeks: 'Wk 16-27', months: 'Mo 5-7', startWeek: 16, endWeek: 27, features: 'Stable period, fetal movement, bump shows' },
+      { name: '  Month 5', weeks: 'Wk 16-19', months: 'Mo 5', startWeek: 16, endWeek: 19, features: 'Stable period begins, first fetal movements' },
+      { name: '  Month 6', weeks: 'Wk 20-23', months: 'Mo 6', startWeek: 20, endWeek: 23, features: 'Active fetal movement, gender may be known' },
+      { name: '  Month 7', weeks: 'Wk 24-27', months: 'Mo 7', startWeek: 24, endWeek: 27, features: 'Bump visible, leg swelling' },
+      { name: 'Third trimester', weeks: 'Wk 28-39', months: 'Mo 8-10', startWeek: 28, endWeek: 39, features: 'Birth preparation, more frequent checkups' },
+      { name: '  Month 8', weeks: 'Wk 28-31', months: 'Mo 8', startWeek: 28, endWeek: 31, features: 'Breech check, maternity leave starts' },
+      { name: '  Month 9', weeks: 'Wk 32-35', months: 'Mo 9', startWeek: 32, endWeek: 35, features: 'Birth preparation, pack hospital bag' },
+      { name: '  Month 10', weeks: 'Wk 36-39', months: 'Mo 10', startWeek: 36, endWeek: 39, features: 'Full term (37+ wk), ready for delivery' }
     ];
 
     var today = new Date();
@@ -63,39 +59,29 @@
       var p = phases[i];
       var tr = document.createElement('tr');
       tr.style.borderBottom = '1px solid var(--color-border-light)';
-
-      // Highlight current phase
       if (currentWeeks >= p.startWeek && currentWeeks <= p.endWeek) {
         tr.style.background = 'var(--color-primary-light, #dbeafe)';
       }
-
-      var isMainPhase = p.name.indexOf('├') === -1 && p.name.indexOf('└') === -1;
+      var isMainPhase = p.name.indexOf('  ') !== 0;
       var fontWeight = isMainPhase ? '600' : '400';
-
       var startDate = addDays(lmpDate, p.startWeek * 7);
       var endDate = addDays(lmpDate, (p.endWeek + 1) * 7 - 1);
-      var dateRange = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '〜' + (endDate.getMonth() + 1) + '/' + endDate.getDate();
-
+      var dateRange = (startDate.getMonth() + 1) + '/' + startDate.getDate() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate();
       var tdName = document.createElement('td');
       tdName.style.cssText = 'padding: 8px; text-align: left; font-weight: ' + fontWeight + ';';
       tdName.textContent = p.name;
-
       var tdWeeks = document.createElement('td');
       tdWeeks.style.cssText = 'padding: 8px; text-align: center;';
       tdWeeks.textContent = p.weeks;
-
       var tdMonths = document.createElement('td');
       tdMonths.style.cssText = 'padding: 8px; text-align: center;';
       tdMonths.textContent = p.months;
-
       var tdDate = document.createElement('td');
       tdDate.style.cssText = 'padding: 8px; text-align: center; font-size: 0.8rem;';
       tdDate.textContent = dateRange;
-
       var tdFeatures = document.createElement('td');
       tdFeatures.style.cssText = 'padding: 8px; text-align: left; font-size: 0.8rem;';
       tdFeatures.textContent = p.features;
-
       tr.appendChild(tdName);
       tr.appendChild(tdWeeks);
       tr.appendChild(tdMonths);
@@ -103,65 +89,51 @@
       tr.appendChild(tdFeatures);
       timelineBody.appendChild(tr);
     }
-
     timelineSection.hidden = false;
   }
 
   calcBtn.addEventListener('click', function () {
     var dateStr = lastPeriodInput.value;
     if (!dateStr) {
-      alert('最終月経開始日を入力してください。');
+      alert('Please enter the date of your last menstrual period.');
       return;
     }
-
     var lmpDate = new Date(dateStr);
     lmpDate.setHours(0, 0, 0, 0);
-
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-
-    // Due date = LMP + 280 days
     var dueDate = addDays(lmpDate, 280);
-
-    // Current pregnancy weeks and days
     var diffDays = Math.floor((today - lmpDate) / (1000 * 60 * 60 * 24));
-
     if (diffDays < 0) {
-      alert('最終月経開始日が未来の日付です。正しい日付を入力してください。');
+      alert('The date is in the future. Please enter a valid date.');
       return;
     }
-
     if (diffDays > 310) {
-      alert('最終月経開始日が44週以上前です。正しい日付を入力してください。');
+      alert('The date is more than 44 weeks ago. Please enter a valid date.');
       return;
     }
-
     var weeks = Math.floor(diffDays / 7);
     var days = diffDays % 7;
-
-    // Days remaining until due date
     var remaining = Math.floor((dueDate - today) / (1000 * 60 * 60 * 24));
-
     var trimester = getTrimester(weeks);
 
-    currentWeekEl.textContent = '妊娠' + weeks + '週' + days + '日';
+    currentWeekEl.textContent = weeks + ' weeks ' + days + ' days';
     currentWeekEl.style.color = trimester.color;
     dueDateEl.textContent = formatDate(dueDate);
     trimesterEl.textContent = trimester.label;
     trimesterEl.style.color = trimester.color;
 
     if (remaining > 0) {
-      daysRemainingEl.textContent = 'あと' + remaining + '日';
+      daysRemainingEl.textContent = remaining + ' days remaining';
     } else if (remaining === 0) {
-      daysRemainingEl.textContent = '本日が出産予定日です';
+      daysRemainingEl.textContent = 'Today is the due date';
       daysRemainingEl.style.color = '#ef4444';
     } else {
-      daysRemainingEl.textContent = '出産予定日を' + Math.abs(remaining) + '日超過';
+      daysRemainingEl.textContent = Math.abs(remaining) + ' days past due date';
       daysRemainingEl.style.color = '#ef4444';
     }
 
     buildTimeline(lmpDate);
-
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });
   });

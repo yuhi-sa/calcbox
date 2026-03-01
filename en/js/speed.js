@@ -33,29 +33,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateInputVisibility() {
     var mode = getMode();
-    // Show/hide input groups based on mode
     if (mode === 'speed') {
-      // Need distance + time to calculate speed
-      inputDistance.hidden = false;
-      inputSpeed.hidden = true;
-      inputTime.hidden = false;
+      inputDistance.hidden = false; inputSpeed.hidden = true; inputTime.hidden = false;
     } else if (mode === 'distance') {
-      // Need speed + time to calculate distance
-      inputDistance.hidden = true;
-      inputSpeed.hidden = false;
-      inputTime.hidden = false;
+      inputDistance.hidden = true; inputSpeed.hidden = false; inputTime.hidden = false;
     } else {
-      // Need speed + distance to calculate time
-      inputDistance.hidden = false;
-      inputSpeed.hidden = false;
-      inputTime.hidden = true;
+      inputDistance.hidden = false; inputSpeed.hidden = false; inputTime.hidden = true;
     }
   }
 
   for (var i = 0; i < modeRadios.length; i++) {
     modeRadios[i].addEventListener('change', updateInputVisibility);
   }
-
   updateInputVisibility();
 
   function formatTime(totalHours) {
@@ -63,20 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var remainMinutes = (totalHours - h) * 60;
     var m = Math.floor(remainMinutes);
     var s = Math.round((remainMinutes - m) * 60);
-    if (s === 60) {
-      m += 1;
-      s = 0;
-    }
-    if (m === 60) {
-      h += 1;
-      m = 0;
-    }
+    if (s === 60) { m += 1; s = 0; }
+    if (m === 60) { h += 1; m = 0; }
     var parts = [];
-    if (h > 0) parts.push(h + '時間');
-    if (m > 0) parts.push(m + '分');
-    if (s > 0) parts.push(s + '秒');
-    if (parts.length === 0) parts.push('0秒');
-    return parts.join('');
+    if (h > 0) parts.push(h + 'h');
+    if (m > 0) parts.push(m + 'min');
+    if (s > 0) parts.push(s + 'sec');
+    if (parts.length === 0) parts.push('0 sec');
+    return parts.join(' ');
   }
 
   function formatPace(kmh) {
@@ -84,10 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var minutesPerKm = 60 / kmh;
     var mins = Math.floor(minutesPerKm);
     var secs = Math.round((minutesPerKm - mins) * 60);
-    if (secs === 60) {
-      mins += 1;
-      secs = 0;
-    }
+    if (secs === 60) { mins += 1; secs = 0; }
     var secStr = secs < 10 ? '0' + secs : '' + secs;
     return mins + "'" + secStr + '"/km';
   }
@@ -114,79 +94,43 @@ document.addEventListener('DOMContentLoaded', function () {
       var hours = parseFloat(timeHours.value) || 0;
       var minutes = parseFloat(timeMinutes.value) || 0;
       timeH = hours + minutes / 60;
-
-      if (isNaN(distance) || distance < 0) {
-        alert('距離を正しく入力してください。');
-        return;
-      }
-      if (timeH <= 0) {
-        alert('時間を正しく入力してください（0より大きい値）。');
-        return;
-      }
-
+      if (isNaN(distance) || distance < 0) { alert('Please enter a valid distance.'); return; }
+      if (timeH <= 0) { alert('Please enter a valid time (greater than 0).'); return; }
       speed = distance / timeH;
-
       resultSpeed.textContent = roundTo(speed, 2) + ' km/h';
       resultDistance.textContent = roundTo(distance, 2) + ' km';
       resultTime.textContent = formatTime(timeH);
-
       resultSpeedRow.style.fontWeight = 'bold';
       resultDistanceRow.style.fontWeight = '';
       resultTimeRow.style.fontWeight = '';
-
       showConversion(speed);
-
     } else if (mode === 'distance') {
       speed = parseFloat(speedInput.value);
       var hours2 = parseFloat(timeHours.value) || 0;
       var minutes2 = parseFloat(timeMinutes.value) || 0;
       timeH = hours2 + minutes2 / 60;
-
-      if (isNaN(speed) || speed < 0) {
-        alert('速度を正しく入力してください。');
-        return;
-      }
-      if (timeH <= 0) {
-        alert('時間を正しく入力してください（0より大きい値）。');
-        return;
-      }
-
+      if (isNaN(speed) || speed < 0) { alert('Please enter a valid speed.'); return; }
+      if (timeH <= 0) { alert('Please enter a valid time (greater than 0).'); return; }
       distance = speed * timeH;
-
       resultSpeed.textContent = roundTo(speed, 2) + ' km/h';
       resultDistance.textContent = roundTo(distance, 2) + ' km';
       resultTime.textContent = formatTime(timeH);
-
       resultSpeedRow.style.fontWeight = '';
       resultDistanceRow.style.fontWeight = 'bold';
       resultTimeRow.style.fontWeight = '';
-
       showConversion(speed);
-
     } else {
-      // time mode
       speed = parseFloat(speedInput.value);
       distance = parseFloat(distanceInput.value);
-
-      if (isNaN(speed) || speed <= 0) {
-        alert('速度を正しく入力してください（0より大きい値）。');
-        return;
-      }
-      if (isNaN(distance) || distance < 0) {
-        alert('距離を正しく入力してください。');
-        return;
-      }
-
+      if (isNaN(speed) || speed <= 0) { alert('Please enter a valid speed (greater than 0).'); return; }
+      if (isNaN(distance) || distance < 0) { alert('Please enter a valid distance.'); return; }
       timeH = distance / speed;
-
       resultSpeed.textContent = roundTo(speed, 2) + ' km/h';
       resultDistance.textContent = roundTo(distance, 2) + ' km';
       resultTime.textContent = formatTime(timeH);
-
       resultSpeedRow.style.fontWeight = '';
       resultDistanceRow.style.fontWeight = '';
       resultTimeRow.style.fontWeight = 'bold';
-
       showConversion(speed);
     }
 
@@ -195,12 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   resetBtn.addEventListener('click', function () {
-    distanceInput.value = '';
-    speedInput.value = '';
-    timeHours.value = '0';
-    timeMinutes.value = '0';
-    resultSection.hidden = true;
-    resultConversion.hidden = true;
+    distanceInput.value = ''; speedInput.value = '';
+    timeHours.value = '0'; timeMinutes.value = '0';
+    resultSection.hidden = true; resultConversion.hidden = true;
     resultSpeedRow.style.fontWeight = '';
     resultDistanceRow.style.fontWeight = '';
     resultTimeRow.style.fontWeight = '';

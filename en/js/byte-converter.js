@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var html = '<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">';
     html += '<thead><tr>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">単位</th>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">IEC表記</th>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:right;">値</th>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:center;width:60px;">コピー</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">Unit</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">IEC Notation</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:right;">Value</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:center;width:60px;">Copy</th>';
     html += '</tr></thead><tbody>';
 
     var units = isBinary ? binaryUnits : decimalUnits;
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       html += '</td>';
       html += '<td style="padding:10px 12px;border:1px solid var(--color-border);font-family:var(--font-mono);font-size:0.85rem;color:var(--color-text-secondary);">' + (isBinary ? '1024^' + units[i].power : '1000^' + units[i].power) + '</td>';
       html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:right;font-family:var(--font-mono);">' + formattedVal + ' ' + displayLabel + '</td>';
-      html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:center;"><button class="copy-btn" data-value="' + converted + '" style="padding:4px 10px;font-size:0.8rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);">コピー</button></td>';
+      html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:center;"><button class="copy-btn" data-value="' + converted + '" style="padding:4px 10px;font-size:0.8rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);">Copy</button></td>';
       html += '</tr>';
     }
 
@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Also show the other system
     var otherBase = isBinary ? 1000 : 1024;
     var otherUnits = isBinary ? decimalUnits : binaryUnits;
-    var otherLabel = isBinary ? 'デシマル（SI / 1000倍）' : 'バイナリ（IEC / 1024倍）';
+    var otherLabel = isBinary ? 'Decimal (SI / x1000)' : 'Binary (IEC / x1024)';
 
-    html += '<h4 style="margin-top:var(--space-lg);margin-bottom:var(--space-sm);">参考: ' + otherLabel + '</h4>';
+    html += '<h4 style="margin-top:var(--space-lg);margin-bottom:var(--space-sm);">Reference: ' + otherLabel + '</h4>';
     html += '<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">';
     html += '<thead><tr>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">単位</th>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:right;">値</th>';
-    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:center;width:60px;">コピー</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:left;">Unit</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:right;">Value</th>';
+    html += '<th style="padding:10px 12px;border:1px solid var(--color-border);background:var(--color-bg-secondary);text-align:center;width:60px;">Copy</th>';
     html += '</tr></thead><tbody>';
 
     for (var j = 0; j < otherUnits.length; j++) {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
       html += '<tr>';
       html += '<td style="padding:10px 12px;border:1px solid var(--color-border);font-weight:bold;">' + otherDisplayLabel + '</td>';
       html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:right;font-family:var(--font-mono);">' + otherFormattedVal + ' ' + otherDisplayLabel + '</td>';
-      html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:center;"><button class="copy-btn" data-value="' + otherConverted + '" style="padding:4px 10px;font-size:0.8rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);">コピー</button></td>';
+      html += '<td style="padding:10px 12px;border:1px solid var(--color-border);text-align:center;"><button class="copy-btn" data-value="' + otherConverted + '" style="padding:4px 10px;font-size:0.8rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);">Copy</button></td>';
       html += '</tr>';
     }
 
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(val).then(function () {
               var original = btn.textContent;
-              btn.textContent = '済';
+              btn.textContent = 'OK';
               setTimeout(function () {
                 btn.textContent = original;
               }, 1500);

@@ -300,13 +300,13 @@ document.addEventListener('DOMContentLoaded', function () {
     hideError();
     var raw = sqlInput.value.trim();
     if (!raw) {
-      showError('SQL文を入力してください。');
+      showError('Please enter a SQL statement.');
       return;
     }
     var formatted = formatSql(raw);
     plainResult = formatted;
     sqlOutput.innerHTML = highlightKeywords(formatted);
-    resultInfo.textContent = '整形済み';
+    resultInfo.textContent = 'Formatted';
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });
   });
@@ -315,13 +315,13 @@ document.addEventListener('DOMContentLoaded', function () {
     hideError();
     var raw = sqlInput.value.trim();
     if (!raw) {
-      showError('SQL文を入力してください。');
+      showError('Please enter a SQL statement.');
       return;
     }
     var minified = minifySql(raw);
     plainResult = minified;
     sqlOutput.innerHTML = highlightKeywords(minified);
-    resultInfo.textContent = '圧縮済み';
+    resultInfo.textContent = 'Minified';
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });
   });

@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var base = parseInt(inputBase.value, 10);
 
     if (!value) {
-      alert('変換する値を入力してください。');
+      alert('Please enter a value to convert.');
       return;
     }
 
     var decimalValue = parseInt(value, base);
 
     if (isNaN(decimalValue) || decimalValue < 0) {
-      alert('入力値が正しくありません。選択した進数に合った値を入力してください。');
+      alert('Invalid input. Please enter a value that matches the selected base.');
       return;
     }
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calcBtn.addEventListener('click', convert);
 
-  // リアルタイム変換
+  // Real-time conversion
   inputValue.addEventListener('input', function () {
     var value = inputValue.value.trim();
     var base = parseInt(inputBase.value, 10);

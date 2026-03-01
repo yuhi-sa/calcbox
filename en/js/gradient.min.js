@@ -66,17 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
       '<input type="color" value="' + color + '" class="stop-color" style="width:48px;height:36px;border:none;cursor:pointer;">' +
       '<input type="number" class="input stop-position" min="0" max="100" value="' + position + '" style="width:80px;" placeholder="%">' +
       '<span style="font-size:0.85rem;color:var(--color-text-secondary);">%</span>' +
-      '<button type="button" class="btn btn--secondary remove-stop" style="padding:6px 12px;font-size:0.85rem;">削除</button>';
+      '<button type="button" class="btn btn--secondary remove-stop" style="padding:6px 12px;font-size:0.85rem;">Remove</button>';
     colorStopsContainer.appendChild(row);
 
     row.querySelector('.stop-color').addEventListener('input', updatePreview);
     row.querySelector('.stop-position').addEventListener('input', updatePreview);
     row.querySelector('.remove-stop').addEventListener('click', function () {
       var rows = colorStopsContainer.querySelectorAll('.color-stop-row');
-      if (rows.length <= 2) {
-        alert('カラーストップは最低2つ必要です。');
-        return;
-      }
+      if (rows.length <= 2) { alert('At least 2 color stops are required.'); return; }
       row.remove();
       updatePreview();
     });
@@ -84,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePreview();
   }
 
-  // Initialize event listeners for existing rows
   var initialRows = colorStopsContainer.querySelectorAll('.color-stop-row');
   for (var i = 0; i < initialRows.length; i++) {
     (function (row) {
@@ -92,10 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
       row.querySelector('.stop-position').addEventListener('input', updatePreview);
       row.querySelector('.remove-stop').addEventListener('click', function () {
         var rows = colorStopsContainer.querySelectorAll('.color-stop-row');
-        if (rows.length <= 2) {
-          alert('カラーストップは最低2つ必要です。');
-          return;
-        }
+        if (rows.length <= 2) { alert('At least 2 color stops are required.'); return; }
         row.remove();
         updatePreview();
       });
@@ -127,23 +120,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   resetBtn.addEventListener('click', function () {
-    // Reset type
     typeRadios[0].checked = true;
     directionGroup.style.display = '';
     radialShapeGroup.style.display = 'none';
-
-    // Reset direction
     directionSelect.value = 'to bottom';
-
-    // Reset shape
     shapeRadios[0].checked = true;
-
-    // Reset color stops
     colorStopsContainer.innerHTML = '';
     addStopRow('#e67e22', 0);
     addStopRow('#3498db', 100);
   });
 
-  // Initial preview
   updatePreview();
 });

@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       freq[key] = (freq[key] || 0) + 1;
       if (freq[key] > maxFreq) maxFreq = freq[key];
     }
-    if (maxFreq <= 1) return 'なし';
+    if (maxFreq <= 1) return 'None';
     var modes = [];
     for (var k in freq) {
       if (freq[k] === maxFreq) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var data = parseData(dataInput.value);
 
     if (data.length === 0) {
-      alert('Valid 数値データを入力してください。');
+      alert('Please enter valid numeric data.');
       return;
     }
 
@@ -100,16 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     statsResults.innerHTML = '';
 
-    addResultItem(statsResults, 'データ数', count);
-    addResultItem(statsResults, '合計', roundTo(sum, 4));
-    addResultItem(statsResults, '平均', roundTo(mean, 4));
-    addResultItem(statsResults, '中央値', roundTo(median, 4));
-    addResultItem(statsResults, '最頻値', mode);
-    addResultItem(statsResults, '最小値', roundTo(min, 4));
-    addResultItem(statsResults, '最大値', roundTo(max, 4));
-    addResultItem(statsResults, '範囲', roundTo(range, 4));
-    addResultItem(statsResults, '分散', roundTo(variance, 4));
-    addResultItem(statsResults, '標準偏差', roundTo(stddev, 4));
+    addResultItem(statsResults, 'Count', count);
+    addResultItem(statsResults, 'Sum', roundTo(sum, 4));
+    addResultItem(statsResults, 'Mean', roundTo(mean, 4));
+    addResultItem(statsResults, 'Median', roundTo(median, 4));
+    addResultItem(statsResults, 'Mode', mode);
+    addResultItem(statsResults, 'Min', roundTo(min, 4));
+    addResultItem(statsResults, 'Max', roundTo(max, 4));
+    addResultItem(statsResults, 'Range', roundTo(range, 4));
+    addResultItem(statsResults, 'Variance', roundTo(variance, 4));
+    addResultItem(statsResults, 'Std Dev', roundTo(stddev, 4));
 
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });

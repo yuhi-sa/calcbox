@@ -22,7 +22,6 @@
       return '';
     }
 
-    // Show/hide dog size selector based on pet type
     function toggleDogSize() {
       var petType = getRadioValue('pet-type');
       dogSizeGroup.hidden = petType !== 'dog';
@@ -32,38 +31,20 @@
       petTypeRadios[i].addEventListener('change', toggleDogSize);
     }
 
-    // Age conversion formulas
-    // Small dog: Year 1=15, Year 2=24, then +4/year
-    // Medium dog: Year 1=15, Year 2=24, then +5/year
-    // Large dog: Year 1=12, Year 2=22, then +6/year
-    // Cat: Year 1=15, Year 2=24, then +4/year
     function calcHumanAge(petAge, type, dogSize) {
       if (petAge <= 0) return 0;
-
       var year1, year2, perYear;
-
       if (type === 'cat') {
-        year1 = 15;
-        year2 = 24;
-        perYear = 4;
+        year1 = 15; year2 = 24; perYear = 4;
       } else {
-        // dog
         if (dogSize === 'large') {
-          year1 = 12;
-          year2 = 22;
-          perYear = 6;
+          year1 = 12; year2 = 22; perYear = 6;
         } else if (dogSize === 'medium') {
-          year1 = 15;
-          year2 = 24;
-          perYear = 5;
+          year1 = 15; year2 = 24; perYear = 5;
         } else {
-          // small
-          year1 = 15;
-          year2 = 24;
-          perYear = 4;
+          year1 = 15; year2 = 24; perYear = 4;
         }
       }
-
       if (petAge <= 1) {
         return Math.round(year1 * petAge);
       } else if (petAge <= 2) {
@@ -74,50 +55,45 @@
     }
 
     function getTypeLabel(type, dogSize) {
-      if (type === 'cat') return '猫';
-      if (dogSize === 'small') return '犬（小型犬）';
-      if (dogSize === 'medium') return '犬（中型犬）';
-      if (dogSize === 'large') return '犬（大型犬）';
-      return '犬';
+      if (type === 'cat') return 'Cat';
+      if (dogSize === 'small') return 'Dog (Small)';
+      if (dogSize === 'medium') return 'Dog (Medium)';
+      if (dogSize === 'large') return 'Dog (Large)';
+      return 'Dog';
     }
 
     function buildTable(type) {
       ageTableHeader.innerHTML = '';
       ageTableBody.innerHTML = '';
-
       var thStyle = 'padding:8px 12px;text-align:center;border:1px solid var(--color-border);';
       var tdStyle = 'padding:8px 12px;text-align:center;border:1px solid var(--color-border);';
 
       if (type === 'dog') {
-        // Dog table with 3 size columns
         ageTableHeader.innerHTML =
-          '<th style="' + thStyle + '">ペット年齢</th>' +
-          '<th style="' + thStyle + '">小型犬</th>' +
-          '<th style="' + thStyle + '">中型犬</th>' +
-          '<th style="' + thStyle + '">大型犬</th>';
-
+          '<th style="' + thStyle + '">Pet age</th>' +
+          '<th style="' + thStyle + '">Small dog</th>' +
+          '<th style="' + thStyle + '">Medium dog</th>' +
+          '<th style="' + thStyle + '">Large dog</th>';
         for (var y = 1; y <= 20; y++) {
           var tr = document.createElement('tr');
           tr.style.backgroundColor = y % 2 === 0 ? 'var(--color-bg-secondary)' : 'var(--color-bg-card)';
           tr.innerHTML =
-            '<td style="' + tdStyle + 'font-weight:600;">' + y + '歳</td>' +
-            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'small') + '歳</td>' +
-            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'medium') + '歳</td>' +
-            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'large') + '歳</td>';
+            '<td style="' + tdStyle + 'font-weight:600;">' + y + ' yrs</td>' +
+            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'small') + ' yrs</td>' +
+            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'medium') + ' yrs</td>' +
+            '<td style="' + tdStyle + '">' + calcHumanAge(y, 'dog', 'large') + ' yrs</td>';
           ageTableBody.appendChild(tr);
         }
       } else {
-        // Cat table with single column
         ageTableHeader.innerHTML =
-          '<th style="' + thStyle + '">ペット年齢</th>' +
-          '<th style="' + thStyle + '">人間換算年齢</th>';
-
+          '<th style="' + thStyle + '">Pet age</th>' +
+          '<th style="' + thStyle + '">Human equivalent</th>';
         for (var c = 1; c <= 20; c++) {
           var catTr = document.createElement('tr');
           catTr.style.backgroundColor = c % 2 === 0 ? 'var(--color-bg-secondary)' : 'var(--color-bg-card)';
           catTr.innerHTML =
-            '<td style="' + tdStyle + 'font-weight:600;">' + c + '歳</td>' +
-            '<td style="' + tdStyle + '">' + calcHumanAge(c, 'cat', '') + '歳</td>';
+            '<td style="' + tdStyle + 'font-weight:600;">' + c + ' yrs</td>' +
+            '<td style="' + tdStyle + '">' + calcHumanAge(c, 'cat', '') + ' yrs</td>';
           ageTableBody.appendChild(catTr);
         }
       }
@@ -127,22 +103,16 @@
       var petType = getRadioValue('pet-type');
       var dogSize = getRadioValue('dog-size');
       var petAge = parseFloat(petAgeInput.value);
-
       if (isNaN(petAge) || petAge < 0 || petAge > 30) {
-        alert('ペットの年齢を正しく入力してください（0〜30歳）。');
+        alert('Please enter a valid pet age (0-30 years).');
         return;
       }
-
       var humanAge = calcHumanAge(petAge, petType, dogSize);
-      humanAgeValue.textContent = '約 ' + humanAge + '歳';
+      humanAgeValue.textContent = 'Approx. ' + humanAge + ' years old';
       petTypeDisplay.textContent = getTypeLabel(petType, dogSize);
-
       resultSection.hidden = false;
-
-      // Build and show table
       buildTable(petType);
       ageTableSection.hidden = false;
-
       resultSection.scrollIntoView({ behavior: 'smooth' });
     });
 

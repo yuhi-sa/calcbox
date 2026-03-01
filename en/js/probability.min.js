@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function formatNumber(num) {
-    if (isNaN(num) || !isFinite(num)) return '計算不可';
+    if (isNaN(num) || !isFinite(num)) return 'N/A';
     if (num > 1e15) return num.toExponential(4);
     return num.toLocaleString();
   }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var n = parseInt(nInput.value, 10);
 
     if (isNaN(n) || n < 0 || n > 170) {
-      alert('nの値を0〜170の範囲で入力してください。');
+      alert('Please enter a value for n between 0 and 170.');
       return;
     }
 
@@ -83,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       var r = parseInt(rInput.value, 10);
       if (isNaN(r) || r < 0) {
-        alert('rの値を0以上の整数で入力してください。');
+        alert('Please enter a non-negative integer for r.');
         return;
       }
       if (r > n) {
-        alert('rはn以下の値を入力してください。');
+        alert('r must be less than or equal to n.');
         return;
       }
 
@@ -119,23 +119,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   presetCoin.addEventListener('click', function () {
     var html = '';
-    html += '<p><strong>コイン投げの確率</strong></p>';
-    html += '<p>表が出る確率: 1/2 = <strong>50.00%</strong></p>';
-    html += '<p>2回連続で表が出る確率: 1/4 = <strong>25.00%</strong></p>';
-    html += '<p>3回連続で表が出る確率: 1/8 = <strong>12.50%</strong></p>';
-    html += '<p>5回中3回表が出る確率: 10/32 = <strong>31.25%</strong></p>';
+    html += '<p><strong>Coin Flip Probabilities</strong></p>';
+    html += '<p>Probability of heads: 1/2 = <strong>50.00%</strong></p>';
+    html += '<p>Heads twice in a row: 1/4 = <strong>25.00%</strong></p>';
+    html += '<p>Heads three times in a row: 1/8 = <strong>12.50%</strong></p>';
+    html += '<p>3 heads out of 5 flips: 10/32 = <strong>31.25%</strong></p>';
     presetDetail.innerHTML = html;
     presetResult.hidden = false;
   });
 
   presetDice.addEventListener('click', function () {
     var html = '';
-    html += '<p><strong>サイコロの確率</strong></p>';
-    html += '<p>特定の目が出る確率: 1/6 ≒ <strong>16.67%</strong></p>';
-    html += '<p>偶数が出る確率: 3/6 = <strong>50.00%</strong></p>';
-    html += '<p>2つのサイコロの合計が7になる確率: 6/36 = <strong>16.67%</strong></p>';
-    html += '<p>2つのサイコロでゾロ目が出る確率: 6/36 = <strong>16.67%</strong></p>';
-    html += '<p>少なくとも1つが6の確率（2個）: 11/36 ≒ <strong>30.56%</strong></p>';
+    html += '<p><strong>Dice Probabilities</strong></p>';
+    html += '<p>Rolling a specific number: 1/6 ≒ <strong>16.67%</strong></p>';
+    html += '<p>Rolling an even number: 3/6 = <strong>50.00%</strong></p>';
+    html += '<p>Sum of two dice equals 7: 6/36 = <strong>16.67%</strong></p>';
+    html += '<p>Doubles with two dice: 6/36 = <strong>16.67%</strong></p>';
+    html += '<p>At least one 6 with two dice: 11/36 ≒ <strong>30.56%</strong></p>';
     presetDetail.innerHTML = html;
     presetResult.hidden = false;
   });
@@ -144,10 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var c = combination(43, 6);
     var prob = 1 / c;
     var html = '';
-    html += '<p><strong>宝くじ（43個から6個を選ぶ）の確率</strong></p>';
-    html += '<p>組み合わせ数 (43C6): <strong>' + formatNumber(c) + ' 通り</strong></p>';
-    html += '<p>全的中の確率: 1/' + formatNumber(c) + ' ≒ <strong>' + (prob * 100).toExponential(2) + '%</strong></p>';
-    html += '<p>5個的中の確率 (6C5 × 37C1 / 43C6): <strong>' + ((combination(6, 5) * combination(37, 1) / c) * 100).toFixed(4) + '%</strong></p>';
+    html += '<p><strong>Lottery (choose 6 from 43)</strong></p>';
+    html += '<p>Number of combinations (43C6): <strong>' + formatNumber(c) + ' ways</strong></p>';
+    html += '<p>Jackpot probability: 1/' + formatNumber(c) + ' ≒ <strong>' + (prob * 100).toExponential(2) + '%</strong></p>';
+    html += '<p>Match 5 of 6 (6C5 x 37C1 / 43C6): <strong>' + ((combination(6, 5) * combination(37, 1) / c) * 100).toFixed(4) + '%</strong></p>';
     presetDetail.innerHTML = html;
     presetResult.hidden = false;
   });

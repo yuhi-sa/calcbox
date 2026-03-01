@@ -5,14 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var calcBtn = document.getElementById('calc-btn');
   var resetBtn = document.getElementById('reset-btn');
   var resultSection = document.getElementById('result');
-
   var resultArea = document.getElementById('result-area');
   var resultTsubo = document.getElementById('result-tsubo');
   var resultJo = document.getElementById('result-jo');
   var resultAre = document.getElementById('result-are');
   var resultHectare = document.getElementById('result-hectare');
 
-  // Field elements
   var fieldSide = document.getElementById('field-side');
   var fieldWidth = document.getElementById('field-width');
   var fieldHeight = document.getElementById('field-height');
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var fieldDiagonal1 = document.getElementById('field-diagonal1');
   var fieldDiagonal2 = document.getElementById('field-diagonal2');
 
-  // Input elements
   var sideInput = document.getElementById('side');
   var widthInput = document.getElementById('width');
   var heightInput = document.getElementById('height');
@@ -36,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var allFields = [fieldSide, fieldWidth, fieldHeight, fieldBase, fieldRadius, fieldTopBase, fieldBottomBase, fieldDiagonal1, fieldDiagonal2];
 
-  // Shape to visible fields mapping
   var shapeFields = {
     'square': [fieldSide],
     'rectangle': [fieldWidth, fieldHeight],
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'rhombus': [fieldDiagonal1, fieldDiagonal2]
   };
 
-  // Update height label based on shape
   var heightLabel = fieldHeight.querySelector('.form-label');
 
   function updateFields() {
@@ -60,11 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
       visibleFields[j].style.display = '';
     }
 
-    // Update height label depending on shape
     if (shape === 'rectangle') {
-      heightLabel.textContent = '縦（m）';
+      heightLabel.textContent = 'Height (m)';
     } else if (shape === 'triangle' || shape === 'trapezoid') {
-      heightLabel.textContent = '高さ（m）';
+      heightLabel.textContent = 'Height (m)';
     }
   }
 
@@ -73,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     resultSection.hidden = true;
   });
 
-  // Initialize fields
   updateFields();
 
   function formatNumber(val) {
@@ -90,62 +83,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (shape === 'square') {
       var side = parseFloat(sideInput.value);
-      if (isNaN(side) || side <= 0) {
-        alert('一辺の長さを正しく入力してください。');
-        return;
-      }
+      if (isNaN(side) || side <= 0) { alert('Please enter a valid side length.'); return; }
       area = side * side;
     } else if (shape === 'rectangle') {
       var w = parseFloat(widthInput.value);
       var h = parseFloat(heightInput.value);
-      if (isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
-        alert('縦と横の長さを正しく入力してください。');
-        return;
-      }
+      if (isNaN(w) || w <= 0 || isNaN(h) || h <= 0) { alert('Please enter valid width and height.'); return; }
       area = w * h;
     } else if (shape === 'triangle') {
       var b = parseFloat(baseInput.value);
       var th = parseFloat(heightInput.value);
-      if (isNaN(b) || b <= 0 || isNaN(th) || th <= 0) {
-        alert('底辺と高さを正しく入力してください。');
-        return;
-      }
+      if (isNaN(b) || b <= 0 || isNaN(th) || th <= 0) { alert('Please enter a valid base and height.'); return; }
       area = b * th / 2;
     } else if (shape === 'circle') {
       var r = parseFloat(radiusInput.value);
-      if (isNaN(r) || r <= 0) {
-        alert('半径を正しく入力してください。');
-        return;
-      }
+      if (isNaN(r) || r <= 0) { alert('Please enter a valid radius.'); return; }
       area = Math.PI * r * r;
     } else if (shape === 'trapezoid') {
       var tb = parseFloat(topBaseInput.value);
       var bb = parseFloat(bottomBaseInput.value);
       var trh = parseFloat(heightInput.value);
-      if (isNaN(tb) || tb <= 0 || isNaN(bb) || bb <= 0 || isNaN(trh) || trh <= 0) {
-        alert('上底・下底・高さを正しく入力してください。');
-        return;
-      }
+      if (isNaN(tb) || tb <= 0 || isNaN(bb) || bb <= 0 || isNaN(trh) || trh <= 0) { alert('Please enter valid top base, bottom base, and height.'); return; }
       area = (tb + bb) * trh / 2;
     } else if (shape === 'rhombus') {
       var d1 = parseFloat(diagonal1Input.value);
       var d2 = parseFloat(diagonal2Input.value);
-      if (isNaN(d1) || d1 <= 0 || isNaN(d2) || d2 <= 0) {
-        alert('対角線の長さを正しく入力してください。');
-        return;
-      }
+      if (isNaN(d1) || d1 <= 0 || isNaN(d2) || d2 <= 0) { alert('Please enter valid diagonal lengths.'); return; }
       area = d1 * d2 / 2;
     }
 
-    // Unit conversions
     var tsubo = area / 3.30579;
     var jo = area / 1.548;
     var are = area / 100;
     var hectare = area / 10000;
 
     resultArea.textContent = formatNumber(area) + ' m\u00B2';
-    resultTsubo.textContent = formatNumber(tsubo) + ' 坪';
-    resultJo.textContent = formatNumber(jo) + ' 畳';
+    resultTsubo.textContent = formatNumber(tsubo) + ' tsubo';
+    resultJo.textContent = formatNumber(jo) + ' jo (tatami)';
     resultAre.textContent = formatNumber(are) + ' a';
     resultHectare.textContent = formatNumber(hectare) + ' ha';
 
@@ -154,15 +128,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   resetBtn.addEventListener('click', function () {
-    sideInput.value = '';
-    widthInput.value = '';
-    heightInput.value = '';
-    baseInput.value = '';
-    radiusInput.value = '';
-    topBaseInput.value = '';
-    bottomBaseInput.value = '';
-    diagonal1Input.value = '';
-    diagonal2Input.value = '';
+    sideInput.value = ''; widthInput.value = ''; heightInput.value = '';
+    baseInput.value = ''; radiusInput.value = ''; topBaseInput.value = '';
+    bottomBaseInput.value = ''; diagonal1Input.value = ''; diagonal2Input.value = '';
     shapeSelect.value = 'square';
     updateFields();
     resultSection.hidden = true;

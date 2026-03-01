@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var after = textAfter.value;
 
     if (!before && !after) {
-      alert('比較するテキストを入力してください。');
+      alert('Please enter text to compare.');
       return;
     }
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var MAX_LINES = 3000;
     if (aLines.length > MAX_LINES || bLines.length > MAX_LINES) {
-      alert('テキストが大きすぎます。各テキストは' + MAX_LINES + '行以内にしてください。');
+      alert('Text is too large. Each text must be ' + MAX_LINES + ' lines or fewer.');
       return;
     }
     var diff = getDiff(aLines, bLines);
@@ -104,21 +104,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    beforeCount.textContent = before.length + ' 文字';
-    afterCount.textContent = after.length + ' 文字';
+    beforeCount.textContent = before.length + ' chars';
+    afterCount.textContent = after.length + ' chars';
     var diff_val = after.length - before.length;
     if (diff_val > 0) {
-      charDiff.textContent = '+' + diff_val + ' 文字';
+      charDiff.textContent = '+' + diff_val + ' chars';
       charDiff.style.color = '#22c55e';
     } else if (diff_val < 0) {
-      charDiff.textContent = diff_val + ' 文字';
+      charDiff.textContent = diff_val + ' chars';
       charDiff.style.color = '#ef4444';
     } else {
-      charDiff.textContent = '0 文字（変更なし）';
+      charDiff.textContent = '0 chars (no change)';
       charDiff.style.color = '';
     }
-    addedLines.textContent = '+' + added + ' 行';
-    removedLines.textContent = '-' + removed + ' 行';
+    addedLines.textContent = '+' + added + ' lines';
+    removedLines.textContent = '-' + removed + ' lines';
 
     diffResult.innerHTML = html;
     resultSection.hidden = false;

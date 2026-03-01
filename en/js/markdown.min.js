@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
   copyHtmlBtn.addEventListener('click', function () {
     var html = mdPreview.innerHTML;
     if (!html.trim()) {
-      alert('プレビューが空です。マークダウンを入力してください。');
+      alert('Preview is empty. Please enter some Markdown.');
       return;
     }
     CalcBox.copy.copyText(html);

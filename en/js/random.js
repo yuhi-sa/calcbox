@@ -29,15 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var count = parseInt(countInput.value, 10);
 
     if (isNaN(min) || isNaN(max)) {
-      alert('最小値と最大値を正しく入力してください。');
+      alert('Please enter valid minimum and maximum values.');
       return;
     }
     if (min > max) {
-      alert('最小値は最大値以下にしてください。');
+      alert('Minimum must be less than or equal to maximum.');
       return;
     }
     if (isNaN(count) || count < 1 || count > 1000) {
-      alert('生成個数は1〜1000の範囲で入力してください。');
+      alert('Please enter a count between 1 and 1000.');
       return;
     }
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var unique = uniqueCheck.checked;
 
     if (unique && count > range) {
-      alert('重複なしの場合、生成個数は範囲内の整数の数（' + range + '個）以下にしてください。');
+      alert('When unique is enabled, count must be at most ' + range + ' (the number of integers in the range).');
       return;
     }
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       randomResults.appendChild(tag);
     }
 
-    resultSummary.textContent = count + '個の乱数（' + min + '〜' + max + '）';
+    resultSummary.textContent = count + ' random numbers (' + min + ' - ' + max + ')';
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });
   });
