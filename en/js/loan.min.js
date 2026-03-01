@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    var principal = amountMan * 10000; // Convert 万円 to 円
+    var principal = amountMan * 10000; // Convert ten-thousands to units
     var monthlyRate = annualRate / 100 / 12;
     var totalMonths = years * 12;
     var method = getRepaymentMethod();
