@@ -1,7 +1,7 @@
 {
   "name": "CalcBox - 暮らしに役立つ無料計算ツール集",
   "short_name": "CalcBox",
-  "description": "暮らしに役立つ無料の計算ツール集。BMI計算、消費税、ローン計算など31種類以上。",
+  "description": "暮らしに役立つ無料の計算ツール集。BMI計算、消費税、ローン計算など61種類以上。",
   "start_url": "/calcbox/",
   "scope": "/calcbox/",
   "display": "standalone",

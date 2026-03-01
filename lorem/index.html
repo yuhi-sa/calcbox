@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Lorem Ipsum生成ツール - CalcBox</title>
+  <meta name="description" content="Lorem Ipsumダミーテキストを生成するツール。段落・文・単語数を指定して生成。文字数・単語数カウント表示付き。Webデザインやモックアップ作成に便利。">
+  <meta property="og:title" content="Lorem Ipsum生成ツール - CalcBox">
+  <meta property="og:description" content="Lorem Ipsumダミーテキストを生成するツール。段落・文・単語数を指定して生成。Webデザインやモックアップ作成に便利。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/lorem/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lorem Ipsum生成ツール - CalcBox">
+  <meta name="twitter:description" content="Lorem Ipsumダミーテキストを生成するツール。段落・文・単語数を指定して生成可能。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/lorem/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Lorem Ipsum生成ツール",
+    "description": "Lorem Ipsumダミーテキストを生成するツール。段落・文・単語数を指定して生成可能。",
+    "url": "https://yuhi-sa.github.io/calcbox/lorem/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "Lorem Ipsum生成", "item": "https://yuhi-sa.github.io/calcbox/lorem/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lorem Ipsumとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lorem Ipsumは、印刷やWebデザインの業界で広く使われるダミーテキストです。紀元前45年のキケロの著作「De Finibus Bonorum et Malorum」に由来し、16世紀から使われています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "なぜダミーテキストを使うのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Webデザインや印刷物のレイアウト確認時に、実際のコンテンツがまだない段階でテキストの配置やフォントの見え方を確認するために使います。意味のない文章を使うことで、レイアウトに集中できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "段落・文・単語の指定はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、生成モードとして段落数・文数・単語数を選択でき、それぞれ任意の数を指定してダミーテキストを生成できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "「Lorem ipsum」で始まるテキストを生成できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、「Lorem ipsumで始める」トグルをオンにすると、生成されるテキストの冒頭が「Lorem ipsum dolor sit amet...」で始まります。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Lorem Ipsum生成ツールの使い方",
+    "description": "Lorem Ipsumダミーテキストを生成するツールの使い方を説明します。",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "生成モードを選択",
+        "text": "段落・文・単語のいずれかの生成モードを選択します。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "数量を指定",
+        "text": "生成する段落数・文数・単語数を入力します。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "オプションを設定",
+        "text": "必要に応じて「Lorem ipsumで始める」トグルをオン/オフにします。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "テキストを生成",
+        "text": "「生成する」ボタンを押すとダミーテキストが生成されます。コピーボタンで簡単にコピーできます。"
+      }
+    ],
+    "tool": {
+      "@type": "HowToTool",
+      "name": "CalcBox Lorem Ipsum生成ツール"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">通貨換算</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">エンコード・デコード</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">正規表現テスター</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IPアドレス・サブネット計算</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">確率・組み合わせ計算</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSSグラデーション生成</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">マークダウンプレビュー</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">テキスト差分比較</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">ローン比較計算</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">栄養素・カロリー計算</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID生成</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unixタイムスタンプ変換</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWTデコーダー</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron式パーサー</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmodパーミッション計算</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON変換</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQLフォーマッター</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">バイト単位変換</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTPステータスコード</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum生成</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">Lorem Ipsum生成</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Lorem Ipsum生成ツール</h1>
+      <p class="tool__lead">Lorem Ipsumダミーテキストを生成します。段落・文・単語数を指定でき、Webデザインやモックアップ作成に便利です。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="mode-select">生成モード</label>
+          <select class="input" id="mode-select" style="max-width:200px;">
+            <option value="paragraphs">段落</option>
+            <option value="sentences">文</option>
+            <option value="words">単語</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="count-input">数量</label>
+          <input class="input" id="count-input" type="number" min="1" max="100" value="3" style="max-width:150px;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <input type="checkbox" id="start-lorem" checked> 「Lorem ipsum」で始める
+          </label>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="generate-btn" type="button">生成する</button>
+        </div>
+
+        <div id="error-msg" hidden style="margin-top:var(--space-md);padding:var(--space-md);background:var(--color-error-bg);border:1.5px solid var(--color-error-border);border-radius:var(--radius-sm);font-size:0.9rem;color:var(--color-accent);"></div>
+
+        <div class="result" id="result" hidden>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-md);flex-wrap:wrap;gap:var(--space-sm);">
+            <span id="result-info" style="font-size:0.85rem;color:var(--color-text-secondary);"></span>
+            <button class="btn btn--secondary" id="copy-btn" type="button" style="padding:6px 14px;font-size:0.85rem;">コピー</button>
+          </div>
+          <div id="lorem-output" style="background:var(--color-bg-secondary);padding:var(--space-md);border-radius:var(--radius-sm);font-size:0.9rem;line-height:1.8;white-space:pre-wrap;word-break:break-all;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">Lorem Ipsum生成ツールの使い方</h2>
+      <div class="section__content">
+        <p>Lorem Ipsum生成ツールは、Webデザインや印刷物のレイアウト確認に使えるダミーテキストを生成するための無料ツールです。</p>
+
+        <h3>生成モード</h3>
+        <p>段落・文・単語の3つのモードから選択できます。段落モードでは複数の文からなる段落を生成し、文モードでは個別の文を生成、単語モードでは指定数の単語を生成します。</p>
+
+        <h3>Lorem ipsumで始める</h3>
+        <p>トグルをオンにすると、生成テキストの冒頭が伝統的な「Lorem ipsum dolor sit amet, consectetur adipiscing elit...」で始まります。</p>
+
+        <h3>文字数・単語数カウント</h3>
+        <p>生成されたテキストの文字数と単語数が自動的に表示されます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. Lorem Ipsumとは何ですか？</h3>
+        <p>A. Lorem Ipsumは、印刷やWebデザインの業界で広く使われるダミーテキストです。紀元前45年のキケロの著作に由来し、16世紀から使われています。</p>
+        <h3>Q. なぜダミーテキストを使うのですか？</h3>
+        <p>A. レイアウト確認時に、実際のコンテンツがまだない段階でテキストの配置やフォントの見え方を確認するために使います。</p>
+        <h3>Q. 段落・文・単語の指定はできますか？</h3>
+        <p>A. はい、生成モードとして段落数・文数・単語数を選択でき、それぞれ任意の数を指定して生成できます。</p>
+        <h3>Q. 「Lorem ipsum」で始まるテキストを生成できますか？</h3>
+        <p>A. はい、「Lorem ipsumで始める」トグルをオンにすると、冒頭が「Lorem ipsum dolor sit amet...」で始まります。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="../random/" class="related-tools__link">乱数生成器</a></li>
+        <li><a href="../markdown/" class="related-tools__link">マークダウンプレビュー</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+            <li><a href="../currency/" class="footer__link">通貨換算</a></li>
+            <li><a href="../encode/" class="footer__link">エンコード・デコード</a></li>
+            <li><a href="../regex/" class="footer__link">正規表現テスター</a></li>
+            <li><a href="../ip-calc/" class="footer__link">IPアドレス計算</a></li>
+            <li><a href="../probability/" class="footer__link">確率・組み合わせ</a></li>
+            <li><a href="../gradient/" class="footer__link">グラデーション生成</a></li>
+            <li><a href="../markdown/" class="footer__link">マークダウン</a></li>
+            <li><a href="../diff/" class="footer__link">テキスト差分比較</a></li>
+            <li><a href="../loan-compare/" class="footer__link">ローン比較</a></li>
+            <li><a href="../nutrition/" class="footer__link">栄養素計算</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID生成</a></li>
+            <li><a href="../timestamp/" class="footer__link">タイムスタンプ変換</a></li>
+            <li><a href="../jwt/" class="footer__link">JWTデコーダー</a></li>
+            <li><a href="../cron/" class="footer__link">Cron式パーサー</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod計算</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON変換</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQLフォーマッター</a></li>
+            <li><a href="../byte-converter/" class="footer__link">バイト単位変換</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTPステータス</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/lorem.min.js"></script>
+</body>
+</html>

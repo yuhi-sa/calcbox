@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>UUID生成ツール（v4） - CalcBox</title>
+  <meta name="description" content="UUID v4をブラウザ上で生成するツール。一括生成（最大100個）、UUIDのバリデーション機能付き。すべての処理はブラウザ内で完結します。">
+  <meta property="og:title" content="UUID生成ツール（v4） - CalcBox">
+  <meta property="og:description" content="UUID v4をブラウザ上で生成するツール。一括生成（最大100個）、UUIDのバリデーション機能付き。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/uuid/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UUID生成ツール（v4） - CalcBox">
+  <meta name="twitter:description" content="UUID v4をブラウザ上で生成するツール。一括生成（最大100個）、UUIDのバリデーション機能付き。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/uuid/">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "UUID生成ツール",
+    "description": "UUID v4をブラウザ上で生成するツール。一括生成・バリデーション機能付き。",
+    "url": "https://yuhi-sa.github.io/calcbox/uuid/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/"},
+      {"@type": "ListItem", "position": 2, "name": "UUID生成ツール", "item": "https://yuhi-sa.github.io/calcbox/uuid/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "UUIDとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UUID（Universally Unique Identifier）は、128ビットの一意な識別子です。データベースの主キーやAPIのリクエストIDなど、重複しない識別子が必要な場面で広く使われています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "UUID v4はどのように生成されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UUID v4は暗号学的に安全な乱数を使って生成されます。このツールではブラウザのcrypto.getRandomValues()を使用しており、高い一意性が保証されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "生成したUUIDはサーバーに送信されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、すべての処理はブラウザ内で完結します。生成されたUUIDがサーバーに送信されることはありません。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "UUID生成ツールの使い方",
+    "description": "UUID v4を簡単に生成できるツールです。一括生成やバリデーション機能もあります。",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "生成個数を指定する",
+        "text": "生成したいUUIDの個数を1～100の範囲で入力します。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "「生成」ボタンを押す",
+        "text": "「生成」ボタンを押すと、指定した個数のUUID v4が生成されます。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "UUIDをコピーする",
+        "text": "各UUIDの横にあるコピーボタンで個別にコピーしたり、「すべてコピー」でまとめてコピーできます。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "UUIDを検証する",
+        "text": "「UUID検証」欄に文字列を入力すると、正しいUUID形式かどうかを判定します。"
+      }
+    ],
+    "tool": {
+      "@type": "HowToTool",
+      "name": "CalcBox UUID生成ツール"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="メインナビゲーション">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI計算</a></li>
+            <li><a href="../days/" class="nav__link">日数計算</a></li>
+            <li><a href="../tax/" class="nav__link">消費税</a></li>
+            <li><a href="../loan/" class="nav__link">ローン</a></li>
+            <li><a href="../electricity/" class="nav__link">電気代</a></li>
+            <li><a href="../unit/" class="nav__link">単位変換</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="テーマ切替">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI計算・適正体重</a></li>
+      <li><a href="../days/" class="mobile-nav__link">日数計算</a></li>
+      <li><a href="../age/" class="mobile-nav__link">年齢計算</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">消費カロリー計算</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">割り勘計算</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">消費税計算</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">ローン計算</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">電気代計算</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">単位変換</a></li>
+      <li><a href="../time/" class="mobile-nav__link">時間計算</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">ペット年齢換算</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">割引計算</a></li>
+      <li><a href="../password/" class="mobile-nav__link">パスワード生成</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">文字数カウント</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">複利計算</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">体脂肪率計算</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">進数変換</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">給与手取り計算</a></li>
+      <li><a href="../area/" class="mobile-nav__link">面積計算</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">色変換</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">速度計算</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">和暦西暦変換</a></li>
+      <li><a href="../random/" class="mobile-nav__link">乱数生成器</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">統計計算</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON整形</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QRコード生成</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">タイムゾーン変換</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">カウントダウン</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">ストップウォッチ</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">ハッシュ生成</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">年齢早見表</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">ふるさと納税計算</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">住宅ローン控除</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">妊娠週数計算</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">睡眠時間計算</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">基礎代謝計算</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">バイト代計算</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">ポイント還元</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">年金シミュレーション</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">アルコール分解計算</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">理想体重計算</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">通貨換算</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">エンコード・デコード</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">正規表現テスター</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IPアドレス・サブネット計算</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">確率・組み合わせ計算</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSSグラデーション生成</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">マークダウンプレビュー</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">テキスト差分比較</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">ローン比較計算</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">栄養素・カロリー計算</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID生成</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unixタイムスタンプ変換</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWTデコーダー</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron式パーサー</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmodパーミッション計算</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON変換</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQLフォーマッター</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">バイト単位変換</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTPステータスコード</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum生成</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">サイトについて</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../">ホーム</a></li>
+        <li aria-current="page">UUID生成ツール</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">UUID生成ツール</h1>
+      <p class="tool__lead">UUID v4を暗号学的に安全な乱数で生成します。一括生成（最大100個）やUUIDのバリデーションも可能です。</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="uuid-count">生成個数</label>
+          <input class="input" type="number" id="uuid-count" min="1" max="100" value="1" style="max-width:120px;">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="generate-btn" type="button">生成</button>
+          <button class="btn btn--secondary" id="copy-all-btn" type="button" hidden>すべてコピー</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div id="uuid-list"></div>
+        </div>
+
+        <hr style="margin:var(--space-lg) 0;border:none;border-top:1px solid var(--color-border);">
+
+        <div class="form-group">
+          <label class="form-label" for="uuid-validate">UUID検証</label>
+          <input class="input" type="text" id="uuid-validate" placeholder="例: 550e8400-e29b-41d4-a716-446655440000">
+        </div>
+        <div id="validate-result" style="margin-top:var(--space-sm);font-size:0.9rem;"></div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">UUID生成ツールの使い方</h2>
+      <div class="section__content">
+        <p>UUID生成ツールは、UUID v4（ランダムベース）を安全に生成するための無料ツールです。データベースの主キーやAPIのリクエストIDなどにご活用ください。</p>
+        <h3>UUID v4の生成</h3>
+        <p>生成個数を指定して「生成」ボタンを押すと、crypto.getRandomValues()を使用した暗号学的に安全なUUID v4が生成されます。</p>
+        <h3>一括生成</h3>
+        <p>1～100個のUUIDをまとめて生成できます。「すべてコピー」ボタンで一括コピーも可能です。</p>
+        <h3>UUIDの検証</h3>
+        <p>UUID検証欄に文字列を入力すると、正しいUUID形式（v1～v5）かどうかを判定します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">よくある質問（FAQ）</h2>
+      <div class="section__content">
+        <h3>Q. UUIDとは何ですか？</h3>
+        <p>A. UUID（Universally Unique Identifier）は、128ビットの一意な識別子です。データベースの主キーやAPIのリクエストIDなど、重複しない識別子が必要な場面で広く使われています。</p>
+        <h3>Q. UUID v4はどのように生成されますか？</h3>
+        <p>A. UUID v4は暗号学的に安全な乱数を使って生成されます。このツールではブラウザのcrypto.getRandomValues()を使用しており、高い一意性が保証されます。</p>
+        <h3>Q. 生成したUUIDはサーバーに送信されますか？</h3>
+        <p>A. いいえ、すべての処理はブラウザ内で完結します。生成されたUUIDがサーバーに送信されることはありません。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">関連ツール</h2>
+      <ul class="related-tools__list">
+        <li><a href="../hash/" class="related-tools__link">ハッシュ生成</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="../random/" class="related-tools__link">乱数生成器</a></li>
+        <li><a href="../timestamp/" class="related-tools__link">Unixタイムスタンプ変換</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="広告">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">サイトについて</a></li>
+            <li><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">計算ツール</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI計算</a></li>
+            <li><a href="../days/" class="footer__link">日数計算</a></li>
+            <li><a href="../age/" class="footer__link">年齢計算</a></li>
+            <li><a href="../calorie/" class="footer__link">消費カロリー</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">割り勘計算</a></li>
+            <li><a href="../tax/" class="footer__link">消費税計算</a></li>
+            <li><a href="../loan/" class="footer__link">ローン計算</a></li>
+            <li><a href="../electricity/" class="footer__link">電気代計算</a></li>
+            <li><a href="../unit/" class="footer__link">単位変換</a></li>
+            <li><a href="../time/" class="footer__link">時間計算</a></li>
+            <li><a href="../pet-age/" class="footer__link">ペット年齢換算</a></li>
+            <li><a href="../discount/" class="footer__link">割引計算</a></li>
+            <li><a href="../password/" class="footer__link">パスワード生成</a></li>
+            <li><a href="../character-count/" class="footer__link">文字数カウント</a></li>
+            <li><a href="../compound-interest/" class="footer__link">複利計算</a></li>
+            <li><a href="../body-fat/" class="footer__link">体脂肪率計算</a></li>
+            <li><a href="../base-converter/" class="footer__link">進数変換</a></li>
+            <li><a href="../salary/" class="footer__link">給与手取り計算</a></li>
+            <li><a href="../area/" class="footer__link">面積計算</a></li>
+            <li><a href="../color-converter/" class="footer__link">色変換</a></li>
+            <li><a href="../speed/" class="footer__link">速度計算</a></li>
+            <li><a href="../wareki/" class="footer__link">和暦西暦変換</a></li>
+            <li><a href="../random/" class="footer__link">乱数生成器</a></li>
+            <li><a href="../statistics/" class="footer__link">統計計算</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON整形</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QRコード生成</a></li>
+            <li><a href="../timezone/" class="footer__link">タイムゾーン変換</a></li>
+            <li><a href="../countdown/" class="footer__link">カウントダウン</a></li>
+            <li><a href="../stopwatch/" class="footer__link">ストップウォッチ</a></li>
+            <li><a href="../hash/" class="footer__link">ハッシュ生成</a></li>
+            <li><a href="../age-table/" class="footer__link">年齢早見表</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">ふるさと納税計算</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">住宅ローン控除</a></li>
+            <li><a href="../pregnancy/" class="footer__link">妊娠週数計算</a></li>
+            <li><a href="../sleep/" class="footer__link">睡眠時間計算</a></li>
+            <li><a href="../bmr/" class="footer__link">基礎代謝計算</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">バイト代計算</a></li>
+            <li><a href="../point-reward/" class="footer__link">ポイント還元</a></li>
+            <li><a href="../pension/" class="footer__link">年金シミュレーション</a></li>
+            <li><a href="../alcohol/" class="footer__link">アルコール分解計算</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">理想体重計算</a></li>
+            <li><a href="../currency/" class="footer__link">通貨換算</a></li>
+            <li><a href="../encode/" class="footer__link">エンコード・デコード</a></li>
+            <li><a href="../regex/" class="footer__link">正規表現テスター</a></li>
+            <li><a href="../ip-calc/" class="footer__link">IPアドレス計算</a></li>
+            <li><a href="../probability/" class="footer__link">確率・組み合わせ</a></li>
+            <li><a href="../gradient/" class="footer__link">グラデーション生成</a></li>
+            <li><a href="../markdown/" class="footer__link">マークダウン</a></li>
+            <li><a href="../diff/" class="footer__link">テキスト差分比較</a></li>
+            <li><a href="../loan-compare/" class="footer__link">ローン比較</a></li>
+            <li><a href="../nutrition/" class="footer__link">栄養素計算</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID生成</a></li>
+            <li><a href="../timestamp/" class="footer__link">タイムスタンプ変換</a></li>
+            <li><a href="../jwt/" class="footer__link">JWTデコーダー</a></li>
+            <li><a href="../cron/" class="footer__link">Cron式パーサー</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod計算</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON変換</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQLフォーマッター</a></li>
+            <li><a href="../byte-converter/" class="footer__link">バイト単位変換</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTPステータス</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/uuid.min.js"></script>
+</body>
+</html>
