@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Loan Calculator Simulation (Free) - CalcBox</title>
+  <meta name="description" content="Easily simulate mortgage, auto loan, and other loan repayments. Calculate monthly payment, total payment, and total interest from loan amount, interest rate, and term. Includes yearly amortization table.">
+  <meta property="og:title" content="Loan Calculator Simulation (Free) - CalcBox">
+  <meta property="og:description" content="Easily simulate mortgage, auto loan, and other loan repayments. Calculate monthly payment, total payment, and total interest from loan amount, interest rate, and term.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/loan/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Loan Calculator Simulation (Free) - CalcBox">
+  <meta name="twitter:description" content="Easily simulate mortgage, auto loan, and other loan repayments. Calculate monthly payment, total payment, and total interest.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/loan/">
+  <link rel="alternate" hreflang="ja" href="https://yuhi-sa.github.io/calcbox/loan/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/loan/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/loan/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan Calculator Simulation",
+    "description": "Easily simulate mortgage, auto loan, and other loan repayments. Calculate monthly payment, total payment, and total interest from loan amount, interest rate, and term.",
+    "url": "https://yuhi-sa.github.io/calcbox/en/loan/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "Loan Calculator Simulation", "item": "https://yuhi-sa.github.io/calcbox/en/loan/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which is better: equal payment (fixed monthly) or equal principal repayment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In terms of total repayment, equal principal repayment results in less total interest. However, the initial monthly burden is higher. If you have financial flexibility, equal principal repayment saves more. If you prefer consistent monthly payments, equal payment (fixed monthly) is more suitable. Choose based on your financial plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the calculator support bonus repayments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The current version supports only monthly repayments. To account for bonus payments, subtract the bonus repayment portion from the total loan amount and simulate separately. For example, for a 30M JPY loan with 5M JPY in bonus repayment, calculate 25M JPY first, then calculate the 5M JPY portion separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why might the actual repayment differ from the calculation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool provides estimates. Actual repayment amounts may differ slightly due to the financial institution's rounding methods, repayment start date, and accrued interest calculation. For variable rate loans, payments change at rate reviews. Please confirm exact amounts with your lender. Use this tool as a guideline for repayment planning."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use the Loan Calculator",
+    "description": "The Loan Calculator Simulation is a free online tool that lets you easily estimate repayment amounts for mortgages, auto loans, and other types of loans. Simply enter the loan amount, annual interest rate, and repayment period to instantly calculate monthly payment, total payment, and total interest. A yearly amortization table is also displayed.",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Enter loan details",
+            "text": "Enter the loan amount, annual interest rate, and repayment period to instantly calculate monthly payment, total payment, and total interest."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Review yearly amortization table",
+            "text": "A yearly amortization table is displayed showing the breakdown of each year's payments for repayment planning."
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox Loan Calculator Simulation"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date</a></li>
+            <li><a href="../tax/" class="nav__link">Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit</a></li>
+          </ul>
+        </nav>
+        <a href="../../loan/" class="lang-switch">JA</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill Calculator</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax Calculator</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost Calculator</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age Calculator</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount Calculator</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest Calculator</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat Calculator</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary Calculator (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era Converter</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number Generator</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics Calculator</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code Generator</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone Converter</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown Timer</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Table</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax Calculator (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Loan Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week Calculator</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-Time Pay Calculator (Japan)</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward Calculator</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension Simulator (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism Calculator</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight Calculator</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encode / Decode</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Address Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability Calculator</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSS Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown Preview</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition Calculator</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unix Timestamp Converter</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Expression Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV-JSON Converter</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status Codes</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum Generator</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">Loan Calculator</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Loan Calculator Simulation</h1>
+      <p class="tool__lead">Simply enter the loan amount, interest rate, and repayment period to simulate monthly payments and total repayment amount.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="loan-type">Loan Type</label>
+          <select class="input" id="loan-type">
+            <option value="housing">Mortgage</option>
+            <option value="car">Auto Loan</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loan-amount">Loan Amount (x10,000 JPY)</label>
+          <input class="input" type="number" id="loan-amount" min="1" step="1" placeholder="e.g. 3000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="interest-rate">Annual Interest Rate (%)</label>
+          <input class="input" type="number" id="interest-rate" min="0" max="50" step="0.01" placeholder="e.g. 1.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loan-years">Loan Term (years)</label>
+          <input class="input" type="number" id="loan-years" min="1" max="50" step="1" placeholder="e.g. 35">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Repayment Method</label>
+          <div class="radio-group">
+            <label><input type="radio" name="repayment-method" value="equal-payment" checked> Equal Payment (Fixed Monthly)</label>
+            <label><input type="radio" name="repayment-method" value="equal-principal"> Equal Principal</label>
+          </div>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">Calculate</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label" id="monthly-label">Monthly Payment</span>
+            <span class="result__value" id="monthly-payment"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Total Payment</span>
+            <span class="result__value" id="total-payment"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Total Interest</span>
+            <span class="result__value" id="total-interest"></span>
+          </div>
+        </div>
+
+        <div id="amortization-section" hidden>
+          <h2 class="section__title">Yearly Amortization Table</h2>
+          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
+            <table id="amortization-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
+              <thead>
+                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
+                  <th style="padding: 10px 8px; text-align: center;">Year</th>
+                  <th style="padding: 10px 8px; text-align: right;">Annual Payment</th>
+                  <th style="padding: 10px 8px; text-align: right;">Principal</th>
+                  <th style="padding: 10px 8px; text-align: right;">Interest</th>
+                  <th style="padding: 10px 8px; text-align: right;">Balance</th>
+                </tr>
+              </thead>
+              <tbody id="amortization-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">How to Use the Loan Calculator</h2>
+      <div class="section__content">
+        <p>The Loan Calculator Simulation is a free online tool that lets you easily estimate repayment amounts for mortgages, auto loans, and other types of loans. Simply enter the loan amount, annual interest rate, and repayment period to instantly calculate monthly payment, total payment, and total interest. A yearly amortization table is also displayed for repayment planning.</p>
+
+        <h3>What is Equal Payment (Fixed Monthly)?</h3>
+        <p>Equal payment is a repayment method where the monthly payment (principal + interest) remains constant. Since the payment doesn't change, it's easy to manage your budget. This is the most common method for mortgages. Early in the repayment period, interest makes up a larger portion, and over time, the principal portion increases.</p>
+        <ul>
+          <li>Monthly Payment = Loan Amount x Monthly Rate x (1 + Monthly Rate)^Total Months / ((1 + Monthly Rate)^Total Months - 1)</li>
+          <li>Monthly Rate = Annual Rate / 12</li>
+          <li>Total Months = Years x 12</li>
+        </ul>
+
+        <h3>What is Equal Principal Repayment?</h3>
+        <p>Equal principal repayment is a method where a fixed amount of principal is repaid each month, plus interest on the remaining balance. Initial payments are higher but decrease over time as the balance reduces. Compared to equal payment, total repayment is lower, but the initial payment burden is higher.</p>
+
+        <h3>Mortgage Simulation</h3>
+        <p>Mortgages typically involve large amounts (tens of millions of JPY) and long terms (25-35 years). Interest types include fixed and variable rates. Use this tool to try different rates and terms to find a repayment plan that suits you.</p>
+
+        <h3>Auto Loan Simulation</h3>
+        <p>Auto loans typically range from 1M to 5M JPY with 3 to 7 year terms. Interest rates vary by lender. Compare different scenarios using this simulator to find the best option.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">FAQ</h2>
+      <div class="section__content">
+        <h3>Q. Which is better: equal payment or equal principal repayment?</h3>
+        <p>A. In terms of total repayment, equal principal repayment results in less total interest. However, the initial monthly burden is higher. If you have financial flexibility, equal principal saves more. If you prefer consistent monthly payments, equal payment is more suitable.</p>
+        <h3>Q. Does the calculator support bonus repayments?</h3>
+        <p>A. The current version supports only monthly repayments. To account for bonus payments, subtract the bonus repayment portion from the total loan amount and simulate separately.</p>
+        <h3>Q. Why might the actual repayment differ from the calculation?</h3>
+        <p>A. This tool provides estimates. Actual repayment amounts may differ slightly due to rounding methods, repayment start date, and interest calculation. For variable rate loans, payments change at rate reviews. Please confirm exact amounts with your lender.</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../tax/" class="related-tools__link">Sales Tax Calculator</a></li>
+        <li><a href="../warikan/" class="related-tools__link">Split Bill Calculator</a></li>
+        <li><a href="../loan-compare/" class="related-tools__link">Loan Comparison</a></li>
+        <li><a href="../compound-interest/" class="related-tools__link">Compound Interest Calculator</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculators</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan Calculator</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../discount/" class="footer__link">Discount Calculator</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Interest</a></li>
+            <li><a href="../salary/" class="footer__link">Salary Calculator</a></li>
+            <li><a href="../currency/" class="footer__link">Currency Converter</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON Formatter</a></li>
+            <li><a href="../password/" class="footer__link">Password Generator</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code Generator</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/loan.min.js"></script>
+</body>
+</html>

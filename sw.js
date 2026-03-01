@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calcbox-v4';
+const CACHE_NAME = 'calcbox-v5';
 const BASE_PATH = '/calcbox/';
 
 const PRECACHE_URLS = [
@@ -44,7 +44,23 @@ const PRECACHE_URLS = [
   BASE_PATH + 'http-status/',
   BASE_PATH + 'js/http-status.min.js',
   BASE_PATH + 'lorem/',
-  BASE_PATH + 'js/lorem.min.js'
+  BASE_PATH + 'js/lorem.min.js',
+  BASE_PATH + 'en/',
+  BASE_PATH + 'en/js/common.js',
+  BASE_PATH + 'en/bmi/',
+  BASE_PATH + 'en/js/bmi.min.js',
+  BASE_PATH + 'en/days/',
+  BASE_PATH + 'en/js/days.min.js',
+  BASE_PATH + 'en/tax/',
+  BASE_PATH + 'en/js/tax.min.js',
+  BASE_PATH + 'en/loan/',
+  BASE_PATH + 'en/js/loan.min.js',
+  BASE_PATH + 'en/json-formatter/',
+  BASE_PATH + 'en/js/json-formatter.min.js',
+  BASE_PATH + 'en/hash/',
+  BASE_PATH + 'en/js/hash.min.js',
+  BASE_PATH + 'en/uuid/',
+  BASE_PATH + 'en/js/uuid.min.js'
 ];
 
 self.addEventListener('install', event => {

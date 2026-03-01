@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Discount Calculator (Free) - CalcBox</title>
+  <meta name="description" content="Calculate discounted prices instantly. Supports percent-off, amount-off, and double discount modes. Free online discount calculator.">
+  <meta property="og:title" content="Discount Calculator (Free) - CalcBox">
+  <meta property="og:description" content="Calculate discounted prices instantly. Supports percent-off, amount-off, and double discount modes. Free online discount calculator.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/discount/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Discount Calculator (Free) - CalcBox">
+  <meta name="twitter:description" content="Calculate discounted prices instantly. Supports percent-off, amount-off, and double discount modes. Free online discount calculator.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/discount/">
+  <link rel="alternate" hreflang="ja" href="https://yuhi-sa.github.io/calcbox/discount/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/discount/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/discount/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Discount Calculator",
+    "description": "Calculate discounted prices instantly. Supports percent-off, amount-off, and double discount modes. Free online discount calculator.",
+    "url": "https://yuhi-sa.github.io/calcbox/en/discount/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "Discount Calculator", "item": "https://yuhi-sa.github.io/calcbox/en/discount/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date</a></li>
+            <li><a href="../tax/" class="nav__link">Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit</a></li>
+          </ul>
+        </nav>
+        <a href="../../discount/" class="lang-switch">JA</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill Calculator</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax Calculator</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost Calculator</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age Calculator</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount Calculator</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest Calculator</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat Calculator</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary Calculator (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era Converter</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number Generator</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics Calculator</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code Generator</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone Converter</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown Timer</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Table</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax Calculator (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Loan Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week Calculator</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-Time Pay Calculator (Japan)</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward Calculator</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension Simulator (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism Calculator</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight Calculator</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encode / Decode</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Address Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability Calculator</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSS Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown Preview</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition Calculator</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unix Timestamp Converter</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Expression Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV-JSON Converter</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status Codes</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum Generator</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">Discount Calculator</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Discount Calculator</h1>
+      <p class="tool__lead">Easily calculate discounted prices. Supports percent-off, amount-off, and double discount modes.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="original-price">Original Price</label>
+          <input class="input" type="number" id="original-price" min="0" step="1" placeholder="e.g. 1000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Discount Mode</label>
+          <div class="radio-group">
+            <label><input type="radio" name="calc-mode" value="percent" checked> Percent Off</label>
+            <label><input type="radio" name="calc-mode" value="amount"> Amount Off</label>
+            <label><input type="radio" name="calc-mode" value="double"> Double Discount</label>
+          </div>
+        </div>
+        <div class="form-group" id="percent-group">
+          <label class="form-label" for="discount-percent">Discount Rate (%)</label>
+          <input class="input" type="number" id="discount-percent" min="0" max="100" step="1" placeholder="e.g. 20">
+        </div>
+        <div class="form-group" id="amount-group" hidden>
+          <label class="form-label" for="discount-amount">Discount Amount</label>
+          <input class="input" type="number" id="discount-amount" min="0" step="1" placeholder="e.g. 200">
+        </div>
+        <div class="form-group" id="double-group1" hidden>
+          <label class="form-label" for="discount-percent1">First Discount (%)</label>
+          <input class="input" type="number" id="discount-percent1" min="0" max="100" step="1" placeholder="e.g. 20">
+        </div>
+        <div class="form-group" id="double-group2" hidden>
+          <label class="form-label" for="discount-percent2">Second Discount (%)</label>
+          <input class="input" type="number" id="discount-percent2" min="0" max="100" step="1" placeholder="e.g. 10">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">Calculate</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">Discounted Price</span>
+            <span class="result__value" id="result-price"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Discount Amount</span>
+            <span class="result__value" id="result-discount"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Discount Rate</span>
+            <span class="result__value" id="result-rate"></span>
+          </div>
+          <div class="result__item" id="result-double-detail-item" hidden>
+            <span class="result__label">Effective Combined Rate</span>
+            <span class="result__value" id="result-double-detail"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Display</span>
+            <span class="result__value" id="result-display"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">How to Use the Discount Calculator</h2>
+      <div class="section__content">
+        <p>Enter the original price and discount rate or amount to instantly calculate the discounted price. Supports percent-off, amount-off, and double discount modes.</p>
+        <h3>Double Discount</h3>
+        <p>A double discount applies two successive discounts. For example, 20% off followed by 10% off is NOT the same as 30% off. The effective combined rate is calculated and displayed.</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../tax/" class="related-tools__link">Sales Tax Calculator</a></li>
+        <li><a href="../warikan/" class="related-tools__link">Split Bill Calculator</a></li>
+        <li><a href="../compound-interest/" class="related-tools__link">Compound Interest Calculator</a></li>
+        <li><a href="../currency/" class="related-tools__link">Currency Converter</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculators</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan Calculator</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../discount/" class="footer__link">Discount Calculator</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Interest</a></li>
+            <li><a href="../salary/" class="footer__link">Salary Calculator</a></li>
+            <li><a href="../currency/" class="footer__link">Currency Converter</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON Formatter</a></li>
+            <li><a href="../password/" class="footer__link">Password Generator</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code Generator</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/discount.min.js"></script>
+</body>
+</html>

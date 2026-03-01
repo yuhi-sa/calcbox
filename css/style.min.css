@@ -250,6 +250,25 @@ main {
 }
 
 /* テーマ切替ボタン */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lang-switch:hover {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-primary);
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;

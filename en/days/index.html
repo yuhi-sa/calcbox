@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Date Calculator (Days Between Dates) - CalcBox</title>
+  <meta name="description" content="Calculate the number of days between two dates. Also find what date is X days from today, or count down to an anniversary or event.">
+  <meta property="og:title" content="Date Calculator (Days Between Dates) - CalcBox">
+  <meta property="og:description" content="Calculate the number of days between two dates. Also find what date is X days from today, or count down to an anniversary or event.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/days/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Date Calculator (Days Between Dates) - CalcBox">
+  <meta name="twitter:description" content="Calculate the number of days between two dates. Also find what date is X days from today, or count down to an anniversary or event.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/days/">
+  <link rel="alternate" hreflang="ja" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/days/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/days/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Date Calculator",
+    "description": "Calculate the number of days between two dates. Also find what date is X days from today, or count down to an anniversary or event.",
+    "url": "https://yuhi-sa.github.io/calcbox/en/days/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "Date Calculator", "item": "https://yuhi-sa.github.io/calcbox/en/days/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does the date calculation include the start and end dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool displays the difference in days between the start and end dates. For example, if you specify January 1 to January 3, it shows 2 days. If you want to count inclusively (3 days including January 1), add 1 to the result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are leap years taken into account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, leap years (February 29) are correctly taken into account. The tool uses JavaScript's Date functionality, so leap year dates are handled accurately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate with past dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, past dates can be entered and calculated without any issues. For the days-between calculation, swapping start and end dates still gives the correct number of days. For the days-from-date calculation, entering a negative number will compute a past date."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use the Date Calculator",
+    "description": "The Date Calculator is an online tool that makes various date-related calculations easy. It can be used for travel planning, project duration calculations, anniversary countdowns, and more.",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Calculate days between two dates",
+            "text": "Enter a start date and end date to see the number of days between them, displayed as both total days and weeks + days."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Check the day of the week",
+            "text": "The day of the week for each date is also displayed."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Calculate a date X days from a base date",
+            "text": "Enter a base date and the number of days to calculate a future (or past) date."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Use negative numbers for past dates",
+            "text": "Enter a negative number of days to calculate a date in the past."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "All calculations are performed in the browser",
+            "text": "All calculations are performed instantly in the browser, and no input data is sent to any server."
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox Date Calculator"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="nav__link">Date Calculator</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Converter</a></li>
+          </ul>
+        </nav>
+        <a href="../../days/" class="lang-switch" aria-label="Switch to Japanese">JA</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill Calculator</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax Calculator</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost Calculator</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age Calculator</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount Calculator</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat Calculator</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary Calculator (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era Converter</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number Generator</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics Calculator</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code Generator</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone Converter</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown Timer</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup Table</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Loan Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week Calculator</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay Calculator</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward Calculator</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension Simulator (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism Calculator</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight Calculator</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Address Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability Calculator</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSS Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown Preview</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff Checker</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition Calculator</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unix Timestamp Converter</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Expression Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV ⇔ JSON Converter</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status Codes</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum Generator</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">Date Calculator</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Date Calculator</h1>
+      <p class="tool__lead">Calculate the number of days between two dates, or find what date is a certain number of days from today.</p>
+
+      <div class="tool__body">
+        <!-- Days between dates -->
+        <h2 class="section__title">Days Between Two Dates</h2>
+        <div class="form-group">
+          <label class="form-label" for="start-date">Start Date</label>
+          <input class="input" type="date" id="start-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="end-date">End Date</label>
+          <input class="input" type="date" id="end-date">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-diff-btn" type="button">Calculate Days</button>
+        </div>
+        <div class="result" id="diff-result" hidden>
+          <div class="result__item">
+            <span class="result__label">Days</span>
+            <span class="result__value" id="diff-days"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Weeks and Days</span>
+            <span class="result__value" id="diff-weeks"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Start Date Day of Week</span>
+            <span class="result__value" id="start-weekday"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">End Date Day of Week</span>
+            <span class="result__value" id="end-weekday"></span>
+          </div>
+        </div>
+
+        <!-- Date after X days -->
+        <h2 class="section__title">What Date is X Days From Today?</h2>
+        <div class="form-group">
+          <label class="form-label" for="base-date">Base Date</label>
+          <input class="input" type="date" id="base-date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="add-days">Number of Days (negative for past)</label>
+          <input class="input" type="number" id="add-days" placeholder="e.g. 30">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-add-btn" type="button">Calculate</button>
+        </div>
+        <div class="result" id="add-result" hidden>
+          <div class="result__item">
+            <span class="result__label">Result</span>
+            <span class="result__value" id="add-result-date"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Day of Week</span>
+            <span class="result__value" id="add-result-weekday"></span>
+          </div>
+        </div>
+
+        <!-- Countdown -->
+        <h2 class="section__title">How Many Days Until a Target Date? (Countdown)</h2>
+        <div class="form-group">
+          <label class="form-label" for="target-date">Target Date</label>
+          <input class="input" type="date" id="target-date">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-countdown-btn" type="button">Countdown</button>
+        </div>
+        <div class="result" id="countdown-result" hidden>
+          <div class="result__item">
+            <span class="result__label">Days Remaining</span>
+            <span class="result__value" id="countdown-days"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Target Date Day of Week</span>
+            <span class="result__value" id="countdown-weekday"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">How to Use the Date Calculator</h2>
+      <div class="section__content">
+        <p>The Date Calculator is an online tool that makes various date-related calculations easy. It can be used for travel planning, project duration calculations, anniversary countdowns, and more.</p>
+        <h3>Three Features</h3>
+        <p><strong>1. Days Between Dates</strong>: Enter a start and end date to see the number of days between them, displayed as both "X days" and "X weeks Y days." The day of the week for each date is also shown.</p>
+        <p><strong>2. Date After X Days</strong>: Calculate the date a specified number of days after (or before) a base date. Quickly answer questions like "What date is 100 days from today?" Enter a negative number to calculate past dates.</p>
+        <p><strong>3. Countdown</strong>: Calculate the number of days remaining until a target date. Great for counting down to anniversaries, events, or exam dates.</p>
+        <p>All calculations are performed instantly in the browser, and no input data is sent to any server.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. Does the day count include both the start and end dates?</h3>
+        <p>A. This tool displays the difference between the start and end dates. For example, from January 1 to January 3, the result is 2 days. If you want to count inclusively (3 days), add 1 to the result.</p>
+        <h3>Q. Are leap years taken into account?</h3>
+        <p>A. Yes, leap years (February 29) are correctly handled. The tool uses JavaScript's Date functionality, ensuring accurate leap year calculations.</p>
+        <h3>Q. Can I calculate with past dates?</h3>
+        <p>A. Yes, past dates work perfectly. For the days-between calculation, swapping start and end dates still gives the correct result. For the date-offset calculation, enter a negative number to find a past date.</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../age/" class="related-tools__link">Age Calculator</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI Calculator</a></li>
+        <li><a href="../calorie/" class="related-tools__link">Calorie Calculator</a></li>
+        <li><a href="../warikan/" class="related-tools__link">Split Bill Calculator</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan Calculator</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../character-count/" class="footer__link">Character Counter</a></li>
+            <li><a href="../password/" class="footer__link">Password Generator</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Converter</a></li>
+            <li><a href="../gradient/" class="footer__link">Gradient Generator</a></li>
+            <li><a href="../markdown/" class="footer__link">Markdown</a></li>
+            <li><a href="../diff/" class="footer__link">Text Diff</a></li>
+            <li><a href="../random/" class="footer__link">Random Number</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../probability/" class="footer__link">Probability</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../area/" class="footer__link">Area Calculator</a></li>
+            <li><a href="../speed/" class="footer__link">Speed Calculator</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON Formatter</a></li>
+            <li><a href="../hash/" class="footer__link">Hash Generator</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID Generator</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Converter</a></li>
+            <li><a href="../currency/" class="footer__link">Currency</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/days.min.js"></script>
+</body>
+</html>

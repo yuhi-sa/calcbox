@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>BMI Calculator & Ideal Weight Check (Free) - CalcBox</title>
+  <meta name="description" content="Automatically calculate BMI from height and weight. Includes obesity level assessment and ideal weight. Free online BMI calculator.">
+  <meta property="og:title" content="BMI Calculator & Ideal Weight Check (Free) - CalcBox">
+  <meta property="og:description" content="Automatically calculate BMI from height and weight. Includes obesity level assessment and ideal weight. Free online BMI calculator.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/bmi/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BMI Calculator & Ideal Weight Check (Free) - CalcBox">
+  <meta name="twitter:description" content="Automatically calculate BMI from height and weight. Includes obesity level assessment and ideal weight.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/bmi/">
+  <link rel="alternate" hreflang="ja" href="https://yuhi-sa.github.io/calcbox/bmi/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/bmi/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/bmi/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BMI Calculator & Ideal Weight Check",
+    "description": "Automatically calculate BMI from height and weight. Includes obesity level assessment and ideal weight. Free online BMI calculator.",
+    "url": "https://yuhi-sa.github.io/calcbox/en/bmi/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "isPartOf": {"@type": "WebSite", "name": "CalcBox", "url": "https://yuhi-sa.github.io/calcbox/"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "BMI Calculator & Ideal Weight Check", "item": "https://yuhi-sa.github.io/calcbox/en/bmi/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BMI accurate for people with high muscle mass?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is calculated from height and weight only, so for athletes or people with low body fat, results may differ from actual body fat levels. BMI should be used as a screening indicator, and accurate body composition should be checked separately with a body fat analyzer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can BMI be used for children?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is an indicator designed for adults (18 years and older). For children, other age-appropriate body metrics are used. This tool displays calculation results for adults."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the relationship between ideal weight and BMI 22?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on statistical data showing that the risk of lifestyle-related diseases is lowest at BMI 22, this value is used as the standard for ideal weight. However, individual differences exist, so BMI 22 is only a guideline."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use the BMI Calculator",
+    "description": "BMI (Body Mass Index) is a body fat index calculated from weight and height. It is an international indicator established by the WHO, widely used to assess obesity and underweight in adults.",
+    "step": [
+      {"@type": "HowToStep", "name": "Enter height (cm) and weight (kg)", "text": "Enter your height in centimeters (cm) and weight in kilograms (kg), then press the Calculate button."},
+      {"@type": "HowToStep", "name": "View BMI, obesity level, and ideal weight", "text": "Your BMI value, obesity level assessment, and ideal weight for your height are displayed instantly."}
+    ],
+    "tool": {"@type": "HowToTool", "name": "CalcBox BMI Calculator"}
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="nav__link">Date Calculator</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Converter</a></li>
+          </ul>
+        </nav>
+        <a href="../../bmi/" class="lang-switch" aria-label="Switch to Japanese">JA</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill Calculator</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax Calculator</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost Calculator</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age Calculator</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount Calculator</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat Calculator</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary Calculator (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era Converter</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number Generator</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics Calculator</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code Generator</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone Converter</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown Timer</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup Table</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Loan Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week Calculator</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay Calculator</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward Calculator</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension Simulator (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism Calculator</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight Calculator</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Address Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability Calculator</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSS Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown Preview</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff Checker</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition Calculator</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unix Timestamp Converter</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Expression Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV / JSON Converter</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status Codes</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum Generator</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">BMI Calculator & Ideal Weight Check</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">BMI Calculator & Ideal Weight Check</h1>
+      <p class="tool__lead">Simply enter your height and weight to instantly calculate your BMI, obesity level, and ideal weight.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="height">Height (cm)</label>
+          <input class="input" type="number" id="height" min="100" max="250" step="0.1" placeholder="e.g., 170">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="weight">Weight (kg)</label>
+          <input class="input" type="number" id="weight" min="20" max="300" step="0.1" placeholder="e.g., 65">
+        </div>
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">Calculate</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label">Your BMI</span>
+            <span class="result__value" id="bmi-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Obesity Level</span>
+            <span class="result__value" id="bmi-category"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Ideal Weight (BMI 22)</span>
+            <span class="result__value" id="ideal-weight"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Difference from Ideal</span>
+            <span class="result__value" id="weight-diff"></span>
+          </div>
+        </div>
+
+        <div id="bmi-chart-section" hidden>
+          <h2 class="section__title">BMI Reference Chart</h2>
+          <div class="bmi-chart-wrapper">
+            <table class="bmi-chart" id="bmi-chart">
+              <thead>
+                <tr>
+                  <th>Height \ Weight</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">How to Use the BMI Calculator</h2>
+      <div class="section__content">
+        <p>BMI (Body Mass Index) is a body fat index calculated from weight and height. It is an international indicator established by the WHO, widely used to assess obesity and underweight in adults.</p>
+        <p>Usage is very simple. Enter your height in centimeters (cm) and weight in kilograms (kg), then press the "Calculate" button. Your BMI value, obesity level, and ideal weight for your height are displayed instantly.</p>
+        <h3>BMI Formula</h3>
+        <p>BMI = Weight (kg) / Height (m) squared</p>
+        <p>For example, for a height of 170cm and weight of 65kg: BMI = 65 / (1.70 x 1.70) = 22.5.</p>
+        <h3>WHO BMI Classification</h3>
+        <ul>
+          <li>BMI below 18.5: Underweight</li>
+          <li>BMI 18.5 to 24.9: Normal weight</li>
+          <li>BMI 25.0 to 29.9: Overweight</li>
+          <li>BMI 30.0 to 34.9: Obese (Class I)</li>
+          <li>BMI 35.0 to 39.9: Obese (Class II)</li>
+          <li>BMI 40.0 and above: Obese (Class III)</li>
+        </ul>
+        <p>Statistically, a BMI of 22 is associated with the lowest risk of lifestyle-related diseases. The ideal weight is calculated as: Ideal Weight = Height (m) squared x 22.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. Is BMI accurate for people with high muscle mass?</h3>
+        <p>A. BMI is calculated from height and weight only, so for athletes or people with low body fat percentage, results may differ from actual body fat levels. BMI should be used as a screening indicator, and accurate body composition should be checked separately with a body fat analyzer.</p>
+        <h3>Q. Can BMI be used for children?</h3>
+        <p>A. BMI is an indicator designed for adults (18 years and older). For children, other age-appropriate body metrics are used. This tool displays calculation results for adults.</p>
+        <h3>Q. What is the relationship between ideal weight and BMI 22?</h3>
+        <p>A. Based on statistical data showing that the risk of lifestyle-related diseases is lowest at BMI 22, this value is used as the standard for ideal weight. However, individual differences exist, so BMI 22 is only a guideline. Please consider your overall health condition and medical check-up results.</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../calorie/" class="related-tools__link">Calorie Calculator</a></li>
+        <li><a href="../age/" class="related-tools__link">Age Calculator</a></li>
+        <li><a href="../days/" class="related-tools__link">Date Calculator</a></li>
+        <li><a href="../warikan/" class="related-tools__link">Split Bill Calculator</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan Calculator</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time Calculator</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../bmr/" class="footer__link">BMR</a></li>
+            <li><a href="../sleep/" class="footer__link">Sleep Calculator</a></li>
+            <li><a href="../pregnancy/" class="footer__link">Pregnancy Week</a></li>
+            <li><a href="../alcohol/" class="footer__link">Alcohol Metabolism</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">Ideal Weight</a></li>
+            <li><a href="../nutrition/" class="footer__link">Nutrition</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/bmi.min.js"></script>
+</body>
+</html>

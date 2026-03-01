@@ -1,0 +1,177 @@
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var priceInput = document.getElementById('price');
+  var priceLabel = document.getElementById('price-label');
+  var calcBtn = document.getElementById('calc-btn');
+  var resetBtn = document.getElementById('reset-btn');
+  var resultSection = document.getElementById('result');
+  var resultPrice = document.getElementById('result-price');
+  var resultTax = document.getElementById('result-tax');
+  var resultOriginal = document.getElementById('result-original');
+  var resultPriceLabel = document.getElementById('result-price-label');
+  var resultOriginalLabel = document.getElementById('result-original-label');
+
+  var addItemBtn = document.getElementById('add-item-btn');
+  var calcMultiBtn = document.getElementById('calc-multi-btn');
+  var multiItems = document.getElementById('multi-items');
+  var multiResult = document.getElementById('multi-result');
+  var multiSubtotal = document.getElementById('multi-subtotal');
+  var multiTax = document.getElementById('multi-tax');
+  var multiTotal = document.getElementById('multi-total');
+
+  function getDirection() {
+    var radios = document.querySelectorAll('input[name="calc-direction"]');
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) return radios[i].value;
+    }
+    return 'exclude-to-include';
+  }
+
+  function getTaxRate() {
+    var radios = document.querySelectorAll('input[name="tax-rate"]');
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) return parseFloat(radios[i].value) / 100;
+    }
+    return 0.10;
+  }
+
+  function formatPrice(val) {
+    return Math.floor(val).toLocaleString();
+  }
+
+  function formatPriceDecimal(val) {
+    if (val === Math.floor(val)) {
+      return val.toLocaleString();
+    }
+    return val.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  }
+
+  // Update label when direction changes
+  var directionRadios = document.querySelectorAll('input[name="calc-direction"]');
+  for (var i = 0; i < directionRadios.length; i++) {
+    directionRadios[i].addEventListener('change', function () {
+      var dir = getDirection();
+      if (dir === 'exclude-to-include') {
+        priceLabel.textContent = 'Tax-Exclusive Price';
+      } else {
+        priceLabel.textContent = 'Tax-Inclusive Price';
+      }
+    });
+  }
+
+  calcBtn.addEventListener('click', function () {
+    var price = parseFloat(priceInput.value);
+    if (isNaN(price) || price < 0) {
+      alert('Please enter a valid amount.');
+      return;
+    }
+
+    var rate = getTaxRate();
+    var direction = getDirection();
+    var taxAmount, resultPriceVal, originalVal;
+
+    if (direction === 'exclude-to-include') {
+      // Tax-excluded to tax-included
+      originalVal = price;
+      taxAmount = price * rate;
+      resultPriceVal = price + taxAmount;
+      resultPriceLabel.textContent = 'Tax-Inclusive Price';
+      resultOriginalLabel.textContent = 'Tax-Exclusive Price';
+    } else {
+      // Tax-included to tax-excluded
+      originalVal = price / (1 + rate);
+      taxAmount = price - originalVal;
+      resultPriceVal = price;
+      resultPriceLabel.textContent = 'Tax-Exclusive Price';
+      resultOriginalLabel.textContent = 'Tax-Inclusive Price';
+    }
+
+    if (direction === 'exclude-to-include') {
+      resultPrice.textContent = formatPrice(resultPriceVal);
+      resultTax.textContent = formatPrice(taxAmount);
+      resultOriginal.textContent = formatPrice(originalVal);
+    } else {
+      resultPrice.textContent = formatPriceDecimal(Math.round(originalVal));
+      resultTax.textContent = formatPriceDecimal(Math.round(taxAmount));
+      resultOriginal.textContent = formatPrice(resultPriceVal);
+    }
+
+    resultSection.hidden = false;
+    resultSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  resetBtn.addEventListener('click', function () {
+    priceInput.value = '';
+    resultSection.hidden = true;
+    multiResult.hidden = true;
+    // Reset multi items to single row
+    var rows = multiItems.querySelectorAll('.form-group');
+    for (var i = rows.length - 1; i > 0; i--) {
+      multiItems.removeChild(rows[i]);
+    }
+    var firstRow = rows[0];
+    firstRow.querySelector('.multi-name').value = '';
+    firstRow.querySelector('.multi-price').value = '';
+    firstRow.querySelector('.multi-rate').value = '10';
+  });
+
+  // Multi-item functionality
+  addItemBtn.addEventListener('click', function () {
+    var row = document.createElement('div');
+    row.className = 'form-group';
+    row.style.cssText = 'display: flex; gap: 8px; align-items: flex-end;';
+    row.innerHTML =
+      '<div style="flex: 2;">' +
+        '<input class="input multi-name" type="text" placeholder="e.g. Apple">' +
+      '</div>' +
+      '<div style="flex: 1;">' +
+        '<input class="input multi-price" type="number" min="0" step="1" placeholder="e.g. 500">' +
+      '</div>' +
+      '<div style="flex: 0;">' +
+        '<select class="input multi-rate" style="min-width: 80px;">' +
+          '<option value="10">10%</option>' +
+          '<option value="8">8%</option>' +
+        '</select>' +
+      '</div>' +
+      '<div style="flex: 0;">' +
+        '<button type="button" class="btn btn--secondary remove-item-btn" style="padding: 8px 12px; font-size: 0.85rem;">Remove</button>' +
+      '</div>';
+    multiItems.appendChild(row);
+
+    row.querySelector('.remove-item-btn').addEventListener('click', function () {
+      multiItems.removeChild(row);
+    });
+  });
+
+  calcMultiBtn.addEventListener('click', function () {
+    var prices = multiItems.querySelectorAll('.multi-price');
+    var rates = multiItems.querySelectorAll('.multi-rate');
+    var totalExcluded = 0;
+    var totalTax = 0;
+    var hasValid = false;
+
+    for (var i = 0; i < prices.length; i++) {
+      var p = parseFloat(prices[i].value);
+      if (isNaN(p) || p <= 0) continue;
+      hasValid = true;
+      var r = parseFloat(rates[i].value) / 100;
+      totalExcluded += p;
+      totalTax += Math.floor(p * r);
+    }
+
+    if (!hasValid) {
+      alert('Please enter the price for at least one item.');
+      return;
+    }
+
+    var totalIncluded = totalExcluded + totalTax;
+
+    multiSubtotal.textContent = formatPrice(totalExcluded);
+    multiTax.textContent = formatPrice(totalTax);
+    multiTotal.textContent = formatPrice(totalIncluded);
+
+    multiResult.hidden = false;
+    multiResult.scrollIntoView({ behavior: 'smooth' });
+  });
+});

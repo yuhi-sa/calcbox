@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Stopwatch - Online Timer (Free) - CalcBox</title>
+  <meta name="description" content="Free online stopwatch with lap times. Accurate and easy to use.">
+  <meta property="og:title" content="Stopwatch - Online Timer (Free) - CalcBox">
+  <meta property="og:description" content="Free online stopwatch with lap times. Accurate and easy to use.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/stopwatch/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stopwatch - Online Timer (Free) - CalcBox">
+  <meta name="twitter:description" content="Free online stopwatch with lap times. Accurate and easy to use.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/stopwatch/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/stopwatch/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/stopwatch/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/stopwatch/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ストップウォッチ",
+    "description": "ブラウザで使える高精度ストップウォッチ。ラップタイム記録機能付き。ミリ秒単位で計測可能。",
+    "url": "https://yuhi-sa.github.io/calcbox/en/stopwatch/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "ストップウォッチ", "item": "https://yuhi-sa.github.io/calcbox/en/stopwatch/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "ストップウォッチの精度はどのくらいですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "10ミリ秒（1/100秒）単位で表示更新を行っています。ブラウザのタイマー精度に依存しますが、一般的な用途には十分な精度です。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "ラップタイムは何個まで記録できますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "特に上限はありません。必要なだけラップタイムを記録できます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "ページを閉じても計測は続きますか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "いいえ、ページを閉じると計測はリセットされます。長時間の計測が必要な場合はページを開いたままにしてください。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ストップウォッチの使い方",
+    "description": "ストップウォッチは、ブラウザ上で経過時間を計測するための無料ツールです。ミリ秒（1/100秒）単位の精度で計測でき、ラップタイムの記録にも対応しています。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "「スタート」ボタンで計測を開始し、「ストップ」ボタンで一時停",
+            "text": "「スタート」ボタンで計測を開始し、「ストップ」ボタンで一時停止します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "再度「スタート」を押すと計測を再開できます",
+            "text": "再度「スタート」を押すと計測を再開できます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "「リセット」ボタンで計測をゼロに戻します",
+            "text": "「リセット」ボタンで計測をゼロに戻します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "計測中に「ラップ」ボタンを押すと、その時点の経過時間が記録さ",
+            "text": "計測中に「ラップ」ボタンを押すと、その時点の経過時間が記録されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "各ラップのラップタイム（前回ラップからの経過時間）と合計タイ",
+            "text": "各ラップのラップタイム（前回ラップからの経過時間）と合計タイムが一覧で表示されます。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ストップウォッチ"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date Calc</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Conv.</a></li>
+          </ul>
+        </nav>
+        <a href="../en/stopwatch/" class="lang-switch" aria-label="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Timestamp</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">ストップウォッチ</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Stopwatch</h1>
+      <p class="tool__lead">A free online stopwatch with lap time recording.</p>
+
+      <div class="tool__body">
+        <div id="timer-display" style="text-align:center; padding:32px 16px;">
+          <div id="timer-value" style="font-size:3rem; font-weight:700; font-family:monospace; line-height:1.2; color:var(--color-primary);">
+            00:00:00.00
+          </div>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="start-stop-btn" type="button">スタート</button>
+          <button class="btn btn--secondary" id="lap-btn" type="button" disabled>ラップ</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <div id="lap-section" hidden>
+          <h2 style="font-size:1.1rem; margin:24px 0 12px;">ラップタイム</h2>
+          <div style="overflow-x:auto;">
+            <table class="result-table" style="width:100%;">
+              <thead>
+                <tr>
+                  <th style="text-align:center; padding:8px 12px;">ラップ</th>
+                  <th style="text-align:center; padding:8px 12px;">ラップタイム</th>
+                  <th style="text-align:center; padding:8px 12px;">合計タイム</th>
+                </tr>
+              </thead>
+              <tbody id="lap-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">ストップウォッチの使い方</h2>
+      <div class="section__content">
+        <p>ストップウォッチは、ブラウザ上で経過時間を計測するための無料ツールです。ミリ秒（1/100秒）単位の精度で計測でき、ラップタイムの記録にも対応しています。</p>
+
+        <h3>基本操作</h3>
+        <p>「スタート」ボタンで計測を開始し、「ストップ」ボタンで一時停止します。再度「スタート」を押すと計測を再開できます。「リセット」ボタンで計測をゼロに戻します。</p>
+
+        <h3>ラップ機能</h3>
+        <p>計測中に「ラップ」ボタンを押すと、その時点の経過時間が記録されます。各ラップのラップタイム（前回ラップからの経過時間）と合計タイムが一覧で表示されます。</p>
+
+        <h3>表示形式</h3>
+        <p>時間は「時:分:秒.ミリ秒」（HH:MM:SS.ms）の形式で表示されます。ミリ秒は2桁（1/100秒単位）で表示されます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. ストップウォッチの精度はどのくらいですか？</h3>
+        <p>A. 10ミリ秒（1/100秒）単位で表示更新を行っています。ブラウザのタイマー精度に依存しますが、一般的な用途には十分な精度です。</p>
+        <h3>Q. ラップタイムは何個まで記録できますか？</h3>
+        <p>A. 特に上限はありません。必要なだけラップタイムを記録できます。</p>
+        <h3>Q. ページを閉じても計測は続きますか？</h3>
+        <p>A. いいえ、ページを閉じると計測はリセットされます。長時間の計測が必要な場合はページを開いたままにしてください。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../time/" class="related-tools__link">時間計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+    <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI</a></li>
+            <li><a href="../days/" class="footer__link">Date Calc</a></li>
+            <li><a href="../age/" class="footer__link">Age</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+            <li><a href="../password/" class="footer__link">Password</a></li>
+            <li><a href="../character-count/" class="footer__link">Char Count</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Int.</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Conv.</a></li>
+            <li><a href="../salary/" class="footer__link">Salary</a></li>
+            <li><a href="../area/" class="footer__link">Area</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Conv.</a></li>
+            <li><a href="../speed/" class="footer__link">Speed</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../random/" class="footer__link">Random</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../hash/" class="footer__link">Hash</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID</a></li>
+            <li><a href="../timestamp/" class="footer__link">Timestamp</a></li>
+            <li><a href="../jwt/" class="footer__link">JWT</a></li>
+            <li><a href="../cron/" class="footer__link">Cron</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQL Fmt</a></li>
+            <li><a href="../byte-converter/" class="footer__link">Byte Conv.</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTP Status</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/stopwatch.min.js"></script>
+</body>
+</html>

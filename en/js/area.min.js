@@ -1,0 +1,170 @@
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var shapeSelect = document.getElementById('shape');
+  var calcBtn = document.getElementById('calc-btn');
+  var resetBtn = document.getElementById('reset-btn');
+  var resultSection = document.getElementById('result');
+
+  var resultArea = document.getElementById('result-area');
+  var resultTsubo = document.getElementById('result-tsubo');
+  var resultJo = document.getElementById('result-jo');
+  var resultAre = document.getElementById('result-are');
+  var resultHectare = document.getElementById('result-hectare');
+
+  // Field elements
+  var fieldSide = document.getElementById('field-side');
+  var fieldWidth = document.getElementById('field-width');
+  var fieldHeight = document.getElementById('field-height');
+  var fieldBase = document.getElementById('field-base');
+  var fieldRadius = document.getElementById('field-radius');
+  var fieldTopBase = document.getElementById('field-top-base');
+  var fieldBottomBase = document.getElementById('field-bottom-base');
+  var fieldDiagonal1 = document.getElementById('field-diagonal1');
+  var fieldDiagonal2 = document.getElementById('field-diagonal2');
+
+  // Input elements
+  var sideInput = document.getElementById('side');
+  var widthInput = document.getElementById('width');
+  var heightInput = document.getElementById('height');
+  var baseInput = document.getElementById('base');
+  var radiusInput = document.getElementById('radius');
+  var topBaseInput = document.getElementById('top-base');
+  var bottomBaseInput = document.getElementById('bottom-base');
+  var diagonal1Input = document.getElementById('diagonal1');
+  var diagonal2Input = document.getElementById('diagonal2');
+
+  var allFields = [fieldSide, fieldWidth, fieldHeight, fieldBase, fieldRadius, fieldTopBase, fieldBottomBase, fieldDiagonal1, fieldDiagonal2];
+
+  // Shape to visible fields mapping
+  var shapeFields = {
+    'square': [fieldSide],
+    'rectangle': [fieldWidth, fieldHeight],
+    'triangle': [fieldBase, fieldHeight],
+    'circle': [fieldRadius],
+    'trapezoid': [fieldTopBase, fieldBottomBase, fieldHeight],
+    'rhombus': [fieldDiagonal1, fieldDiagonal2]
+  };
+
+  // Update height label based on shape
+  var heightLabel = fieldHeight.querySelector('.form-label');
+
+  function updateFields() {
+    var shape = shapeSelect.value;
+    var visibleFields = shapeFields[shape] || [];
+
+    for (var i = 0; i < allFields.length; i++) {
+      allFields[i].style.display = 'none';
+    }
+    for (var j = 0; j < visibleFields.length; j++) {
+      visibleFields[j].style.display = '';
+    }
+
+    // Update height label depending on shape
+    if (shape === 'rectangle') {
+      heightLabel.textContent = '縦（m）';
+    } else if (shape === 'triangle' || shape === 'trapezoid') {
+      heightLabel.textContent = '高さ（m）';
+    }
+  }
+
+  shapeSelect.addEventListener('change', function () {
+    updateFields();
+    resultSection.hidden = true;
+  });
+
+  // Initialize fields
+  updateFields();
+
+  function formatNumber(val) {
+    if (val === 0) return '0';
+    if (val >= 1) {
+      return val.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 4 });
+    }
+    return val.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 6 });
+  }
+
+  calcBtn.addEventListener('click', function () {
+    var shape = shapeSelect.value;
+    var area = 0;
+
+    if (shape === 'square') {
+      var side = parseFloat(sideInput.value);
+      if (isNaN(side) || side <= 0) {
+        alert('一辺の長さを正しく入力してください。');
+        return;
+      }
+      area = side * side;
+    } else if (shape === 'rectangle') {
+      var w = parseFloat(widthInput.value);
+      var h = parseFloat(heightInput.value);
+      if (isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+        alert('縦と横の長さを正しく入力してください。');
+        return;
+      }
+      area = w * h;
+    } else if (shape === 'triangle') {
+      var b = parseFloat(baseInput.value);
+      var th = parseFloat(heightInput.value);
+      if (isNaN(b) || b <= 0 || isNaN(th) || th <= 0) {
+        alert('底辺と高さを正しく入力してください。');
+        return;
+      }
+      area = b * th / 2;
+    } else if (shape === 'circle') {
+      var r = parseFloat(radiusInput.value);
+      if (isNaN(r) || r <= 0) {
+        alert('半径を正しく入力してください。');
+        return;
+      }
+      area = Math.PI * r * r;
+    } else if (shape === 'trapezoid') {
+      var tb = parseFloat(topBaseInput.value);
+      var bb = parseFloat(bottomBaseInput.value);
+      var trh = parseFloat(heightInput.value);
+      if (isNaN(tb) || tb <= 0 || isNaN(bb) || bb <= 0 || isNaN(trh) || trh <= 0) {
+        alert('上底・下底・高さを正しく入力してください。');
+        return;
+      }
+      area = (tb + bb) * trh / 2;
+    } else if (shape === 'rhombus') {
+      var d1 = parseFloat(diagonal1Input.value);
+      var d2 = parseFloat(diagonal2Input.value);
+      if (isNaN(d1) || d1 <= 0 || isNaN(d2) || d2 <= 0) {
+        alert('対角線の長さを正しく入力してください。');
+        return;
+      }
+      area = d1 * d2 / 2;
+    }
+
+    // Unit conversions
+    var tsubo = area / 3.30579;
+    var jo = area / 1.548;
+    var are = area / 100;
+    var hectare = area / 10000;
+
+    resultArea.textContent = formatNumber(area) + ' m\u00B2';
+    resultTsubo.textContent = formatNumber(tsubo) + ' 坪';
+    resultJo.textContent = formatNumber(jo) + ' 畳';
+    resultAre.textContent = formatNumber(are) + ' a';
+    resultHectare.textContent = formatNumber(hectare) + ' ha';
+
+    resultSection.hidden = false;
+    resultSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  resetBtn.addEventListener('click', function () {
+    sideInput.value = '';
+    widthInput.value = '';
+    heightInput.value = '';
+    baseInput.value = '';
+    radiusInput.value = '';
+    topBaseInput.value = '';
+    bottomBaseInput.value = '';
+    diagonal1Input.value = '';
+    diagonal2Input.value = '';
+    shapeSelect.value = 'square';
+    updateFields();
+    resultSection.hidden = true;
+  });
+});

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Byte Unit Converter (Free) - CalcBox</title>
+  <meta name="description" content="Convert between byte units: B, KB, MB, GB, TB, PB. Binary and decimal. Free byte converter.">
+  <meta property="og:title" content="Byte Unit Converter (Free) - CalcBox">
+  <meta property="og:description" content="Convert between byte units: B, KB, MB, GB, TB, PB. Binary and decimal. Free byte converter.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/byte-converter/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Byte Unit Converter (Free) - CalcBox">
+  <meta name="twitter:description" content="Convert between byte units: B, KB, MB, GB, TB, PB. Binary and decimal. Free byte converter.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/byte-converter/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/byte-converter/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/byte-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/byte-converter/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "バイト単位変換ツール",
+    "description": "バイト単位を相互変換するツール。バイナリ・デシマル両方に対応。",
+    "url": "https://yuhi-sa.github.io/calcbox/en/byte-converter/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "バイト単位変換", "item": "https://yuhi-sa.github.io/calcbox/en/byte-converter/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "バイナリ（1024）とデシマル（1000）の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "バイナリ方式は1KB=1024Bで計算し、OS上のファイルサイズ表示に使われます。デシマル方式は1KB=1000Bで計算し、ストレージメーカーの容量表示に使われます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "IECとSIの表記の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IEC表記（KiB, MiB, GiB）はバイナリ（1024倍）を明示し、SI表記（KB, MB, GB）はデシマル（1000倍）を指します。混同を避けるためIEC表記が推奨されています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "なぜHDDの容量はOSで表示される値と異なるのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HDDメーカーはデシマル方式（1GB=1,000,000,000B）で表示しますが、OSはバイナリ方式（1GB=1,073,741,824B）で表示するため、差が生じます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "バイト単位変換ツールの使い方",
+    "description": "バイト単位を変換するツールの使い方を説明します。",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "数値を入力",
+        "text": "変換したい数値を入力欄に入力します。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "単位を選択",
+        "text": "入力値の単位をB/KB/MB/GB/TB/PBから選択します。"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "変換結果を確認",
+        "text": "すべての単位への変換結果が自動的に表示されます。バイナリ・デシマル両方の値を確認できます。"
+      }
+    ],
+    "tool": {
+      "@type": "HowToTool",
+      "name": "CalcBox バイト単位変換ツール"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date Calc</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Conv.</a></li>
+          </ul>
+        </nav>
+        <a href="../en/byte-converter/" class="lang-switch" aria-label="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Timestamp</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">バイト単位変換</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Byte Unit Converter</h1>
+      <p class="tool__lead">Convert between byte units (B, KB, MB, GB, TB, PB) in both binary and decimal.</p>
+
+      <div class="tool__body">
+        <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:flex-end;">
+          <div class="form-group" style="flex:1;min-width:150px;">
+            <label class="form-label" for="byte-input">数値</label>
+            <input class="input" id="byte-input" type="number" step="any" placeholder="1024" value="">
+          </div>
+          <div class="form-group" style="min-width:120px;">
+            <label class="form-label" for="unit-select">単位</label>
+            <select class="input" id="unit-select">
+              <option value="0">B (バイト)</option>
+              <option value="1" selected>KB</option>
+              <option value="2">MB</option>
+              <option value="3">GB</option>
+              <option value="4">TB</option>
+              <option value="5">PB</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:var(--space-md);">
+          <label class="form-label">
+            <input type="radio" name="base" value="binary" id="base-binary" checked> バイナリ（1024倍 / IEC）
+          </label>
+          <label class="form-label" style="margin-left:var(--space-md);">
+            <input type="radio" name="base" value="decimal" id="base-decimal"> デシマル（1000倍 / SI）
+          </label>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <h3 style="margin-bottom:var(--space-sm);">変換結果</h3>
+          <div id="result-table"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">バイト単位変換ツールの使い方</h2>
+      <div class="section__content">
+        <p>バイト単位変換ツールは、コンピュータのデータサイズを各種単位に変換するための無料ツールです。</p>
+
+        <h3>バイナリ（1024倍）</h3>
+        <p>OS上のファイルサイズ表示などで使われる方式です。1 KiB = 1,024 B、1 MiB = 1,048,576 Bとなります。</p>
+
+        <h3>デシマル（1000倍）</h3>
+        <p>ストレージメーカーの容量表示で使われる方式です。1 KB = 1,000 B、1 MB = 1,000,000 Bとなります。</p>
+
+        <h3>IECとSI表記</h3>
+        <p>IEC表記（KiB, MiB, GiB）はバイナリ方式を明示し、SI表記（KB, MB, GB）はデシマル方式を指します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. バイナリ（1024）とデシマル（1000）の違いは何ですか？</h3>
+        <p>A. バイナリ方式は1KB=1024Bで計算し、OS上のファイルサイズ表示に使われます。デシマル方式は1KB=1000Bで計算し、ストレージメーカーの容量表示に使われます。</p>
+        <h3>Q. IECとSIの表記の違いは何ですか？</h3>
+        <p>A. IEC表記（KiB, MiB, GiB）はバイナリ（1024倍）を明示し、SI表記（KB, MB, GB）はデシマル（1000倍）を指します。</p>
+        <h3>Q. なぜHDDの容量はOSで表示される値と異なるのですか？</h3>
+        <p>A. HDDメーカーはデシマル方式で表示し、OSはバイナリ方式で表示するため、差が生じます。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
+        <li><a href="../ip-calc/" class="related-tools__link">IPアドレス計算</a></li>
+        <li><a href="../hash/" class="related-tools__link">ハッシュ生成</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+    <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI</a></li>
+            <li><a href="../days/" class="footer__link">Date Calc</a></li>
+            <li><a href="../age/" class="footer__link">Age</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+            <li><a href="../password/" class="footer__link">Password</a></li>
+            <li><a href="../character-count/" class="footer__link">Char Count</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Int.</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Conv.</a></li>
+            <li><a href="../salary/" class="footer__link">Salary</a></li>
+            <li><a href="../area/" class="footer__link">Area</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Conv.</a></li>
+            <li><a href="../speed/" class="footer__link">Speed</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../random/" class="footer__link">Random</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../hash/" class="footer__link">Hash</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID</a></li>
+            <li><a href="../timestamp/" class="footer__link">Timestamp</a></li>
+            <li><a href="../jwt/" class="footer__link">JWT</a></li>
+            <li><a href="../cron/" class="footer__link">Cron</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQL Fmt</a></li>
+            <li><a href="../byte-converter/" class="footer__link">Byte Conv.</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTP Status</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/byte-converter.min.js"></script>
+</body>
+</html>

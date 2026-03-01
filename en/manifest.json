@@ -1,0 +1,27 @@
+{
+  "name": "CalcBox - Free Online Calculator Tools",
+  "short_name": "CalcBox",
+  "description": "Free online calculator tools for everyday use. BMI, tax, loan, unit conversion, and 61+ more tools.",
+  "start_url": "/calcbox/en/",
+  "scope": "/calcbox/en/",
+  "display": "standalone",
+  "background_color": "#fefefe",
+  "theme_color": "#e67e22",
+  "lang": "en",
+  "orientation": "any",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='64' fill='%23e67e22'/%3E%3Crect x='96' y='80' width='320' height='128' rx='16' fill='%23fff'/%3E%3Crect x='112' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='224' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='336' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='112' y='368' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='224' y='368' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='336' y='368' width='64' height='64' rx='8' fill='%2327ae60'/%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='64' fill='%23e67e22'/%3E%3Crect x='96' y='80' width='320' height='128' rx='16' fill='%23fff'/%3E%3Crect x='112' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='224' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='336' y='256' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='112' y='368' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='224' y='368' width='64' height='64' rx='8' fill='%23fff' opacity='.9'/%3E%3Crect x='336' y='368' width='64' height='64' rx='8' fill='%2327ae60'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

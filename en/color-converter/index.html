@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Color Converter - HEX, RGB, HSL (Free) - CalcBox</title>
+  <meta name="description" content="Convert colors between HEX, RGB, and HSL formats. Free online color converter.">
+  <meta property="og:title" content="Color Converter - HEX, RGB, HSL (Free) - CalcBox">
+  <meta property="og:description" content="Convert colors between HEX, RGB, and HSL formats. Free online color converter.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/color-converter/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Color Converter - HEX, RGB, HSL (Free) - CalcBox">
+  <meta name="twitter:description" content="Convert colors between HEX, RGB, and HSL formats. Free online color converter.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/color-converter/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/color-converter/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/color-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/color-converter/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "色変換ツール",
+    "description": "カラーコードを簡単に変換。HEX、RGB、HSLの相互変換に対応。カラーピッカーで色を選んで各形式のコードを取得できる無料オンライン色変換ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/en/color-converter/",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "色変換ツール（HEX・RGB・HSL）（無料）", "item": "https://yuhi-sa.github.io/calcbox/en/color-converter/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "HEXとRGBの違いは何ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HEXとRGBは同じ色を異なる記法で表現したものです。HEXは16進数表記で「#3b82f6」のように書き、RGBは10進数表記で「rgb(59, 130, 246)」のように書きます。どちらも赤・緑・青の3つの値で色を表しており、相互に変換可能です。HEXはHTMLやCSSでの色指定に、RGBはプログラミングやデザインツールでよく使用されます。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "HSLはどのような場面で便利ですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HSLは色の調整を行う際に特に便利です。例えば、同じ色相のまま明度だけを変えてホバーエフェクト用の色を作ったり、彩度を下げてグレーがかった落ち着いた色にしたりすることが直感的にできます。Webデザインでカラーパレットを作成する際にも、HSLベースで考えると統一感のある配色がしやすくなります。"
+              }
+          },
+          {
+              "@type": "Question",
+              "name": "CSSではどのカラーコード形式を使うべきですか？",
+              "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "CSSではHEX、RGB、HSLのいずれも使用できます。短く書けるHEXが最もよく使われていますが、透明度（アルファ値）を指定したい場合はrgba()やhsla()が便利です。チームやプロジェクトのコーディング規約に合わせて選択することをおすすめします。最近のCSSでは、HSLを使った色管理も人気が高まっています。"
+              }
+          }
+      ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "色変換ツールの使い方",
+    "description": "色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "色変換ツールは、Webデザインやグラフィックデザインでよく使",
+            "text": "色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "カラーピッカーで直感的に色を選択するか、各形式の値を直接入力",
+            "text": "カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "CSSでの色指定やデザインツールでの色共有に広く使用されてい",
+            "text": "CSSでの色指定やデザインツールでの色共有に広く使用されています。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "各色の値は0〜255の整数で指定します",
+            "text": "各色の値は0〜255の整数で指定します。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "モニターやディスプレイは光の三原色で色を表示するため、画面表",
+            "text": "モニターやディスプレイは光の三原色で色を表示するため、画面表示に最も直接的な色指定方式です。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox 色変換ツール"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date Calc</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Conv.</a></li>
+          </ul>
+        </nav>
+        <a href="../en/color-converter/" class="lang-switch" aria-label="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Timestamp</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">色変換</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Color Converter</h1>
+      <p class="tool__lead">Convert colors between HEX, RGB, and HSL formats with a live preview.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label" for="color-picker">カラーピッカー</label>
+          <input class="input" type="color" id="color-picker" value="#3b82f6" style="width: 100%; height: 50px; padding: 4px; cursor: pointer;">
+        </div>
+
+        <div id="color-preview" style="width: 100%; height: 80px; border-radius: 8px; margin-bottom: 1rem; background-color: #3b82f6; border: 1px solid var(--color-border);"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="hex-input">HEXコード</label>
+          <div style="display: flex; gap: 8px;">
+            <input class="input" type="text" id="hex-input" value="#3b82f6" placeholder="例: #ff6600" style="flex: 1;">
+            <button class="btn btn--secondary copy-btn" type="button" data-target="hex-input" style="white-space: nowrap;">Copy</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">RGB値</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-r" style="font-size: 0.8rem;">R (0-255)</label>
+              <input class="input" type="number" id="rgb-r" min="0" max="255" value="59">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-g" style="font-size: 0.8rem;">G (0-255)</label>
+              <input class="input" type="number" id="rgb-g" min="0" max="255" value="130">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="rgb-b" style="font-size: 0.8rem;">B (0-255)</label>
+              <input class="input" type="number" id="rgb-b" min="0" max="255" value="246">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">HSL値</label>
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-h" style="font-size: 0.8rem;">H (0-360)</label>
+              <input class="input" type="number" id="hsl-h" min="0" max="360" value="217">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-s" style="font-size: 0.8rem;">S (0-100)</label>
+              <input class="input" type="number" id="hsl-s" min="0" max="100" value="91">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label" for="hsl-l" style="font-size: 0.8rem;">L (0-100)</label>
+              <input class="input" type="number" id="hsl-l" min="0" max="100" value="60">
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section__title" style="margin-top: 2rem;">CSS記法</h2>
+        <div class="result" id="result">
+          <div class="result__item">
+            <span class="result__label">HEX</span>
+            <span class="result__value" id="css-hex" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-hex-text">#3b82f6</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-hex-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">Copy</button>
+            </span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">RGB</span>
+            <span class="result__value" id="css-rgb" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-rgb-text">rgb(59, 130, 246)</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-rgb-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">Copy</button>
+            </span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">HSL</span>
+            <span class="result__value" id="css-hsl" style="display: flex; align-items: center; gap: 8px;">
+              <span id="css-hsl-text">hsl(217, 91%, 60%)</span>
+              <button class="btn btn--secondary copy-btn" type="button" data-copy-text="css-hsl-text" style="padding: 4px 10px; font-size: 0.8rem; white-space: nowrap;">Copy</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">色変換ツールの使い方</h2>
+      <div class="section__content">
+        <p>色変換ツールは、Webデザインやグラフィックデザインでよく使われるカラーコード形式（HEX、RGB、HSL）を相互に変換するための無料オンラインツールです。カラーピッカーで直感的に色を選択するか、各形式の値を直接入力することで、すべての形式が自動的に更新されます。</p>
+
+        <h3>HEX（16進数カラーコード）</h3>
+        <p>HEXカラーコードは、Webデザインで最も広く使われる色の表記方法です。「#」に続く6桁の16進数で色を表現します。先頭2桁が赤（R）、中央2桁が緑（G）、末尾2桁が青（B）を表し、それぞれ00〜FFの値を取ります。例えば「#FF0000」は純粋な赤、「#00FF00」は純粋な緑、「#0000FF」は純粋な青です。CSSでの色指定やデザインツールでの色共有に広く使用されています。</p>
+
+        <h3>RGB（Red, Green, Blue）</h3>
+        <p>RGBは赤（Red）・緑（Green）・青（Blue）の3つの光の原色を組み合わせて色を表現する方式です。各色の値は0〜255の整数で指定します。RGB(255, 0, 0)は赤、RGB(0, 255, 0)は緑、RGB(0, 0, 255)は青を表します。CSSでは「rgb(59, 130, 246)」のような記法で使用します。モニターやディスプレイは光の三原色で色を表示するため、画面表示に最も直接的な色指定方式です。</p>
+
+        <h3>HSL（Hue, Saturation, Lightness）</h3>
+        <p>HSLは色相（Hue）・彩度（Saturation）・明度（Lightness）の3つの要素で色を表現する方式です。色相は0〜360度の角度で色味を指定し（0度=赤、120度=緑、240度=青）、彩度は0〜100%で鮮やかさを、明度は0〜100%で明るさを指定します。人間の色の知覚に近い表現方法のため、「同じ色味で少し明るくしたい」「彩度を落として落ち着いた色にしたい」といった調整が直感的に行えます。</p>
+
+        <h3>コピー機能</h3>
+        <p>各カラーコード形式の横にある「コピー」ボタンをクリックすると、クリップボードに値がコピーされます。CSS記法セクションでは、CSSで直接使用できる形式でコードをコピーできるため、コーディング作業がスムーズに行えます。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. HEXとRGBの違いは何ですか？</h3>
+        <p>A. HEXとRGBは同じ色を異なる記法で表現したものです。HEXは16進数表記で「#3b82f6」のように書き、RGBは10進数表記で「rgb(59, 130, 246)」のように書きます。どちらも赤・緑・青の3つの値で色を表しており、相互に変換可能です。HEXはHTMLやCSSでの色指定に、RGBはプログラミングやデザインツールでよく使用されます。</p>
+        <h3>Q. HSLはどのような場面で便利ですか？</h3>
+        <p>A. HSLは色の調整を行う際に特に便利です。例えば、同じ色相のまま明度だけを変えてホバーエフェクト用の色を作ったり、彩度を下げてグレーがかった落ち着いた色にしたりすることが直感的にできます。Webデザインでカラーパレットを作成する際にも、HSLベースで考えると統一感のある配色がしやすくなります。</p>
+        <h3>Q. CSSではどのカラーコード形式を使うべきですか？</h3>
+        <p>A. CSSではHEX、RGB、HSLのいずれも使用できます。短く書けるHEXが最もよく使われていますが、透明度（アルファ値）を指定したい場合はrgba()やhsla()が便利です。チームやプロジェクトのコーディング規約に合わせて選択することをおすすめします。最近のCSSでは、HSLを使った色管理も人気が高まっています。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../base-converter/" class="related-tools__link">進数変換</a></li>
+        <li><a href="../character-count/" class="related-tools__link">文字数カウント</a></li>
+        <li><a href="../unit/" class="related-tools__link">単位変換</a></li>
+        <li><a href="../password/" class="related-tools__link">パスワード生成</a></li>
+        <li><a href="https://yuhi-sa.github.io/devtoolbox/tools/color-converter/" class="related-tools__link">開発者向け色変換ツール（DevToolBox）</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+    <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI</a></li>
+            <li><a href="../days/" class="footer__link">Date Calc</a></li>
+            <li><a href="../age/" class="footer__link">Age</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+            <li><a href="../password/" class="footer__link">Password</a></li>
+            <li><a href="../character-count/" class="footer__link">Char Count</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Int.</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Conv.</a></li>
+            <li><a href="../salary/" class="footer__link">Salary</a></li>
+            <li><a href="../area/" class="footer__link">Area</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Conv.</a></li>
+            <li><a href="../speed/" class="footer__link">Speed</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../random/" class="footer__link">Random</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../hash/" class="footer__link">Hash</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID</a></li>
+            <li><a href="../timestamp/" class="footer__link">Timestamp</a></li>
+            <li><a href="../jwt/" class="footer__link">JWT</a></li>
+            <li><a href="../cron/" class="footer__link">Cron</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQL Fmt</a></li>
+            <li><a href="../byte-converter/" class="footer__link">Byte Conv.</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTP Status</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/color-converter.min.js"></script>
+</body>
+</html>

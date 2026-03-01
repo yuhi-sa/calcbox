@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Pet Age Calculator - Dog & Cat (Free) - CalcBox</title>
+  <meta name="description" content="Convert your pet's age to human years. Supports dogs and cats. Free online pet age calculator.">
+  <meta property="og:title" content="Pet Age Calculator - Dog & Cat (Free) - CalcBox">
+  <meta property="og:description" content="Convert your pet's age to human years. Supports dogs and cats. Free online pet age calculator.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/pet-age/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pet Age Calculator - Dog & Cat (Free) - CalcBox">
+  <meta name="twitter:description" content="Convert your pet's age to human years. Supports dogs and cats. Free online pet age calculator.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/pet-age/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/pet-age/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/pet-age/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/pet-age/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ペット年齢換算ツール",
+    "description": "犬・猫の年齢を人間の年齢に換算。小型犬・中型犬・大型犬に対応した無料計算ツール。",
+    "url": "https://yuhi-sa.github.io/calcbox/en/pet-age/",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "ペット年齢換算ツール（無料）", "item": "https://yuhi-sa.github.io/calcbox/en/pet-age/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "犬の1年は人間の7年というのは正しいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "これは簡易的な目安として長く使われてきましたが、正確ではありません。犬は最初の1〜2年で急速に成長するため、幼少期は7倍以上のペースで成長し、成犬以降は緩やかになります。また、小型犬と大型犬では加齢のペースが異なります。本ツールではより正確な換算式を使用しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "子犬・子猫の月齢にも対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、0.5歳（6か月）単位での入力に対応しています。たとえば0.5歳と入力すると、生後6か月時点での換算結果が表示されます。1歳未満の場合は、1歳時の人間年齢をもとに比例計算で算出しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ミックス犬の場合はどのサイズを選べばいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ミックス犬の場合は、成犬時の体重を基準に選んでください。10kg未満なら小型犬、10〜25kgなら中型犬、25kg以上なら大型犬を選択すると、より正確な換算結果が得られます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ペット年齢換算ツールの使い方",
+    "description": "ペット年齢換算ツールは、犬や猫の年齢を人間の年齢に換算するための無料オンラインツールです。「うちの犬は人間でいうと何歳？」「猫の5歳は人間だと何歳くらい？」という疑問にすぐお答えします。",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "計算結果とともに、1歳から20歳までの年齢換算表が表示されま",
+            "text": "計算結果とともに、1歳から20歳までの年齢換算表が表示されます。"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "犬の場合は小型犬・中型犬・大型犬の3種類の換算結果を並べて比",
+            "text": "犬の場合は小型犬・中型犬・大型犬の3種類の換算結果を並べて比較できるので、サイズによる違いが一目でわかります。"
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox ペット年齢換算ツール"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI</a></li>
+            <li><a href="../days/" class="nav__link">Date Calc</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Conv.</a></li>
+          </ul>
+        </nav>
+        <a href="../en/pet-age/" class="lang-switch" aria-label="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Timestamp</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV⇔JSON</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">ペット年齢換算</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Pet Age Calculator</h1>
+      <p class="tool__lead">Convert your dog or cat's age to human equivalent years.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label">ペットの種類</label>
+          <div class="radio-group">
+            <label><input type="radio" name="pet-type" value="dog" checked> 犬（いぬ）</label>
+            <label><input type="radio" name="pet-type" value="cat"> 猫（ねこ）</label>
+          </div>
+        </div>
+
+        <div class="form-group" id="dog-size-group">
+          <label class="form-label">犬のサイズ</label>
+          <div class="radio-group">
+            <label><input type="radio" name="dog-size" value="small" checked> 小型犬</label>
+            <label><input type="radio" name="dog-size" value="medium"> 中型犬</label>
+            <label><input type="radio" name="dog-size" value="large"> 大型犬</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="pet-age-input">ペットの年齢</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input class="input" type="number" id="pet-age-input" min="0" max="30" step="0.5" placeholder="例: 5" style="width:100px;"> 歳
+          </div>
+          <p style="font-size:0.85rem;color:var(--color-text-secondary);margin-top:4px;">0.5歳単位で入力できます（子犬・子猫の場合）</p>
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="pet-calc-btn" type="button">換算する</button>
+          <button class="btn btn--secondary" id="pet-reset-btn" type="button">Reset</button>
+        </div>
+
+        <div class="result" id="pet-result" hidden>
+          <div class="result__item">
+            <span class="result__label">人間に換算した年齢</span>
+            <span class="result__value" id="human-age-value"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">ペットの種類</span>
+            <span class="result__value" id="pet-type-display"></span>
+          </div>
+        </div>
+
+        <!-- 年齢換算表 -->
+        <div id="age-table-section" hidden>
+          <h2 class="section__title">年齢換算表</h2>
+          <div style="overflow-x:auto;margin-top:16px;">
+            <table id="age-table" style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+              <thead>
+                <tr id="age-table-header" style="background-color:var(--color-primary);color:#fff;">
+                </tr>
+              </thead>
+              <tbody id="age-table-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">ペット年齢換算ツールの使い方</h2>
+      <div class="section__content">
+        <p>ペット年齢換算ツールは、犬や猫の年齢を人間の年齢に換算するための無料オンラインツールです。「うちの犬は人間でいうと何歳？」「猫の5歳は人間だと何歳くらい？」という疑問にすぐお答えします。</p>
+
+        <h3>犬の年齢換算について</h3>
+        <p>犬の年齢換算は、かつて「犬の1年は人間の7年」と言われていましたが、現在ではより正確な換算方法が使われています。犬は最初の1〜2年で急速に成長し、その後の加齢ペースは体のサイズによって異なります。本ツールでは、獣医学で広く使われている以下の換算式を採用しています。</p>
+        <p><strong>小型犬</strong>（チワワ、トイプードル、ポメラニアンなど10kg未満）：1歳で人間の15歳、2歳で24歳、以降1年ごとに+4歳。小型犬は大型犬に比べて長寿な傾向があり、15歳以上生きることも珍しくありません。</p>
+        <p><strong>中型犬</strong>（柴犬、コーギー、ビーグルなど10〜25kg）：1歳で人間の15歳、2歳で24歳、以降1年ごとに+5歳。中型犬の平均寿命は12〜15歳程度です。</p>
+        <p><strong>大型犬</strong>（ラブラドール、ゴールデンレトリバー、ジャーマンシェパードなど25kg以上）：1歳で人間の12歳、2歳で22歳、以降1年ごとに+6歳。大型犬は小型犬より成長が遅い一方、老化のペースが早く、平均寿命は10〜12歳程度です。</p>
+
+        <h3>猫の年齢換算について</h3>
+        <p>猫の年齢換算も犬と同様に、最初の2年間で急速に成長します。猫の場合は体のサイズによる差が小さいため、共通の換算式を使います。1歳で人間の15歳、2歳で24歳、以降1年ごとに+4歳として計算します。室内飼いの猫の平均寿命は15〜20歳と言われており、人間に換算すると76〜96歳に相当します。</p>
+
+        <h3>換算表について</h3>
+        <p>計算結果とともに、1歳から20歳までの年齢換算表が表示されます。犬の場合は小型犬・中型犬・大型犬の3種類の換算結果を並べて比較できるので、サイズによる違いが一目でわかります。ペットの健康管理やライフステージの把握にお役立てください。</p>
+
+        <h3>注意事項</h3>
+        <p>年齢換算はあくまで目安です。犬種や猫種、個体差、生活環境、食事内容などによって実際の健康状態や老化の進み方は異なります。ペットの健康状態が気になる場合は、獣医師にご相談ください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. 犬の1年は人間の7年というのは正しいですか？</h3>
+        <p>A. これは簡易的な目安として長く使われてきましたが、正確ではありません。犬は最初の1〜2年で急速に成長するため、幼少期は7倍以上のペースで成長し、成犬以降は緩やかになります。また、小型犬と大型犬では加齢のペースが異なります。本ツールではより正確な換算式を使用しています。</p>
+        <h3>Q. 子犬・子猫の月齢にも対応していますか？</h3>
+        <p>A. はい、0.5歳（6か月）単位での入力に対応しています。たとえば0.5歳と入力すると、生後6か月時点での換算結果が表示されます。1歳未満の場合は、1歳時の人間年齢をもとに比例計算で算出しています。</p>
+        <h3>Q. ミックス犬の場合はどのサイズを選べばいいですか？</h3>
+        <p>A. ミックス犬の場合は、成犬時の体重を基準に選んでください。10kg未満なら小型犬、10〜25kgなら中型犬、25kg以上なら大型犬を選択すると、より正確な換算結果が得られます。</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../age/" class="related-tools__link">年齢計算</a></li>
+        <li><a href="../days/" class="related-tools__link">日数計算</a></li>
+        <li><a href="../bmi/" class="related-tools__link">BMI計算</a></li>
+        <li><a href="../calorie/" class="related-tools__link">消費カロリー計算</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+    <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI</a></li>
+            <li><a href="../days/" class="footer__link">Date Calc</a></li>
+            <li><a href="../age/" class="footer__link">Age</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+            <li><a href="../password/" class="footer__link">Password</a></li>
+            <li><a href="../character-count/" class="footer__link">Char Count</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Int.</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Conv.</a></li>
+            <li><a href="../salary/" class="footer__link">Salary</a></li>
+            <li><a href="../area/" class="footer__link">Area</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Conv.</a></li>
+            <li><a href="../speed/" class="footer__link">Speed</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../random/" class="footer__link">Random</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../hash/" class="footer__link">Hash</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID</a></li>
+            <li><a href="../timestamp/" class="footer__link">Timestamp</a></li>
+            <li><a href="../jwt/" class="footer__link">JWT</a></li>
+            <li><a href="../cron/" class="footer__link">Cron</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQL Fmt</a></li>
+            <li><a href="../byte-converter/" class="footer__link">Byte Conv.</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTP Status</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/pet-age.min.js"></script>
+</body>
+</html>

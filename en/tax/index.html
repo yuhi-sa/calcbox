@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Sales Tax Calculator (Tax-Inclusive / Tax-Exclusive) (Free) - CalcBox</title>
+  <meta name="description" content="Easily calculate sales tax. Automatically convert between tax-inclusive and tax-exclusive prices. Supports Japan's standard 10% and reduced 8% tax rates. Free online sales tax calculator.">
+  <meta property="og:title" content="Sales Tax Calculator (Tax-Inclusive / Tax-Exclusive) (Free) - CalcBox">
+  <meta property="og:description" content="Easily calculate sales tax. Automatically convert between tax-inclusive and tax-exclusive prices. Supports Japan's standard 10% and reduced 8% tax rates. Free online sales tax calculator.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yuhi-sa.github.io/calcbox/en/tax/">
+  <meta property="og:site_name" content="CalcBox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sales Tax Calculator (Tax-Inclusive / Tax-Exclusive) (Free) - CalcBox">
+  <meta name="twitter:description" content="Easily calculate sales tax. Automatically convert between tax-inclusive and tax-exclusive prices. Supports Japan's standard 10% and reduced 8% tax rates.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yuhi-sa.github.io/calcbox/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://yuhi-sa.github.io/calcbox/en/tax/">
+  <link rel="alternate" hreflang="ja" href="https://yuhi-sa.github.io/calcbox/tax/">
+  <link rel="alternate" hreflang="en" href="https://yuhi-sa.github.io/calcbox/en/tax/">
+  <link rel="alternate" hreflang="x-default" href="https://yuhi-sa.github.io/calcbox/tax/">
+  <link rel="stylesheet" href="../../css/style.min.css">
+  <script data-ad-client="ca-pub-9558545098866170" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sales Tax Calculator",
+    "description": "Easily calculate sales tax. Automatically convert between tax-inclusive and tax-exclusive prices. Supports Japan's standard 10% and reduced 8% tax rates.",
+    "url": "https://yuhi-sa.github.io/calcbox/en/tax/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcBox",
+      "url": "https://yuhi-sa.github.io/calcbox/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yuhi-sa.github.io/calcbox/en/"},
+      {"@type": "ListItem", "position": 2, "name": "Sales Tax Calculator (Free)", "item": "https://yuhi-sa.github.io/calcbox/en/tax/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What products are subject to the reduced 8% tax rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The reduced 8% tax rate applies to food and beverages (excluding alcohol) and newspapers published at least twice a week via subscription. Food items include snacks, drinks, processed foods, and fresh produce. However, dining out (eating at restaurants or food courts), catering, and alcohol are subject to the standard 10% rate. Takeout and delivery are subject to the reduced 8% rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can there be fractions when calculating tax-exclusive price from tax-inclusive price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, depending on the tax-inclusive price, the tax-exclusive price may include decimals. This tool displays decimal places. In actual transactions, rounding rules (round down, round up, or round to nearest) vary by business. Generally, amounts below one yen are rounded down."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the relationship between the Invoice System and sales tax calculation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Invoice System (Qualified Invoice Preservation Method) that started in October 2023 requires invoices to accurately state the consumption tax amount for each tax rate. The tax amounts calculated by this tool can be used as reference values when creating invoices and estimates. For official accounting, please follow the rounding rules of your accounting software."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use the Sales Tax Calculator",
+    "description": "The Sales Tax Calculator is a free online tool for converting between tax-inclusive and tax-exclusive prices. Japan's consumption tax system includes a standard rate of 10% and a reduced rate of 8%, both of which are supported by this tool.",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Set different tax rates for each product",
+            "text": "You can set different tax rates for each product, enabling accurate total calculation even when standard 10% items and reduced 8% food items are mixed."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Use for receipt verification, expense reports, and estimates",
+            "text": "Use this tool for receipt verification, expense reports, and creating estimates."
+        }
+    ],
+    "tool": {
+        "@type": "HowToTool",
+        "name": "CalcBox Sales Tax Calculator"
+    }
+}
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="7" y="5" width="14" height="18" rx="2" fill="#fff"/>
+          <rect x="9" y="7" width="10" height="4" rx="1" fill="currentColor" style="color: var(--color-primary); opacity:0.3"/>
+          <circle cx="11" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="17" cy="14" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="14" cy="17" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="16" y="16" width="3" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+          <circle cx="11" cy="20" r="1.2" fill="currentColor" style="color: var(--color-primary)"/>
+          <rect x="13" y="19" width="5" height="2.5" rx="0.5" fill="currentColor" style="color: var(--color-primary)"/>
+        </svg>
+        CalcBox
+      </a>
+      <div class="header__right">
+        <a href="../../tax/" class="lang-switch" aria-label="Switch to Japanese">JA</a>
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li><a href="../bmi/" class="nav__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="nav__link">Date Calculator</a></li>
+            <li><a href="../tax/" class="nav__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="nav__link">Loan</a></li>
+            <li><a href="../electricity/" class="nav__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="nav__link">Unit Converter</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--light" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav__list">
+      <li><a href="../bmi/" class="mobile-nav__link">BMI Calculator</a></li>
+      <li><a href="../days/" class="mobile-nav__link">Date Calculator</a></li>
+      <li><a href="../age/" class="mobile-nav__link">Age Calculator</a></li>
+      <li><a href="../calorie/" class="mobile-nav__link">Calorie Calculator</a></li>
+      <li><a href="../warikan/" class="mobile-nav__link">Split Bill Calculator</a></li>
+      <li><a href="../tax/" class="mobile-nav__link">Sales Tax Calculator</a></li>
+      <li><a href="../loan/" class="mobile-nav__link">Loan Calculator</a></li>
+      <li><a href="../electricity/" class="mobile-nav__link">Electricity Cost Calculator</a></li>
+      <li><a href="../unit/" class="mobile-nav__link">Unit Converter</a></li>
+      <li><a href="../time/" class="mobile-nav__link">Time Calculator</a></li>
+      <li><a href="../pet-age/" class="mobile-nav__link">Pet Age Calculator</a></li>
+      <li><a href="../discount/" class="mobile-nav__link">Discount Calculator</a></li>
+      <li><a href="../password/" class="mobile-nav__link">Password Generator</a></li>
+      <li><a href="../character-count/" class="mobile-nav__link">Character Counter</a></li>
+      <li><a href="../compound-interest/" class="mobile-nav__link">Compound Interest</a></li>
+      <li><a href="../body-fat/" class="mobile-nav__link">Body Fat Calculator</a></li>
+      <li><a href="../base-converter/" class="mobile-nav__link">Base Converter</a></li>
+      <li><a href="../salary/" class="mobile-nav__link">Salary Calculator (Japan)</a></li>
+      <li><a href="../area/" class="mobile-nav__link">Area Calculator</a></li>
+      <li><a href="../color-converter/" class="mobile-nav__link">Color Converter</a></li>
+      <li><a href="../speed/" class="mobile-nav__link">Speed Calculator</a></li>
+      <li><a href="../wareki/" class="mobile-nav__link">Japanese Era Converter</a></li>
+      <li><a href="../random/" class="mobile-nav__link">Random Number Generator</a></li>
+      <li><a href="../statistics/" class="mobile-nav__link">Statistics Calculator</a></li>
+      <li><a href="../json-formatter/" class="mobile-nav__link">JSON Formatter</a></li>
+      <li><a href="../qr-generator/" class="mobile-nav__link">QR Code Generator</a></li>
+      <li><a href="../timezone/" class="mobile-nav__link">Timezone Converter</a></li>
+      <li><a href="../countdown/" class="mobile-nav__link">Countdown Timer</a></li>
+      <li><a href="../stopwatch/" class="mobile-nav__link">Stopwatch</a></li>
+      <li><a href="../hash/" class="mobile-nav__link">Hash Generator</a></li>
+      <li><a href="../age-table/" class="mobile-nav__link">Age Lookup Table</a></li>
+      <li><a href="../furusato-tax/" class="mobile-nav__link">Furusato Tax (Japan)</a></li>
+      <li><a href="../housing-deduction/" class="mobile-nav__link">Housing Loan Deduction (Japan)</a></li>
+      <li><a href="../pregnancy/" class="mobile-nav__link">Pregnancy Week Calculator</a></li>
+      <li><a href="../sleep/" class="mobile-nav__link">Sleep Calculator</a></li>
+      <li><a href="../bmr/" class="mobile-nav__link">BMR Calculator</a></li>
+      <li><a href="../part-time-pay/" class="mobile-nav__link">Part-time Pay Calculator</a></li>
+      <li><a href="../point-reward/" class="mobile-nav__link">Point Reward Calculator</a></li>
+      <li><a href="../pension/" class="mobile-nav__link">Pension Simulator (Japan)</a></li>
+      <li><a href="../alcohol/" class="mobile-nav__link">Alcohol Metabolism Calculator</a></li>
+      <li><a href="../ideal-weight/" class="mobile-nav__link">Ideal Weight Calculator</a></li>
+      <li><a href="../currency/" class="mobile-nav__link">Currency Converter</a></li>
+      <li><a href="../encode/" class="mobile-nav__link">Encoder/Decoder</a></li>
+      <li><a href="../regex/" class="mobile-nav__link">Regex Tester</a></li>
+      <li><a href="../ip-calc/" class="mobile-nav__link">IP Address Calculator</a></li>
+      <li><a href="../probability/" class="mobile-nav__link">Probability Calculator</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSS Gradient Generator</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">Markdown Preview</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">Text Diff Checker</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">Loan Comparison</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">Nutrition Calculator</a></li>
+      <li><a href="../uuid/" class="mobile-nav__link">UUID Generator</a></li>
+      <li><a href="../timestamp/" class="mobile-nav__link">Unix Timestamp Converter</a></li>
+      <li><a href="../jwt/" class="mobile-nav__link">JWT Decoder</a></li>
+      <li><a href="../cron/" class="mobile-nav__link">Cron Expression Parser</a></li>
+      <li><a href="../chmod/" class="mobile-nav__link">chmod Calculator</a></li>
+      <li><a href="../csv-json/" class="mobile-nav__link">CSV ⇔ JSON Converter</a></li>
+      <li><a href="../sql-formatter/" class="mobile-nav__link">SQL Formatter</a></li>
+      <li><a href="../byte-converter/" class="mobile-nav__link">Byte Converter</a></li>
+      <li><a href="../http-status/" class="mobile-nav__link">HTTP Status Codes</a></li>
+      <li><a href="../lorem/" class="mobile-nav__link">Lorem Ipsum Generator</a></li>
+      <li><a href="../about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="../privacy.html" class="mobile-nav__link">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">Sales Tax Calculator</li>
+      </ol>
+    </nav>
+
+    <div class="tool">
+      <h1 class="tool__title">Sales Tax Calculator</h1>
+      <p class="tool__lead">Easily convert between tax-inclusive and tax-exclusive prices. Supports Japan's standard 10% and reduced 8% tax rates.</p>
+
+      <div class="tool__body">
+        <div class="form-group">
+          <label class="form-label">Calculation Direction</label>
+          <div class="radio-group">
+            <label><input type="radio" name="calc-direction" value="exclude-to-include" checked> Tax-Exclusive → Tax-Inclusive</label>
+            <label><input type="radio" name="calc-direction" value="include-to-exclude"> Tax-Inclusive → Tax-Exclusive</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tax Rate</label>
+          <div class="radio-group">
+            <label><input type="radio" name="tax-rate" value="10" checked> 10% (Standard Rate)</label>
+            <label><input type="radio" name="tax-rate" value="8"> 8% (Reduced Rate)</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="price" id="price-label">Tax-Exclusive Price (JPY)</label>
+          <input class="input" type="number" id="price" min="0" step="1" placeholder="e.g. 1000">
+        </div>
+
+        <div class="tool__actions">
+          <button class="btn btn--primary" id="calc-btn" type="button">Calculate</button>
+          <button class="btn btn--secondary" id="reset-btn" type="button">Reset</button>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div class="result__item">
+            <span class="result__label" id="result-price-label">Tax-Inclusive Price</span>
+            <span class="result__value" id="result-price"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Tax Amount</span>
+            <span class="result__value" id="result-tax"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label" id="result-original-label">Tax-Exclusive Price</span>
+            <span class="result__value" id="result-original"></span>
+          </div>
+        </div>
+
+        <h2 class="section__title" style="margin-top: 2rem;">Multiple Items Total</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1rem;">Calculate sales tax for multiple items at once. Click "Add Row" to add more items.</p>
+        <div id="multi-items">
+          <div class="form-group" style="display: flex; gap: 8px; align-items: flex-end;">
+            <div style="flex: 2;">
+              <label class="form-label">Item Name (Optional)</label>
+              <input class="input multi-name" type="text" placeholder="e.g. Apple">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label">Amount (JPY)</label>
+              <input class="input multi-price" type="number" min="0" step="1" placeholder="e.g. 500">
+            </div>
+            <div style="flex: 0;">
+              <select class="input multi-rate" style="min-width: 80px;">
+                <option value="10">10%</option>
+                <option value="8">8%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="tool__actions" style="margin-top: 0.5rem;">
+          <button class="btn btn--secondary" id="add-item-btn" type="button">Add Row</button>
+          <button class="btn btn--primary" id="calc-multi-btn" type="button">Calculate Total</button>
+        </div>
+
+        <div class="result" id="multi-result" hidden>
+          <div class="result__item">
+            <span class="result__label">Subtotal (Tax-Exclusive)</span>
+            <span class="result__value" id="multi-subtotal"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Total Tax</span>
+            <span class="result__value" id="multi-tax"></span>
+          </div>
+          <div class="result__item">
+            <span class="result__label">Total (Tax-Inclusive)</span>
+            <span class="result__value" id="multi-total"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="section">
+      <h2 class="section__title">How to Use the Sales Tax Calculator</h2>
+      <div class="section__content">
+        <p>The Sales Tax Calculator is a free online tool for calculating tax-inclusive prices from tax-exclusive prices, and vice versa. Following Japan's consumption tax rate increase in October 2019, a dual-rate system was introduced with a standard rate of 10% and a reduced rate of 8%. This tool supports both rates and is useful for everyday shopping and business scenarios.</p>
+
+        <h3>Tax-Exclusive to Tax-Inclusive Calculation</h3>
+        <p>Add consumption tax to the tax-exclusive price to calculate the tax-inclusive price. The formulas are:</p>
+        <ul>
+          <li>Tax-Inclusive Price = Tax-Exclusive Price x (1 + Tax Rate)</li>
+          <li>Tax Amount = Tax-Exclusive Price x Tax Rate</li>
+        </ul>
+        <p>For example, applying the standard 10% rate to a 1,000 yen tax-exclusive item gives a tax of 100 yen and a tax-inclusive price of 1,100 yen. With the reduced 8% rate, the tax is 80 yen and the tax-inclusive price is 1,080 yen.</p>
+
+        <h3>Tax-Inclusive to Tax-Exclusive Calculation</h3>
+        <p>Subtract consumption tax from the tax-inclusive price to calculate the tax-exclusive price. The formulas are:</p>
+        <ul>
+          <li>Tax-Exclusive Price = Tax-Inclusive Price / (1 + Tax Rate)</li>
+          <li>Tax Amount = Tax-Inclusive Price - Tax-Exclusive Price</li>
+        </ul>
+        <p>For example, a 1,100 yen tax-inclusive item (standard 10%) has a tax-exclusive price of 1,000 yen and a tax of 100 yen. A 1,080 yen food item (reduced 8%) has a tax-exclusive price of 1,000 yen and a tax of 80 yen.</p>
+
+        <h3>What is the Reduced Tax Rate?</h3>
+        <p>The reduced tax rate of 8% applies to essential food and beverages (excluding alcohol) and subscription newspapers. Dining out and catering are subject to the standard 10% rate. Most food purchased at supermarkets and convenience stores falls under the reduced 8% rate. Receipts and invoices typically mark reduced-rate items with an asterisk (*).</p>
+
+        <h3>Multiple Items Total Calculation</h3>
+        <p>This tool also includes a feature for calculating sales tax on multiple items at once. You can set different tax rates for each item, enabling accurate totals even when standard 10% items and reduced 8% food items are mixed. Useful for receipt verification, expense reports, and creating estimates.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Frequently Asked Questions (FAQ)</h2>
+      <div class="section__content">
+        <h3>Q. What products are subject to the reduced 8% tax rate?</h3>
+        <p>A. The reduced 8% rate applies to food and beverages (excluding alcohol) and newspapers published at least twice a week via subscription. Food items include snacks, drinks, processed foods, and fresh produce. Dining out (restaurants, food courts), catering, and alcohol are subject to the standard 10% rate. Takeout and delivery qualify for the reduced 8% rate.</p>
+        <h3>Q. Can there be fractions when calculating tax-exclusive price from tax-inclusive price?</h3>
+        <p>A. Yes, depending on the tax-inclusive price, the tax-exclusive price may include decimals. This tool displays decimal places. In actual transactions, rounding rules (round down, round up, or round to nearest) vary by business. Generally, amounts below one yen are rounded down.</p>
+        <h3>Q. What is the relationship between the Invoice System and sales tax calculation?</h3>
+        <p>A. The Invoice System (Qualified Invoice Preservation Method) started in October 2023 requires accurate recording of consumption tax amounts by tax rate on invoices. Tax amounts calculated by this tool can serve as reference values for invoices and estimates. For official accounting, follow the rounding rules of your accounting software.</p>
+      </div>
+    </section>
+
+    <section class="related-tools">
+      <h2 class="section__title">Related Tools</h2>
+      <ul class="related-tools__list">
+        <li><a href="../warikan/" class="related-tools__link">Split Bill Calculator</a></li>
+        <li><a href="../loan/" class="related-tools__link">Loan Calculator</a></li>
+        <li><a href="../days/" class="related-tools__link">Date Calculator</a></li>
+        <li><a href="../calorie/" class="related-tools__link">Calorie Calculator</a></li>
+      </ul>
+    </section>
+
+    <div class="ad-slot" aria-label="Advertisement">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true" data-ad-layout-key="" data-ad-client="ca-pub-9558545098866170" data-ad-slot=""></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__section-title">CalcBox</p>
+          <ul class="footer__list">
+            <li><a href="../about.html" class="footer__link">About</a></li>
+            <li><a href="../privacy.html" class="footer__link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">Calculator Tools</p>
+          <ul class="footer__list">
+            <li><a href="../bmi/" class="footer__link">BMI Calculator</a></li>
+            <li><a href="../days/" class="footer__link">Date Calculator</a></li>
+            <li><a href="../age/" class="footer__link">Age Calculator</a></li>
+            <li><a href="../calorie/" class="footer__link">Calorie Calculator</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__section-title">&nbsp;</p>
+          <ul class="footer__list">
+            <li><a href="../warikan/" class="footer__link">Split Bill</a></li>
+            <li><a href="../tax/" class="footer__link">Sales Tax</a></li>
+            <li><a href="../loan/" class="footer__link">Loan Calculator</a></li>
+            <li><a href="../electricity/" class="footer__link">Electricity Cost</a></li>
+            <li><a href="../unit/" class="footer__link">Unit Converter</a></li>
+            <li><a href="../time/" class="footer__link">Time Calculator</a></li>
+            <li><a href="../pet-age/" class="footer__link">Pet Age</a></li>
+            <li><a href="../discount/" class="footer__link">Discount</a></li>
+            <li><a href="../password/" class="footer__link">Password Generator</a></li>
+            <li><a href="../character-count/" class="footer__link">Character Counter</a></li>
+            <li><a href="../compound-interest/" class="footer__link">Compound Interest</a></li>
+            <li><a href="../body-fat/" class="footer__link">Body Fat</a></li>
+            <li><a href="../base-converter/" class="footer__link">Base Converter</a></li>
+            <li><a href="../salary/" class="footer__link">Salary (Japan)</a></li>
+            <li><a href="../area/" class="footer__link">Area Calculator</a></li>
+            <li><a href="../color-converter/" class="footer__link">Color Converter</a></li>
+            <li><a href="../speed/" class="footer__link">Speed Calculator</a></li>
+            <li><a href="../wareki/" class="footer__link">Japanese Era</a></li>
+            <li><a href="../random/" class="footer__link">Random Number</a></li>
+            <li><a href="../statistics/" class="footer__link">Statistics</a></li>
+            <li><a href="../json-formatter/" class="footer__link">JSON Formatter</a></li>
+            <li><a href="../qr-generator/" class="footer__link">QR Code</a></li>
+            <li><a href="../timezone/" class="footer__link">Timezone</a></li>
+            <li><a href="../countdown/" class="footer__link">Countdown</a></li>
+            <li><a href="../stopwatch/" class="footer__link">Stopwatch</a></li>
+            <li><a href="../hash/" class="footer__link">Hash Generator</a></li>
+            <li><a href="../age-table/" class="footer__link">Age Lookup</a></li>
+            <li><a href="../furusato-tax/" class="footer__link">Furusato Tax</a></li>
+            <li><a href="../housing-deduction/" class="footer__link">Housing Deduction</a></li>
+            <li><a href="../pregnancy/" class="footer__link">Pregnancy Week</a></li>
+            <li><a href="../sleep/" class="footer__link">Sleep Calculator</a></li>
+            <li><a href="../bmr/" class="footer__link">BMR</a></li>
+            <li><a href="../part-time-pay/" class="footer__link">Part-time Pay</a></li>
+            <li><a href="../point-reward/" class="footer__link">Point Reward</a></li>
+            <li><a href="../pension/" class="footer__link">Pension (Japan)</a></li>
+            <li><a href="../alcohol/" class="footer__link">Alcohol Metabolism</a></li>
+            <li><a href="../ideal-weight/" class="footer__link">Ideal Weight</a></li>
+            <li><a href="../currency/" class="footer__link">Currency</a></li>
+            <li><a href="../encode/" class="footer__link">Encoder/Decoder</a></li>
+            <li><a href="../regex/" class="footer__link">Regex Tester</a></li>
+            <li><a href="../ip-calc/" class="footer__link">IP Calculator</a></li>
+            <li><a href="../probability/" class="footer__link">Probability</a></li>
+            <li><a href="../gradient/" class="footer__link">Gradient Generator</a></li>
+            <li><a href="../markdown/" class="footer__link">Markdown</a></li>
+            <li><a href="../diff/" class="footer__link">Text Diff</a></li>
+            <li><a href="../loan-compare/" class="footer__link">Loan Comparison</a></li>
+            <li><a href="../nutrition/" class="footer__link">Nutrition</a></li>
+            <li><a href="../uuid/" class="footer__link">UUID Generator</a></li>
+            <li><a href="../timestamp/" class="footer__link">Timestamp</a></li>
+            <li><a href="../jwt/" class="footer__link">JWT Decoder</a></li>
+            <li><a href="../cron/" class="footer__link">Cron Parser</a></li>
+            <li><a href="../chmod/" class="footer__link">chmod Calculator</a></li>
+            <li><a href="../csv-json/" class="footer__link">CSV⇔JSON</a></li>
+            <li><a href="../sql-formatter/" class="footer__link">SQL Formatter</a></li>
+            <li><a href="../byte-converter/" class="footer__link">Byte Converter</a></li>
+            <li><a href="../http-status/" class="footer__link">HTTP Status</a></li>
+            <li><a href="../lorem/" class="footer__link">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 CalcBox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/common.min.js"></script>
+  <script src="../js/tax.min.js"></script>
+</body>
+</html>
