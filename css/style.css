@@ -1821,3 +1821,48 @@ main > .related-tools {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* ----- アフィリエイトセクション ----- */
+.affiliate-section {
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: var(--color-bg-secondary, #f8f8f8);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+}
+
+.affiliate-section h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: var(--color-text, #333);
+}
+
+.affiliate-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.affiliate-section ul li a {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--color-primary, #e67e22);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.affiliate-section ul li a:hover {
+  opacity: 0.85;
+}
+
+.affiliate-note {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #888);
+  margin: 0;
+}
