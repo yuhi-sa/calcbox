@@ -61,6 +61,18 @@ export const tools: ToolDefinition[] = [
   { id: 'statistics', name: '平均・標準偏差計算', description: '数値データの平均・中央値・標準偏差・分散を一括計算。', category: 'text', icon: 'bar-chart', implemented: true },
   { id: 'probability', name: '確率・組み合わせ計算', description: '順列(nPr)・組み合わせ(nCr)・階乗の計算。', category: 'text', icon: 'dice', implemented: true },
   { id: 'diff', name: 'テキスト差分比較', description: '2つのテキストの差分をカラーハイライトで表示。', category: 'text', icon: 'diff', implemented: true },
+
+  // --- 追加ツール ---
+  { id: 'percentage', name: 'パーセント計算', description: '割合・構成比・変化率などパーセントに関する計算をまとめて。', category: 'life', icon: 'percent', implemented: true },
+  { id: 'tip', name: 'チップ計算', description: 'チップ金額と一人あたりの支払額を計算。', category: 'life', icon: 'dollar', implemented: true },
+  { id: 'gpa', name: 'GPA計算', description: '成績と単位数から加重GPAを計算。日本式(秀優良可)対応。', category: 'text', icon: 'bar-chart', implemented: true },
+  { id: 'date-format', name: '日付フォーマット変換', description: '日付を多数のフォーマットで一覧表示。ISO 8601, RFC 2822対応。', category: 'datetime', icon: 'calendar', implemented: true },
+  { id: 'overtime', name: '残業代計算', description: '時間外・深夜・休日の残業代を日本の労働基準法に基づいて計算。', category: 'money', icon: 'briefcase', implemented: true },
+  { id: 'water-intake', name: '水分摂取量計算', description: '体重・活動量・気候から1日の推奨水分摂取量を計算。', category: 'health', icon: 'cup', implemented: true },
+  { id: 'heart-rate', name: '心拍数ゾーン計算', description: '年齢から最大心拍数と5つのトレーニングゾーンを計算。', category: 'health', icon: 'flame', implemented: true },
+  { id: 'shoe-size', name: '靴サイズ変換', description: '日本(cm)・US・UK・EUの靴サイズを相互変換。', category: 'life', icon: 'arrows', implemented: true },
+  { id: 'cooking', name: '料理単位変換', description: '大さじ・小さじ・カップ・mL・gを食材別に変換。', category: 'life', icon: 'cup', implemented: true },
+  { id: 'savings-goal', name: '貯金目標計算', description: '目標金額までの期間と利息をシミュレーション。', category: 'money', icon: 'trending-up', implemented: true },
 ];
 
 export function getToolById(id: string): ToolDefinition | undefined {

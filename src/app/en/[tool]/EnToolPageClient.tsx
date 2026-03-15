@@ -46,6 +46,16 @@ const toolComponents: Record<string, React.ComponentType> = {
   statistics: dynamic(() => import('@/tools/statistics/StatisticsCalculator')),
   probability: dynamic(() => import('@/tools/probability/ProbabilityCalculator')),
   diff: dynamic(() => import('@/tools/diff/DiffChecker')),
+  percentage: dynamic(() => import('@/tools/percentage/PercentageCalculator')),
+  tip: dynamic(() => import('@/tools/tip/TipCalculator')),
+  gpa: dynamic(() => import('@/tools/gpa/GpaCalculator')),
+  'date-format': dynamic(() => import('@/tools/date-format/DateFormatConverter')),
+  overtime: dynamic(() => import('@/tools/overtime/OvertimeCalculator')),
+  'water-intake': dynamic(() => import('@/tools/water-intake/WaterIntakeCalculator')),
+  'heart-rate': dynamic(() => import('@/tools/heart-rate/HeartRateCalculator')),
+  'shoe-size': dynamic(() => import('@/tools/shoe-size/ShoeSizeConverter')),
+  cooking: dynamic(() => import('@/tools/cooking/CookingConverter')),
+  'savings-goal': dynamic(() => import('@/tools/savings-goal/SavingsGoalCalculator')),
 };
 
 interface EnToolPageClientProps {
