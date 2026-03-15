@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
   var inputArea = document.getElementById('encode-input');
   var outputArea = document.getElementById('encode-output');
   var outputGroup = document.getElementById('output-group');
@@ -75,10 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   copyBtn.addEventListener('click', function () {
-    if (window.CalcBox && CalcBox.copy) {
-      CalcBox.copy.copyText(outputArea.value);
-    } else if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(outputArea.value);
+    try {
+      if (window.CalcBox && CalcBox.copy) {
+        CalcBox.copy.copyText(outputArea.value);
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(outputArea.value).catch(function () {
+          alert('クリップボードへのコピーに失敗しました。');
+        });
+      }
+    } catch (e) {
+      alert('クリップボードへのコピーに失敗しました。');
     }
   });
 

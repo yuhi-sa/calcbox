@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
   var amountInput = document.getElementById('amount');
   var fromCurrency = document.getElementById('from-currency');
   var toCurrency = document.getElementById('to-currency');
@@ -57,6 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
     fromValue.textContent = formatNumber(amount, from) + ' ' + from;
     toValue.textContent = formatNumber(result, to) + ' ' + to;
     rateValue.textContent = '1 ' + from + ' = ' + formatNumber(rate, to) + ' ' + to;
+
+    var noteEl = document.getElementById('rate-note');
+    if (!noteEl) {
+      noteEl = document.createElement('p');
+      noteEl.id = 'rate-note';
+      noteEl.style.cssText = 'font-size:0.85em;color:var(--color-text-secondary);margin-top:8px;';
+      resultSection.appendChild(noteEl);
+    }
+    noteEl.textContent = '※ レートは2026年2月時点の概算値です。実際の取引レートとは異なります。';
 
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: 'smooth' });

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
   var mdInput = document.getElementById('md-input');
   var mdPreview = document.getElementById('md-preview');
   var copyHtmlBtn = document.getElementById('copy-html-btn');
@@ -25,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
     text = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (m, alt, url) {
       var safe = sanitizeUrl(url);
       if (!safe) return m;
-      return '<img src="' + safe + '" alt="' + alt + '" style="max-width:100%;">';
+      return '<img src="' + safe + '" alt="' + escapeHtml(alt) + '" style="max-width:100%;">';
     });
     // Links
     text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, label, url) {
       var safe = sanitizeUrl(url);
       if (!safe) return m;
-      return '<a href="' + safe + '" target="_blank" rel="noopener">' + label + '</a>';
+      return '<a href="' + safe + '" target="_blank" rel="noopener">' + escapeHtml(label) + '</a>';
     });
     // Bold
     text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');

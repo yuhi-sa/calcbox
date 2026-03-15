@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
   var heightInput = document.getElementById('height');
   var weightInput = document.getElementById('weight');
   var calcBtn = document.getElementById('calc-btn');

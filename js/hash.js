@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
       sha256Value.textContent = results[1];
       sha512Value.textContent = results[2];
       resultSection.hidden = false;
+    }).catch(function () {
+      sha1Value.textContent = 'エラー';
+      sha256Value.textContent = 'エラー';
+      sha512Value.textContent = 'エラー';
+      resultSection.hidden = false;
     });
   }
 
