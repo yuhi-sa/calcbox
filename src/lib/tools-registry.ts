@@ -7,7 +7,6 @@ export const categories: { id: ToolCategory | 'all' | 'favorites'; label: string
   { id: 'health', label: '健康' },
   { id: 'money', label: 'お金' },
   { id: 'datetime', label: '時間・日付' },
-  { id: 'developer', label: '開発者' },
   { id: 'text', label: 'テキスト' },
 ];
 
@@ -55,29 +54,7 @@ export const tools: ToolDefinition[] = [
   { id: 'countdown', name: 'カウントダウンタイマー', description: '目標の日時までのカウントダウンをリアルタイム表示。', category: 'datetime', icon: 'alarm', implemented: true },
   { id: 'stopwatch', name: 'ストップウォッチ', description: '精密なストップウォッチ。ラップタイム記録機能付き。', category: 'datetime', icon: 'timer', implemented: true },
   { id: 'age-table', name: '年齢早見表', description: '西暦・和暦・年齢・干支の一覧表。検索フィルター付き。', category: 'datetime', icon: 'file-text', implemented: true },
-  { id: 'timestamp', name: 'Unixタイムスタンプ変換', description: 'Unix時刻と日時の双方向変換。現在のタイムスタンプもリアルタイム表示。', category: 'developer', icon: 'clock', implemented: true },
-
-  // --- 開発者 ---
-  { id: 'password', name: 'パスワード生成', description: '安全なパスワードをワンクリックで生成。強度メーター付き。', category: 'developer', icon: 'lock', implemented: true },
-  { id: 'hash', name: 'ハッシュ生成（SHA-256等）', description: 'テキストからSHA-1/SHA-256/SHA-512ハッシュを生成。', category: 'developer', icon: 'hash', implemented: true },
-  { id: 'uuid', name: 'UUID生成ツール', description: 'v4 UUIDをワンクリック生成。バルク生成・バリデーション機能付き。', category: 'developer', icon: 'grid', implemented: true },
-  { id: 'markdown', name: 'マークダウンプレビュー', description: 'マークダウンをリアルタイムプレビュー。HTMLコピー対応。', category: 'developer', icon: 'file-text', implemented: true },
-  { id: 'base-converter', name: '進数変換', description: '2進数・8進数・10進数・16進数を相互変換。', category: 'developer', icon: 'binary', implemented: true },
-  { id: 'color-converter', name: '色変換（カラーコード）', description: 'HEX・RGB・HSLを相互変換。カラーピッカーとプレビュー付き。', category: 'developer', icon: 'palette', implemented: true },
-  { id: 'json-formatter', name: 'JSON整形ツール', description: 'JSONの整形・圧縮・バリデーション。開発者の必須ツール。', category: 'developer', icon: 'code', implemented: true },
-  { id: 'qr-generator', name: 'QRコード生成', description: 'テキストやURLからQRコードを即座に生成。', category: 'developer', icon: 'qr', implemented: true },
-  { id: 'encode', name: 'エンコード・デコード', description: 'Base64・URL・HTMLのエンコード/デコードをワンクリックで。', category: 'developer', icon: 'code', implemented: true },
-  { id: 'regex', name: '正規表現テスター', description: '正規表現パターンをリアルタイムテスト。マッチ箇所をハイライト。', category: 'developer', icon: 'search', implemented: true },
-  { id: 'ip-calc', name: 'IPアドレス・サブネット計算', description: 'CIDR表記からネットワークアドレス・ブロードキャスト・ホスト範囲を計算。', category: 'developer', icon: 'server', implemented: true },
-  { id: 'gradient', name: 'CSSグラデーション生成', description: 'Linear/Radialグラデーションをビジュアルに生成。', category: 'developer', icon: 'palette', implemented: true },
-  { id: 'jwt', name: 'JWTデコーダー', description: 'JWTトークンのヘッダー・ペイロードを解析。有効期限チェック付き。', category: 'developer', icon: 'lock', implemented: true },
-  { id: 'cron', name: 'Cron式パーサー', description: 'cron式を人間が読める形で解説。次回実行時刻の表示付き。', category: 'developer', icon: 'alarm', implemented: true },
-  { id: 'chmod', name: 'chmodパーミッション計算', description: 'チェックボックスUIで直感的にファイルパーミッションを設定。', category: 'developer', icon: 'shield', implemented: true },
-  { id: 'csv-json', name: 'CSV⇔JSON変換', description: 'CSVとJSONの双方向変換。区切り文字選択・プレビュー付き。', category: 'developer', icon: 'arrows', implemented: true },
-  { id: 'sql-formatter', name: 'SQLフォーマッター', description: 'SQLクエリを自動整形。複雑なクエリも見やすく。', category: 'developer', icon: 'database', implemented: true },
-  { id: 'byte-converter', name: 'バイト単位変換', description: 'B/KB/MB/GB/TBを相互変換。', category: 'developer', icon: 'hard-drive', implemented: true },
-  { id: 'http-status', name: 'HTTPステータスコード一覧', description: 'HTTPステータスコードの意味と使い方を一覧表示。', category: 'developer', icon: 'globe', implemented: true },
-  { id: 'lorem', name: 'Lorem Ipsum生成', description: 'ダミーテキストを段落・文・単語単位で生成。', category: 'developer', icon: 'type', implemented: true },
+  { id: 'timestamp', name: 'Unixタイムスタンプ変換', description: 'Unix時刻と日時の双方向変換。現在のタイムスタンプもリアルタイム表示。', category: 'datetime', icon: 'clock', implemented: true },
 
   // --- テキスト ---
   { id: 'character-count', name: '文字数カウント', description: 'リアルタイムで文字数・行数・バイト数をカウント。', category: 'text', icon: 'file-text', implemented: true },

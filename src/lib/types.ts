@@ -1,4 +1,4 @@
-export type ToolCategory = 'life' | 'health' | 'money' | 'datetime' | 'developer' | 'text';
+export type ToolCategory = 'life' | 'health' | 'money' | 'datetime' | 'text';
 
 export interface ToolDefinition {
   id: string;
