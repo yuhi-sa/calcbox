@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import SearchBar from '@/components/Layout/SearchBar';
 import ToolGrid from '@/components/ToolGrid';
 import { tools, categories } from '@/lib/tools-registry';
@@ -58,6 +59,9 @@ export default function HomePage() {
         </h1>
         <p className="mt-3 text-gray-500 dark:text-gray-400">
           日常のちょっとした計算を、サッと解決。CalcBoxは無料で使える便利な計算ツール集です。
+        </p>
+        <p className="mt-2">
+          <Link href="/en" className="text-sm text-[var(--color-primary)] hover:underline">🇺🇸 English</Link>
         </p>
       </section>
 
