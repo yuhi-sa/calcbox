@@ -126,4 +126,12 @@ export const toolTranslations: Record<string, { name: string; description: strin
   'shoe-size': { name: 'Shoe Size Converter', description: 'Convert shoe sizes between Japan, US, UK, and EU.' },
   cooking: { name: 'Cooking Unit Converter', description: 'Convert cooking measurements (tbsp, tsp, cup, mL, g) by ingredient.' },
   'savings-goal': { name: 'Savings Goal Calculator', description: 'Simulate months to reach savings goal with interest.' },
+  'fuel-cost': { name: 'Fuel Cost Calculator', description: 'Calculate fuel cost from distance and efficiency, or distance from budget.' },
+  'moving-cost': { name: 'Moving Cost Estimator', description: 'Estimate moving costs by distance, household size, and season.' },
+  'rent-budget': { name: 'Rent Affordability Calculator', description: 'Calculate recommended rent range from your income.' },
+  'paper-size': { name: 'Paper Size Reference', description: 'Reference table for A/B series and common paper sizes.' },
+  'aspect-ratio': { name: 'Aspect Ratio Calculator', description: 'Calculate and convert aspect ratios with common presets.' },
+  'menstrual-cycle': { name: 'Menstrual Cycle Calculator', description: 'Predict next period, ovulation, and fertile window.' },
+  'blood-type': { name: 'Blood Type Compatibility', description: 'Check blood type compatibility and personality traits (entertainment).' },
+  zodiac: { name: 'Zodiac & Chinese Zodiac', description: 'Find your Western zodiac sign and Chinese zodiac from your birthdate.' },
 };

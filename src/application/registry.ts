@@ -73,6 +73,14 @@ export const tools: ToolDefinition[] = [
   { id: 'shoe-size', name: '靴サイズ変換', description: '日本(cm)・US・UK・EUの靴サイズを相互変換。', category: 'life', icon: 'arrows', implemented: true },
   { id: 'cooking', name: '料理単位変換', description: '大さじ・小さじ・カップ・mL・gを食材別に変換。', category: 'life', icon: 'cup', implemented: true },
   { id: 'savings-goal', name: '貯金目標計算', description: '目標金額までの期間と利息をシミュレーション。', category: 'money', icon: 'trending-up', implemented: true },
+  { id: 'fuel-cost', name: '燃費・ガソリン代計算', description: '距離と燃費からガソリン代を計算。予算から走行可能距離も。', category: 'life', icon: 'zap', implemented: true },
+  { id: 'moving-cost', name: '引越し費用概算', description: '距離・人数・時期から引越し費用を概算。繁忙期対応。', category: 'life', icon: 'home', implemented: true },
+  { id: 'rent-budget', name: '家賃適正額計算', description: '月収・年収から適正な家賃の目安を算出。', category: 'money', icon: 'home', implemented: true },
+  { id: 'paper-size', name: '紙サイズ早見表', description: 'A判・B判・はがき等の紙サイズ一覧。検索フィルター付き。', category: 'life', icon: 'file-text', implemented: true },
+  { id: 'aspect-ratio', name: 'アスペクト比計算', description: '画面・画像のアスペクト比を計算。16:9等のプリセット付き。', category: 'life', icon: 'grid', implemented: true },
+  { id: 'menstrual-cycle', name: '生理周期・排卵日予測', description: '最終生理日と周期から次回の生理日・排卵日を予測。', category: 'health', icon: 'calendar', implemented: true },
+  { id: 'blood-type', name: '血液型相性診断', description: '2人の血液型から相性を診断。性格タイプも表示。', category: 'health', icon: 'user-plus', implemented: true },
+  { id: 'zodiac', name: '星座・干支判定', description: '生年月日から西洋星座と干支を判定。性格診断付き。', category: 'health', icon: 'globe', implemented: true },
 ];
 
 export function getToolById(id: string): ToolDefinition | undefined {

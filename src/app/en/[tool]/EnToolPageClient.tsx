@@ -56,6 +56,14 @@ const toolComponents: Record<string, React.ComponentType> = {
   'shoe-size': dynamic(() => import('@/tools/shoe-size/ShoeSizeConverter')),
   cooking: dynamic(() => import('@/tools/cooking/CookingConverter')),
   'savings-goal': dynamic(() => import('@/tools/savings-goal/SavingsGoalCalculator')),
+  'fuel-cost': dynamic(() => import('@/tools/fuel-cost/FuelCostCalculator')),
+  'moving-cost': dynamic(() => import('@/tools/moving-cost/MovingCostEstimator')),
+  'rent-budget': dynamic(() => import('@/tools/rent-budget/RentBudgetCalculator')),
+  'paper-size': dynamic(() => import('@/tools/paper-size/PaperSizeReference')),
+  'aspect-ratio': dynamic(() => import('@/tools/aspect-ratio/AspectRatioCalculator')),
+  'menstrual-cycle': dynamic(() => import('@/tools/menstrual-cycle/MenstrualCycleCalculator')),
+  'blood-type': dynamic(() => import('@/tools/blood-type/BloodTypeCompatibility')),
+  zodiac: dynamic(() => import('@/tools/zodiac/ZodiacCalculator')),
 };
 
 interface EnToolPageClientProps {
