@@ -81,6 +81,14 @@ export const tools: ToolDefinition[] = [
   { id: 'menstrual-cycle', name: '生理周期・排卵日予測', description: '最終生理日と周期から次回の生理日・排卵日を予測。', category: 'health', icon: 'calendar', implemented: true },
   { id: 'blood-type', name: '血液型相性診断', description: '2人の血液型から相性を診断。性格タイプも表示。', category: 'health', icon: 'user-plus', implemented: true },
   { id: 'zodiac', name: '星座・干支判定', description: '生年月日から西洋星座と干支を判定。性格診断付き。', category: 'health', icon: 'globe', implemented: true },
+  { id: 'gift-money', name: 'ご祝儀・香典目安表', description: '関係性別のご祝儀・香典の金額目安とマナー。', category: 'life', icon: 'dollar', implemented: true },
+  { id: 'school-year', name: '入学年度計算', description: '生年月日から小中高大の入学・卒業年度を計算。', category: 'datetime', icon: 'calendar', implemented: true },
+  { id: 'car-tax', name: '自動車税計算', description: '排気量から自動車税（種別割）を計算。13年超重課対応。', category: 'money', icon: 'card', implemented: true },
+  { id: 'retirement-pay', name: '退職金試算', description: '月給・勤続年数・退職理由から退職金と税金を試算。', category: 'money', icon: 'chart', implemented: true },
+  { id: 'car-inspection', name: '車検時期計算', description: '初回登録日から次回車検日と今後のスケジュールを表示。', category: 'life', icon: 'clock', implemented: true },
+  { id: 'paint-calc', name: '壁紙・ペンキ量計算', description: '部屋サイズから必要なペンキ量・壁紙ロール数を計算。', category: 'life', icon: 'grid', implemented: true },
+  { id: 'wbgt', name: '暑さ指数(WBGT)計算', description: '気温と湿度から暑さ指数を推定。熱中症リスク判定付き。', category: 'health', icon: 'flame', implemented: true },
+  { id: 'wind-chill', name: '風速体感温度計算', description: '気温と風速から体感温度を計算。凍傷リスクも表示。', category: 'health', icon: 'layers', implemented: true },
 ];
 
 export function getToolById(id: string): ToolDefinition | undefined {

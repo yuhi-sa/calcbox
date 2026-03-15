@@ -64,6 +64,14 @@ const toolComponents: Record<string, React.ComponentType> = {
   'menstrual-cycle': dynamic(() => import('@/tools/menstrual-cycle/MenstrualCycleCalculator')),
   'blood-type': dynamic(() => import('@/tools/blood-type/BloodTypeCompatibility')),
   zodiac: dynamic(() => import('@/tools/zodiac/ZodiacCalculator')),
+  'gift-money': dynamic(() => import('@/tools/gift-money/GiftMoneyReference')),
+  'school-year': dynamic(() => import('@/tools/school-year/SchoolYearCalculator')),
+  'car-tax': dynamic(() => import('@/tools/car-tax/CarTaxCalculator')),
+  'retirement-pay': dynamic(() => import('@/tools/retirement-pay/RetirementPayEstimator')),
+  'car-inspection': dynamic(() => import('@/tools/car-inspection/CarInspectionCalculator')),
+  'paint-calc': dynamic(() => import('@/tools/paint-calc/PaintCalculator')),
+  wbgt: dynamic(() => import('@/tools/wbgt/WbgtCalculator')),
+  'wind-chill': dynamic(() => import('@/tools/wind-chill/WindChillCalculator')),
 };
 
 interface EnToolPageClientProps {

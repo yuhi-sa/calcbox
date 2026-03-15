@@ -134,4 +134,12 @@ export const toolTranslations: Record<string, { name: string; description: strin
   'menstrual-cycle': { name: 'Menstrual Cycle Calculator', description: 'Predict next period, ovulation, and fertile window.' },
   'blood-type': { name: 'Blood Type Compatibility', description: 'Check blood type compatibility and personality traits (entertainment).' },
   zodiac: { name: 'Zodiac & Chinese Zodiac', description: 'Find your Western zodiac sign and Chinese zodiac from your birthdate.' },
+  'gift-money': { name: 'Gift Money Guide', description: 'Recommended gift amounts for weddings and funerals by relationship.' },
+  'school-year': { name: 'School Year Calculator', description: 'Calculate school entry and graduation years from birthdate (Japanese system).' },
+  'car-tax': { name: 'Car Tax Calculator', description: 'Calculate annual car tax by engine displacement (Japanese tax rates).' },
+  'retirement-pay': { name: 'Retirement Pay Estimator', description: 'Estimate retirement pay and tax from salary, years of service, and type.' },
+  'car-inspection': { name: 'Car Inspection Schedule', description: 'Calculate next car inspection date and upcoming schedule.' },
+  'paint-calc': { name: 'Paint & Wallpaper Calculator', description: 'Calculate paint and wallpaper needed from room dimensions.' },
+  wbgt: { name: 'Heat Index (WBGT) Calculator', description: 'Estimate WBGT heat index from temperature and humidity.' },
+  'wind-chill': { name: 'Wind Chill Calculator', description: 'Calculate wind chill temperature from air temp and wind speed.' },
 };
