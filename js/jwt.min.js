@@ -11,15 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var copyPayloadBtn = document.getElementById('copy-payload-btn');
 
   function copyToClipboard(text, btn) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () {
-        var original = btn.textContent;
-        btn.textContent = 'コピー済み';
-        setTimeout(function () {
-          btn.textContent = original;
-        }, 1500);
-      });
-    }
+    CalcBox.copy.copyText(text).then(function () {
+      var original = btn.textContent;
+      btn.textContent = 'コピー済み';
+      setTimeout(function () {
+        btn.textContent = original;
+      }, 1500);
+    });
   }
 
   function base64urlDecode(str) {

@@ -158,7 +158,11 @@
       <li><a href="../regex/" class="mobile-nav__link">正規表現テスター</a></li>
       <li><a href="../ip-calc/" class="mobile-nav__link">IPアドレス・サブネット計算</a></li>
       <li><a href="../probability/" class="mobile-nav__link">確率・組み合わせ計算</a></li>
-      <li><a href="../gradient/" class="mobile-nav__link">CSSグラデーション生成</a></li>n      <li><a href="../markdown/" class="mobile-nav__link">マークダウンプレビュー</a></li>n      <li><a href="../diff/" class="mobile-nav__link">テキスト差分比較</a></li>n      <li><a href="../loan-compare/" class="mobile-nav__link">ローン比較計算</a></li>n      <li><a href="../nutrition/" class="mobile-nav__link">栄養素・カロリー計算</a></li>
+      <li><a href="../gradient/" class="mobile-nav__link">CSSグラデーション生成</a></li>
+      <li><a href="../markdown/" class="mobile-nav__link">マークダウンプレビュー</a></li>
+      <li><a href="../diff/" class="mobile-nav__link">テキスト差分比較</a></li>
+      <li><a href="../loan-compare/" class="mobile-nav__link">ローン比較計算</a></li>
+      <li><a href="../nutrition/" class="mobile-nav__link">栄養素・カロリー計算</a></li>
             <li><a href="../uuid/" class="mobile-nav__link">UUID生成</a></li>
       <li><a href="../timestamp/" class="mobile-nav__link">Unixタイムスタンプ変換</a></li>
       <li><a href="../jwt/" class="mobile-nav__link">JWTデコーダー</a></li>
@@ -212,7 +216,7 @@
           </select>
         </div>
         <div class="tool__actions" style="justify-content: center; margin-bottom: var(--space-lg);">
-          <button class="btn btn--secondary" id="swap-btn" type="button">↑↓ 入れ替え</button>
+          <button class="btn btn--secondary" id="swap-btn" type="button" aria-label="変換元と変換先の通貨を入れ替え">↑↓ 入れ替え</button>
         </div>
         <div class="form-group">
           <label class="form-label" for="to-currency">変換先通貨</label>
@@ -248,7 +252,7 @@
             <span class="result__value" id="rate-value"></span>
           </div>
         </div>
-        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: var(--space-md); text-align: center;">※ 固定レートを使用しています。最終更新: 2026年2月</p>
+        <p id="rate-note" style="font-size: 0.85em; color: var(--color-text-secondary); margin-top: 8px; text-align: center;">レート取得中...</p>
       </div>
     </div>
 

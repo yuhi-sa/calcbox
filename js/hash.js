@@ -60,15 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Copy buttons
   function copyToClipboard(text, btn) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () {
-        var original = btn.textContent;
-        btn.textContent = 'コピー済み';
-        setTimeout(function () {
-          btn.textContent = original;
-        }, 1500);
-      });
-    }
+    CalcBox.copy.copyText(text).then(function () {
+      var original = btn.textContent;
+      btn.textContent = 'コピー済み';
+      setTimeout(function () {
+        btn.textContent = original;
+      }, 1500);
+    });
   }
 
   var copyBtns = document.querySelectorAll('.copy-btn');
