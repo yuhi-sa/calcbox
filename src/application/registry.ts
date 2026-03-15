@@ -1,4 +1,4 @@
-import { ToolDefinition, ToolCategory } from './types';
+import { ToolDefinition, ToolCategory } from '@/domain/types';
 
 export const categories: { id: ToolCategory | 'all' | 'favorites'; label: string }[] = [
   { id: 'all', label: 'すべて' },

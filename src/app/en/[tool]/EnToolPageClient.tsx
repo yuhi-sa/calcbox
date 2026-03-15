@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { toolTranslations } from '@/lib/i18n';
+import { toolTranslations } from '@/application/i18n';
 
 const toolComponents: Record<string, React.ComponentType> = {
   bmi: dynamic(() => import('@/tools/bmi/BmiCalculator')),

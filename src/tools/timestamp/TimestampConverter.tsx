@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { formatDate, timestampToDate, dateToTimestamp, getCurrentTimestamp, getLocalISOString } from './timestamp-logic';
-import { copyToClipboard } from '@/lib/clipboard';
+import { copyToClipboard } from '@/infrastructure/clipboard';
 import { showToast } from '@/components/Toast';
 
 export default function TimestampConverter() {

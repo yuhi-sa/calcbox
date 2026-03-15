@@ -1,6 +1,6 @@
 'use client';
 
-import { ToolDefinition } from '@/lib/types';
+import { ToolDefinition } from '@/domain/types';
 import ToolCard from './ToolCard';
 
 interface ToolGridProps {

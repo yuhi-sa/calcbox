@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { generateUUIDv4, validateUUID } from './uuid-logic';
-import { copyToClipboard } from '@/lib/clipboard';
+import { copyToClipboard } from '@/infrastructure/clipboard';
 import { showToast } from '@/components/Toast';
 
 export default function UuidGenerator() {

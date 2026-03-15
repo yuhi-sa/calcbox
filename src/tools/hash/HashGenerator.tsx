@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { computeAllHashes } from './hash-logic';
-import { copyToClipboard } from '@/lib/clipboard';
+import { copyToClipboard } from '@/infrastructure/clipboard';
 import { showToast } from '@/components/Toast';
 
 export default function HashGenerator() {

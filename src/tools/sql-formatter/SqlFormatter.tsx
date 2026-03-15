@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { formatSQL } from './sql-formatter-logic';
-import { copyToClipboard } from '@/lib/clipboard';
+import { copyToClipboard } from '@/infrastructure/clipboard';
 import { showToast } from '@/components/Toast';
 
 export default function SqlFormatter() {

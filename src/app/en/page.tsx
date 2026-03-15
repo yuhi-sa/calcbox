@@ -3,9 +3,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import SearchBar from '@/components/Layout/SearchBar';
-import { tools } from '@/lib/tools-registry';
-import { ToolCategory } from '@/lib/types';
-import { toolTranslations } from '@/lib/i18n';
+import { tools } from '@/application/registry';
+import { ToolCategory } from '@/domain/types';
+import { toolTranslations } from '@/application/i18n';
 
 export default function EnglishHomePage() {
   const [search, setSearch] = useState('');

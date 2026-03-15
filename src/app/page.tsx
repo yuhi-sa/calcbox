@@ -4,8 +4,8 @@ import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import SearchBar from '@/components/Layout/SearchBar';
 import ToolGrid from '@/components/ToolGrid';
-import { tools, categories } from '@/lib/tools-registry';
-import { ToolCategory } from '@/lib/types';
+import { tools, categories } from '@/application/registry';
+import { ToolCategory } from '@/domain/types';
 
 export default function HomePage() {
   const [search, setSearch] = useState('');

@@ -1,4 +1,4 @@
-import { tools } from '@/lib/tools-registry';
+import { tools } from '@/application/registry';
 import { notFound } from 'next/navigation';
 import EnToolPageClient from './EnToolPageClient';
 
