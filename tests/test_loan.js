@@ -116,4 +116,124 @@ test('formatMan does not show man notation for values < 10000', function () {
   assert.ok(result.indexOf('\u4e07\u5186') === -1, 'Should not have man-yen in: ' + result);
 });
 
+// --- calcLoan (extracted logic for comparison testing) ---
+function calcLoan(amountMan, annualRate, years, method) {
+  var principal = amountMan * 10000;
+  var monthlyRate = annualRate / 100 / 12;
+  var totalMonths = years * 12;
+
+  var monthlyPayment, totalPayment, totalInterest;
+
+  if (method === 'equal-payment') {
+    monthlyPayment = calcEqualPayment(principal, monthlyRate, totalMonths);
+    totalPayment = monthlyPayment * totalMonths;
+    totalInterest = totalPayment - principal;
+  } else {
+    var monthlyPrincipal = principal / totalMonths;
+    monthlyPayment = monthlyPrincipal + principal * monthlyRate;
+    totalPayment = 0;
+    totalInterest = 0;
+    var balance = principal;
+    for (var y = 1; y <= years; y++) {
+      for (var m = 0; m < 12; m++) {
+        if (balance <= 0) break;
+        var interestPart = balance * monthlyRate;
+        var principalPart = monthlyPrincipal;
+        if (principalPart > balance) principalPart = balance;
+        totalInterest += interestPart;
+        totalPayment += principalPart + interestPart;
+        balance -= principalPart;
+      }
+    }
+  }
+
+  return {
+    monthlyPayment: monthlyPayment,
+    totalPayment: totalPayment,
+    totalInterest: totalInterest
+  };
+}
+
+// --- Comparison feature tests ---
+console.log('\nComparison feature tests');
+
+test('calcLoan returns correct structure for equal-payment', function () {
+  var result = calcLoan(3000, 1.5, 35, 'equal-payment');
+  assert.ok(result.monthlyPayment > 0, 'monthlyPayment should be positive');
+  assert.ok(result.totalPayment > 0, 'totalPayment should be positive');
+  assert.ok(result.totalInterest > 0, 'totalInterest should be positive');
+  assert.ok(result.totalPayment > result.totalInterest, 'totalPayment should exceed totalInterest');
+});
+
+test('calcLoan returns correct structure for equal-principal', function () {
+  var result = calcLoan(3000, 1.5, 35, 'equal-principal');
+  assert.ok(result.monthlyPayment > 0, 'monthlyPayment should be positive');
+  assert.ok(result.totalPayment > 0, 'totalPayment should be positive');
+  assert.ok(result.totalInterest > 0, 'totalInterest should be positive');
+});
+
+test('Higher interest rate leads to higher total payment', function () {
+  var result1 = calcLoan(3000, 1.0, 35, 'equal-payment');
+  var result2 = calcLoan(3000, 2.0, 35, 'equal-payment');
+  assert.ok(result2.totalPayment > result1.totalPayment,
+    'Higher rate (' + Math.round(result2.totalPayment) + ') should exceed lower rate (' + Math.round(result1.totalPayment) + ')');
+});
+
+test('Higher interest rate leads to higher total interest', function () {
+  var result1 = calcLoan(3000, 1.0, 35, 'equal-payment');
+  var result2 = calcLoan(3000, 2.0, 35, 'equal-payment');
+  assert.ok(result2.totalInterest > result1.totalInterest,
+    'Higher rate interest (' + Math.round(result2.totalInterest) + ') should exceed lower rate (' + Math.round(result1.totalInterest) + ')');
+});
+
+test('Comparison diff: same conditions yield zero difference', function () {
+  var result1 = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var result2 = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var diff = result2.totalPayment - result1.totalPayment;
+  assert.strictEqual(diff, 0, 'Same conditions should have zero diff');
+});
+
+test('Comparison diff: lower rate is cheaper (negative diff)', function () {
+  var result1 = calcLoan(3000, 2.0, 35, 'equal-payment');
+  var result2 = calcLoan(3000, 1.0, 35, 'equal-payment');
+  var diff = result2.totalPayment - result1.totalPayment;
+  assert.ok(diff < 0, 'Lower rate should produce negative diff: ' + diff);
+});
+
+test('Comparison diff: higher rate is more expensive (positive diff)', function () {
+  var result1 = calcLoan(3000, 1.0, 35, 'equal-payment');
+  var result2 = calcLoan(3000, 2.0, 35, 'equal-payment');
+  var diff = result2.totalPayment - result1.totalPayment;
+  assert.ok(diff > 0, 'Higher rate should produce positive diff: ' + diff);
+});
+
+test('Three conditions comparison: can calculate all three', function () {
+  var r1 = calcLoan(3000, 1.0, 35, 'equal-payment');
+  var r2 = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var r3 = calcLoan(3000, 2.0, 35, 'equal-payment');
+  assert.ok(r1.totalPayment < r2.totalPayment, 'r1 < r2');
+  assert.ok(r2.totalPayment < r3.totalPayment, 'r2 < r3');
+});
+
+test('Equal-principal has lower total interest than equal-payment', function () {
+  var ep = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var epr = calcLoan(3000, 1.5, 35, 'equal-principal');
+  assert.ok(epr.totalInterest < ep.totalInterest,
+    'Equal-principal interest (' + Math.round(epr.totalInterest) + ') should be less than equal-payment (' + Math.round(ep.totalInterest) + ')');
+});
+
+test('Shorter loan period leads to less total interest', function () {
+  var long = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var short = calcLoan(3000, 1.5, 20, 'equal-payment');
+  assert.ok(short.totalInterest < long.totalInterest,
+    '20yr interest (' + Math.round(short.totalInterest) + ') should be less than 35yr (' + Math.round(long.totalInterest) + ')');
+});
+
+test('Shorter loan period leads to higher monthly payment', function () {
+  var long = calcLoan(3000, 1.5, 35, 'equal-payment');
+  var short = calcLoan(3000, 1.5, 20, 'equal-payment');
+  assert.ok(short.monthlyPayment > long.monthlyPayment,
+    '20yr monthly (' + Math.round(short.monthlyPayment) + ') should exceed 35yr (' + Math.round(long.monthlyPayment) + ')');
+});
+
 module.exports = { passed: passed, failed: failed };

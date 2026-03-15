@@ -283,6 +283,58 @@
         <div class="tool__actions">
           <button class="btn btn--primary" id="calc-btn" type="button">計算する</button>
           <button class="btn btn--secondary" id="reset-btn" type="button">リセット</button>
+          <button class="btn btn--secondary" id="compare-toggle-btn" type="button">条件を追加</button>
+        </div>
+
+        <div id="compare-inputs" hidden>
+          <div class="compare-condition" id="condition-2">
+            <h3 class="compare-condition__title">条件2</h3>
+            <div class="form-group">
+              <label class="form-label" for="loan-amount-2">借入金額（万円）</label>
+              <input class="input" type="number" id="loan-amount-2" min="1" step="1" placeholder="例: 3000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interest-rate-2">年利（%）</label>
+              <input class="input" type="number" id="interest-rate-2" min="0" max="50" step="0.01" placeholder="例: 1.5">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loan-years-2">返済期間（年）</label>
+              <input class="input" type="number" id="loan-years-2" min="1" max="50" step="1" placeholder="例: 35">
+            </div>
+            <div class="form-group">
+              <label class="form-label">返済方式</label>
+              <div class="radio-group">
+                <label><input type="radio" name="repayment-method-2" value="equal-payment" checked> 元利均等返済</label>
+                <label><input type="radio" name="repayment-method-2" value="equal-principal"> 元金均等返済</label>
+              </div>
+            </div>
+          </div>
+          <div class="compare-condition" id="condition-3" hidden>
+            <h3 class="compare-condition__title">条件3</h3>
+            <div class="form-group">
+              <label class="form-label" for="loan-amount-3">借入金額（万円）</label>
+              <input class="input" type="number" id="loan-amount-3" min="1" step="1" placeholder="例: 3000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interest-rate-3">年利（%）</label>
+              <input class="input" type="number" id="interest-rate-3" min="0" max="50" step="0.01" placeholder="例: 1.5">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loan-years-3">返済期間（年）</label>
+              <input class="input" type="number" id="loan-years-3" min="1" max="50" step="1" placeholder="例: 35">
+            </div>
+            <div class="form-group">
+              <label class="form-label">返済方式</label>
+              <div class="radio-group">
+                <label><input type="radio" name="repayment-method-3" value="equal-payment" checked> 元利均等返済</label>
+                <label><input type="radio" name="repayment-method-3" value="equal-principal"> 元金均等返済</label>
+              </div>
+            </div>
+          </div>
+          <div class="tool__actions">
+            <button class="btn btn--secondary" id="add-condition-btn" type="button">条件3を追加</button>
+            <button class="btn btn--secondary" id="remove-condition-btn" type="button" hidden>条件を削除</button>
+          </div>
         </div>
 
         <div class="result" id="result" hidden>
@@ -297,6 +349,23 @@
           <div class="result__item">
             <span class="result__label">利息総額</span>
             <span class="result__value" id="total-interest"></span>
+          </div>
+        </div>
+
+        <div id="compare-result" class="compare-result" hidden>
+          <h2 class="section__title">条件比較表</h2>
+          <div class="bmi-chart-wrapper" style="overflow-x: auto;">
+            <table id="compare-table" class="compare-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 400px;">
+              <thead>
+                <tr style="background: var(--color-bg-secondary); border-bottom: 2px solid var(--color-border);">
+                  <th style="padding: 10px 8px; text-align: left;"></th>
+                  <th style="padding: 10px 8px; text-align: right;" id="compare-th-1">条件1</th>
+                  <th style="padding: 10px 8px; text-align: right;" id="compare-th-2">条件2</th>
+                  <th style="padding: 10px 8px; text-align: right;" id="compare-th-3" hidden>条件3</th>
+                </tr>
+              </thead>
+              <tbody id="compare-body"></tbody>
+            </table>
           </div>
         </div>
 

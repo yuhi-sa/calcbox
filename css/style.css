@@ -1261,6 +1261,46 @@ main {
   color: var(--color-text);
 }
 
+/* ----- ローン比較モード ----- */
+.compare-condition {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.compare-condition__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.compare-result {
+  margin-top: var(--space-xl);
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 10px 8px;
+}
+
+.compare-diff--positive {
+  color: #e74c3c;
+  font-size: 0.8rem;
+}
+
+.compare-diff--negative {
+  color: #27ae60;
+  font-size: 0.8rem;
+}
+
+.compare-diff--zero {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+}
+
 /* ----- ツールページ用セクション ----- */
 .section {
   max-width: 720px;
