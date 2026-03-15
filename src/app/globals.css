@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #e67e22;
+  --color-primary-dark: #d35400;
+  --color-primary-light: #fdebd0;
+  --color-success: #27ae60;
+  --color-danger: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #2980b9;
+}
+
+[data-theme="dark"] {
+  --color-primary-light: #3d2a12;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.toast--visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast--success {
+  background: var(--color-success);
+}
+
+.toast--error {
+  background: var(--color-danger);
+}
