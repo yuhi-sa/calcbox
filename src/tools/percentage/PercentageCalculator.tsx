@@ -44,7 +44,11 @@ export default function PercentageCalculator() {
           <span className="text-sm">is</span>
           <input type="number" value={wpY} onChange={(e) => setWpY(e.target.value)} placeholder="Y" className={inputClass} />
           <span className="text-sm">の</span>
-          <span className="text-lg font-bold">{wpResult !== null && !isNaN(wpResult) ? wpResult.toFixed(2) + '%' : '?%'}</span>
+          <span className="text-lg font-bold">
+            {wpX && wpY && parseFloat(wpY) === 0
+              ? <span className="text-red-500 text-sm">Yは0以外を入力</span>
+              : wpResult !== null && !isNaN(wpResult) ? wpResult.toFixed(2) + '%' : '?%'}
+          </span>
         </div>
       </div>
 
@@ -57,7 +61,9 @@ export default function PercentageCalculator() {
           <input type="number" value={pcTo} onChange={(e) => setPcTo(e.target.value)} placeholder="To" className={inputClass} />
           <span className="text-sm">=</span>
           <span className="text-lg font-bold" style={{ color: pcResult !== null && !isNaN(pcResult) ? (pcResult >= 0 ? '#22c55e' : '#ef4444') : undefined }}>
-            {pcResult !== null && !isNaN(pcResult) ? (pcResult >= 0 ? '+' : '') + pcResult.toFixed(2) + '%' : '?%'}
+            {pcFrom && parseFloat(pcFrom) === 0
+              ? <span className="text-red-500 text-sm" style={{ color: '#ef4444' }}>From は0以外を入力</span>
+              : pcResult !== null && !isNaN(pcResult) ? (pcResult >= 0 ? '+' : '') + pcResult.toFixed(2) + '%' : '?%'}
           </span>
         </div>
       </div>

@@ -12,13 +12,13 @@ describe('Percentage calculations', () => {
     expect(whatPercentOf(25, 100)).toBe(25);
     expect(whatPercentOf(1, 4)).toBe(25);
     expect(whatPercentOf(0, 100)).toBe(0);
-    expect(whatPercentOf(10, 0)).toBe(0);
+    expect(whatPercentOf(10, 0)).toBeNull();
   });
 
   it('calculates percentage change from X to Y', () => {
     expect(percentChange(100, 150)).toBe(50);
     expect(percentChange(200, 100)).toBe(-50);
-    expect(percentChange(0, 100)).toBe(0);
+    expect(percentChange(0, 100)).toBeNull();
   });
 
   it('calculates increase by percent', () => {

@@ -43,7 +43,8 @@ export default function HomePage() {
       result = result.filter(
         (t) =>
           t.name.toLowerCase().includes(q) ||
-          t.description.toLowerCase().includes(q)
+          t.description.toLowerCase().includes(q) ||
+          (t.keywords && t.keywords.some((k) => k.toLowerCase().includes(q)))
       );
     }
 

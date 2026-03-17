@@ -77,6 +77,27 @@ const toolComponents: Record<string, React.ComponentType> = {
   'paint-calc': dynamic(() => import('@/tools/paint-calc/PaintCalculator')),
   wbgt: dynamic(() => import('@/tools/wbgt/WbgtCalculator')),
   'wind-chill': dynamic(() => import('@/tools/wind-chill/WindChillCalculator')),
+  // Developer
+  password: dynamic(() => import('@/tools/password/PasswordGenerator')),
+  hash: dynamic(() => import('@/tools/hash/HashGenerator')),
+  uuid: dynamic(() => import('@/tools/uuid/UuidGenerator')),
+  'base-converter': dynamic(() => import('@/tools/base-converter/BaseConverter')),
+  'color-converter': dynamic(() => import('@/tools/color-converter/ColorConverter')),
+  'json-formatter': dynamic(() => import('@/tools/json-formatter/JsonFormatter')),
+  encode: dynamic(() => import('@/tools/encode/EncodeTool')),
+  regex: dynamic(() => import('@/tools/regex/RegexTester')),
+  'ip-calc': dynamic(() => import('@/tools/ip-calc/IpCalculator')),
+  cron: dynamic(() => import('@/tools/cron/CronParser')),
+  chmod: dynamic(() => import('@/tools/chmod/ChmodCalculator')),
+  jwt: dynamic(() => import('@/tools/jwt/JwtDecoder')),
+  'csv-json': dynamic(() => import('@/tools/csv-json/CsvJsonConverter')),
+  'sql-formatter': dynamic(() => import('@/tools/sql-formatter/SqlFormatter')),
+  'byte-converter': dynamic(() => import('@/tools/byte-converter/ByteConverter')),
+  'http-status': dynamic(() => import('@/tools/http-status/HttpStatusReference')),
+  markdown: dynamic(() => import('@/tools/markdown/MarkdownPreview')),
+  gradient: dynamic(() => import('@/tools/gradient/GradientGenerator')),
+  'qr-generator': dynamic(() => import('@/tools/qr-generator/QrGenerator')),
+  lorem: dynamic(() => import('@/tools/lorem/LoremGenerator')),
 };
 
 interface ToolPageClientProps {

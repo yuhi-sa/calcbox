@@ -7,14 +7,17 @@ export default function BmiCalculator() {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   const [result, setResult] = useState<BmiResult | null>(null);
+  const [error, setError] = useState('');
 
   const calculate = () => {
     const h = parseFloat(height);
     const w = parseFloat(weight);
     if (!h || !w || h < 100 || h > 250 || w < 20 || w > 300) {
-      alert('身長（100〜250cm）と体重（20〜300kg）を正しく入力してください。');
+      setError('身長（100〜250cm）と体重（20〜300kg）を正しく入力してください。');
+      setResult(null);
       return;
     }
+    setError('');
     setResult(calculateBmi(h, w));
   };
 
@@ -22,6 +25,7 @@ export default function BmiCalculator() {
     setHeight('');
     setWeight('');
     setResult(null);
+    setError('');
   };
 
   return (
@@ -40,6 +44,12 @@ export default function BmiCalculator() {
           <button onClick={reset} className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:opacity-90">リセット</button>
         </div>
       </div>
+
+      {error && (
+        <div className="mt-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       {result && (
         <div className="mt-6 space-y-4">

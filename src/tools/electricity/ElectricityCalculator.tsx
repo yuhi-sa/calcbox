@@ -8,15 +8,28 @@ export default function ElectricityCalculator() {
   const [hours, setHours] = useState('');
   const [unitPrice, setUnitPrice] = useState(String(DEFAULT_UNIT_PRICE));
   const [result, setResult] = useState<ElectricityResult | null>(null);
+  const [error, setError] = useState('');
 
   const calculate = () => {
     const w = parseFloat(wattage);
     const h = parseFloat(hours);
     const p = parseFloat(unitPrice);
-    if (isNaN(w) || w < 0 || isNaN(h) || h < 0 || h > 24 || isNaN(p) || p < 0) {
-      alert('入力値を正しく入力してください。');
+    if (isNaN(w) || w < 0) {
+      setError('消費電力は0以上の数値を入力してください。');
+      setResult(null);
       return;
     }
+    if (isNaN(h) || h < 0 || h > 24) {
+      setError('使用時間は0〜24時間の範囲で入力してください。');
+      setResult(null);
+      return;
+    }
+    if (isNaN(p) || p < 0) {
+      setError('電気料金単価は0以上の数値を入力してください。');
+      setResult(null);
+      return;
+    }
+    setError('');
     setResult(calcElectricity(w, h, p));
   };
 
@@ -25,6 +38,7 @@ export default function ElectricityCalculator() {
     setHours('');
     setUnitPrice(String(DEFAULT_UNIT_PRICE));
     setResult(null);
+    setError('');
   };
 
   return (
@@ -47,6 +61,12 @@ export default function ElectricityCalculator() {
           <button onClick={reset} className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:opacity-90">リセット</button>
         </div>
       </div>
+
+      {error && (
+        <div className="mt-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       {result && (
         <div className="mt-6 space-y-4">

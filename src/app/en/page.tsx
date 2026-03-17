@@ -51,7 +51,8 @@ export default function EnglishHomePage() {
         const en = toolTranslations[t.id];
         const name = en?.name || t.name;
         const desc = en?.description || t.description;
-        return name.toLowerCase().includes(q) || desc.toLowerCase().includes(q);
+        return name.toLowerCase().includes(q) || desc.toLowerCase().includes(q) ||
+          (t.keywords && t.keywords.some((k) => k.toLowerCase().includes(q)));
       });
     }
     return result;
@@ -64,7 +65,7 @@ export default function EnglishHomePage() {
           Quick calculations, <span className="text-[var(--color-primary)]">solved.</span>
         </h1>
         <p className="mt-3 text-gray-500 dark:text-gray-400">
-          A collection of 61+ free calculator tools for everyday life.
+          A collection of 87+ free calculator tools for everyday life.
         </p>
         <p className="mt-2">
           <Link href="/" className="text-sm text-[var(--color-primary)] hover:underline">🇯🇵 日本語版</Link>

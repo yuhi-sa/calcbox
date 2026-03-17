@@ -27,7 +27,7 @@ const translations = {
   },
   en: {
     siteTitle: 'CalcBox - Free Online Calculator Tools',
-    siteDescription: 'A collection of 61+ free calculator tools for everyday life.',
+    siteDescription: 'A collection of 87+ free calculator tools for everyday life.',
     allTools: 'All',
     favorites: 'Favorites',
     searchPlaceholder: 'Search tools...',

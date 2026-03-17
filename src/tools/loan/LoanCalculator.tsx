@@ -22,17 +22,30 @@ export default function LoanCalculator() {
   const [method, setMethod] = useState<'equal-payment' | 'equal-principal'>('equal-payment');
   const [result, setResult] = useState<LoanResult | null>(null);
   const [showTable, setShowTable] = useState(false);
+  const [error, setError] = useState('');
 
   const calculate = () => {
     const a = parseFloat(amount);
     const r = parseFloat(rate);
     const y = parseInt(years, 10);
 
-    if (!a || a <= 0 || isNaN(r) || r < 0 || r > 50 || !y || y < 1 || y > 50) {
-      alert('入力値を確認してください。');
+    if (!a || a <= 0) {
+      setError('借入金額は0より大きい値を入力してください。');
+      setResult(null);
+      return;
+    }
+    if (isNaN(r) || r < 0 || r > 50) {
+      setError('年利は0〜50%の範囲で入力してください。');
+      setResult(null);
+      return;
+    }
+    if (!y || y < 1 || y > 50) {
+      setError('返済期間は1〜50年の範囲で入力してください。');
+      setResult(null);
       return;
     }
 
+    setError('');
     setResult(calcLoan(a, r, y, method));
     setShowTable(false);
   };
@@ -43,6 +56,7 @@ export default function LoanCalculator() {
     setYears('');
     setResult(null);
     setShowTable(false);
+    setError('');
   };
 
   return (
@@ -78,6 +92,12 @@ export default function LoanCalculator() {
           <button onClick={reset} className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:opacity-90">リセット</button>
         </div>
       </div>
+
+      {error && (
+        <div className="mt-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       {result && (
         <div className="mt-6 space-y-4">

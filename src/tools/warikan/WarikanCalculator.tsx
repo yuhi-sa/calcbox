@@ -11,28 +11,40 @@ export default function WarikanCalculator() {
   const [weights, setWeights] = useState('');
   const [result, setResult] = useState<WarikanResult | null>(null);
   const [weightedResult, setWeightedResult] = useState<WeightedWarikanResult | null>(null);
+  const [error, setError] = useState('');
 
   const calculate = () => {
     const t = parseFloat(total);
     if (isNaN(t) || t < 0) {
-      alert('合計金額を正しく入力してください。');
+      setError('合計金額は0以上の数値を入力してください。');
+      setResult(null);
+      setWeightedResult(null);
       return;
     }
 
     if (mode === 'equal') {
       const p = parseInt(people);
       if (isNaN(p) || p <= 0) {
-        alert('人数を正しく入力してください。');
+        setError('人数は1以上の整数を入力してください。');
+        setResult(null);
         return;
       }
+      setError('');
       setResult(calcWarikan(t, p, method));
       setWeightedResult(null);
     } else {
       const w = weights.split(',').map((s) => parseFloat(s.trim()));
       if (w.some(isNaN) || w.length === 0) {
-        alert('重みをカンマ区切りで正しく入力してください。');
+        setError('重みをカンマ区切りの数値で入力してください。（例: 2,1,1）');
+        setWeightedResult(null);
         return;
       }
+      if (w.some((v) => v <= 0)) {
+        setError('重みは0より大きい数値を入力してください。');
+        setWeightedResult(null);
+        return;
+      }
+      setError('');
       setWeightedResult(calcWeightedWarikan(t, w, method));
       setResult(null);
     }
@@ -44,6 +56,7 @@ export default function WarikanCalculator() {
     setWeights('');
     setResult(null);
     setWeightedResult(null);
+    setError('');
   };
 
   return (
@@ -88,6 +101,12 @@ export default function WarikanCalculator() {
           <button onClick={reset} className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:opacity-90">リセット</button>
         </div>
       </div>
+
+      {error && (
+        <div className="mt-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       {result && (
         <div className="mt-6 space-y-4">

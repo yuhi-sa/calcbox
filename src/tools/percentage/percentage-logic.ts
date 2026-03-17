@@ -12,14 +12,14 @@ export function percentOf(x: number, y: number): number {
 }
 
 /** X is what percent of Y */
-export function whatPercentOf(x: number, y: number): number {
-  if (y === 0) return 0;
+export function whatPercentOf(x: number, y: number): number | null {
+  if (y === 0) return null;
   return (x / y) * 100;
 }
 
 /** Percentage change from X to Y */
-export function percentChange(from: number, to: number): number {
-  if (from === 0) return 0;
+export function percentChange(from: number, to: number): number | null {
+  if (from === 0) return null;
   return ((to - from) / Math.abs(from)) * 100;
 }
 
